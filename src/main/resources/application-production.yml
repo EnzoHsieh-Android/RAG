@@ -1,0 +1,50 @@
+server:
+  port: 8081
+
+# 生產環境配置 - 支援大數據量
+qdrant:
+  host: localhost
+  port: 6333
+  collection:
+    name: books_large
+    vector_size: 4096
+    distance: Cosine
+    # 針對大數據量的優化配置
+    hnsw_config:
+      m: 16                    # 連接數，影響搜索精度和速度
+      ef_construct: 200        # 構建索引時的搜索範圍
+      full_scan_threshold: 10000   # 全掃描閾值
+    quantization:
+      scalar:
+        type: int8             # 使用量化減少內存使用
+        quantile: 0.99
+        always_ram: true
+
+# JVM優化設置
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+  
+# 緩存配置
+cache:
+  embeddings:
+    max-size: 100000           # 增加緩存容量
+    expire-after-write: 24h
+    
+# 批處理配置
+batch:
+  size: 1000                   # 批次處理大小
+  parallel-workers: 4          # 並行工作線程數
+  
+# 搜索優化
+search:
+  max-results: 100             # 最大搜索結果數
+  default-threshold: 0.7       # 提高相似度閾值
+  timeout: 30s                 # 搜索超時時間
+
+logging:
+  level:
+    com.enzo.rag.demo: INFO
+    org.springframework.web: WARN

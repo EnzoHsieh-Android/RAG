@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./gradlew:*)",
+      "WebFetch(domain:docs.spring.io)",
+      "Bash(rm:*)",
+      "Bash(timeout:*)",
+      "Bash(curl:*)",
+      "Bash(chmod:*)",
+      "Bash(lsof:*)",
+      "Bash(kill:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(docker run:*)",
+      "Bash(echo:*)",
+      "Bash(./import_books_new.sh:*)",
+      "Bash(time curl:*)",
+      "Bash(find:*)",
+      "Bash(./import_diverse_books.sh:*)",
+      "Bash(ollama list:*)",
+      "Bash(ollama pull:*)",
+      "Bash(ollama search:*)"
+    ],
+    "deny": []
+  }
+}

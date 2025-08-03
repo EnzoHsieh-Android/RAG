@@ -1,0 +1,674 @@
+> Task :checkKotlinGradlePluginConfigurationErrors
+> Task :compileKotlin UP-TO-DATE
+> Task :compileJava NO-SOURCE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :resolveMainClassName UP-TO-DATE
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T12:10:47.586+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T12:10:47.588+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T12:10:47.614+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-03T12:10:47.614+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-03T12:10:48.102+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T12:10:48.111+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T12:10:48.111+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T12:10:48.131+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-03T12:10:48.131+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 516 ms
+2025-08-03T12:10:48.462+08:00 ERROR 5010 --- [rag.demo] [  restartedMain] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+✅ Qdrant 集合 'books' 已存在
+2025-08-03T12:10:48.720+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-03T12:10:48.731+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-03T12:10:48.735+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 1.362 seconds (process running for 1.562)
+2025-08-03T12:11:27.695+08:00  INFO 5010 --- [rag.demo] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-03T12:11:27.695+08:00  INFO 5010 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-03T12:11:27.696+08:00  INFO 5010 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 253a8d92-da17-498e-bceb-44a9c7db678d
+✅ 書籍已添加: 人工智慧與未來社會 by 張明華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 9a61fe04-91d2-4674-9b8f-8056eeaa942f
+✅ 書籍已添加: 量子計算原理與實踐 by 李志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 77fd72f5-8c3c-4c79-8973-ec5fd4b934b6
+✅ 書籍已添加: 區塊鏈技術詳解 by 王建國
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: f0fc02b5-f417-4b1a-bb15-8250f39d2c12
+✅ 書籍已添加: 大資料分析與商業智慧 by 陳美玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: bd2f64cc-9397-4919-ac60-94a6f65abe3b
+✅ 書籍已添加: 雲端運算架構設計 by 劉德華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 102bf477-3d17-40d9-be6c-ba4274503822
+✅ 書籍已添加: 機器學習實戰指南 by 黃志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: e4585b23-1a8f-4797-8a68-6909d92e4ed1
+✅ 書籍已添加: 網路安全防護策略 by 林雅惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 37fcbf17-4c87-4b0b-8632-7b0dbd8f0132
+✅ 書籍已添加: 物聯網系統開發 by 吳建宏
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 727563fc-2764-4b6e-b007-802c600b3ca6
+✅ 書籍已添加: 數位轉型策略 by 許文龍
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 46854b4b-73e2-483e-9b17-351bd10c13af
+✅ 書籍已添加: 演算法設計與分析 by 趙立峰
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 83f8452e-bbac-4b3c-bcc7-ea94017e9f11
+✅ 書籍已添加: 軟體工程最佳實踐 by 錢志偉
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 62486f64-bc7a-4930-b277-07beea78ad05
+✅ 書籍已添加: 資料庫系統原理 by 孫美華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 47422eee-b48b-4e47-a352-93dda5779359
+✅ 書籍已添加: 前端開發完全指南 by 鄭志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 4beefdc6-70e7-4645-a071-fcf1a26f0db0
+✅ 書籍已添加: 後端API設計原則 by 馬建國
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: e25fa20b-a3da-47ac-b32f-f59748b62177
+✅ 書籍已添加: 行動應用開發實戰 by 周雅玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: b6ca3f61-0e1d-4da2-a341-a3b5619ef34e
+✅ 書籍已添加: 遊戲引擎架構 by 楊志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: b7d19e7b-2d49-454f-b2f8-1805fd1b37d5
+✅ 書籍已添加: 虛擬實境技術應用 by 何美惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: dfdeec0a-ab66-4d6e-8b87-544d77d87c5e
+✅ 書籍已添加: 電腦視覺與影像處理 by 蔡志峰
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 391988d0-cf57-48f1-9d1b-735179fa50d6
+✅ 書籍已添加: 自然語言處理技術 by 洪文龍
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: aeebc97b-88e0-4dd5-90bc-5b1d76865c43
+✅ 書籍已添加: 分散式系統設計 by 方雅華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 2f22b817-8e94-49dd-973a-ec86a1edf71d
+✅ 書籍已添加: 資料科學與Python by 丁志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: e02473a7-53a3-41d3-afe1-fd75b185dcd1
+✅ 書籍已添加: 深度學習理論與實踐 by 江美玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 56adac64-d84c-41cf-9470-350fd85b26b4
+✅ 書籍已添加: 網頁安全攻防技術 by 羅建國
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: bc64cc52-8607-459b-aeb1-6fd4d8fb45c7
+✅ 書籍已添加: 敏捷開發實踐 by 袁雅惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 36fdc96b-f63c-41d0-b8b2-65c130125709
+✅ 書籍已添加: 容器化技術指南 by 朱志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: ecaadf00-7c80-4ff2-a04e-074369a6756a
+✅ 書籍已添加: 區塊鏈智能合約開發 by 高美華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: af407590-05cc-43a3-a6e7-c37b779edc89
+✅ 書籍已添加: 資訊安全管理 by 葉志峰
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: a635b3c8-6ec0-44f2-96d5-e911825c9966
+✅ 書籍已添加: 數據可視化技術 by 鍾文龍
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 739b4726-97aa-4c04-932f-340a48fd202f
+✅ 書籍已添加: 軟體測試自動化 by 蘇雅玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 0b37ca0a-3b96-49b2-8ce6-e5e27c2474e4
+✅ 書籍已添加: DevOps工程實踐 by 龔志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: f45efca5-8ccb-45ab-8f41-034d4cf2394b
+✅ 書籍已添加: 人機介面設計 by 范美惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 037ecc1a-4e05-4723-abe1-838dc2cb2e37
+✅ 書籍已添加: 電子商務系統架構 by 曾志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: ee2a9918-d6e4-42e3-89ea-0c52deebe596
+✅ 書籍已添加: 行動支付技術 by 薛雅華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 76236640-f495-4e34-85f2-77cf1ce89858
+✅ 書籍已添加: 社群網路分析 by 顏志峰
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: f736abc1-3431-4ce6-88ce-342146b9a945
+✅ 書籍已添加: 推薦系統算法 by 魏文龍
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: ec115f06-cc36-4774-86b7-0f086003d19c
+✅ 書籍已添加: 搜尋引擎技術 by 賴雅玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: f9cb42e2-acdb-4369-af7a-5c3e23a01148
+✅ 書籍已添加: 金融科技創新 by 戴志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: abdc2876-6e69-4cb1-b66f-53a665d90ddf
+✅ 書籍已添加: 物聯網安全 by 謝美惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 07ec4106-8b9b-4361-a085-c2d6d52b7e87
+✅ 書籍已添加: 邊緣計算技術 by 簡志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: beffa3c1-d132-4856-aa7e-b5603f704030
+✅ 書籍已添加: 網路協定詳解 by 閻雅華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: e125fd47-1454-4454-92e0-e1eb24e345fe
+✅ 書籍已添加: 虛擬化技術原理 by 柯志峰
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: c90f73e1-d6e3-4e8e-895d-eddb8cf7409b
+✅ 書籍已添加: 資料挖掘與知識發現 by 侯文龍
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 4eb013da-76f4-4527-9865-33f727237fad
+✅ 書籍已添加: 程式設計範式 by 鐘雅玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 7fc54fb0-dd58-4f11-9f8a-9e2cbccae73e
+✅ 書籍已添加: 編譯器設計原理 by 溫志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: aec19fcc-85c8-457d-a81b-fb73b408f45f
+✅ 書籍已添加: 作業系統核心 by 湯美惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 9f11bf90-1b75-4385-ae68-48c0806bc1fe
+✅ 書籍已添加: 計算機圖學 by 黎志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 2ec6f05d-7e57-41d7-acd9-a678dcebbd18
+✅ 書籍已添加: 多媒體技術 by 韓雅華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: bd694644-1039-4f9d-9906-6686f459f5b7
+✅ 書籍已添加: 嵌入式系統設計 by 藍志峰
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 070f97d8-2669-4beb-87bd-f42fbdaf5fdc
+✅ 書籍已添加: 高效能計算 by 馮文龍
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 9372c913-b7f8-41f9-ac5c-bf27e170a819
+✅ 書籍已添加: 資料結構與算法 by 程雅玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 3b2ba9b9-8523-4246-9a22-7e180e7bd6f9
+✅ 書籍已添加: 軟體架構模式 by 游志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 348a2e0e-c042-4d4d-94ca-13c4cc969bb3
+✅ 書籍已添加: 資料庫效能調優 by 童美惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: ab5d74cc-7e6b-425d-a32d-988f5607eb39
+✅ 書籍已添加: 網路程式設計 by 席志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: dde005ff-1c8e-4c49-81f5-32cd70248501
+✅ 書籍已添加: 資訊檢索系統 by 卜雅華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: de12057e-a77d-45de-836d-aceddf47caeb
+✅ 書籍已添加: 計算複雜度理論 by 盛志峰
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 0e188448-abe1-44c7-bd2d-ac9686084766
+✅ 書籍已添加: 函數式程式設計 by 牛文龍
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 67478610-b7d5-4367-a5bc-5ca0561c53e6
+✅ 書籍已添加: 並行程式設計 by 石雅玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 5a70e147-8aaf-457a-88b4-b9a2acce77ad
+✅ 書籍已添加: 機器學習系統設計 by 左志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 792df90c-06e3-4906-8cf2-126e8113f8ae
+✅ 書籍已添加: 電腦網路安全 by 史美惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 1604e3d6-9aba-4c1a-bcb1-ebc42d116fc9
+✅ 書籍已添加: 雲端原生應用 by 田志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 87026548-95f4-4352-aeb8-57fdd2f413cb
+✅ 書籍已添加: 自然語言生成 by 向雅華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 3dd9753b-7784-4535-8d94-5dd30e7a121e
+✅ 書籍已添加: 知識圖譜技術 by 包志峰
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 644deb2f-51db-4c73-a737-7d6800041498
+✅ 書籍已添加: 計算機視覺應用 by 費文龍
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: c4865205-b35b-4570-96c9-2a08d7949222
+✅ 書籍已添加: 語音識別技術 by 雷雅玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: cd02a2e7-ba43-4258-b52f-0299ea1ceacb
+✅ 書籍已添加: 區塊鏈共識算法 by 章志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 95e2c659-0759-42c5-be7c-24e5600fd9d7
+✅ 書籍已添加: 分散式資料庫 by 冷美惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: db300d02-69e7-498a-90be-524bc1da7fd7
+✅ 書籍已添加: 軟體品質保證 by 尤志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 94d41683-95a6-4844-bc4a-b4236409056d
+✅ 書籍已添加: 企業架構設計 by 穆雅華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: de259103-5bf1-4231-913b-da7cab1097f6
+✅ 書籍已添加: 演算法競程指南 by 昌志峰
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 3943fdc6-d17a-4ef5-a0e3-d94af99ab649
+✅ 書籍已添加: 量化交易系統 by 邰文龍
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: aa9004da-15a2-4bbf-ab1f-7890df8cf9c4
+✅ 書籍已添加: 遊戲AI程式設計 by 郎雅玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: dfa1c3c0-f899-42fe-a1f6-a05d122d6584
+✅ 書籍已添加: 資料科學專案實戰 by 井志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 671446dc-f982-42c2-9a63-c86a9a780261
+✅ 書籍已添加: 軟體設計模式 by 成美惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 5f4a6cc9-786d-4c70-a6a9-b782df49ae7b
+✅ 書籍已添加: API設計與管理 by 解志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: bfcc9e8e-8b73-4c31-b5dd-a2e89841cc46
+✅ 書籍已添加: 區塊鏈應用開發 by 鄧雅華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 53074531-7291-4c66-8a21-11a2f52efeb1
+✅ 書籍已添加: 深度學習框架 by 酆志峰
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 1d2edc5d-fe3e-432c-818e-09fdd74410ba
+✅ 書籍已添加: 電腦圖形學算法 by 別文龍
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 9526a4f5-4c92-4691-9b9b-f7d90e0c1bce
+✅ 書籍已添加: 網路爬蟲技術 by 訾雅玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 6f40efac-1777-4bf4-b091-8dbc72ac1628
+✅ 書籍已添加: 系統效能優化 by 卞志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 7cc7f85b-c340-4636-867e-214d9871a638
+✅ 書籍已添加: 微服務架構實戰 by 覃美惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: e467aa93-a512-4f19-8339-319000d0546f
+✅ 書籍已添加: 資料倉儲與ETL by 逄志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 2bdd1af6-68b3-423e-88c3-d1e4138f9914
+✅ 書籍已添加: 持續交付實踐 by 厲雅華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 12236d02-3c85-41f4-8b4e-85d9157f0490
+✅ 書籍已添加: 電腦安全基礎 by 臧志峰
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 0a655625-38ac-4c9f-bba7-532afe19def5
+✅ 書籍已添加: 人工智慧倫理 by 路文龍
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: af5e7e0c-f424-4662-bf4e-e5e8d8f20ceb
+✅ 書籍已添加: 量化金融模型 by 繩雅玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: f1aa65e0-9641-4c23-a949-ab84aaf9b215
+✅ 書籍已添加: 軟體專案管理 by 商志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 892adc3e-2a47-491b-9330-4178d75895ca
+✅ 書籍已添加: 邊緣AI計算 by 蒿美惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 3c227f24-aaa1-4b9c-b481-462db07029b1
+✅ 書籍已添加: 區塊鏈密碼學 by 山志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: fd4b0e55-a527-467c-854d-d967af3f6e0b
+✅ 書籍已添加: 機器人程式設計 by 諸雅華
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 7313cd2d-315a-4557-ae14-5fad62cf76d9
+✅ 書籍已添加: 分散式機器學習 by 虞志峰
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 3cd03f40-e2b7-48b1-94d5-c65ce06c5b93
+✅ 書籍已添加: 計算機網絡協議 by 焦文龍
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 3b92d5d0-6eb4-4ba4-8205-3490c1b1cd21
+✅ 書籍已添加: 軟體逆向工程 by 班雅玲
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 5c59571b-05aa-4830-b012-0a43a7697ba1
+✅ 書籍已添加: 量子演算法設計 by 仇志強
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: ae392e01-5ab4-4e43-9e6c-d292563aa8df
+✅ 書籍已添加: 智慧城市技術 by 暢美惠
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 21bfc06b-370d-45d4-bf43-20faf510f8c1
+✅ 書籍已添加: 生物資訊學算法 by 養志明
+💾 已緩存embedding
+✅ 文檔已添加到 Qdrant: 486f9b31-75cf-4962-836d-aa2edb9de565
+✅ 書籍已添加: 金融風險建模 by 牧雅華
+💾 已緩存embedding
+✅ 使用向量搜索，找到 5 個候選結果
+💾 已緩存embedding
+✅ 使用向量搜索，找到 5 個候選結果
+📋 使用緩存的embedding
+✅ 使用向量搜索，找到 5 個候選結果
+💾 已緩存embedding
+✅ 使用向量搜索，找到 5 個候選結果
+📋 使用緩存的embedding
+✅ 使用向量搜索，找到 5 個候選結果
+📋 使用緩存的embedding
+✅ 使用向量搜索，找到 15 個候選結果
+2025-08-03T12:22:58.464+08:00  INFO 5010 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 69 class path changes (1 addition, 0 deletions, 68 modifications)
+2025-08-03T12:22:58.469+08:00  INFO 5010 --- [rag.demo] [      Thread-15] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-03T12:22:58.472+08:00  INFO 5010 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T12:22:58.547+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T12:22:58.547+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T12:22:58.671+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T12:22:58.673+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T12:22:58.673+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T12:22:58.680+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-03T12:22:58.680+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 131 ms
+✅ Qdrant 集合 'books' 已存在
+2025-08-03T12:22:58.764+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-03T12:22:58.768+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-03T12:22:58.770+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.241 seconds (process running for 731.598)
+2025-08-03T12:22:58.771+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-08-03T12:23:30.419+08:00  INFO 5010 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 28 class path changes (0 additions, 28 deletions, 0 modifications)
+2025-08-03T12:23:30.420+08:00  INFO 5010 --- [rag.demo] [      Thread-17] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-03T12:23:30.422+08:00  INFO 5010 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T12:23:30.465+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T12:23:30.465+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T12:23:30.556+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T12:23:30.556+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T12:23:30.556+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T12:23:30.562+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-03T12:23:30.562+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 96 ms
+✅ Qdrant 集合 'books' 已存在
+2025-08-03T12:23:30.622+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-03T12:23:30.626+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-03T12:23:30.628+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.175 seconds (process running for 763.456)
+2025-08-03T12:23:30.629+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-08-03T12:23:32.036+08:00  INFO 5010 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 40 class path changes (28 additions, 0 deletions, 12 modifications)
+2025-08-03T12:23:32.037+08:00  INFO 5010 --- [rag.demo] [      Thread-31] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-03T12:23:32.039+08:00  INFO 5010 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T12:23:32.077+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T12:23:32.078+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T12:23:32.153+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T12:23:32.153+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T12:23:32.153+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T12:23:32.158+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-03T12:23:32.159+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 80 ms
+✅ Qdrant 集合 'books' 已存在
+2025-08-03T12:23:32.209+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-03T12:23:32.212+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-03T12:23:32.214+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.147 seconds (process running for 765.042)
+2025-08-03T12:23:32.215+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-08-03T12:23:37.408+08:00  INFO 5010 --- [rag.demo] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-03T12:23:37.409+08:00  INFO 5010 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-03T12:23:37.409+08:00  INFO 5010 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-08-03T17:14:31.099+08:00  INFO 5010 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 46 class path changes (0 additions, 46 deletions, 0 modifications)
+2025-08-03T17:14:31.102+08:00  INFO 5010 --- [rag.demo] [      Thread-45] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-03T17:14:31.103+08:00  INFO 5010 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T17:14:31.184+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T17:14:31.185+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T17:14:31.409+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T17:14:31.411+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T17:14:31.411+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T17:14:31.424+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-03T17:14:31.425+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 235 ms
+✅ Qdrant 集合 'books' 已存在
+2025-08-03T17:14:31.573+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-03T17:14:31.578+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-03T17:14:31.581+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.446 seconds (process running for 18222.179)
+2025-08-03T17:14:31.582+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-08-03T17:14:35.006+08:00  INFO 5010 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 66 class path changes (46 additions, 0 deletions, 20 modifications)
+2025-08-03T17:14:35.007+08:00  INFO 5010 --- [rag.demo] [      Thread-59] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-03T17:14:35.008+08:00  INFO 5010 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T17:14:35.047+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T17:14:35.047+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T17:14:35.137+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T17:14:35.137+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T17:14:35.137+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T17:14:35.143+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-03T17:14:35.143+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 95 ms
+✅ Qdrant 集合 'books' 已存在
+2025-08-03T17:14:35.207+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-03T17:14:35.210+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-03T17:14:35.212+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.178 seconds (process running for 18225.81)
+2025-08-03T17:14:35.213+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-08-03T17:15:15.974+08:00  INFO 5010 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 46 class path changes (0 additions, 46 deletions, 0 modifications)
+2025-08-03T17:15:15.975+08:00  INFO 5010 --- [rag.demo] [      Thread-73] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-03T17:15:15.976+08:00  INFO 5010 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T17:15:16.024+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T17:15:16.024+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T17:15:16.104+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T17:15:16.104+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T17:15:16.104+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T17:15:16.110+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-03T17:15:16.110+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 85 ms
+✅ Qdrant 集合 'books' 已存在
+2025-08-03T17:15:16.163+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-03T17:15:16.167+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-03T17:15:16.169+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.157 seconds (process running for 18266.766)
+2025-08-03T17:15:16.169+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-08-03T17:15:17.581+08:00  INFO 5010 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 66 class path changes (46 additions, 0 deletions, 20 modifications)
+2025-08-03T17:15:17.582+08:00  INFO 5010 --- [rag.demo] [      Thread-87] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-03T17:15:17.584+08:00  INFO 5010 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T17:15:17.618+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T17:15:17.618+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T17:15:17.690+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T17:15:17.691+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T17:15:17.691+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T17:15:17.696+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-03T17:15:17.696+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 77 ms
+✅ Qdrant 集合 'books' 已存在
+2025-08-03T17:15:17.749+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-03T17:15:17.752+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-03T17:15:17.754+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.146 seconds (process running for 18268.351)
+2025-08-03T17:15:17.754+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-08-03T17:17:13.212+08:00  INFO 5010 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 22 class path changes (0 additions, 22 deletions, 0 modifications)
+2025-08-03T17:17:13.212+08:00  INFO 5010 --- [rag.demo] [     Thread-101] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-03T17:17:13.214+08:00  INFO 5010 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T17:17:13.250+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T17:17:13.250+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T17:17:13.324+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T17:17:13.325+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T17:17:13.325+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T17:17:13.329+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-03T17:17:13.329+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 78 ms
+2025-08-03T17:17:13.338+08:00  WARN 5010 --- [rag.demo] [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'bookRAGController' defined in file [/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main/com/enzo/rag/demo/controller/BookRAGController.class]: Unsatisfied dependency expressed through constructor parameter 0: No qualifying bean of type 'com.enzo.rag.demo.service.BookDocumentService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2025-08-03T17:17:13.339+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-08-03T17:17:13.342+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-08-03T17:17:13.353+08:00 ERROR 5010 --- [rag.demo] [  restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of constructor in com.enzo.rag.demo.controller.BookRAGController required a bean of type 'com.enzo.rag.demo.service.BookDocumentService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.enzo.rag.demo.service.BookDocumentService' in your configuration.
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T17:17:14.779+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T17:17:14.779+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T17:17:14.854+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T17:17:14.855+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T17:17:14.855+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T17:17:14.860+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-08-03T17:17:14.860+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 81 ms
+✅ Qdrant 集合 'books' 已存在
+2025-08-03T17:17:14.910+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-03T17:17:14.913+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-03T17:17:14.915+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.146 seconds (process running for 18385.51)
+2025-08-03T17:17:14.916+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-08-03T17:17:34.487+08:00  INFO 5010 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 22 class path changes (0 additions, 6 deletions, 16 modifications)
+2025-08-03T17:17:34.488+08:00  INFO 5010 --- [rag.demo] [     Thread-115] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-03T17:17:34.489+08:00  INFO 5010 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T17:17:34.524+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T17:17:34.524+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T17:17:34.600+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T17:17:34.601+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T17:17:34.601+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T17:17:34.607+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-08-03T17:17:34.607+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 82 ms
+✅ Qdrant 集合 'books' 已存在
+2025-08-03T17:17:34.712+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-03T17:17:34.715+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-03T17:17:34.717+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.203 seconds (process running for 18405.312)
+2025-08-03T17:17:34.718+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-08-03T17:21:30.544+08:00  INFO 5010 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 63 class path changes (0 additions, 60 deletions, 3 modifications)
+2025-08-03T17:21:30.545+08:00  INFO 5010 --- [rag.demo] [     Thread-132] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-03T17:21:30.546+08:00  INFO 5010 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T17:21:30.586+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T17:21:30.586+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T17:21:30.653+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T17:21:30.653+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T17:21:30.653+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T17:21:30.659+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-08-03T17:21:30.659+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 72 ms
+2025-08-03T17:21:30.686+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-03T17:21:30.690+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-03T17:21:30.692+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.116 seconds (process running for 18641.283)
+2025-08-03T17:21:30.692+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-08-03T17:21:33.105+08:00  INFO 5010 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 60 class path changes (60 additions, 0 deletions, 0 modifications)
+2025-08-03T17:21:33.106+08:00  INFO 5010 --- [rag.demo] [     Thread-146] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-03T17:21:33.107+08:00  INFO 5010 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.4)
+
+2025-08-03T17:21:33.140+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 5010 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-03T17:21:33.140+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-03T17:21:33.209+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-03T17:21:33.209+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-03T17:21:33.209+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-03T17:21:33.215+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2025-08-03T17:21:33.215+08:00  INFO 5010 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 74 ms
+✅ Qdrant 集合 'books' 已存在
+2025-08-03T17:21:33.267+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-03T17:21:33.270+08:00  INFO 5010 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-03T17:21:33.272+08:00  INFO 5010 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.142 seconds (process running for 18643.864)
+2025-08-03T17:21:33.273+08:00  INFO 5010 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+
+> Task :bootRun FAILED
+
+[Incubating] Problems report is available at: file:///Users/xiechengru/Downloads/rag.demo/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':bootRun'.
+> Process 'command '/opt/homebrew/Cellar/openjdk@21/21.0.8/libexec/openjdk.jdk/Contents/Home/bin/java'' finished with non-zero exit value 137
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 5h 11m 9s
+5 actionable tasks: 2 executed, 3 up-to-date

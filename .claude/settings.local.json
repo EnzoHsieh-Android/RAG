@@ -20,7 +20,15 @@
       "Bash(ollama pull:*)",
       "Bash(ollama search:*)",
       "Bash(pkill:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(./check_qdrant.sh:*)",
+      "Bash(./search_books.sh:*)",
+      "Bash(touch:*)",
+      "Bash(-H \"Content-Type: application/json\")",
+      "Bash(./check_new_collections.sh:*)",
+      "Bash(./test_recommendation.sh:*)",
+      "Bash(./test_natural_query.sh:*)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }

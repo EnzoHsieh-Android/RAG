@@ -1,0 +1,20 @@
+[
+  {
+    "book_id": "test_001",
+    "title": "怪咖心理學",
+    "author": "約翰多伊",
+    "description": "這是一本探討人際與自我探索的心理書籍，幫助讀者了解自己和他人的心理機制。",
+    "tags": ["心理", "勵志", "自我成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/test_001.jpg"
+  },
+  {
+    "book_id": "test_002",
+    "title": "前端開發實戰",
+    "author": "李程序",
+    "description": "從HTML、CSS到JavaScript的全面前端開發指南，包含React和Vue.js框架介紹。",
+    "tags": ["前端", "程式設計", "網頁開發", "JavaScript"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/test_002.jpg"
+  }
+]

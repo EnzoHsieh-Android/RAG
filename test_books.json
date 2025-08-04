@@ -1,482 +1,3476 @@
 [
   {
+    "book_id": "bk_1001",
     "title": "人工智慧與未來社會",
     "author": "張明華",
-    "description": "本書深入探討人工智慧技術對未來社會的影響，包括機器學習、深度學習、自然語言處理等核心技術的發展趨勢。作者分析了AI在醫療、教育、金融等領域的應用前景，並討論了相關的倫理和社會問題。"
+    "description": "本書深入探討人工智慧技術對未來社會的影響，包括機器學習、深度學習、自然語言處理等核心技術的發展趨勢。作者分析了AI在醫療、教育、金融等領域的應用前景，並討論了相關的倫理和社會問題。",
+    "tags": ["人工智慧", "未來趨勢", "科技倫理", "社會學", "機器學習"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1001.jpg"
   },
   {
+    "book_id": "bk_1002",
     "title": "量子計算原理與實踐",
     "author": "李志強",
-    "description": "一本全面介紹量子計算理論和實際應用的專業書籍。從量子力學基礎開始，逐步介紹量子比特、量子糾纏、量子算法等核心概念，並提供實際的程式設計範例。適合電腦科學和物理學背景的讀者。"
+    "description": "一本全面介紹量子計算理論和實際應用的專業書籍。從量子力學基礎開始，逐步介紹量子比特、量子糾纏、量子算法等核心概念，並提供實際的程式設計範例。適合電腦科學和物理學背景的讀者。",
+    "tags": ["量子計算", "物理學", "電腦科學", "量子力學", "演算法"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1002.jpg"
   },
   {
+    "book_id": "bk_1003",
     "title": "區塊鏈技術詳解",
     "author": "王建國",
-    "description": "深入淺出地介紹區塊鏈技術的原理、架構和應用。涵蓋比特幣、以太坊、智能合約、去中心化金融等重要主題。書中包含大量實際案例和程式碼範例，是學習區塊鏈技術的權威指南。"
+    "description": "深入淺出地介紹區塊鏈技術的原理、架構和應用。涵蓋比特幣、以太坊、智能合約、去中心化金融等重要主題。書中包含大量實際案例和程式碼範例，是學習區塊鏈技術的權威指南。",
+    "tags": ["區塊鏈", "比特幣", "以太坊", "智能合約", "金融科技"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1003.jpg"
   },
   {
+    "book_id": "bk_1004",
     "title": "大資料分析與商業智慧",
     "author": "陳美玲",
-    "description": "本書介紹如何運用大資料技術來驅動商業決策。涵蓋資料收集、清理、分析和視覺化的完整流程。提供Python和R語言的實作範例，並探討資料科學在各行業中的應用案例。"
+    "description": "本書介紹如何運用大資料技術來驅動商業決策。涵蓋資料收集、清理、分析和視覺化的完整流程。提供Python和R語言的實作範例，並探討資料科學在各行業中的應用案例。",
+    "tags": ["大數據", "資料分析", "商業智慧", "Python", "資料科學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1004.jpg"
   },
   {
+    "book_id": "bk_1005",
     "title": "雲端運算架構設計",
     "author": "劉德華",
-    "description": "全面介紹雲端運算的架構設計原則和最佳實踐。包括微服務架構、容器化技術、DevOps流程、雲端安全等重要主題。適合系統架構師和雲端工程師閱讀學習。"
+    "description": "全面介紹雲端運算的架構設計原則和最佳實踐。包括微服務架構、容器化技術、DevOps流程、雲端安全等重要主題。適合系統架構師和雲端工程師閱讀學習。",
+    "tags": ["雲端運算", "架構設計", "微服務", "DevOps", "系統架構"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1005.jpg"
   },
   {
+    "book_id": "bk_1006",
     "title": "機器學習實戰指南",
     "author": "黃志明",
-    "description": "從基礎到進階的機器學習實作教程。涵蓋監督學習、無監督學習、強化學習等主要領域。提供豐富的Python程式碼範例和實際專案案例，幫助讀者快速掌握機器學習技能。"
+    "description": "從基礎到進階的機器學習實作教程。涵蓋監督學習、無監督學習、強化學習等主要領域。提供豐富的Python程式碼範例和實際專案案例，幫助讀者快速掌握機器學習技能。",
+    "tags": ["機器學習", "Python", "資料科學", "演算法", "實作"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1006.jpg"
   },
   {
+    "book_id": "bk_1007",
     "title": "網路安全防護策略",
     "author": "林雅惠",
-    "description": "全面介紹現代網路安全威脅和防護策略。涵蓋惡意軟體、釣魚攻擊、DDoS攻擊等常見威脅的防護方法。適合資訊安全專業人員和系統管理員參考。"
+    "description": "全面介紹現代網路安全威脅和防護策略。涵蓋惡意軟體、釣魚攻擊、DDoS攻擊等常見威脅的防護方法。適合資訊安全專業人員和系統管理員參考。",
+    "tags": ["網路安全", "資訊安全", "駭客攻防", "系統管理"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1007.jpg"
   },
   {
+    "book_id": "bk_1008",
     "title": "物聯網系統開發",
     "author": "吳建宏",
-    "description": "深入介紹物聯網系統的設計和開發方法。包括感測器技術、無線通訊協定、邊緣計算、物聯網平台等核心技術。提供Arduino和樹莓派的實作專案範例。"
+    "description": "深入介紹物聯網系統的設計和開發方法。包括感測器技術、無線通訊協定、邊緣計算、物聯網平台等核心技術。提供Arduino和樹莓派的實作專案範例。",
+    "tags": ["物聯網", "IoT", "嵌入式系統", "Arduino", "邊緣計算"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1008.jpg"
   },
   {
+    "book_id": "bk_1009",
     "title": "數位轉型策略",
     "author": "許文龍",
-    "description": "探討企業數位轉型的策略和實施方法。分析數位化對商業模式、組織結構、企業文化的影響。提供多個成功企業的數位轉型案例研究，為企業管理者提供實用指導。"
+    "description": "探討企業數位轉型的策略和實施方法。分析數位化對商業模式、組織結構、企業文化的影響。提供多個成功企業的數位轉型案例研究，為企業管理者提供實用指導。",
+    "tags": ["數位轉型", "企業管理", "商業模式", "策略", "案例研究"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1009.jpg"
   },
   {
+    "book_id": "bk_1010",
     "title": "演算法設計與分析",
     "author": "趙立峰",
-    "description": "系統性介紹各種重要的演算法設計技巧和分析方法。涵蓋排序、搜尋、圖論、動態規劃等經典演算法。每個章節都包含詳細的時間複雜度分析和程式實作。"
+    "description": "系統性介紹各種重要的演算法設計技巧和分析方法。涵蓋排序、搜尋、圖論、動態規劃等經典演算法。每個章節都包含詳細的時間複雜度分析和程式實作。",
+    "tags": ["演算法", "資料結構", "程式設計", "電腦科學", "複雜度分析"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1010.jpg"
   },
   {
+    "book_id": "bk_1011",
+    "title": "絲綢之路：一部文化交流史",
+    "author": "歐陽修文",
+    "description": "本書詳細描繪了古代絲綢之路的興衰，不僅僅是一條商貿路線，更是東西方文明、宗教、藝術和技術交匯的偉大橋樑。從漢代張騫出使西域到元代的馬可波羅東來，追溯千年來的歷史變遷與文化融合。",
+    "tags": ["歷史", "絲綢之路", "文化交流", "世界史", "古代史"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1011.jpg"
+  },
+  {
+    "book_id": "bk_1012",
+    "title": "時間的碎片：給現代人的哲學思考",
+    "author": "蘇格拉底",
+    "description": "在快節奏的現代生活中，我們如何找到內心的平靜？本書從斯多噶主義到存在主義，精選12位哲學家的智慧，幫助讀者反思生命、焦慮與幸福的本質。",
+    "tags": ["哲學", "人生", "心理勵志", "斯多噶", "存在主義"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1012.jpg"
+  },
+  {
+    "book_id": "bk_1013",
+    "title": "一碗療癒：30分鐘快速上桌的家常湯品",
+    "author": "林暖心",
+    "description": "本書專為忙碌的現代人設計，收錄50道兼具美味與營養的快速湯品食譜。從滋補的雞湯到清爽的蔬菜湯，每道食譜都有詳細的步驟圖解與時間管理技巧，讓您在30分鐘內為家人端上一碗溫暖的療癒。",
+    "tags": ["食譜", "烹飪", "健康飲食", "家常菜", "湯品"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1013.jpg"
+  },
+  {
+    "book_id": "bk_1014",
+    "title": "群星的低語",
+    "author": "葉星辰",
+    "description": "一部設定在23世紀的科幻史詩。當人類文明擴展至遙遠星系，卻意外喚醒了沉睡的古老種族。這是一場關於生存、背叛與希望的星際戰爭。",
+    "tags": ["小說", "科幻", "星際戰爭", "未來世界", "冒險"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1014.jpg"
+  },
+  {
+    "book_id": "bk_1015",
+    "title": "城市微光：一部現代詩集",
+    "author": "陳默",
+    "description": "收錄了詩人陳默近五年來的創作，以細膩的筆觸捕捉現代都市中的孤獨、愛情與迷惘。詩句如街角的微光，溫暖而又帶有一絲感傷，觸動每一位城市遊子的心弦。",
+    "tags": ["詩集", "文學", "現代詩", "情感", "都市"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1015.jpg"
+  },
+  {
+    "book_id": "bk_1016",
+    "title": "極簡生活法則",
+    "author": "山下英子",
+    "description": "真正的富足，是內心的自由。本書提供從衣物、家居到人際關係的「斷捨離」實踐指南，幫助你擺脫物質與心靈的束縛，過上更輕鬆、更有品質的極簡生活。",
+    "tags": ["生活風格", "極簡主義", "斷捨離", "自我成長", "整理術"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1016.jpg"
+  },
+  {
+    "book_id": "bk_1017",
+    "title": "與孩子的情緒共舞：讀懂孩子的內心戲",
+    "author": "汪培珽",
+    "description": "孩子哭鬧、固執、不聽話？本書從兒童發展心理學出發，教你如何辨識孩子的情緒信號，用同理心和有效的溝通技巧，化解親子衝突，建立穩固的情感連結。",
+    "tags": ["親子教養", "兒童心理", "情緒管理", "家庭關係", "溝通"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1017.jpg"
+  },
+  {
+    "book_id": "bk_1018",
+    "title": "羅馬帝國的榮耀與黃昏",
+    "author": "愛德華·吉朋",
+    "description": "濃縮歷史巨著《羅馬帝國衰亡史》的精華，以生動的敘事呈現從奧古斯都的輝煌、五賢帝的治世，到帝國分裂與最終崩潰的千年史詩。是了解西方古典文明的必讀之作。",
+    "tags": ["歷史", "羅馬", "世界史", "古典文明", "政治"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1018.jpg"
+  },
+  {
+    "book_id": "bk_1019",
+    "title": "番茄鐘工作法圖解",
+    "author": "法蘭西斯科·西里洛",
+    "description": "風靡全球的時間管理術！本書詳細介紹如何利用「工作25分鐘、休息5分鐘」的循環，有效對抗拖延症，提升專注力與工作效率。適合學生、上班族和所有希望提高生產力的人。",
+    "tags": ["時間管理", "工作法", "效率", "自我成長", "生產力"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1019.jpg"
+  },
+  {
+    "book_id": "bk_1020",
+    "title": "巷口的深夜食堂",
+    "author": "安倍夜郎",
+    "description": "在都市的喧囂中，有一家只在午夜營業的食堂。每一道菜的背後，都藏著一個動人的故事。這是一本用美食療癒人心的溫暖漫畫，獻給所有在生活中努力的你。",
+    "tags": ["漫畫", "美食", "療癒", "人生故事", "日本文化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1020.jpg"
+  },
+  {
+    "book_id": "bk_1021",
+    "title": "深度休息法",
+    "author": "克勞蒂亞·哈蒙德",
+    "description": "你是否時常感到疲憊，卻又睡不好？本書結合最新腦科學與心理學研究，揭示睡眠之外的十種高效休息模式，如散步、聽音樂、正念冥想等，幫助你真正恢復精力，告別慢性疲勞。",
+    "tags": ["健康", "心理學", "壓力管理", "睡眠", "正念"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1021.jpg"
+  },
+  {
+    "book_id": "bk_1022",
+    "title": "印象派的光與影：從莫內到梵谷",
+    "author": "安娜·卡列尼娜",
+    "description": "一本專為藝術愛好者設計的入門讀物。書中精選超過200幅高清名畫，詳細解讀印象派的發展脈絡、代表畫家及其風格特色，帶你走進19世紀巴黎的藝術革命。",
+    "tags": ["藝術", "藝術史", "印象派", "繪畫", "美學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1022.jpg"
+  },
+  {
+    "book_id": "bk_1023",
+    "title": "一個人的京都慢旅行",
+    "author": "Milly",
+    "description": "放下地圖，跟隨心靈的指引。本書作者分享了她在京都多次深度旅行的私房景點與心得，從古老的寺廟、靜謐的庭園到職人小店，體驗京都獨有的四季之美與生活哲學。",
+    "tags": ["旅遊", "日本", "京都", "生活風格", "散文"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1023.jpg"
+  },
+  {
+    "book_id": "bk_1024",
+    "title": "綠野仙蹤",
+    "author": "李曼·法蘭克·鮑姆",
+    "description": "經典兒童文學作品。描述女孩桃樂絲與她的寵物狗托托被龍捲風吹到了一個神奇的國度，在尋找回家之路的旅途中，她遇到了稻草人、錫樵夫和獅子，展開了一場關於勇氣、智慧與愛的冒險。",
+    "tags": ["童書", "經典文學", "奇幻", "冒險", "成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1024.jpg"
+  },
+  {
+    "book_id": "bk_1025",
+    "title": "餐桌上的經濟學",
+    "author": "提姆·哈福特",
+    "description": "為何超市裡的有機雞蛋那麼貴？星巴克如何定價？本書用生活中的大小事，如咖啡、交通、戀愛等，解釋供給需求、機會成本、資訊不對稱等核心經濟學原理，讓經濟學變得有趣又實用。",
+    "tags": ["經濟學", "科普", "商業", "生活", "決策"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1025.jpg"
+  },
+  {
+    "book_id": "bk_1026",
+    "title": "百年孤寂",
+    "author": "加布列·賈西亞·馬奎斯",
+    "description": "魔幻寫實主義的巔峰之作。故事圍繞著布恩迪亞家族七代人的傳奇經歷，描繪了拉丁美洲一個虛構小鎮馬康多的百年興衰，交織著神話、奇蹟與殘酷的現實。",
+    "tags": ["小說", "經典文學", "魔幻寫實", "拉丁美洲", "歷史"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1026.jpg"
+  },
+  {
+    "book_id": "bk_1027",
+    "title": "肌力訓練解剖學",
+    "author": "德拉維爾",
+    "description": "健身愛好者與專業教練的必備參考書。書中包含上百幅精細的人體解剖圖，清楚標示出每個重訓動作所鍛鍊的主要與輔助肌群，幫助你精準訓練、避免運動傷害。",
+    "tags": ["健康", "健身", "運動", "解剖學", "肌力訓練"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1027.jpg"
+  },
+  {
+    "book_id": "bk_1028",
+    "title": "台北女子圖鑑",
+    "author": "林怡君",
+    "description": "從南部北上打拼的女孩林怡珊，在台北這個夢想與現實交織的城市裡，經歷了工作、愛情與友誼的種種挑戰與成長。這是一部描寫現代都會女性生存與抉擇的寫實小說。",
+    "tags": ["小說", "都會", "女性", "職場", "愛情"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1028.jpg"
+  },
+  {
+    "book_id": "bk_1029",
+    "title": "禪與摩托車維修的藝術",
+    "author": "羅伯特·M·波西格",
+    "description": "一部融合旅行、哲學與家庭關係的獨特作品。作者記敘了自己與兒子騎著摩托車橫跨美國大陸的旅程，並在途中深入探討了科技與人文、理性與感性、以及「良質」的本質。",
+    "tags": ["哲學", "經典文學", "旅行", "人生", "自我探索"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1029.jpg"
+  },
+  {
+    "book_id": "bk_1030",
+    "title": "轉動的光陰：台灣老相機的故事",
+    "author": "張光儀",
+    "description": "本書不僅是相機的收藏指南，更是一部台灣的庶民生活史。作者透過數十台經典老相機，講述它們背後的故事，以及鏡頭下所捕捉的台灣社會變遷與時代記憶。",
+    "tags": ["攝影", "歷史", "台灣", "文化", "收藏"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1030.jpg"
+  },
+  {
+    "book_id": "bk_1031",
+    "title": "低GI飲食全書",
+    "author": "蕭營養師",
+    "description": "穩定血糖、減重、抗老化，從選擇「對」的碳水化合物開始。本書提供完整的低升糖指數（GI）食物列表，並設計了百道美味又健康的低GI食譜，讓你吃得飽足又能維持健康體態。",
+    "tags": ["健康", "食譜", "減重", "營養學", "糖尿病"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1031.jpg"
+  },
+  {
+    "book_id": "bk_1032",
+    "title": "被討厭的勇氣",
+    "author": "岸見一郎",
+    "description": "本書以哲學家與年輕人的對話形式，深入淺出地介紹阿德勒心理學的核心思想。闡述所有煩惱都來自於人際關係，並提出如何擺脫過去束縛、活出真正自我的具體方法。",
+    "tags": ["心理學", "阿德勒", "自我成長", "勵志", "人際關係"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1032.jpg"
+  },
+  {
+    "book_id": "bk_1033",
+    "title": "人類大歷史：從野獸到扮演上帝",
+    "author": "尤瓦爾·諾瓦·哈拉瑞",
+    "description": "一部宏大的世界史。從十萬年前的認知革命，到農業革命、科學革命，作者以獨特的視角，闡述了人類如何從一個無足輕重的物種，一步步成為地球的主宰，並探討了未來的可能性。",
+    "tags": ["歷史", "人類學", "科普", "世界史", "未來趨勢"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1033.jpg"
+  },
+  {
+    "book_id": "bk_1034",
+    "title": "風之影",
+    "author": "卡洛斯·魯依斯·薩豐",
+    "description": "在巴塞隆納的「遺忘書之墓」，少年達尼找到了一本名為《風之影》的神秘小說。他對作者深深著迷，卻發現一個惡魔般的人物正企圖銷毀所有相關書籍。一場充滿懸疑、愛情與魔法的冒險就此展開。",
+    "tags": ["小說", "懸疑", "奇幻", "文學", "西班牙"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1034.jpg"
+  },
+  {
+    "book_id": "bk_1035",
+    "title": "聽風的歌：村上春樹成名作",
+    "author": "村上春樹",
+    "description": "村上春樹的處女作。故事發生在一個夏日的海邊小鎮，主角「我」與朋友「老鼠」無所事事地喝著啤酒，談論著人生與死亡，邂逅了一位沒有小指的女孩。充滿了獨特的疏離感與青春的哀愁。",
+    "tags": ["小說", "日本文學", "村上春樹", "青春", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1035.jpg"
+  },
+  {
+    "book_id": "bk_1036",
+    "title": "咖啡學：從豆子到杯子的風味科學",
+    "author": "詹姆斯·霍夫曼",
+    "description": "世界咖啡師冠軍的權威之作。本書從咖啡豆的品種、產地、處理法，到烘焙、研磨與沖煮的每個環節，以科學的角度剖析影響咖啡風味的變因，是咖啡愛好者的進階聖經。",
+    "tags": ["飲食", "咖啡", "科普", "生活風格", "專業技術"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1036.jpg"
+  },
+  {
+    "book_id": "bk_1037",
+    "title": "三國演義",
+    "author": "羅貫中",
+    "description": "中國四大名著之一。描寫了從東漢末年到西晉初年之間近百年的歷史風雲，以劉備、曹操、孫權三方的政治和軍事鬥爭為主線，刻畫了數百個栩栩如生的人物形象，是中國歷史小說的巔峰。",
+    "tags": ["經典文學", "歷史", "小說", "中國", "戰爭"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1037.jpg"
+  },
+  {
+    "book_id": "bk_1038",
+    "title": "靜坐的科學、醫學與心靈之旅",
+    "author": "楊定一",
+    "description": "本書整合了現代醫學、量子物理與古代智慧，系統性地闡述了靜坐對大腦、身體和心靈的深遠影響。不僅是理論的介紹，更提供了實用的靜坐練習方法，引導讀者找回內在的平衡與健康。",
+    "tags": ["健康", "心靈", "靜坐", "正念", "科普"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1038.jpg"
+  },
+  {
+    "book_id": "bk_1039",
+    "title": "台灣鳥類圖鑑",
+    "author": "中華鳥會",
+    "description": "收錄台灣超過600種鳥類的完整介紹，包含留鳥、候鳥與迷鳥。每種鳥類均配有高清生態照片、詳細的形態特徵、棲地與行為描述，是賞鳥愛好者與生態研究者的權威工具書。",
+    "tags": ["自然", "科普", "生態", "台灣", "鳥類"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1039.jpg"
+  },
+  {
+    "book_id": "bk_1040",
+    "title": "斜槓青年：全球職涯新趨勢",
+    "author": "Susan Kuang",
+    "description": "不再滿足於單一職業，越來越多的年輕人選擇擁有多重職業和身份的「斜槓」生活。本書探討了這種新型態工作模式的興起，並提供如何發掘興趣、打造個人品牌、實現多元收入的實用策略。",
+    "tags": ["職涯規劃", "自我成長", "工作法", "趨勢", "生活風格"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1040.jpg"
+  },
+  {
+    "book_id": "bk_1041",
+    "title": "麵包之魂：法國麵包的工藝與哲學",
+    "author": "皮耶·艾曼",
+    "description": "一位法國麵包大師的畢生心血。書中不僅有法棍、可頌等經典麵包的詳細配方與製作技巧，更深入探討了關於酵母、麵粉、水與時間的哲學，揭示了麵包製作背後的靈魂與藝術。",
+    "tags": ["食譜", "烘焙", "飲食文化", "法國", "專業技術"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1041.jpg"
+  },
+  {
+    "book_id": "bk_1042",
+    "title": "解憂雜貨店",
+    "author": "東野圭吾",
+    "description": "三個闖空門的少年意外躲進了一家廢棄的雜貨店，發現這家店竟能收到來自過去的煩惱諮詢信。他們在回信的過程中，無意間改變了許多人的人生，也找到了自己的方向。一部充滿奇幻與溫暖的療癒小說。",
+    "tags": ["小說", "奇幻", "療癒", "日本文學", "人生"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1042.jpg"
+  },
+  {
+    "book_id": "bk_1043",
+    "title": "原子習慣",
+    "author": "詹姆斯·克利爾",
+    "description": "每天進步1%，一年後你會強大37倍。本書提出一套建立好習慣、戒除壞習慣的系統性方法。核心概念是讓改變微小到難以察覺，透過「提示、渴望、回應、獎賞」四步驟，輕鬆養成任何你想要的習慣。",
+    "tags": ["自我成長", "習慣", "心理學", "效率", "勵志"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1043.jpg"
+  },
+  {
+    "book_id": "bk_1044",
+    "title": "銀河便車指南",
+    "author": "道格拉斯·亞當斯",
+    "description": "一部充滿英式幽默的科幻經典。地球人亞瑟·鄧特在地球被毀滅前的最後一刻，被外星朋友救走，搭上便車，展開了一場穿越宇宙的荒誕冒險。書中對生命、宇宙及一切的終極答案提出了無厘頭的解答。",
+    "tags": ["小說", "科幻", "幽默", "經典文學", "冒險"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1044.jpg"
+  },
+  {
+    "book_id": "bk_1045",
+    "title": "說故事的領導力",
+    "author": "安奈特·西蒙斯",
+    "description": "數據和簡報無法打動人心，但故事可以。本書教導管理者和領導者如何運用「我是誰」、「我為何在此」等六種類型的故事，來建立信任、激勵團隊、傳遞價值觀，發揮真正的影響力。",
+    "tags": ["領導力", "溝通", "企業管理", "演講", "故事"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1045.jpg"
+  },
+  {
+    "book_id": "bk_1046",
+    "title": "唐詩三百首新注",
+    "author": "詩詞鑑賞學會",
+    "description": "本書在傳統《唐詩三百首》的基礎上，加入了詳盡的現代漢語註釋、賞析與背景介紹。特別收錄了詩人生平、創作風格分析，幫助讀者更深入地理解唐詩的意境與藝術成就。",
+    "tags": ["詩集", "經典文學", "唐詩", "中國", "文學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1046.jpg"
+  },
+  {
+    "book_id": "bk_1047",
+    "title": "貓的搖籃",
+    "author": "庫爾特·馮內古特",
+    "description": "一部反諷意味濃厚的黑色幽默小說。故事圍繞著原子彈發明者之一的子女，以及一種名為「冰-九」的末日物質展開。透過荒誕的情節，尖銳地批判了科學、宗教與人類的愚蠢。",
+    "tags": ["小說", "黑色幽默", "科幻", "經典文學", "諷刺"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1047.jpg"
+  },
+  {
+    "book_id": "bk_1048",
+    "title": "槍炮、病菌與鋼鐵",
+    "author": "賈德·戴蒙",
+    "description": "為何是歐亞大陸征服了其他文明，而不是相反？本書從地理學、生物學、歷史學等多個角度，探討了環境因素如何塑造了不同大陸人類社會的發展軌跡，顛覆了傳統的種族主義歷史觀。",
+    "tags": ["歷史", "科普", "人類學", "地理", "社會學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1048.jpg"
+  },
+  {
+    "book_id": "bk_1049",
+    "title": "思考，快與慢",
+    "author": "丹尼爾·康納曼",
+    "description": "諾貝爾經濟學獎得主的經典之作。書中揭示了人類大腦中存在兩種思考模式：快速、直覺的「系統一」和緩慢、理性的「系統二」。了解這兩種系統的運作與偏誤，能幫助我們做出更佳的個人與商業決策。",
+    "tags": ["心理學", "決策", "行為經濟學", "科普", "思考"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1049.jpg"
+  },
+  {
+    "book_id": "bk_1050",
+    "title": "我輩中人：寫給中年世代的備忘錄",
+    "author": "張曼娟",
+    "description": "當我們成為父母的倚靠、子女的榜樣，我們如何安頓自己的中年心事？作家張曼娟以溫柔而深刻的筆觸，分享她照顧年邁父母、面對人生中場的心路歷程，為中年讀者帶來撫慰與力量。",
+    "tags": ["散文", "人生", "家庭關係", "中年", "療癒"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1050.jpg"
+  },
+  {
+    "book_id": "bk_1051",
+    "title": "小紅帽的奇幻冒險",
+    "author": "林小花",
+    "description": "改編自經典童話的現代版本，小紅帽遇到會說話的動物朋友，一起展開神奇的森林冒險。適合3-8歲兒童閱讀，培養想像力和勇氣。",
+    "tags": ["童書", "繪本", "奇幻", "冒險", "親子"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1051.jpg"
+  },
+  {
+    "book_id": "bk_1052",
+    "title": "哈利波特：神秘的魔法石",
+    "author": "J.K.羅琳",
+    "description": "風靡全球的魔法小說第一集。描述孤兒哈利波特發現自己是巫師，進入霍格華茲魔法學校的奇幻冒險故事。適合青少年和成人讀者。",
+    "tags": ["小說", "奇幻", "魔法", "冒險", "青少年"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1052.jpg"
+  },
+  {
+    "book_id": "bk_1053",
+    "title": "東野圭吾懸疑集：白夜行",
+    "author": "東野圭吾",
+    "description": "日本推理小說大師的經典作品。講述一樁離奇殺人案背後隱藏的複雜人性和愛恨糾葛。情節緊張刺激，是推理小說愛好者的必讀之作。",
+    "tags": ["小說", "懸疑", "推理", "日本文學", "犯罪"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1053.jpg"
+  },
+  {
+    "book_id": "bk_1054",
+    "title": "投資理財入門指南",
+    "author": "王金融",
+    "description": "為投資新手量身打造的理財教學書。從基本的儲蓄觀念到股票、基金、債券投資，用淺顯易懂的方式介紹各種理財工具和投資策略。",
+    "tags": ["理財", "投資", "金融", "股票", "入門"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1054.jpg"
+  },
+  {
+    "book_id": "bk_1055",
+    "title": "世界歷史大百科",
+    "author": "史學研究會",
+    "description": "從古代文明到現代社會的完整歷史脈絡。涵蓋政治、經濟、文化、科技發展，配有豐富的圖表和地圖，是學習世界歷史的最佳參考書。",
+    "tags": ["歷史", "世界史", "百科", "科普", "教育"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1055.jpg"
+  },
+  {
+    "book_id": "bk_1056",
+    "title": "料理新手的第一本食譜",
+    "author": "廚神小當家",
+    "description": "專為料理初學者設計的實用食譜書。收錄100道簡單易學的家常菜，每道菜都有詳細的步驟圖解和烹飪技巧說明。",
+    "tags": ["食譜", "烹飪", "家常菜", "美食", "新手"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1056.jpg"
+  },
+  {
+    "book_id": "bk_1057",
+    "title": "心理學概論",
+    "author": "張心理",
+    "description": "介紹心理學的基本理論和應用領域。包括認知心理學、社會心理學、發展心理學等分支，適合心理學系學生和對心理學感興趣的一般讀者。",
+    "tags": ["心理學", "科普", "教育", "社會科學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1057.jpg"
+  },
+  {
+    "book_id": "bk_1058",
+    "title": "太空探索的故事",
+    "author": "李天文",
+    "description": "從古代天文觀測到現代太空任務的精彩歷程。介紹人類探索宇宙的偉大成就，包括登月計畫、火星探測、哈伯太空望遠鏡等重要里程碑。",
+    "tags": ["科普", "天文", "太空", "歷史", "科學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1058.jpg"
+  },
+  {
+    "book_id": "bk_1059",
+    "title": "青少年成長心理輔導",
+    "author": "陳輔導",
+    "description": "專為青少年及其家長編寫的心理健康指南。探討青春期常見的心理問題、人際關係困擾，提供實用的解決方案和溝通技巧。",
+    "tags": ["心理學", "青少年", "親子教養", "情緒管理", "輔導"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1059.jpg"
+  },
+  {
+    "book_id": "bk_1060",
+    "title": "小王子",
+    "author": "安東尼·聖修伯里",
+    "description": "一部寫給大人的童話。講述一位飛行員在沙漠中遇見了來自遙遠星球的小王子，透過小王子純真的視角，重新審視友誼、愛情與生命的意義。全球最暢銷的書籍之一。",
+    "tags": ["經典文學", "小說", "哲學", "童話", "人生"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1060.jpg"
+  },
+  {
+    "book_id": "bk_1061",
+    "title": "海邊的卡夫卡",
+    "author": "村上春樹",
+    "description": "15歲少年田村卡夫卡離家出走，來到一座奇異的圖書館。故事在少年與另一位能與貓對話的老人中田之間，以雙線交錯的方式展開，探討了命運、潛意識與現實的界線。",
+    "tags": ["小說", "日本文學", "奇幻", "村上春樹", "成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1061.jpg"
+  },
+  {
+    "book_id": "bk_1062",
+    "title": "情緒勒索",
+    "author": "周慕姿",
+    "description": "「我這麼做都是為你好！」你是否也常聽到這樣的話？本書深入剖析華人社會中常見的情緒勒索現象，教你如何辨識並設立界線，擺脫罪惡感與被控制的關係，找回情緒自主權。",
+    "tags": ["心理學", "人際關係", "情緒管理", "自我成長", "家庭關係"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1062.jpg"
+  },
+  {
+    "book_id": "bk_1063",
+    "title": "戰國策：權謀與話術的經典",
+    "author": "劉向",
+    "description": "一部記錄戰國時期縱橫家遊說事蹟的史書。書中充滿了精彩的政治謀略、外交辭令和人性洞察，是學習談判、說服與策略思維的必讀經典。",
+    "tags": ["歷史", "經典文學", "策略", "政治", "中國"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1063.jpg"
+  },
+  {
+    "book_id": "bk_1064",
+    "title": "一人的私房烤箱料理",
+    "author": "小林食堂",
+    "description": "專為單身或小家庭設計的烤箱食譜。從鹹派、焗烤、披薩到甜點，只需將食材準備好送入烤箱，就能輕鬆完成一道道美味料理。書中附有時間與溫度設定的詳細指南，新手也能零失敗。",
+    "tags": ["食譜", "烹飪", "烤箱料理", "西餐", "美食"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1064.jpg"
+  },
+  {
+    "book_id": "bk_1065",
+    "title": "設計中的設計",
+    "author": "原研哉",
+    "description": "日本設計大師原研哉的經典之作。本書並非設計方法的指南，而是對設計本質的深刻思考。透過「無印良品」等案例，探討了「空」的設計哲學，以及如何重新發現日常生活中的設計潛力。",
+    "tags": ["設計", "美學", "哲學", "日本文化", "創意"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1065.jpg"
+  },
+  {
+    "book_id": "bk_1066",
+    "title": "餘生，用喜歡的方式過",
+    "author": "李偉文",
+    "description": "牙醫師、作家、環保志工，李偉文的斜槓人生備忘錄。他分享如何在忙碌生活中，透過閱讀、旅行和與朋友的深度交流，找到生命的熱情與意義，活出不後悔的下半場。",
+    "tags": ["人生", "勵志", "散文", "生活風格", "自我成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1066.jpg"
+  },
+  {
+    "book_id": "bk_1067",
+    "title": "流浪者之歌",
+    "author": "赫曼·赫塞",
+    "description": "諾貝爾文學獎得主赫塞的代表作。故事講述印度貴族青年悉達塔，為了追尋真正的自我，捨棄一切，歷經了苦行僧、富商、船夫等多重身份，最終在河邊悟道的人生旅程。",
+    "tags": ["經典文學", "小說", "哲學", "心靈", "成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1067.jpg"
+  },
+  {
+    "book_id": "bk_1068",
+    "title": "地中海飲食聖經",
+    "author": "美國心臟協會",
+    "description": "被公認為最健康的飲食模式之一。本書詳細介紹了地中海飲食的原則，強調攝取大量蔬菜、水果、全穀物、橄欖油和魚類。內含超過150道美味食譜，助你預防心血管疾病、抗發炎。",
+    "tags": ["健康", "食譜", "營養學", "地中海飲食", "養生"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1068.jpg"
+  },
+  {
+    "book_id": "bk_1069",
+    "title": "冰與火之歌：權力遊戲",
+    "author": "喬治·R·R·馬丁",
+    "description": "史詩級奇幻小說系列的第一部。在維斯特洛大陸上，七大王國的貴族家族為了爭奪鐵王座，展開了殘酷的權力鬥爭。與此同時，北境長城外的古老威脅也正悄然甦醒。",
+    "tags": ["小說", "奇幻", "史詩", "戰爭", "政治"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1069.jpg"
+  },
+  {
+    "book_id": "bk_1070",
+    "title": "台灣百年歷史地圖",
+    "author": "國立台灣博物館",
+    "description": "本書收錄了從清領、日治到戰後各時期的珍貴台灣地圖。透過比對不同時代的地圖，可以清晰地看到台灣行政區劃、城市樣貌、交通建設的演變，是一部圖像化的台灣發展史。",
+    "tags": ["歷史", "台灣", "地圖", "地理", "文化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1070.jpg"
+  },
+  {
+    "book_id": "bk_1071",
+    "title": "當下的力量",
+    "author": "艾克哈特·托勒",
+    "description": "一本深刻的心靈指南。作者指出，人類所有痛苦的根源都來自於對過去的悔恨和對未來的焦慮。本書引導讀者擺脫思維的束縛，全然地活在當下，體驗內在的平靜與喜悅。",
+    "tags": ["心靈", "勵志", "哲學", "正念", "自我成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1071.jpg"
+  },
+  {
+    "book_id": "bk_1072",
+    "title": "雲邊有個小賣部",
+    "author": "張嘉佳",
+    "description": "在外漂泊的年輕人劉十三，回到故鄉，陪伴罹患重病的外婆度過最後的時光。故事圍繞著雲邊鎮的小賣部展開，用溫暖又幽默的筆調，書寫了關於親情、友情和故鄉的動人篇章。",
+    "tags": ["小說", "療癒", "親情", "人生", "故鄉"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1072.jpg"
+  },
+  {
+    "book_id": "bk_1073",
+    "title": "非暴力溝通",
+    "author": "馬歇爾·盧森堡",
+    "description": "一種充滿愛的溝通方式。本書教導我們如何專注於觀察、感受、需要和請求，來表達自己和傾聽他人。這種方法有助於化解衝突，建立和諧的人際關係，無論在家庭還是職場都同樣適用。",
+    "tags": ["溝通", "人際關係", "心理學", "自我成長", "技巧"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1073.jpg"
+  },
+  {
+    "book_id": "bk_1074",
+    "title": "生命中不能承受之輕",
+    "author": "米蘭·昆德拉",
+    "description": "一部充滿哲學思辨的愛情小說。以1968年「布拉格之春」為背景，透過四位主角的愛慾糾葛，探討了「永恆回歸」與「輕與重」的對立，以及生命中偶然與必然的辯證關係。",
+    "tags": ["小說", "經典文學", "哲學", "愛情", "歷史"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1074.jpg"
+  },
+  {
+    "book_id": "bk_1075",
+    "title": "葡萄酒全事典",
+    "author": "林裕森",
+    "description": "華文世界最權威的葡萄酒百科全書。從葡萄品種、世界產區、釀造工藝到品飲技巧，內容全面而深入。不論是入門新手還是資深酒迷，都能從中獲得豐富的知識與樂趣。",
+    "tags": ["飲食", "葡萄酒", "科普", "生活風格", "百科"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1075.jpg"
+  },
+  {
+    "book_id": "bk_1076",
+    "title": "錢：7步創造終身收入",
+    "author": "東尼·羅賓斯",
+    "description": "潛能激發大師東尼·羅賓斯採訪了巴菲特、雷·達利歐等數十位頂尖投資專家，將他們複雜的投資策略，濃縮成普通人也能執行的七個簡單步驟，幫助你打造財務自由的未來。",
+    "tags": ["理財", "投資", "金融", "勵志", "自我成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1076.jpg"
+  },
+  {
+    "book_id": "bk_1077",
+    "title": "美的歷史",
+    "author": "安伯托·艾可",
+    "description": "「美」的標準是如何演變的？義大利國寶級學者艾可帶領讀者進行一場穿越時空的壯遊，從古希臘的維納斯到中世紀的聖母，再到現代的抽象藝術，探討西方文明中「美」的觀念變遷史。",
+    "tags": ["藝術", "哲學", "歷史", "美學", "文化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1077.jpg"
+  },
+  {
+    "book_id": "bk_1078",
+    "title": "正念減壓的奇蹟",
+    "author": "喬·卡巴金",
+    "description": "正念減壓療法（MBSR）創始人的權威著作。本書詳細介紹了如何透過靜坐、身體掃描、正念瑜珈等練習，有意識地覺察當下的身心狀態，有效緩解壓力、焦慮和慢性疼痛。",
+    "tags": ["心理學", "健康", "正念", "壓力管理", "靜坐"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1078.jpg"
+  },
+  {
+    "book_id": "bk_1079",
+    "title": "自私的基因",
+    "author": "理查·道金斯",
+    "description": "演化生物學的顛覆性經典。本書提出，生物體只是基因的生存機器，所有生命現象，包括利他行為，最終都是為了基因的複製與傳播。這個觀點徹底改變了我們對自然選擇和生命本質的理解。",
+    "tags": ["科普", "生物學", "演化論", "基因", "科學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1079.jpg"
+  },
+  {
+    "book_id": "bk_1080",
+    "title": "深夜的食堂料理帖",
+    "author": "飯島奈美",
+    "description": "人氣日劇《深夜食堂》的幕後功臣，食物設計師飯島奈美的官方食譜。書中重現了劇中經典菜色，如玉子燒、豬肉味噌湯、貓飯等，並附上詳細的製作步驟和溫馨的拍攝花絮。",
+    "tags": ["食譜", "日本料理", "美食", "影視", "家常菜"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1080.jpg"
+  },
+  {
+    "book_id": "bk_1081",
+    "title": "魔戒：魔戒現身",
+    "author": "J.R.R.托爾金",
+    "description": "現代奇幻文學的開山之作。哈比人佛羅多意外繼承了一枚擁有邪惡力量的至尊魔戒，為了摧毀它，他與夥伴們組成魔戒遠征隊，踏上了前往末日火山的艱險旅程。",
+    "tags": ["小說", "奇幻", "經典文學", "史詩", "冒險"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1081.jpg"
+  },
+  {
+    "book_id": "bk_1082",
+    "title": "台北歷史散步",
+    "author": "城市觀察家",
+    "description": "本書規劃了十條台北市的歷史主題散步路線，從大稻埕的洋樓、萬華的古寺到青田街的日式宿舍。跟隨作者的腳步，穿梭在巷弄之間，發現隱藏在現代都市下的歷史紋理與故事。",
+    "tags": ["旅遊", "歷史", "台灣", "台北", "文化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1082.jpg"
+  },
+  {
+    "book_id": "bk_1083",
+    "title": "如何閱讀一本書",
+    "author": "莫提默·艾德勒",
+    "description": "一本教你如何有效閱讀的經典指南。作者將閱讀分為四個層次：基礎閱讀、檢視閱讀、分析閱讀和主題閱讀。掌握這些技巧，能幫助你從任何書籍中汲取最大的收穫，真正將知識內化。",
+    "tags": ["閱讀", "學習方法", "自我成長", "教育", "技巧"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1083.jpg"
+  },
+  {
+    "book_id": "bk_1084",
+    "title": "看不見的城市",
+    "author": "伊塔羅·卡爾維諾",
+    "description": "馬可波羅向元朝大汗忽必烈講述他旅途中所經過的五十五座奇異城市。這些城市的名字都是女性的名字，它們虛幻而又真實，反映了關於記憶、慾望、符號和死亡的哲學思考。",
+    "tags": ["小說", "經典文學", "哲學", "奇幻", "城市"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1084.jpg"
+  },
+  {
+    "book_id": "bk_1085",
+    "title": "從零開始的居家健身",
+    "author": "健身狂人Mark",
+    "description": "沒時間上健身房？本書教你如何利用自身體重和簡單的彈力帶、啞鈴，在家打造高效的訓練計畫。涵蓋從暖身、主訓練到緩和的全套流程，並針對不同部位提供多種動作選擇。",
+    "tags": ["健康", "健身", "運動", "居家訓練", "減重"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1085.jpg"
+  },
+  {
+    "book_id": "bk_1086",
+    "title": "塵埃之書：野美人號",
+    "author": "菲力普·普曼",
+    "description": "《黑暗元素》三部曲的前傳。故事發生在萊拉出生之前，主角是十一歲的男孩麥爾肯。他無意間捲入了圍繞著女嬰萊拉的巨大陰謀之中，為了保護她，展開了一場驚心動魄的逃亡。",
+    "tags": ["小說", "奇幻", "青少年", "冒險", "魔法"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1086.jpg"
+  },
+  {
+    "book_id": "bk_1087",
+    "title": "窮查理的普通常識",
+    "author": "查理·蒙格",
+    "description": "股神巴菲特的黃金搭檔、波克夏副董事長查理·蒙格的智慧語錄。書中收錄了他多年來的演講稿和文章，分享了他關於投資、商業、決策和人生的多元思維模型，充滿了實用的人生智慧。",
+    "tags": ["投資", "商業", "哲學", "決策", "勵志"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1087.jpg"
+  },
+  {
+    "book_id": "bk_1088",
+    "title": "人間詞話",
+    "author": "王國維",
+    "description": "中國近代最負盛名的詞論著作。王國維以其深厚的學養和獨到的眼光，提出了著名的「境界說」，將詩詞的藝術美學提升到一個新的高度。是理解中國古典詩詞美學的必讀之作。",
+    "tags": ["文學評論", "經典文學", "詩詞", "美學", "中國"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1088.jpg"
+  },
+  {
+    "book_id": "bk_1089",
+    "title": "故事：材質、結構、風格和銀幕劇作的原理",
+    "author": "羅伯特·麥基",
+    "description": "好萊塢編劇的必讀聖經。本書深入剖析了故事創作的核心元素，從角色設定、場景設計到情節結構，提供了系統性且極具操作性的寫作指南。不僅適用於電影劇本，也適用於小說和各種敘事創作。",
+    "tags": ["寫作", "編劇", "電影", "創意", "故事"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1089.jpg"
+  },
+  {
+    "book_id": "bk_1090",
+    "title": "異鄉人",
+    "author": "阿爾ベ·卡繆",
+    "description": "存在主義文學的代表作。主角莫梭對母親的死無動於衷，在沙灘上意外殺人，最終被判處死刑。小說以極度冷靜和疏離的口吻，探討了社會的荒謬、人生的無意義以及個體與世界的隔閡。",
+    "tags": ["小說", "經典文學", "哲學", "存在主義", "法國"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1090.jpg"
+  },
+  {
+    "book_id": "bk_1091",
+    "title": "宋徽宗：天才皇帝的悲劇人生",
+    "author": "宋史專家",
+    "description": "他是一位傑出的藝術家，卻是一位失敗的皇帝。本書透過豐富的史料和文物，重現了宋徽宗趙佶的一生，分析他在藝術上的非凡成就與政治上的昏庸無能，探討了這位悲劇皇帝的複雜人性。",
+    "tags": ["歷史", "傳記", "中國", "宋朝", "藝術"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1091.jpg"
+  },
+  {
+    "book_id": "bk_1092",
+    "title": "氣炸鍋的100種可能",
+    "author": "料理達人Amy",
+    "description": "氣炸鍋不只能炸雞塊！本書顛覆你對氣炸鍋的想像，收錄了100道從主食、海鮮、肉類到蔬菜、甜點的創意料理。利用氣炸鍋的高溫烘烤功能，做出少油、健康又快速的美味佳餚。",
+    "tags": ["食譜", "烹飪", "氣炸鍋", "健康飲食", "家常菜"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1092.jpg"
+  },
+  {
+    "book_id": "bk_1093",
+    "title": "薩提爾的對話練習",
+    "author": "李崇建",
+    "description": "本書將家族治療大師薩提爾的模式，轉化為易於學習的對話練習。透過覺察自我、好奇提問、同理回應等步驟，深入自己和他人的內心，化解溝通僵局，重塑親密關係。",
+    "tags": ["心理學", "溝通", "薩提爾", "家庭關係", "人際關係"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1093.jpg"
+  },
+  {
+    "book_id": "bk_1094",
+    "title": "沙丘",
+    "author": "法蘭克·赫伯特",
+    "description": "科幻小說史上的不朽經典。在一個被沙漠覆蓋的行星「亞拉基斯」，出產著宇宙中最珍貴的物質「香料」。年輕的貴族繼承人保羅·亞崔迪，被迫捲入一場關於權力、宗教和生態的史詩鬥爭。",
+    "tags": ["小說", "科幻", "史詩", "經典文學", "政治"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1094.jpg"
+  },
+  {
+    "book_id": "bk_1095",
+    "title": "為什麼要睡覺？",
+    "author": "馬修·沃克",
+    "description": "世界頂尖的睡眠科學家，揭示了睡眠對我們學習、記憶、情緒、免疫力乃至壽命的決定性影響。本書以大量科學證據，說明睡眠不足的危害，並提供改善睡眠品質的實用建議。",
+    "tags": ["健康", "科普", "睡眠", "腦科學", "心理學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1095.jpg"
+  },
+  {
+    "book_id": "bk_1096",
+    "title": "文心雕龍選讀",
+    "author": "劉勰",
+    "description": "中國文學理論批評史上第一部系統性巨著。本書精選其中重要篇章，如〈原道〉、〈神思〉、〈體性〉等，並附上詳細的白話譯文與評析，是深入了解中國古典文論的入門必讀。",
+    "tags": ["文學評論", "經典文學", "美學", "寫作", "中國"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1096.jpg"
+  },
+  {
+    "book_id": "bk_1097",
+    "title": "快思慢想的實踐",
+    "author": "丹尼爾·卡尼曼",
+    "description": "本書是《思考，快與慢》的應用篇，提供了50個來自真實生活與商業決策的情境練習，幫助讀者識別自己與他人的認知偏誤，並在投資、購物、職場談判中做出更理性的選擇。",
+    "tags": ["心理學", "決策", "行為經濟學", "實作", "商業"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1097.jpg"
+  },
+  {
+    "book_id": "bk_1098",
+    "title": "愛的藝術",
+    "author": "埃里希·佛洛姆",
+    "description": "愛是一門需要學習的藝術，而不是一種偶然降臨的感覺。社會心理學家佛洛姆在書中探討了愛的理論與實踐，指出真正的愛包含關心、責任、尊重和了解，需要紀律、專注和耐心來培養。",
+    "tags": ["心理學", "哲學", "愛情", "人際關係", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1098.jpg"
+  },
+  {
+    "book_id": "bk_1099",
+    "title": "改變世界的植物",
+    "author": "邱園植物學家",
+    "description": "從提供糧食的小麥、稻米，到引發戰爭的香料、鴉片，再到工業革命的關鍵原料橡膠、棉花。本書精選了80種影響人類歷史的關鍵植物，講述它們與人類文明之間密不可分的精彩故事。",
+    "tags": ["科普", "歷史", "植物", "自然", "科學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1099.jpg"
+  },
+  {
+    "book_id": "bk_1100",
+    "title": "1984",
+    "author": "喬治·歐威爾",
+    "description": "反烏托邦小說的經典之作。故事描繪了一個由「老大哥」統治的極權世界，思想警察無所不在，歷史可以被隨意竄改。主角溫斯頓在試圖反抗的過程中，深刻體驗了自由的脆弱與極權的恐怖。",
+    "tags": ["小說", "經典文學", "反烏托邦", "政治", "科幻"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1100.jpg"
+  },
+  {
+    "book_id": "bk_1101",
     "title": "軟體工程最佳實踐",
     "author": "錢志偉",
-    "description": "全面介紹現代軟體工程的最佳實踐方法。包括敏捷開發、測試驅動開發、持續整合、程式碼品質管理等重要主題。適合軟體開發團隊和專案管理者閱讀。"
+    "description": "全面介紹現代軟體工程的最佳實踐方法。包括敏捷開發、測試驅動開發、持續整合、程式碼品質管理等重要主題。適合軟體開發團隊和專案管理者閱讀。",
+    "tags": ["軟體工程", "敏捷開發", "程式設計", "專案管理", "DevOps"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1101.jpg"
   },
   {
+    "book_id": "bk_1102",
     "title": "資料庫系統原理",
     "author": "孫美華",
-    "description": "深入介紹關聯式資料庫和NoSQL資料庫的原理和設計。涵蓋SQL語言、資料庫正規化、索引優化、事務處理等核心概念。提供MySQL、PostgreSQL、MongoDB的實作範例。"
+    "description": "深入介紹關聯式資料庫和NoSQL資料庫的原理和設計。涵蓋SQL語言、資料庫正規化、索引優化、事務處理等核心概念。提供MySQL、PostgreSQL、MongoDB的實作範例。",
+    "tags": ["資料庫", "SQL", "NoSQL", "電腦科學", "後端開發"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1102.jpg"
   },
   {
+    "book_id": "bk_1103",
     "title": "前端開發完全指南",
     "author": "鄭志強",
-    "description": "從HTML、CSS、JavaScript基礎到現代前端框架的完整學習指南。涵蓋React、Vue.js、Angular等主流框架，以及響應式設計、效能優化等高級主題。"
+    "description": "從HTML、CSS、JavaScript基礎到現代前端框架的完整學習指南。涵蓋React、Vue.js、Angular等主流框架，以及響應式設計、效能優化等高級主題。",
+    "tags": ["前端開發", "JavaScript", "React", "Vue.js", "網頁設計"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1103.jpg"
   },
   {
+    "book_id": "bk_1104",
     "title": "後端API設計原則",
     "author": "馬建國",
-    "description": "介紹RESTful API和GraphQL的設計原則和最佳實踐。包括API版本控制、認證授權、錯誤處理、效能優化等重要主題。提供Node.js和Python的實作範例。"
+    "description": "介紹RESTful API和GraphQL的設計原則和最佳實踐。包括API版本控制、認證授權、錯誤處理、效能優化等重要主題。提供Node.js和Python的實作範例。",
+    "tags": ["後端開發", "API設計", "RESTful", "GraphQL", "軟體架構"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1104.jpg"
   },
   {
+    "book_id": "bk_1105",
     "title": "行動應用開發實戰",
     "author": "周雅玲",
-    "description": "全面介紹iOS和Android原生應用開發，以及React Native、Flutter等跨平台開發框架。包含完整的應用開發流程，從設計到上架的全過程指導。"
+    "description": "全面介紹iOS和Android原生應用開發，以及React Native、Flutter等跨平台開發框架。包含完整的應用開發流程，從設計到上架的全過程指導。",
+    "tags": ["App開發", "iOS", "Android", "Flutter", "React Native"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1105.jpg"
   },
   {
+    "book_id": "bk_1106",
     "title": "遊戲引擎架構",
     "author": "楊志明",
-    "description": "深入介紹遊戲引擎的核心架構和關鍵技術。涵蓋渲染系統、物理模擬、音效系統、遊戲邏輯等模組。適合遊戲開發者和引擎程式設計師學習參考。"
+    "description": "深入介紹遊戲引擎的核心架構和關鍵技術。涵蓋渲染系統、物理模擬、音效系統、遊戲邏輯等模組。適合遊戲開發者和引擎程式設計師學習參考。",
+    "tags": ["遊戲開發", "遊戲引擎", "電腦圖學", "程式設計", "軟體架構"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1106.jpg"
   },
   {
+    "book_id": "bk_1107",
     "title": "虛擬實境技術應用",
     "author": "何美惠",
-    "description": "介紹VR和AR技術的原理、開發工具和應用領域。包括3D圖形渲染、動作追蹤、沉浸式介面設計等技術要點。提供Unity和Unreal Engine的開發範例。"
+    "description": "介紹VR和AR技術的原理、開發工具和應用領域。包括3D圖形渲染、動作追蹤、沉浸式介面設計等技術要點。提供Unity和Unreal Engine的開發範例。",
+    "tags": ["虛擬實境", "VR", "擴增實境", "AR", "Unity"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1107.jpg"
   },
   {
+    "book_id": "bk_1108",
     "title": "電腦視覺與影像處理",
     "author": "蔡志峰",
-    "description": "全面介紹電腦視覺的基本理論和實作技術。涵蓋影像處理、特徵提取、物體識別、深度學習在視覺任務中的應用。提供OpenCV和TensorFlow的程式範例。"
+    "description": "全面介紹電腦視覺的基本理論和實作技術。涵蓋影像處理、特徵提取、物體識別、深度學習在視覺任務中的應用。提供OpenCV和TensorFlow的程式範例。",
+    "tags": ["電腦視覺", "影像處理", "深度學習", "OpenCV", "人工智慧"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1108.jpg"
   },
   {
+    "book_id": "bk_1109",
     "title": "自然語言處理技術",
     "author": "洪文龍",
-    "description": "深入介紹NLP的核心技術和最新發展。包括文本預處理、詞向量、語言模型、機器翻譯、情感分析等主題。涵蓋傳統方法和深度學習方法的比較分析。"
+    "description": "深入介紹NLP的核心技術和最新發展。包括文本預處理、詞向量、語言模型、機器翻譯、情感分析等主題。涵蓋傳統方法和深度學習方法的比較分析。",
+    "tags": ["自然語言處理", "NLP", "人工智慧", "深度學習", "語言學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1109.jpg"
   },
   {
+    "book_id": "bk_1110",
     "title": "分散式系統設計",
     "author": "方雅華",
-    "description": "介紹大規模分散式系統的設計原則和實作技術。涵蓋一致性、可用性、分區容錯、負載均衡等核心概念。分析Google、Amazon、Facebook等公司的系統架構。"
+    "description": "介紹大規模分散式系統的設計原則和實作技術。涵蓋一致性、可用性、分區容錯、負載均衡等核心概念。分析Google、Amazon、Facebook等公司的系統架構。",
+    "tags": ["分散式系統", "系統設計", "軟體架構", "高併發", "雲端運算"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1110.jpg"
   },
   {
+    "book_id": "bk_1111",
     "title": "資料科學與Python",
     "author": "丁志強",
-    "description": "使用Python進行資料科學專案的完整指南。涵蓋NumPy、Pandas、Matplotlib、Scikit-learn等重要函式庫。從資料探索到模型部署的完整工作流程。"
+    "description": "使用Python進行資料科學專案的完整指南。涵蓋NumPy、Pandas、Matplotlib、Scikit-learn等重要函式庫。從資料探索到模型部署的完整工作流程。",
+    "tags": ["資料科學", "Python", "Pandas", "機器學習", "資料分析"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1111.jpg"
   },
   {
+    "book_id": "bk_1112",
     "title": "深度學習理論與實踐",
     "author": "江美玲",
-    "description": "深入介紹深度學習的理論基礎和實際應用。包括神經網路、CNN、RNN、Transformer等架構。提供TensorFlow和PyTorch的實作範例和專案案例。"
+    "description": "深入介紹深度學習的理論基礎和實際應用。包括神經網路、CNN、RNN、Transformer等架構。提供TensorFlow和PyTorch的實作範例和專案案例。",
+    "tags": ["深度學習", "人工智慧", "神經網路", "TensorFlow", "PyTorch"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1112.jpg"
   },
   {
+    "book_id": "bk_1113",
     "title": "網頁安全攻防技術",
     "author": "羅建國",
-    "description": "全面介紹網頁應用安全的攻擊手法和防護策略。涵蓋SQL注入、XSS、CSRF等常見漏洞的原理和防護方法。適合網頁開發者和安全工程師學習。"
+    "description": "全面介紹網頁應用安全的攻擊手法和防護策略。涵蓋SQL注入、XSS、CSRF等常見漏洞的原理和防護方法。適合網頁開發者和安全工程師學習。",
+    "tags": ["網路安全", "資訊安全", "駭客攻防", "Web開發", "漏洞"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1113.jpg"
   },
   {
+    "book_id": "bk_1114",
     "title": "敏捷開發實踐",
     "author": "袁雅惠",
-    "description": "介紹Scrum、Kanban、極限程式設計等敏捷開發方法論。包含團隊協作、需求管理、迭代開發等實踐經驗。適合專案經理和開發團隊參考。"
+    "description": "介紹Scrum、Kanban、極限程式設計等敏捷開發方法論。包含團隊協作、需求管理、迭代開發等實踐經驗。適合專案經理和開發團隊參考。",
+    "tags": ["敏捷開發", "Scrum", "專案管理", "軟體開發", "團隊協作"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1114.jpg"
   },
   {
+    "book_id": "bk_1115",
     "title": "容器化技術指南",
     "author": "朱志明",
-    "description": "全面介紹Docker和Kubernetes等容器化技術。包括容器化部署、微服務架構、容器編排等主題。提供實際的企業級容器化解決方案案例。"
+    "description": "全面介紹Docker和Kubernetes等容器化技術。包括容器化部署、微服務架構、容器編排等主題。提供實際的企業級容器化解決方案案例。",
+    "tags": ["Docker", "Kubernetes", "容器化", "微服務", "DevOps"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1115.jpg"
   },
   {
+    "book_id": "bk_1116",
     "title": "區塊鏈智能合約開發",
     "author": "高美華",
-    "description": "深入介紹以太坊智能合約的開發技術。包括Solidity語言、Web3.js、去中心化應用(DApp)開發等內容。提供完整的智能合約專案開發流程。"
+    "description": "深入介紹以太坊智能合約的開發技術。包括Solidity語言、Web3.js、去中心化應用(DApp)開發等內容。提供完整的智能合約專案開發流程。",
+    "tags": ["區塊鏈", "智能合約", "以太坊", "Solidity", "DApp"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1116.jpg"
   },
   {
+    "book_id": "bk_1117",
     "title": "資訊安全管理",
     "author": "葉志峰",
-    "description": "全面介紹企業資訊安全管理體系的建立和維護。涵蓋風險評估、安全政策制定、事件應變、合規要求等管理層面的內容。適合資安主管和IT管理者。"
+    "description": "全面介紹企業資訊安全管理體系的建立和維護。涵蓋風險評估、安全政策制定、事件應變、合規要求等管理層面的內容。適合資安主管和IT管理者。",
+    "tags": ["資訊安全", "管理", "風險評估", "企業管理", "IT"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1117.jpg"
   },
   {
+    "book_id": "bk_1118",
     "title": "數據可視化技術",
     "author": "鍾文龍",
-    "description": "介紹資料視覺化的設計原則和實作技術。包括圖表設計、互動式視覺化、商業智慧儀表板等應用。提供D3.js、Tableau、Power BI的使用指南。"
+    "description": "介紹資料視覺化的設計原則和實作技術。包括圖表設計、互動式視覺化、商業智慧儀表板等應用。提供D3.js、Tableau、Power BI的使用指南。",
+    "tags": ["資料視覺化", "D3.js", "Tableau", "商業智慧", "數據分析"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1118.jpg"
   },
   {
+    "book_id": "bk_1119",
     "title": "軟體測試自動化",
     "author": "蘇雅玲",
-    "description": "全面介紹軟體測試自動化的理論和實踐。涵蓋單元測試、整合測試、UI測試等不同層級的自動化策略。提供Selenium、Jest、JUnit等工具的使用範例。"
+    "description": "全面介紹軟體測試自動化的理論和實踐。涵蓋單元測試、整合測試、UI測試等不同層級的自動化策略。提供Selenium、Jest、JUnit等工具的使用範例。",
+    "tags": ["軟體測試", "自動化測試", "QA", "Selenium", "軟體工程"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1119.jpg"
   },
   {
+    "book_id": "bk_1120",
     "title": "DevOps工程實踐",
     "author": "龔志強",
-    "description": "介紹DevOps文化和技術實踐的完整指南。包括持續整合、持續部署、基礎設施即程式碼、監控和日誌管理等主題。適合運維工程師和開發團隊。"
+    "description": "介紹DevOps文化和技術實踐的完整指南。包括持續整合、持續部署、基礎設施即程式碼、監控和日誌管理等主題。適合運維工程師和開發團隊。",
+    "tags": ["DevOps", "CI/CD", "SRE", "雲端運算", "自動化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1120.jpg"
   },
   {
+    "book_id": "bk_1121",
     "title": "人機介面設計",
     "author": "范美惠",
-    "description": "深入介紹使用者介面和使用者體驗設計的原則和方法。涵蓋使用者研究、原型設計、可用性測試等UX/UI設計流程。適合設計師和產品經理學習。"
+    "description": "深入介紹使用者介面和使用者體驗設計的原則和方法。涵蓋使用者研究、原型設計、可用性測試等UX/UI設計流程。適合設計師和產品經理學習。",
+    "tags": ["UI/UX", "設計", "使用者體驗", "人機互動", "產品設計"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1121.jpg"
   },
   {
+    "book_id": "bk_1122",
     "title": "電子商務系統架構",
     "author": "曾志明",
-    "description": "全面介紹電子商務平台的系統架構設計。包括購物車系統、支付處理、庫存管理、訂單處理等核心功能模組。分析淘寶、Amazon等大型平台的技術架構。"
+    "description": "全面介紹電子商務平台的系統架構設計。包括購物車系統、支付處理、庫存管理、訂單處理等核心功能模組。分析淘寶、Amazon等大型平台的技術架構。",
+    "tags": ["電子商務", "系統架構", "軟體設計", "微服務", "後端開發"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1122.jpg"
   },
   {
+    "book_id": "bk_1123",
     "title": "行動支付技術",
     "author": "薛雅華",
-    "description": "深入介紹行動支付的技術原理和安全機制。涵蓋NFC、QR碼、生物識別等支付技術，以及支付安全、反欺詐等重要議題。適合金融科技從業者。"
+    "description": "深入介紹行動支付的技術原理和安全機制。涵蓋NFC、QR碼、生物識別等支付技術，以及支付安全、反欺詐等重要議題。適合金融科技從業者。",
+    "tags": ["行動支付", "金融科技", "FinTech", "資訊安全", "電子商務"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1123.jpg"
   },
   {
+    "book_id": "bk_1124",
     "title": "社群網路分析",
     "author": "顏志峰",
-    "description": "介紹社群網路的數學模型和分析方法。包括圖論基礎、中心性分析、社群發現、影響力傳播等主題。提供NetworkX和igraph的程式實作範例。"
+    "description": "介紹社群網路的數學模型和分析方法。包括圖論基礎、中心性分析、社群發現、影響力傳播等主題。提供NetworkX和igraph的程式實作範例。",
+    "tags": ["社群網路", "資料科學", "圖論", "網路分析", "Python"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1124.jpg"
   },
   {
+    "book_id": "bk_1125",
     "title": "推薦系統算法",
     "author": "魏文龍",
-    "description": "全面介紹推薦系統的核心算法和實作技術。涵蓋協同過濾、內容推薦、深度學習推薦等方法。分析Netflix、YouTube等平台的推薦算法原理。"
+    "description": "全面介紹推薦系統的核心算法和實作技術。涵蓋協同過濾、內容推薦、深度學習推薦等方法。分析Netflix、YouTube等平台的推薦算法原理。",
+    "tags": ["推薦系統", "機器學習", "演算法", "大數據", "深度學習"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1125.jpg"
   },
   {
+    "book_id": "bk_1126",
     "title": "搜尋引擎技術",
     "author": "賴雅玲",
-    "description": "深入介紹搜尋引擎的核心技術和架構設計。包括網頁爬取、倒排索引、排名算法、查詢處理等關鍵技術。分析Google、百度等搜尋引擎的技術實現。"
+    "description": "深入介紹搜尋引擎的核心技術和架構設計。包括網頁爬取、倒排索引、排名算法、查詢處理等關鍵技術。分析Google、百度等搜尋引擎的技術實現。",
+    "tags": ["搜尋引擎", "資訊檢索", "演算法", "大數據", "系統設計"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1126.jpg"
   },
   {
+    "book_id": "bk_1127",
     "title": "金融科技創新",
     "author": "戴志強",
-    "description": "探討金融科技對傳統金融業的影響和創新應用。包括數位銀行、智能投顧、區塊鏈金融、監管科技等新興領域。適合金融從業者和科技創業者。"
+    "description": "探討金融科技對傳統金融業的影響和創新應用。包括數位銀行、智能投顧、區塊鏈金融、監管科技等新興領域。適合金融從業者和科技創業者。",
+    "tags": ["金融科技", "FinTech", "創新", "區塊鏈", "投資"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1127.jpg"
   },
   {
+    "book_id": "bk_1128",
     "title": "物聯網安全",
     "author": "謝美惠",
-    "description": "全面介紹物聯網系統的安全威脅和防護策略。涵蓋設備安全、通訊安全、資料安全等多個層面。提供實際的安全架構設計和實施指南。"
+    "description": "全面介紹物聯網系統的安全威脅和防護策略。涵蓋設備安全、通訊安全、資料安全等多個層面。提供實際的安全架構設計和實施指南。",
+    "tags": ["物聯網", "IoT", "資訊安全", "網路安全", "嵌入式系統"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1128.jpg"
   },
   {
+    "book_id": "bk_1129",
     "title": "邊緣計算技術",
     "author": "簡志明",
-    "description": "深入介紹邊緣計算的概念、架構和應用場景。包括霧計算、移動邊緣計算、邊緣AI等技術方向。分析5G網路對邊緣計算發展的推動作用。"
+    "description": "深入介紹邊緣計算的概念、架構和應用場景。包括霧計算、移動邊緣計算、邊緣AI等技術方向。分析5G網路對邊緣計算發展的推動作用。",
+    "tags": ["邊緣計算", "物聯網", "5G", "雲端運算", "AI"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1129.jpg"
   },
   {
+    "book_id": "bk_1130",
     "title": "網路協定詳解",
     "author": "閻雅華",
-    "description": "全面介紹TCP/IP協定族和現代網路技術。涵蓋HTTP/HTTPS、DNS、BGP、QUIC等重要協定的原理和實作。適合網路工程師和系統管理員。"
+    "description": "全面介紹TCP/IP協定族和現代網路技術。涵蓋HTTP/HTTPS、DNS、BGP、QUIC等重要協定的原理和實作。適合網路工程師和系統管理員。",
+    "tags": ["電腦網路", "TCP/IP", "HTTP", "網路工程", "系統管理"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1130.jpg"
   },
   {
+    "book_id": "bk_1131",
     "title": "虛擬化技術原理",
     "author": "柯志峰",
-    "description": "深入介紹虛擬化技術的原理和實作。包括伺服器虛擬化、網路虛擬化、儲存虛擬化等技術領域。分析VMware、KVM、Hyper-V等主流虛擬化平台。"
+    "description": "深入介紹虛擬化技術的原理和實作。包括伺服器虛擬化、網路虛擬化、儲存虛擬化等技術領域。分析VMware、KVM、Hyper-V等主流虛擬化平台。",
+    "tags": ["虛擬化", "雲端運算", "VMware", "KVM", "系統管理"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1131.jpg"
   },
   {
+    "book_id": "bk_1132",
     "title": "資料挖掘與知識發現",
     "author": "侯文龍",
-    "description": "全面介紹資料挖掘的理論、方法和應用。涵蓋分類、聚類、關聯規則、序列模式等挖掘任務。提供Weka、RapidMiner等工具的使用指南。"
+    "description": "全面介紹資料挖掘的理論、方法和應用。涵蓋分類、聚類、關聯規則、序列模式等挖掘任務。提供Weka、RapidMiner等工具的使用指南。",
+    "tags": ["資料挖掘", "機器學習", "資料科學", "大數據", "演算法"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1132.jpg"
   },
   {
+    "book_id": "bk_1133",
     "title": "程式設計範式",
     "author": "鐘雅玲",
-    "description": "深入比較不同程式設計範式的特點和應用。包括物件導向、函數式、邏輯式、並行程式設計等範式。適合希望提升程式設計思維的開發者。"
+    "description": "深入比較不同程式設計範式的特點和應用。包括物件導向、函數式、邏輯式、並行程式設計等範式。適合希望提升程式設計思維的開發者。",
+    "tags": ["程式設計", "軟體開發", "函數式程式設計", "物件導向", "電腦科學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1133.jpg"
   },
   {
+    "book_id": "bk_1134",
     "title": "編譯器設計原理",
     "author": "溫志強",
-    "description": "系統性介紹編譯器的設計理論和實作技術。涵蓋詞法分析、語法分析、語意分析、程式碼生成等編譯階段。提供LLVM框架的使用範例。"
+    "description": "系統性介紹編譯器的設計理論和實作技術。涵蓋詞法分析、語法分析、語意分析、程式碼生成等編譯階段。提供LLVM框架的使用範例。",
+    "tags": ["編譯器", "電腦科學", "程式語言", "LLVM", "系統程式設計"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1134.jpg"
   },
   {
+    "book_id": "bk_1135",
     "title": "作業系統核心",
     "author": "湯美惠",
-    "description": "深入介紹作業系統核心的設計原理和實作細節。包括行程管理、記憶體管理、檔案系統、裝置驅動等核心功能。分析Linux、Windows核心的差異。"
+    "description": "深入介紹作業系統核心的設計原理和實作細節。包括行程管理、記憶體管理、檔案系統、裝置驅動等核心功能。分析Linux、Windows核心的差異。",
+    "tags": ["作業系統", "Linux", "核心", "電腦科學", "系統程式設計"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1135.jpg"
   },
   {
+    "book_id": "bk_1136",
     "title": "計算機圖學",
     "author": "黎志明",
-    "description": "全面介紹計算機圖學的基本理論和算法。涵蓋2D/3D圖形渲染、光照模型、紋理映射、動畫技術等主題。提供OpenGL和DirectX的程式範例。"
+    "description": "全面介紹計算機圖學的基本理論和算法。涵蓋2D/3D圖形渲染、光照模型、紋理映射、動畫技術等主題。提供OpenGL和DirectX的程式範例。",
+    "tags": ["電腦圖學", "OpenGL", "渲染", "遊戲開發", "3D"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1136.jpg"
   },
   {
+    "book_id": "bk_1137",
     "title": "多媒體技術",
     "author": "韓雅華",
-    "description": "深入介紹多媒體資料的處理和應用技術。包括音訊處理、視訊編碼、影像壓縮、串流媒體等技術領域。適合多媒體應用開發者學習。"
+    "description": "深入介紹多媒體資料的處理和應用技術。包括音訊處理、視訊編碼、影像壓縮、串流媒體等技術領域。適合多媒體應用開發者學習。",
+    "tags": ["多媒體", "影像處理", "音訊處理", "視訊編碼", "串流"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1137.jpg"
   },
   {
+    "book_id": "bk_1138",
     "title": "嵌入式系統設計",
     "author": "藍志峰",
-    "description": "全面介紹嵌入式系統的硬體設計和軟體開發。涵蓋微控制器、即時作業系統、驅動程式開發等技術要點。提供ARM和RISC-V架構的開發範例。"
+    "description": "全面介紹嵌入式系統的硬體設計和軟體開發。涵蓋微控制器、即時作業系統、驅動程式開發等技術要點。提供ARM和RISC-V架構的開發範例。",
+    "tags": ["嵌入式系統", "物聯網", "硬體", "ARM", "韌體"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1138.jpg"
   },
   {
+    "book_id": "bk_1139",
     "title": "高效能計算",
     "author": "馮文龍",
-    "description": "深入介紹高效能計算的架構和程式設計技術。包括並行算法、GPU計算、叢集系統、效能調優等主題。適合科學計算和大規模資料處理應用。"
+    "description": "深入介紹高效能計算的架構和程式設計技術。包括並行算法、GPU計算、叢集系統、效能調優等主題。適合科學計算和大規模資料處理應用。",
+    "tags": ["高效能計算", "HPC", "GPU", "並行計算", "CUDA"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1139.jpg"
   },
   {
+    "book_id": "bk_1140",
     "title": "資料結構與算法",
     "author": "程雅玲",
-    "description": "系統性介紹常用資料結構和經典算法。涵蓋陣列、鏈表、樹、圖等資料結構，以及排序、搜尋、圖論算法等內容。提供多種程式語言的實作範例。"
+    "description": "系統性介紹常用資料結構和經典算法。涵蓋陣列、鏈表、樹、圖等資料結構，以及排序、搜尋、圖論算法等內容。提供多種程式語言的實作範例。",
+    "tags": ["資料結構", "演算法", "程式設計", "電腦科學", "解題"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1140.jpg"
   },
   {
+    "book_id": "bk_1141",
     "title": "軟體架構模式",
     "author": "游志強",
-    "description": "深入介紹軟體架構設計的經典模式和最佳實踐。包括分層架構、微服務、事件驅動、CQRS等架構模式。適合系統架構師和高級開發者學習。"
+    "description": "深入介紹軟體架構設計的經典模式和最佳實踐。包括分層架構、微服務、事件驅動、CQRS等架構模式。適合系統架構師和高級開發者學習。",
+    "tags": ["軟體架構", "設計模式", "微服務", "系統設計", "軟體工程"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1141.jpg"
   },
   {
+    "book_id": "bk_1142",
     "title": "資料庫效能調優",
     "author": "童美惠",
-    "description": "全面介紹資料庫效能優化的理論和實踐。涵蓋索引設計、查詢優化、分區策略、讀寫分離等技術。提供MySQL、PostgreSQL、Oracle的調優案例。"
+    "description": "全面介紹資料庫效能優化的理論和實踐。涵蓋索引設計、查詢優化、分區策略、讀寫分離等技術。提供MySQL、PostgreSQL、Oracle的調優案例。",
+    "tags": ["資料庫", "效能優化", "SQL", "MySQL", "DBA"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1142.jpg"
   },
   {
+    "book_id": "bk_1143",
     "title": "網路程式設計",
     "author": "席志明",
-    "description": "深入介紹網路應用程式的開發技術。包括Socket程式設計、HTTP程式設計、非同步I/O、網路安全等主題。提供Java、Python、C++的程式範例。"
+    "description": "深入介紹網路應用程式的開發技術。包括Socket程式設計、HTTP程式設計、非同步I/O、網路安全等主題。提供Java、Python、C++的程式範例。",
+    "tags": ["網路程式設計", "Socket", "TCP/IP", "Python", "後端開發"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1143.jpg"
   },
   {
+    "book_id": "bk_1144",
     "title": "資訊檢索系統",
     "author": "卜雅華",
-    "description": "全面介紹資訊檢索的理論和系統實作。涵蓋文件索引、查詢處理、相關性排序、評估指標等核心技術。分析Elasticsearch、Solr等檢索引擎。"
+    "description": "全面介紹資訊檢索的理論和系統實作。涵蓋文件索引、查詢處理、相關性排序、評估指標等核心技術。分析Elasticsearch、Solr等檢索引擎。",
+    "tags": ["資訊檢索", "搜尋引擎", "Elasticsearch", "NLP", "大數據"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1144.jpg"
   },
   {
+    "book_id": "bk_1145",
     "title": "計算複雜度理論",
     "author": "盛志峰",
-    "description": "深入介紹計算複雜度的理論基礎。包括P與NP問題、時間複雜度、空間複雜度、近似算法等理論內容。適合理論電腦科學研究者和高級開發者。"
+    "description": "深入介紹計算複雜度的理論基礎。包括P與NP問題、時間複雜度、空間複雜度、近似算法等理論內容。適合理論電腦科學研究者和高級開發者。",
+    "tags": ["計算理論", "複雜度", "P vs NP", "演算法", "電腦科學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1145.jpg"
   },
   {
+    "book_id": "bk_1146",
     "title": "函數式程式設計",
     "author": "牛文龍",
-    "description": "全面介紹函數式程式設計的概念和實踐。涵蓋高階函數、不可變性、惰性求值、函數組合等核心概念。提供Haskell、Scala、Clojure的程式範例。"
+    "description": "全面介紹函數式程式設計的概念和實踐。涵蓋高階函數、不可變性、惰性求值、函數組合等核心概念。提供Haskell、Scala、Clojure的程式範例。",
+    "tags": ["函數式程式設計", "程式設計", "Haskell", "Scala", "軟體開發"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1146.jpg"
   },
   {
+    "book_id": "bk_1147",
     "title": "並行程式設計",
     "author": "石雅玲",
-    "description": "深入介紹並行和並發程式設計的理論和實踐。包括執行緒管理、同步機制、無鎖程式設計、actor模型等技術。適合系統程式設計師和效能調優專家。"
+    "description": "深入介紹並行和並發程式設計的理論和實踐。包括執行緒管理、同步機制、無鎖程式設計、actor模型等技術。適合系統程式設計師和效能調優專家。",
+    "tags": ["並行程式設計", "多線程", "並發", "系統程式設計", "效能優化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1147.jpg"
   },
   {
+    "book_id": "bk_1148",
     "title": "機器學習系統設計",
     "author": "左志強",
-    "description": "全面介紹機器學習系統的架構設計和工程實踐。涵蓋資料管道、模型訓練、模型部署、A/B測試等完整流程。適合機器學習工程師和資料科學家。"
+    "description": "全面介紹機器學習系統的架構設計和工程實踐。涵蓋資料管道、模型訓練、模型部署、A/B測試等完整流程。適合機器學習工程師和資料科學家。",
+    "tags": ["機器學習", "MLOps", "系統設計", "資料工程", "AI"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1148.jpg"
   },
   {
+    "book_id": "bk_1149",
     "title": "電腦網路安全",
     "author": "史美惠",
-    "description": "深入介紹網路安全的威脅模型和防護技術。包括防火牆、入侵偵測、VPN、無線網路安全等主題。適合網路安全專業人員和系統管理員。"
+    "description": "深入介紹網路安全的威脅模型和防護技術。包括防火牆、入侵偵測、VPN、無線網路安全等主題。適合網路安全專業人員和系統管理員。",
+    "tags": ["網路安全", "資訊安全", "駭客攻防", "密碼學", "網路管理"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1149.jpg"
   },
   {
+    "book_id": "bk_1150",
     "title": "雲端原生應用",
     "author": "田志明",
-    "description": "全面介紹雲端原生應用的設計原則和開發實踐。涵蓋微服務架構、容器化、服務網格、可觀察性等技術棧。適合現代應用開發團隊學習。"
+    "description": "全面介紹雲端原生應用的設計原則和開發實踐。涵蓋微服務架構、容器化、服務網格、可觀察性等技術棧。適合現代應用開發團隊學習。",
+    "tags": ["雲端原生", "微服務", "Kubernetes", "DevOps", "軟體架構"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1150.jpg"
   },
   {
+    "book_id": "bk_1151",
     "title": "自然語言生成",
     "author": "向雅華",
-    "description": "深入介紹自然語言生成的技術和應用。包括模板生成、統計生成、神經生成等方法。涵蓋文本摘要、機器翻譯、對話系統等應用場景。"
+    "description": "深入介紹自然語言生成的技術和應用。包括模板生成、統計生成、神經生成等方法。涵蓋文本摘要、機器翻譯、對話系統等應用場景。",
+    "tags": ["自然語言生成", "NLG", "NLP", "人工智慧", "大型語言模型"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1151.jpg"
   },
   {
+    "book_id": "bk_1152",
     "title": "知識圖譜技術",
     "author": "包志峰",
-    "description": "全面介紹知識圖譜的構建和應用技術。涵蓋實體識別、關係抽取、知識融合、圖譜查詢等核心技術。分析Google Knowledge Graph等大型知識圖譜。"
+    "description": "全面介紹知識圖譜的構建和應用技術。涵蓋實體識別、關係抽取、知識融合、圖譜查詢等核心技術。分析Google Knowledge Graph等大型知識圖譜。",
+    "tags": ["知識圖譜", "人工智慧", "NLP", "圖資料庫", "語意網"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1152.jpg"
   },
   {
+    "book_id": "bk_1153",
     "title": "計算機視覺應用",
     "author": "費文龍",
-    "description": "深入介紹計算機視覺在實際應用中的技術實現。包括人臉識別、物體偵測、影像分割、動作識別等應用領域。提供深度學習模型的實作指南。"
+    "description": "深入介紹計算機視覺在實際應用中的技術實現。包括人臉識別、物體偵測、影像分割、動作識別等應用領域。提供深度學習模型的實作指南。",
+    "tags": ["電腦視覺", "深度學習", "AI", "影像辨識", "應用"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1153.jpg"
   },
   {
+    "book_id": "bk_1154",
     "title": "語音識別技術",
     "author": "雷雅玲",
-    "description": "全面介紹語音識別的理論基礎和實作技術。涵蓋語音訊號處理、聲學模型、語言模型、端到端識別等技術要點。適合語音技術研究者和開發者。"
+    "description": "全面介紹語音識別的理論基礎和實作技術。涵蓋語音訊號處理、聲學模型、語言模型、端到端識別等技術要點。適合語音技術研究者和開發者。",
+    "tags": ["語音辨識", "人工智慧", "NLP", "訊號處理", "深度學習"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1154.jpg"
   },
   {
+    "book_id": "bk_1155",
     "title": "區塊鏈共識算法",
     "author": "章志強",
-    "description": "深入分析各種區塊鏈共識算法的原理和特性。包括PoW、PoS、DPoS、PBFT等共識機制的設計思路和適用場景。適合區塊鏈技術研究者。"
+    "description": "深入分析各種區塊鏈共識算法的原理和特性。包括PoW、PoS、DPoS、PBFT等共識機制的設計思路和適用場景。適合區塊鏈技術研究者。",
+    "tags": ["區塊鏈", "共識演算法", "PoW", "PoS", "分散式系統"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1155.jpg"
   },
   {
+    "book_id": "bk_1156",
     "title": "分散式資料庫",
     "author": "冷美惠",
-    "description": "全面介紹分散式資料庫系統的設計和實作。涵蓋分散式事務、資料一致性、分片策略、容錯機制等核心技術。分析MongoDB、Cassandra等NoSQL系統。"
+    "description": "全面介紹分散式資料庫系統的設計和實作。涵蓋分散式事務、資料一致性、分片策略、容錯機制等核心技術。分析MongoDB、Cassandra等NoSQL系統。",
+    "tags": ["分散式資料庫", "NoSQL", "資料庫", "系統設計", "大數據"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1156.jpg"
   },
   {
+    "book_id": "bk_1157",
     "title": "軟體品質保證",
     "author": "尤志明",
-    "description": "深入介紹軟體品質保證的方法和實踐。包括程式碼審查、靜態分析、測試策略、品質度量等品質管理技術。適合品質保證工程師和開發團隊。"
+    "description": "深入介紹軟體品質保證的方法和實踐。包括程式碼審查、靜態分析、測試策略、品質度量等品質管理技術。適合品質保證工程師和開發團隊。",
+    "tags": ["軟體品質", "QA", "軟體測試", "軟體工程", "管理"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1157.jpg"
   },
   {
+    "book_id": "bk_1158",
     "title": "企業架構設計",
     "author": "穆雅華",
-    "description": "全面介紹企業級系統架構的設計原則和方法論。涵蓋業務架構、應用架構、技術架構、資料架構等多個層面。適合企業架構師和IT規劃人員。"
+    "description": "全面介紹企業級系統架構的設計原則和方法論。涵蓋業務架構、應用架構、技術架構、資料架構等多個層面。適合企業架構師和IT規劃人員。",
+    "tags": ["企業架構", "軟體架構", "TOGAF", "系統設計", "IT管理"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1158.jpg"
   },
   {
+    "book_id": "bk_1159",
     "title": "演算法競程指南",
     "author": "昌志峰",
-    "description": "深入介紹演算法競賽的解題技巧和策略。涵蓋動態規劃、圖論、數論、幾何等競賽常見主題。提供大量經典題目的詳細解析和程式實作。"
+    "description": "深入介紹演算法競賽的解題技巧和策略。涵蓋動態規劃、圖論、數論、幾何等競賽常見主題。提供大量經典題目的詳細解析和程式實作。",
+    "tags": ["演算法", "程式競賽", "ACM", "解題", "動態規劃"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1159.jpg"
   },
   {
+    "book_id": "bk_1160",
     "title": "量化交易系統",
     "author": "邰文龍",
-    "description": "全面介紹量化交易系統的設計和實作。包括策略開發、回測框架、風險管理、高頻交易等技術要點。適合金融工程師和量化投資者學習。"
+    "description": "全面介紹量化交易系統的設計和實作。包括策略開發、回測框架、風險管理、高頻交易等技術要點。適合金融工程師和量化投資者學習。",
+    "tags": ["量化交易", "金融工程", "演算法交易", "Python", "金融科技"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1160.jpg"
   },
   {
+    "book_id": "bk_1161",
     "title": "遊戲AI程式設計",
     "author": "郎雅玲",
-    "description": "深入介紹遊戲人工智慧的設計和實作技術。涵蓋路徑尋找、狀態機、行為樹、機器學習在遊戲中的應用等主題。適合遊戲開發者學習。"
+    "description": "深入介紹遊戲人工智慧的設計和實作技術。涵蓋路徑尋找、狀態機、行為樹、機器學習在遊戲中的應用等主題。適合遊戲開發者學習。",
+    "tags": ["遊戲開發", "遊戲AI", "人工智慧", "行為樹", "程式設計"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1161.jpg"
   },
   {
+    "book_id": "bk_1162",
     "title": "資料科學專案實戰",
     "author": "井志強",
-    "description": "通過實際專案案例介紹資料科學的完整工作流程。從問題定義到模型部署的端到端實作指南。涵蓋零售、金融、醫療等不同領域的應用案例。"
+    "description": "通過實際專案案例介紹資料科學的完整工作流程。從問題定義到模型部署的端到端實作指南。涵蓋零售、金融、醫療等不同領域的應用案例。",
+    "tags": ["資料科學", "專案管理", "機器學習", "Python", "案例研究"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1162.jpg"
   },
   {
+    "book_id": "bk_1163",
     "title": "軟體設計模式",
     "author": "成美惠",
-    "description": "深入介紹經典軟體設計模式的原理和應用。涵蓋創建型、結構型、行為型等各類設計模式。提供Java、C#、Python等語言的實作範例。"
+    "description": "深入介紹經典軟體設計模式的原理和應用。涵蓋創建型、結構型、行為型等各類設計模式。提供Java、C#、Python等語言的實作範例。",
+    "tags": ["設計模式", "軟體工程", "程式設計", "軟體架構", "Java"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1163.jpg"
   },
   {
+    "book_id": "bk_1164",
     "title": "API設計與管理",
     "author": "解志明",
-    "description": "全面介紹API的設計原則和管理實踐。包括RESTful設計、API版本控制、文件生成、監控分析等主題。適合後端開發者和API產品經理。"
+    "description": "全面介紹API的設計原則和管理實踐。包括RESTful設計、API版本控制、文件生成、監控分析等主題。適合後端開發者和API產品經理。",
+    "tags": ["API設計", "後端開發", "RESTful", "微服務", "軟體架構"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1164.jpg"
   },
   {
+    "book_id": "bk_1165",
     "title": "區塊鏈應用開發",
     "author": "鄧雅華",
-    "description": "深入介紹區塊鏈應用的開發技術和實作案例。涵蓋智能合約、DApp開發、跨鏈技術、去中心化金融等應用領域。提供完整的開發環境搭建指南。"
+    "description": "深入介紹區塊鏈應用的開發技術和實作案例。涵蓋智能合約、DApp開發、跨鏈技術、去中心化金融等應用領域。提供完整的開發環境搭建指南。",
+    "tags": ["區塊鏈", "DApp", "智能合約", "Web3", "去中心化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1165.jpg"
   },
   {
+    "book_id": "bk_1166",
     "title": "深度學習框架",
     "author": "酆志峰",
-    "description": "全面比較主流深度學習框架的特點和使用方法。包括TensorFlow、PyTorch、Keras、PaddlePaddle等框架的架構設計和程式實作。"
+    "description": "全面比較主流深度學習框架的特點和使用方法。包括TensorFlow、PyTorch、Keras、PaddlePaddle等框架的架構設計和程式實作。",
+    "tags": ["深度學習", "TensorFlow", "PyTorch", "框架", "人工智慧"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1166.jpg"
   },
   {
+    "book_id": "bk_1167",
     "title": "電腦圖形學算法",
     "author": "別文龍",
-    "description": "深入介紹電腦圖形學的核心算法和實作技術。涵蓋光線追蹤、陰影算法、全域照明、實時渲染等高級圖形技術。適合圖形程式設計師學習。"
+    "description": "深入介紹電腦圖形學的核心算法和實作技術。涵蓋光線追蹤、陰影算法、全域照明、實時渲染等高級圖形技術。適合圖形程式設計師學習。",
+    "tags": ["電腦圖學", "演算法", "渲染", "光線追蹤", "3D"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1167.jpg"
   },
   {
+    "book_id": "bk_1168",
     "title": "網路爬蟲技術",
     "author": "訾雅玲",
-    "description": "全面介紹網路爬蟲的設計和實作技術。包括反爬蟲對抗、分散式爬取、資料清理、法律合規等實用主題。提供Python和Java的爬蟲框架使用指南。"
+    "description": "全面介紹網路爬蟲的設計和實作技術。包括反爬蟲對抗、分散式爬取、資料清理、法律合規等實用主題。提供Python和Java的爬蟲框架使用指南。",
+    "tags": ["網路爬蟲", "Python", "資料擷取", "Scrapy", "大數據"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1168.jpg"
   },
   {
+    "book_id": "bk_1169",
     "title": "系統效能優化",
     "author": "卞志強",
-    "description": "深入介紹系統效能分析和優化的方法論。涵蓋CPU、記憶體、I/O、網路等各個層面的效能調優技術。適合系統工程師和效能調優專家。"
+    "description": "深入介紹系統效能分析和優化的方法論。涵蓋CPU、記憶體、I/O、網路等各個層面的效能調優技術。適合系統工程師和效能調優專家。",
+    "tags": ["效能優化", "系統工程", "SRE", "Linux", "監控"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1169.jpg"
   },
   {
+    "book_id": "bk_1170",
     "title": "微服務架構實戰",
     "author": "覃美惠",
-    "description": "全面介紹微服務架構的設計原則和實施策略。包括服務拆分、API閘道、服務發現、分散式追蹤等核心技術。提供Spring Cloud和Service Mesh的實作指南。"
+    "description": "全面介紹微服務架構的設計原則和實施策略。包括服務拆分、API閘道、服務發現、分散式追蹤等核心技術。提供Spring Cloud和Service Mesh的實作指南。",
+    "tags": ["微服務", "軟體架構", "Spring Cloud", "分散式系統", "雲端原生"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1170.jpg"
   },
   {
+    "book_id": "bk_1171",
     "title": "資料倉儲與ETL",
     "author": "逄志明",
-    "description": "深入介紹資料倉儲的設計和ETL流程的實作。涵蓋維度建模、星型架構、增量更新、資料品質管理等企業級資料處理技術。"
+    "description": "深入介紹資料倉儲的設計和ETL流程的實作。涵蓋維度建模、星型架構、增量更新、資料品質管理等企業級資料處理技術。",
+    "tags": ["資料倉儲", "ETL", "大數據", "資料工程", "商業智慧"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1171.jpg"
   },
   {
+    "book_id": "bk_1172",
     "title": "持續交付實踐",
     "author": "厲雅華",
-    "description": "全面介紹持續交付的理念和實踐方法。包括自動化測試、部署管道、藍綠部署、金絲雀發布等DevOps核心實踐。適合開發和運維團隊學習。"
+    "description": "全面介紹持續交付的理念和實踐方法。包括自動化測試、部署管道、藍綠部署、金絲雀發布等DevOps核心實踐。適合開發和運維團隊學習。",
+    "tags": ["持續交付", "DevOps", "CI/CD", "軟體工程", "自動化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1172.jpg"
   },
   {
+    "book_id": "bk_1173",
     "title": "電腦安全基礎",
     "author": "臧志峰",
-    "description": "深入介紹電腦系統安全的基本概念和防護技術。涵蓋作業系統安全、網路安全、應用安全、密碼學基礎等重要主題。適合資訊安全入門學習。"
+    "description": "深入介紹電腦系統安全的基本概念和防護技術。涵蓋作業系統安全、網路安全、應用安全、密碼學基礎等重要主題。適合資訊安全入門學習。",
+    "tags": ["資訊安全", "網路安全", "密碼學", "電腦科學", "入門"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1173.jpg"
   },
   {
+    "book_id": "bk_1174",
     "title": "人工智慧倫理",
     "author": "路文龍",
-    "description": "探討人工智慧發展中的倫理議題和社會影響。包括演算法偏見、隱私保護、自主武器、就業影響等重要問題。適合AI研究者和政策制定者參考。"
+    "description": "探討人工智慧發展中的倫理議題和社會影響。包括演算法偏見、隱私保護、自主武器、就業影響等重要問題。適合AI研究者和政策制定者參考。",
+    "tags": ["人工智慧", "倫理", "社會學", "哲學", "科技"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1174.jpg"
   },
   {
+    "book_id": "bk_1175",
     "title": "量化金融模型",
     "author": "繩雅玲",
-    "description": "全面介紹金融工程中的數學模型和計算方法。涵蓋期權定價、風險管理、投資組合優化、高頻交易等量化金融核心領域。"
+    "description": "全面介紹金融工程中的數學模型和計算方法。涵蓋期權定價、風險管理、投資組合優化、高頻交易等量化金融核心領域。",
+    "tags": ["量化金融", "金融工程", "數學模型", "投資", "風險管理"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1175.jpg"
   },
   {
+    "book_id": "bk_1176",
     "title": "軟體專案管理",
     "author": "商志強",
-    "description": "深入介紹軟體專案管理的方法和工具。包括專案規劃、進度追蹤、風險管理、團隊協作等管理實踐。適合專案經理和團隊領導者學習。"
+    "description": "深入介紹軟體專案管理的方法和工具。包括專案規劃、進度追蹤、風險管理、團隊協作等管理實踐。適合專案經理和團隊領導者學習。",
+    "tags": ["專案管理", "軟體開發", "敏捷開發", "管理", "團隊協作"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1176.jpg"
   },
   {
+    "book_id": "bk_1177",
     "title": "邊緣AI計算",
     "author": "蒿美惠",
-    "description": "全面介紹邊緣計算環境下的AI應用開發。涵蓋模型壓縮、推理優化、邊緣部署、端雲協同等技術要點。適合AI工程師和IoT開發者。"
+    "description": "全面介紹邊緣計算環境下的AI應用開發。涵蓋模型壓縮、推理優化、邊緣部署、端雲協同等技術要點。適合AI工程師和IoT開發者。",
+    "tags": ["邊緣計算", "AI", "物聯網", "深度學習", "模型部署"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1177.jpg"
   },
   {
+    "book_id": "bk_1178",
     "title": "區塊鏈密碼學",
     "author": "山志明",
-    "description": "深入介紹區塊鏈中的密碼學技術和安全機制。包括數位簽名、雜湊函數、零知識證明、多方計算等密碼學應用。適合區塊鏈安全研究者。"
+    "description": "深入介紹區塊鏈中的密碼學技術和安全機制。包括數位簽名、雜湊函數、零知識證明、多方計算等密碼學應用。適合區塊鏈安全研究者。",
+    "tags": ["區塊鏈", "密碼學", "資訊安全", "零知識證明", "數位簽章"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1178.jpg"
   },
   {
+    "book_id": "bk_1179",
     "title": "機器人程式設計",
     "author": "諸雅華",
-    "description": "全面介紹機器人控制系統的程式設計技術。涵蓋運動控制、感測器整合、路徑規劃、SLAM算法等機器人技術要點。提供ROS框架的使用指南。"
+    "description": "全面介紹機器人控制系統的程式設計技術。涵蓋運動控制、感測器整合、路徑規劃、SLAM算法等機器人技術要點。提供ROS框架的使用指南。",
+    "tags": ["機器人", "ROS", "程式設計", "自動控制", "SLAM"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1179.jpg"
   },
   {
+    "book_id": "bk_1180",
     "title": "分散式機器學習",
     "author": "虞志峰",
-    "description": "深入介紹分散式環境下的機器學習技術。包括聯邦學習、模型並行、資料並行、分散式優化等技術方向。適合大規模機器學習系統開發。"
+    "description": "深入介紹分散式環境下的機器學習技術。包括聯邦學習、模型並行、資料並行、分散式優化等技術方向。適合大規模機器學習系統開發。",
+    "tags": ["機器學習", "分散式系統", "聯邦學習", "大數據", "AI"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1180.jpg"
   },
   {
+    "book_id": "bk_1181",
     "title": "計算機網絡協議",
     "author": "焦文龍",
-    "description": "全面介紹現代網路協議的設計原理和實現技術。涵蓋IPv6、HTTP/3、QUIC、5G網路等最新網路技術發展。適合網路工程師和協議研發人員。"
+    "description": "全面介紹現代網路協議的設計原理和實現技術。涵蓋IPv6、HTTP/3、QUIC、5G網路等最新網路技術發展。適合網路工程師和協議研發人員。",
+    "tags": ["電腦網路", "網路協定", "HTTP", "IPv6", "QUIC"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1181.jpg"
   },
   {
+    "book_id": "bk_1182",
     "title": "軟體逆向工程",
     "author": "班雅玲",
-    "description": "深入介紹軟體逆向分析的技術和工具。包括靜態分析、動態分析、反編譯技術、惡意軟體分析等內容。適合資訊安全研究者和分析師。"
+    "description": "深入介紹軟體逆向分析的技術和工具。包括靜態分析、動態分析、反編譯技術、惡意軟體分析等內容。適合資訊安全研究者和分析師。",
+    "tags": ["逆向工程", "資訊安全", "惡意軟體", "駭客攻防", "除錯"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1182.jpg"
   },
   {
+    "book_id": "bk_1183",
     "title": "量子演算法設計",
     "author": "仇志強",
-    "description": "全面介紹量子演算法的設計原理和實作方法。涵蓋Shor算法、Grover算法、變分量子算法等經典和現代量子算法。適合量子計算研究者。"
+    "description": "全面介紹量子演算法的設計原理和實作方法。涵蓋Shor算法、Grover算法、變分量子算法等經典和現代量子算法。適合量子計算研究者。",
+    "tags": ["量子計算", "演算法", "量子力學", "電腦科學", "理論"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1183.jpg"
   },
   {
+    "book_id": "bk_1184",
     "title": "智慧城市技術",
     "author": "暢美惠",
-    "description": "深入介紹智慧城市建設中的關鍵技術和應用案例。包括智慧交通、智慧能源、智慧醫療、城市大腦等技術領域。適合城市規劃和科技政策制定者。"
+    "description": "深入介紹智慧城市建設中的關鍵技術和應用案例。包括智慧交通、智慧能源、智慧醫療、城市大腦等技術領域。適合城市規劃和科技政策制定者。",
+    "tags": ["智慧城市", "物聯網", "大數據", "AI", "城市規劃"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1184.jpg"
   },
   {
+    "book_id": "bk_1185",
     "title": "生物資訊學算法",
     "author": "養志明",
-    "description": "全面介紹生物資訊學中的計算方法和算法。涵蓋基因序列分析、蛋白質結構預測、演化分析、系統生物學等交叉領域。適合生物資訊研究者。"
+    "description": "全面介紹生物資訊學中的計算方法和算法。涵蓋基因序列分析、蛋白質結構預測、演化分析、系統生物學等交叉領域。適合生物資訊研究者。",
+    "tags": ["生物資訊學", "演算法", "基因", "計算生物學", "科學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1185.jpg"
   },
   {
+    "book_id": "bk_1186",
     "title": "金融風險建模",
     "author": "牧雅華",
-    "description": "深入介紹金融風險管理中的數學模型和計算技術。包括信用風險、市場風險、操作風險、流動性風險等風險類型的建模方法。適合風險管理專業人員。"
+    "description": "深入介紹金融風險管理中的數學模型和計算技術。包括信用風險、市場風險、操作風險、流動性風險等風險類型的建模方法。適合風險管理專業人員。",
+    "tags": ["金融", "風險管理", "數學模型", "量化金融", "建模"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_1186.jpg"
+  },
+  {
+    "book_id": "bk_2001",
+    "title": "腸道菌的大腦連結",
+    "author": "愛瑪·梅爾",
+    "description": "腸道是我們的第二大腦。本書揭示了腸道菌群如何透過『菌-腸-腦軸』影響我們的情緒、壓力和決策。了解並改善腸道健康，是提升整體身心健康的關鍵。",
+    "tags": ["健康", "科普", "腸道健康", "微生物", "心理學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2001.jpg"
+  },
+  {
+    "book_id": "bk_2002",
+    "title": "文藝復興三傑：達文西、米開朗基羅、拉斐爾",
+    "author": "喬治·瓦薩里",
+    "description": "本書聚焦於文藝復興時期最耀眼的三位藝術巨匠。透過他們的生平、競爭與代表作，深入剖析其藝術風格的形成與創新，以及他們如何共同定義了西方藝術的巔峰。",
+    "tags": ["藝術史", "文藝復興", "傳記", "繪畫", "歷史"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2002.jpg"
+  },
+  {
+    "book_id": "bk_2003",
+    "title": "療癒心傷：從創傷到復原的心理之路",
+    "author": "貝塞爾·范德寇",
+    "description": "創傷會改變我們的大腦與身體。本書作者為創傷研究領域的權威，整合了神經科學、心理治療和身體工作的最新進展，提供了理解與療癒創傷的全面指南。",
+    "tags": ["心理學", "創傷療癒", "心理治療", "健康", "自我成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2003.jpg"
+  },
+  {
+    "book_id": "bk_2004",
+    "title": "我的第一本法式烘焙",
+    "author": "艾蜜莉·勒·克萊爾",
+    "description": "在家也能重現巴黎甜點店的美味！本書收錄瑪德蓮、費南雪、檸檬塔等30道經典法式甜點，步驟清晰，並提供許多不失敗的秘訣，讓烘焙新手也能輕鬆上手。",
+    "tags": ["食譜", "烘焙", "甜點", "法國料理", "新手"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2004.jpg"
+  },
+  {
+    "book_id": "bk_2005",
+    "title": "島嶼的呼喚：蘭嶼達悟族的生活誌",
+    "author": "夏曼·藍波安",
+    "description": "由達悟族作家親筆撰寫，以充滿詩意的文字和深邃的海洋哲學，記錄了族人與海洋共生的傳統智慧、飛魚祭典文化，以及現代化衝擊下的反思。是一部深刻的民族誌散文。",
+    "tags": ["文學", "散文", "台灣", "原住民", "海洋文化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2005.jpg"
+  },
+  {
+    "book_id": "bk_2006",
+    "title": "牡丹亭",
+    "author": "湯顯祖",
+    "description": "明代戲曲的巔峰之作。講述了太守之女杜麗娘因夢生情，傷情而死，化為鬼魂尋找夢中情人柳夢梅，最終死而復生的愛情故事。展現了對自由愛情和人性的極致追求。",
+    "tags": ["經典文學", "戲曲", "中國", "愛情", "奇幻"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2006.jpg"
+  },
+  {
+    "book_id": "bk_2007",
+    "title": "刺殺騎士團長",
+    "author": "村上春樹",
+    "description": "一位肖像畫家在與妻子分居後，隱居於山間小屋。他偶然發現了一幅名為「刺殺騎士團長」的神秘日本畫，從此捲入了一連串超現實的奇異事件中。一部融合藝術、歷史與謎團的長篇小說。",
+    "tags": ["小說", "日本文學", "村上春樹", "奇幻", "懸疑"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2007.jpg"
+  },
+  {
+    "book_id": "bk_2008",
+    "title": "萬曆十五年",
+    "author": "黃仁宇",
+    "description": "本書以公元1587年為切入點，透過萬曆皇帝、張居正、申時行、海瑞等關鍵人物的經歷，剖析明代文官制度的僵化與帝國走向衰敗的深層原因。以「大歷史觀」聞名。",
+    "tags": ["歷史", "中國", "明朝", "政治", "傳記"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2008.jpg"
+  },
+  {
+    "book_id": "bk_2009",
+    "title": "高敏感是種天賦",
+    "author": "伊蓮·艾融",
+    "description": "高敏感族（HSP）並非脆弱或神經質。本書作者首創此概念，詳細解釋了高敏感族的四個核心特質，並提供如何發揮敏感天賦、應對過度刺激的實用策略，幫助你將高敏感轉化為優勢。",
+    "tags": ["心理學", "自我成長", "高敏感", "勵志", "人際關係"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2009.jpg"
+  },
+  {
+    "book_id": "bk_2010",
+    "title": "尋找回憶的偵探",
+    "author": "約瑟芬·鐵伊",
+    "description": "蘇格蘭場的格蘭特探長因病住院，偶然看到一幅理查三世的畫像，決定挑戰歷史定論，調查這位被描繪成暴君的國王是否真的殺害了塔中的王子。一部經典的歷史推理小說。",
+    "tags": ["小說", "推理", "歷史", "英國文學", "懸疑"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2010.jpg"
+  },
+  {
+    "book_id": "bk_2011",
+    "title": "一個人開伙：快速、簡單、不浪費的單人料理",
+    "author": "速簡料理研究會",
+    "description": "一個人吃飯也能豐盛又美味。本書專為單人設計，從食材採買、保存到食譜設計，都以「不浪費」為核心。收錄50道15分鐘上菜的料理，讓你輕鬆享受一個人的餐桌時光。",
+    "tags": ["食譜", "烹飪", "家常菜", "新手", "生活風格"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2011.jpg"
+  },
+  {
+    "book_id": "bk_2012",
+    "title": "在路上",
+    "author": "傑克·凱魯亞克",
+    "description": "「垮掉的一代」的聖經。小說以作者的親身經歷為藍本，記錄了主角們開著車橫穿美國大陸，追求自由、爵士樂、性和毒品的瘋狂旅程。其自發性、即興的寫作風格影響深遠。",
+    "tags": ["經典文學", "小說", "美國文學", "旅行", "自由"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2012.jpg"
+  },
+  {
+    "book_id": "bk_2013",
+    "title": "身體從不說謊：探索你與生俱來的痊癒力",
+    "author": "愛麗絲·米勒",
+    "description": "童年的創傷和壓抑的情感，會以疾病的形式在身體上表現出來。本書作者透過許多名人案例，揭示了身體症狀背後隱藏的心理根源，並強調了誠實面對過去對身心健康的重要性。",
+    "tags": ["心理學", "健康", "創傷療癒", "身心靈", "家庭關係"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2013.jpg"
+  },
+  {
+    "book_id": "bk_2014",
+    "title": "打造第二大腦",
+    "author": "提亞戈·佛特",
+    "description": "在資訊爆炸的時代，如何有效管理知識？本書提出一套數位筆記系統，教你如何捕捉、組織、萃取和表達你的想法，建立一個可以信賴的「第二大腦」，從而提升創造力與生產力。",
+    "tags": ["知識管理", "生產力", "筆記術", "自我成長", "數位工具"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2014.jpg"
+  },
+  {
+    "book_id": "bk_2015",
+    "title": "紅樓夢",
+    "author": "曹雪芹",
+    "description": "中國古典小說的巔峰之作。以賈、史、王、薛四大家族的興衰為背景，描寫了賈寶玉、林黛玉、薛寶釵之間的愛情悲劇。其細膩的人物刻畫、複雜的社會描寫和深邃的哲學意涵，使其成為不朽的經典。",
+    "tags": ["經典文學", "小說", "中國", "歷史", "愛情"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2015.jpg"
+  },
+  {
+    "book_id": "bk_2016",
+    "title": "被遺忘的歷史：改變世界的50場戰役",
+    "author": "軍事史學家",
+    "description": "除了赤壁之戰和諾曼第登陸，還有哪些戰役深刻地改變了世界格局？本書介紹了從古希臘到現代，50場較少為人所知但影響深遠的關鍵戰役，揭示了戰爭背後的戰略、技術與人性。",
+    "tags": ["歷史", "軍事", "戰爭", "世界史", "策略"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2016.jpg"
+  },
+  {
+    "book_id": "bk_2017",
+    "title": "植物知道生命的答案",
+    "author": "丹尼爾·查莫維茨",
+    "description": "植物有視覺、嗅覺、觸覺甚至記憶嗎？本書以引人入勝的方式，結合最新的科學研究，揭示了植物感知世界的奇妙方式，顛覆你對這些沉默生命體的刻板印象。",
+    "tags": ["科普", "植物", "生物學", "自然", "科學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2017.jpg"
+  },
+  {
+    "book_id": "bk_2018",
+    "title": "OKR：做最重要的事",
+    "author": "約翰·杜爾",
+    "description": "源自英特爾、在谷歌發揚光大的目標管理法。本書作者將OKR（目標與關鍵結果）引進谷歌，詳細介紹了其設定原則與實施方法，幫助團隊和個人聚焦於真正重要的目標，創造卓越績效。",
+    "tags": ["企業管理", "目標管理", "OKR", "工作法", "領導力"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2018.jpg"
+  },
+  {
+    "book_id": "bk_2019",
+    "title": "雪國",
+    "author": "川端康成",
+    "description": "諾貝爾文學獎得獎作品。故事描寫了舞蹈評論家島村三次前往雪國，與當地藝妓駒子、少女葉子之間發生的虛無縹緲的愛情故事。文字極致純淨，充滿了日本式的物哀之美。",
+    "tags": ["經典文學", "小說", "日本文學", "愛情", "美學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2019.jpg"
+  },
+  {
+    "book_id": "bk_2020",
+    "title": "台灣小吃圖鑑",
+    "author": "美食探險隊",
+    "description": "一本讓人口水直流的台灣小吃百科。從北到南，收錄超過100種經典小吃，如滷肉飯、牛肉麵、珍珠奶茶等，不僅有精美照片，還介紹了其歷史源流與在地名店。",
+    "tags": ["美食", "台灣", "旅遊", "飲食文化", "圖鑑"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2020.jpg"
+  },
+  {
+    "book_id": "bk_2021",
+    "title": "月亮與六便士",
+    "author": "威廉·薩默塞特·毛姆",
+    "description": "「月亮」代表崇高的理想，「六便士」則是卑微的現實。小說以畫家高更為原型，講述一位倫敦證券經紀人，在中年時突然拋妻棄子，遠赴大溪地，追尋他繪畫的夢想。探討了天才、個性與社會規範的衝突。",
+    "tags": ["經典文學", "小說", "藝術", "人生", "勵志"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2021.jpg"
+  },
+  {
+    "book_id": "bk_2022",
+    "title": "阿德勒談人性",
+    "author": "阿爾弗雷德·阿德勒",
+    "description": "個體心理學創始人阿德勒的經典演講集。書中系統闡述了他關於自卑感、追求優越、社會興趣、生活風格等核心概念，幫助讀者理解人性的基本動機與行為模式。",
+    "tags": ["心理學", "阿德勒", "經典", "人性", "自我探索"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2022.jpg"
+  },
+  {
+    "book_id": "bk_2023",
+    "title": "芬蘭的教育奇蹟",
+    "author": "帕思·薩爾博格",
+    "description": "芬蘭如何在PISA國際評比中屢創佳績？本書作者為芬蘭教育官員，深入剖析了芬蘭教育成功的秘訣：沒有考試、沒有排名、重視公平與教師專業，提供了一個與主流教育思維截然不同的範例。",
+    "tags": ["教育", "芬蘭", "社會", "學習方法", "政策"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2023.jpg"
+  },
+  {
+    "book_id": "bk_2024",
+    "title": "不存在的女兒",
+    "author": "金·愛德華茲",
+    "description": "一場暴風雪之夜，醫生大衛親手為妻子接生了一對龍鳳胎，但他發現女兒患有唐氏症。為了保護妻子，他謊稱女兒夭折，並將她送走。這個秘密從此纏繞著整個家庭，引發了一連串的悲歡離合。",
+    "tags": ["小說", "家庭關係", "秘密", "療癒", "情感"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2024.jpg"
+  },
+  {
+    "book_id": "bk_2025",
+    "title": "史記菁華錄",
+    "author": "司馬遷",
+    "description": "從「二十四史」之首《史記》中，精選出最經典的本紀、世家、列傳篇章，如〈項羽本紀〉、〈刺客列傳〉等。每篇均附有詳盡的注釋與賞析，讓讀者輕鬆領略太史公「史家之絕唱」的魅力。",
+    "tags": ["經典文學", "歷史", "中國", "傳記", "散文"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2025.jpg"
+  },
+  {
+    "book_id": "bk_2026",
+    "title": "走路的科學",
+    "author": "沙恩·奧馬拉",
+    "description": "走路這個簡單的動作，對我們的大腦和身心有多麼驚人的好處？本書結合神經科學、心理學和演化學，闡述了走路如何增強創造力、改善情緒、延緩老化，並鼓勵我們多加走動。",
+    "tags": ["健康", "科普", "運動", "腦科學", "心理學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2026.jpg"
+  },
+  {
+    "book_id": "bk_2027",
+    "title": "義大利麵之書",
+    "author": "馬西莫·博圖拉",
+    "description": "米其林三星主廚的義大利麵聖經。書中不僅收錄了數十道從經典到創新的義大利麵食譜，更分享了他對食材、風味組合與烹飪哲學的深刻見解，是一本兼具實用與藝術性的美食書。",
+    "tags": ["食譜", "義大利料理", "烹飪", "美食", "專業技術"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2027.jpg"
+  },
+  {
+    "book_id": "bk_2028",
+    "title": "第二性",
+    "author": "西蒙·波娃",
+    "description": "女性主義的奠基之作。「女人不是天生的，而是後天被塑造成的。」本書從生物學、心理分析、歷史唯物論等角度，全面而深刻地探討了女性在父權社會中的處境與異化，影響深遠。",
+    "tags": ["女性主義", "哲學", "社會學", "經典", "性別研究"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2028.jpg"
+  },
+  {
+    "book_id": "bk_2029",
+    "title": "你想活出怎樣的人生？",
+    "author": "吉野源三郎",
+    "description": "宮崎駿深受啟發的經典名著。書中透過主角「小哥白尼」與舅舅的書信往來，探討了關於友情、貧富、勇氣、自我認同等人生課題。是一本引導青少年思考生命意義的哲學啟蒙書。",
+    "tags": ["小說", "青少年", "哲學", "成長", "經典文學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2029.jpg"
+  },
+  {
+    "book_id": "bk_2030",
+    "title": "戀愛腦科學",
+    "author": "海倫·費雪",
+    "description": "為什麼我們會墜入愛河？愛情能持續多久？人類學家海倫·費雪透過fMRI功能性磁振造影研究，揭示了愛情背後的大腦機制，分析了多巴胺、催產素等激素如何影響我們的戀愛行為。",
+    "tags": ["科普", "心理學", "愛情", "腦科學", "人際關係"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2030.jpg"
+  },
+  {
+    "book_id": "bk_2031",
+    "title": "失落的致富經典",
+    "author": "華勒思·華特斯",
+    "description": "啟發《秘密》的百年財富指南。本書提出，致富是一門精確的科學，核心在於以「特定方式」思考和行動。透過改變心態，專注於創造而非競爭，任何人都能吸引財富，實現富足。",
+    "tags": ["勵志", "心靈", "財富", "吸引力法則", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2031.jpg"
+  },
+  {
+    "book_id": "bk_2032",
+    "title": "日本戰國英雄錄",
+    "author": "戰國歷史研究會",
+    "description": "本書生動描寫了日本戰國時代的風雲人物，包括「第六天魔王」織田信長、統一日本的豐臣秀吉，以及開創江戶幕府的德川家康。深入解析他們的戰略、權謀與個人魅力。",
+    "tags": ["歷史", "日本", "戰國", "傳記", "戰爭"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2032.jpg"
+  },
+  {
+    "book_id": "bk_2033",
+    "title": "心流：高手都在研究的最優體驗心理學",
+    "author": "米哈里·契克森米哈賴",
+    "description": "「心流」是指當我們全神貫注地投入一項活動時，所體驗到的那種渾然忘我的最佳狀態。本書作者為「心流」理論之父，詳細闡述了心流的構成要素，以及如何在工作和生活中創造更多心流體驗。",
+    "tags": ["心理學", "心流", "幸福", "自我成長", "工作法"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2033.jpg"
+  },
+  {
+    "book_id": "bk_2034",
+    "title": "香料共和國：從一顆胡椒看世界史",
+    "author": "傑克·特納",
+    "description": "香料曾比黃金更貴重，引發了地理大發現，也點燃了帝國之間的戰爭。本書追溯了肉豆蔻、丁香、胡椒等香料的迷人歷史，揭示了它們如何塑造了我們的世界版圖與飲食文化。",
+    "tags": ["歷史", "飲食文化", "世界史", "科普", "貿易"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2034.jpg"
+  },
+  {
+    "book_id": "bk_2035",
+    "title": "不便利的便利店",
+    "author": "金浩然",
+    "description": "一個失憶的流浪漢，意外成為一家便利店的夜班店員。他以奇特的方式，溫暖了來到這家店的每一個孤單的靈魂，也慢慢找回了自己的人生。一部充滿人情味的韓國療癒小說。",
+    "tags": ["小說", "療癒", "韓國文學", "人生", "溫暖"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2035.jpg"
+  },
+  {
+    "book_id": "bk_2036",
+    "title": "刻意練習：從新手到專家的成功法則",
+    "author": "安德斯·艾瑞克森",
+    "description": "天才不是天生的，而是練出來的。本書作者為「專家表現」領域的世界級權威，揭示了「一萬小時定律」的誤區，並提出「刻意練習」的四個關鍵要素：目標、專注、回饋與跳出舒適圈。",
+    "tags": ["學習方法", "自我成長", "心理學", "技巧", "勵志"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2036.jpg"
+  },
+  {
+    "book_id": "bk_2037",
+    "title": "海風酒店",
+    "author": "吳明益",
+    "description": "一座臨海的舊日飯店，牽起了橫跨數十年的環境、親情與記憶。小說以多重視角，交織出台灣東海岸的變遷、環境運動的掙扎，以及人與土地之間複雜而深刻的連結。",
+    "tags": ["小說", "台灣文學", "環境", "歷史", "家庭"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2037.jpg"
+  },
+  {
+    "book_id": "bk_2038",
+    "title": "讓天賦自由",
+    "author": "肯·羅賓森",
+    "description": "許多人在標準化的教育體制下，埋沒了自己真正的天賦。本書作者為國際知名的教育家，主張每個人都應該找到自己的「天命」——即天賦與熱情的交會點，並提供了尋找天命的實用方法。",
+    "tags": ["教育", "自我探索", "職涯規劃", "勵志", "創意"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2038.jpg"
+  },
+  {
+    "book_id": "bk_2039",
+    "title": "廚房裡的人類學家：從田野到餐桌的美味追尋",
+    "author": "莊祖宜",
+    "description": "一位放棄博士學位，轉身投入專業廚房的人類學家。本書是她的廚藝學習與生活隨筆，記錄了她在美國、香港、上海等地，如何透過料理認識不同文化，並在家庭餐桌上實踐她的飲食理念。",
+    "tags": ["散文", "美食", "飲食文化", "生活風格", "烹飪"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2039.jpg"
+  },
+  {
+    "book_id": "bk_2040",
+    "title": "蘇東坡傳",
+    "author": "林語堂",
+    "description": "林語堂以優美的文筆，描繪了北宋大文豪蘇東坡的一生。他不僅是詩人、書法家、畫家，也是一位正直的官員和熱愛生活的美食家。本書呈現了他雖屢遭貶謫，卻始終保持豁達樂觀的偉大人格。",
+    "tags": ["傳記", "歷史", "中國", "文學", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2040.jpg"
+  },
+  {
+    "book_id": "bk_2041",
+    "title": "恆毅力：人生成功的究極能力",
+    "author": "安琪拉·達克沃斯",
+    "description": "天賦和才華並非成功的保證。本書作者透過大量研究證明，對長期目標的熱情與堅持，即「恆毅力」，才是預測成功的關鍵指標。書中提供了培養自身與孩子恆毅力的具體方法。",
+    "tags": ["心理學", "勵志", "成功學", "教育", "自我成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2041.jpg"
+  },
+  {
+    "book_id": "bk_2042",
+    "title": "希臘神話故事集",
+    "author": "古斯塔夫·施瓦布",
+    "description": "一部系統性、完整性都極佳的希臘神話入門讀物。從創世傳說、奧林帕斯眾神到特洛伊戰爭與英雄的冒險，本書以生動的故事，呈現了西方文明的源頭與豐富的想像世界。",
+    "tags": ["神話", "歷史", "經典文學", "希臘", "故事"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2042.jpg"
+  },
+  {
+    "book_id": "bk_2043",
+    "title": "每天清除心靈癌細胞",
+    "author": "許瑞云",
+    "description": "許多疾病都源於未解的心結與負面情緒。哈佛醫師許瑞云結合中西醫與自然療法，教導讀者如何透過能量運動、飲食調整與轉念練習，清除內在的負能量，啟動身體的自癒力。",
+    "tags": ["健康", "心靈", "情緒管理", "養生", "身心靈"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2043.jpg"
+  },
+  {
+    "book_id": "bk_2044",
+    "title": "決斷2秒間",
+    "author": "麥爾坎·葛拉威爾",
+    "description": "我們在瞬間做出的直覺判斷，有時比深思熟慮的分析更準確。本書探討了「薄片擷取」的潛意識力量，分析了專家直覺的養成，以及何時該相信直覺，何時又該警惕其偏誤。",
+    "tags": ["心理學", "決策", "直覺", "科普", "商業"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2044.jpg"
+  },
+  {
+    "book_id": "bk_2045",
+    "title": "深夜的京都，我愛上日本酒",
+    "author": "黃國華",
+    "description": "本書不僅是日本酒的品飲指南，更是一趟深入京都酒鄉的文化之旅。作者走訪多家特色居酒屋與老字號酒造，分享他對清酒的熱愛，以及在旅途中遇見的職人與故事。",
+    "tags": ["旅遊", "飲食", "日本酒", "京都", "文化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2045.jpg"
+  },
+  {
+    "book_id": "bk_2046",
+    "title": "沉默的艦隊",
+    "author": "川口開治",
+    "description": "日本海上自衛隊的核動力潛艦「海蝠號」，在艦長海江田四郎的帶領下，脫離美日指揮，宣告成為獨立戰鬥國家「大和」。一部探討國際政治、核武威懾與世界和平的經典軍事漫畫。",
+    "tags": ["漫畫", "軍事", "政治", "潛艦", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2046.jpg"
+  },
+  {
+    "book_id": "bk_2047",
+    "title": "正義：一場思辨之旅",
+    "author": "邁可·桑德爾",
+    "description": "哈佛大學最受歡迎的公開課。本書透過電車難題、市場倫理等真實案例，引導讀者思考功利主義、自由至上主義和社群主義等不同派別的觀點，展開一場關於正義與道德的思辨。",
+    "tags": ["哲學", "政治學", "倫理學", "思辨", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2047.jpg"
+  },
+  {
+    "book_id": "bk_2048",
+    "title": "漢娜的遺言",
+    "author": "傑伊·艾夏",
+    "description": "高中生克萊收到了七卷錄音帶，來自兩週前自殺的同學漢娜。錄音帶中揭示了壓垮她的十三個原因。一部探討霸凌、流言與青少年心理困境的震撼小說，引發全球對相關議題的廣泛討論。",
+    "tags": ["小說", "青少年", "心理學", "霸凌", "社會議題"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2048.jpg"
+  },
+  {
+    "book_id": "bk_2049",
+    "title": "番茄醬的宇宙",
+    "author": "安娜貝兒·派徹",
+    "description": "十五歲的女孩柔伊愛上了不該愛的人，犯下了不可告人的秘密。她開始與一位死囚通信，在信中吐露心聲，尋找救贖的可能。一本關於愛、罪與秘密的青少年成長小說。",
+    "tags": ["小說", "青少年", "愛情", "秘密", "成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2049.jpg"
+  },
+  {
+    "book_id": "bk_2050",
+    "title": "大國的崛起與衰落",
+    "author": "保羅·甘迺迪",
+    "description": "本書分析了自1500年以來，世界主要大國在經濟實力與軍事力量之間的互動關係。核心論點是，國家的興衰取決於其能否在經濟發展與軍事擴張之間維持平衡，避免「過度擴張」。",
+    "tags": ["歷史", "國際關係", "政治學", "經濟", "軍事"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2050.jpg"
+  },
+  {
+    "book_id": "bk_2051",
+    "title": "無印良品教我的事",
+    "author": "松井忠三",
+    "description": "前無印良品會長親自揭示，如何將一家瀕臨破產的公司，打造成全球知名的生活品牌。本書分享了無印良品獨特的管理哲學、商品開發流程與組織文化，核心在於一本厚達2000頁的業務標準書。",
+    "tags": ["企業管理", "品牌", "日本文化", "經營哲學", "零售"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2051.jpg"
+  },
+  {
+    "book_id": "bk_2052",
+    "title": "葉慈詩選",
+    "author": "威廉·巴特勒·葉慈",
+    "description": "收錄了諾貝爾文學獎得主、愛爾蘭最偉大詩人葉慈的代表作品。詩中融合了愛爾蘭神話、政治現實與個人情感，充滿了音樂性與象徵意涵，展現了從浪漫主義到現代主義的風格轉變。",
+    "tags": ["詩集", "經典文學", "愛爾蘭", "文學", "現代主義"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2052.jpg"
+  },
+  {
+    "book_id": "bk_2053",
+    "title": "偷書賊",
+    "author": "馬格斯·朱薩克",
+    "description": "故事以「死神」為敘述者，講述在二戰時期的德國，一位名叫莉賽爾的女孩，在養父母的庇護下，靠著偷來的書本學習閱讀，並在文字的世界中找到了慰藉與力量。",
+    "tags": ["小說", "歷史", "戰爭", "文學", "成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2053.jpg"
+  },
+  {
+    "book_id": "bk_2054",
+    "title": "真確：扭轉十大直覺偏誤，發現事情比你想得更好",
+    "author": "漢斯·羅斯林",
+    "description": "我們的世界觀其實充滿偏誤。本書作者以大量數據，揭示了我們對貧窮、教育、健康等全球議題的普遍誤解，並提出了十種扭轉直覺偏誤的思考工具，幫助我們看見世界的真實樣貌。",
+    "tags": ["科普", "思辨", "數據", "社會學", "心理學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2054.jpg"
+  },
+  {
+    "book_id": "bk_2055",
+    "title": "台灣老樹誌",
+    "author": "綠色和平",
+    "description": "本書記錄了台灣各地數十棵具有歷史與文化意義的老樹。每一棵樹的背後，都承載著地方的記憶、信仰與傳說。透過攝影與文字，傳達了對自然遺產的敬意與保育的呼籲。",
+    "tags": ["自然", "台灣", "生態", "歷史", "攝影"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2055.jpg"
+  },
+  {
+    "book_id": "bk_2056",
+    "title": "新手媽媽的安心指南",
+    "author": "黃瑽寧",
+    "description": "從懷孕、生產到育兒，新手媽媽總有問不完的問題。本書由知名兒科醫師撰寫，以問答形式，提供了關於新生兒照護、餵養、常見疾病的最新、最可靠的醫學知識，是媽媽們最安心的後盾。",
+    "tags": ["親子教養", "育兒", "健康", "新手媽媽", "嬰兒"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2056.jpg"
+  },
+  {
+    "book_id": "bk_2057",
+    "title": "大亨小傳",
+    "author": "史考特·費茲傑羅",
+    "description": "描寫了1920年代美國「爵士時代」的社會風貌。神秘富豪蓋茨比每晚舉辦奢華派對，只為了吸引住在對岸的昔日戀人黛西。小說透過鄰居尼克的視角，呈現了美國夢的幻滅與悲劇。",
+    "tags": ["經典文學", "小說", "美國文學", "愛情", "社會"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2057.jpg"
+  },
+  {
+    "book_id": "bk_2058",
+    "title": "極簡投資法則",
+    "author": "約翰·柏格",
+    "description": "指數基金教父的投資哲學。本書的核心理念是，試圖打敗市場是徒勞且昂貴的。對一般投資人而言，最佳策略是買入並持有涵蓋整個市場的低成本指數型基金，享受市場的長期回報。",
+    "tags": ["投資", "理財", "指數基金", "金融", "被動投資"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2058.jpg"
+  },
+  {
+    "book_id": "bk_2059",
+    "title": "發條橘子",
+    "author": "安東尼·伯吉斯",
+    "description": "一部探討自由意志與暴力的反烏托邦小說。主角亞利斯是個沉迷於古典樂和極端暴力的少年，在被捕後接受了「盧多維科療法」的洗腦，喪失了作惡的能力，引發了對人性與道德的深刻辯證。",
+    "tags": ["小說", "反烏托邦", "經典文學", "哲學", "科幻"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2059.jpg"
+  },
+  {
+    "book_id": "bk_2060",
+    "title": "生命之詩：泰戈爾詩選",
+    "author": "羅賓德拉納特·泰戈爾",
+    "description": "收錄了亞洲第一位諾貝爾文學獎得主泰戈爾的經典詩作，如《漂鳥集》、《新月集》等。其詩歌充滿了對自然、生命和神性的熱愛，語言純淨而富有哲理，為無數讀者帶來心靈的慰藉。",
+    "tags": ["詩集", "經典文學", "哲學", "印度", "心靈"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2060.jpg"
+  },
+  {
+    "book_id": "bk_2061",
+    "title": "情緒急救：自我療癒的30個處方",
+    "author": "蓋·溫奇",
+    "description": "我們懂得如何處理身體的傷口，卻常常忽視心理的創傷。本書作者為心理學家，針對孤獨、內疚、拒絕、失敗等常見的心理傷害，提出了具體、有效的「情緒急救」方法。",
+    "tags": ["心理學", "情緒管理", "自我療癒", "勵志", "健康"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2061.jpg"
+  },
+  {
+    "book_id": "bk_2062",
+    "title": "文明：決定人類走向的六大殺手級APP",
+    "author": "尼爾·弗格森",
+    "description": "過去五百年，為何是西方主導了世界？歷史學家弗格森認為，關鍵在於西方發展出了六個「殺手級應用」：競爭、科學、財產權、醫學、消費社會和工作倫理。本書探討了這些因素的起源與影響。",
+    "tags": ["歷史", "社會學", "經濟", "科普", "全球化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2062.jpg"
+  },
+  {
+    "book_id": "bk_2063",
+    "title": "台灣日式建築紀行",
+    "author": "李清志",
+    "description": "本書帶領讀者探訪散落在台灣各地的日式建築遺產，從官舍、武德殿到神社、宿舍。透過建築的細節，講述其歷史背景與空間美學，呈現了日治時期對台灣的深遠影響。",
+    "tags": ["建築", "台灣", "歷史", "旅遊", "日本文化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2063.jpg"
+  },
+  {
+    "book_id": "bk_2064",
+    "title": "蒼蠅王",
+    "author": "威廉·高汀",
+    "description": "一群英國男童因飛機失事被困在一座荒島上。在沒有成人的情況下，他們試圖建立文明秩序，但原始的野性最終戰勝了理性，導致了殘酷的權力鬥爭與暴力。一部關於人性本質的寓言小說。",
+    "tags": ["小說", "經典文學", "人性", "哲學", "寓言"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2064.jpg"
+  },
+  {
+    "book_id": "bk_2065",
+    "title": "影響力：讓人乖乖聽話的說服術",
+    "author": "羅伯特·席爾迪尼",
+    "description": "社會心理學的經典之作。本書揭示了六個影響力的武器：互惠、承諾與一致、社會認同、喜好、權威和稀有性。了解這些原則，不僅能讓你成為說服高手，也能避免自己落入他人的圈套。",
+    "tags": ["心理學", "說服", "溝通", "行銷", "商業"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2065.jpg"
+  },
+  {
+    "book_id": "bk_2066",
+    "title": "一日三餐的健康奇蹟：間歇性斷食全指南",
+    "author": "傑森·方",
+    "description": "本書作者為腎臟科醫師，以大量科學證據闡述了間歇性斷食（如168斷食）對減重、改善胰島素阻抗、延緩老化的益處。書中提供了多種斷食方案與食譜，幫助讀者安全有效地執行。",
+    "tags": ["健康", "減重", "斷食", "營養學", "養生"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2066.jpg"
+  },
+  {
+    "book_id": "bk_2067",
+    "title": "龍紋身的女孩",
+    "author": "史迪格·拉森",
+    "description": "一位聲名狼藉的記者和一位神秘的女駭客，聯手調查一樁四十年前的豪門少女失蹤案。在揭開層層謎團的過程中，他們也觸及了瑞典社會光鮮外表下的黑暗面。千禧三部曲的第一部。",
+    "tags": ["小說", "懸疑", "推理", "犯罪", "瑞典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2067.jpg"
+  },
+  {
+    "book_id": "bk_2068",
+    "title": "與成功有約：高效能人士的七個習慣",
+    "author": "史蒂芬·柯維",
+    "description": "全球銷量超過千萬的自我成長經典。本書提出的七個習慣（主動積極、以終為始、要事第一等）是一套完整的思維與行為準則，幫助個人與組織由內而外地提升效能，實現成功。",
+    "tags": ["自我成長", "勵志", "管理", "習慣", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2068.jpg"
+  },
+  {
+    "book_id": "bk_2069",
+    "title": "安妮的日記",
+    "author": "安妮·法蘭克",
+    "description": "二戰期間，猶太少女安妮一家為了躲避納粹迫害，藏身於阿姆斯特丹的密室中。本書是她兩年躲藏期間的日記，真實記錄了青春期的煩惱、對自由的渴望以及戰爭的殘酷。",
+    "tags": ["傳記", "歷史", "戰爭", "猶太人", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2069.jpg"
+  },
+  {
+    "book_id": "bk_2070",
+    "title": "怪奇事物所：你知道嗎？其實我們都很怪",
+    "author": "怪奇事物所長",
+    "description": "一本充滿冷知識與趣味圖文的科普書。從「為什麼貓喜歡紙箱」到「樹懶一週只上一次廁所」，用幽默的方式介紹了動物、人體、宇宙的各種奇怪知識，滿足你的好奇心。",
+    "tags": ["科普", "趣味", "冷知識", "生物", "圖文"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2070.jpg"
+  },
+  {
+    "book_id": "bk_2071",
+    "title": "天橋上的魔術師",
+    "author": "吳明益",
+    "description": "以1980年代的台北中華商場為背景，透過一個神出鬼沒的魔術師，串起了商場裡不同孩子的童年故事。小說融合了寫實與魔幻，呈現了對逝去時光與記憶的溫柔凝視。",
+    "tags": ["小說", "台灣文學", "歷史", "魔幻寫實", "成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2071.jpg"
+  },
+  {
+    "book_id": "bk_2072",
+    "title": "我愛讀詩：席慕蓉的詩選與畫",
+    "author": "席慕蓉",
+    "description": "精選了詩人席慕蓉數十年創作生涯中的經典詩作，如〈一棵開花的樹〉。詩文搭配作者親繪的插畫，詩畫共鳴，呈現了對青春、愛情、鄉愁與時光流逝的細膩感懷。",
+    "tags": ["詩集", "文學", "台灣", "愛情", "繪畫"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2072.jpg"
+  },
+  {
+    "book_id": "bk_2073",
+    "title": "工作的意義：從史前到未來的人類勞動史",
+    "author": "詹姆斯·舒茲曼",
+    "description": "工作對我們來說到底是什麼？人類學家從狩獵採集社會、農業革命到工業時代，探討了人類對「工作」的觀念變遷。並對自動化時代下，我們的工作與生活意義提出深刻反思。",
+    "tags": ["社會學", "人類學", "歷史", "工作", "未來趨勢"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2073.jpg"
+  },
+  {
+    "book_id": "bk_2074",
+    "title": "追風箏的孩子",
+    "author": "卡勒德·胡賽尼",
+    "description": "在阿富汗，富家少爺阿米爾與僕人哈山情同手足。然而，一場風箏比賽後的背叛，徹底改變了兩人的命運。多年後，阿米爾為了尋求救贖，踏上了重返故鄉的艱險旅途。",
+    "tags": ["小說", "親情", "背叛", "救贖", "阿富汗"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2074.jpg"
+  },
+  {
+    "book_id": "bk_2075",
+    "title": "巴菲特寫給股東的信",
+    "author": "華倫·巴菲特",
+    "description": "本書匯集了股神巴菲特數十年來寫給波克夏股東的信件精華，由勞倫斯·康寧漢按主題編排。完整呈現了巴菲特的價值投資理念、企業管理哲學與誠信正直的人生觀。",
+    "tags": ["投資", "理財", "巴菲特", "價值投資", "商業"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2075.jpg"
+  },
+  {
+    "book_id": "bk_2076",
+    "title": "如何讓你愛的人愛上你",
+    "author": "萊爾·朗德絲",
+    "description": "一本基於科學研究的戀愛技巧指南。作者提供了從初次見面、眼神接觸、肢體語言到深度對話的65個實用技巧，幫助你提升個人魅力，在情場上無往不利。",
+    "tags": ["人際關係", "愛情", "溝通", "心理學", "技巧"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2076.jpg"
+  },
+  {
+    "book_id": "bk_2077",
+    "title": "美麗新世界",
+    "author": "阿道斯·赫胥黎",
+    "description": "與《1984》齊名的反烏托邦經典。在未來世界，人類透過基因工程和藥物「蘇麻」來維持社會的穩定與快樂，但代價是失去了藝術、家庭與真正的自由。小說對科技與人性的關係提出了警示。",
+    "tags": ["小說", "反烏托邦", "經典文學", "科幻", "哲學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2077.jpg"
+  },
+  {
+    "book_id": "bk_2078",
+    "title": "我們與惡的距離：從罪行、新聞到心理的深度剖析",
+    "author": "社會心理研究社",
+    "description": "本書深入探討了隨機殺人、媒體倫理、精神疾病污名化等社會議題。從心理學、社會學和法律等多重角度，分析了「惡」的成因與社會結構的關聯，引發讀者對人性與公義的深刻反思。",
+    "tags": ["社會學", "心理學", "犯罪", "媒體", "社會議題"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2078.jpg"
+  },
+  {
+    "book_id": "bk_2079",
+    "title": "撒哈拉歲月",
+    "author": "三毛",
+    "description": "作家三毛與荷西在撒哈拉沙漠生活的點滴記錄。她以幽默、率真的筆觸，描寫了沙漠中奇特的風土人情、克難而有趣的生活，以及與荷西之間深厚的愛情。開啟了華文世界的流浪文學風潮。",
+    "tags": ["散文", "旅行", "愛情", "經典", "生活風格"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2079.jpg"
+  },
+  {
+    "book_id": "bk_2080",
+    "title": "快時尚的代價",
+    "author": "安德魯·摩根",
+    "description": "我們身上廉價又時髦的衣服，背後隱藏著什麼樣的真相？本書揭示了快時尚產業對環境的巨大破壞，以及對開發中國家勞工的殘酷剝削。引導消費者反思自己的購物行為，倡導永續時尚。",
+    "tags": ["社會議題", "環保", "時尚", "全球化", "紀錄片"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2080.jpg"
+  },
+  {
+    "book_id": "bk_2081",
+    "title": "愛在瘟疫蔓延時",
+    "author": "加布列·賈西亞·馬奎斯",
+    "description": "一部跨越半個世紀的愛情史詩。佛倫提諾在年輕時被費米娜拒絕後，發誓要等她一輩子。在接下來的五十一年九個月又四天裡，他經歷了無數風流韻事，卻始終守候著最初的愛戀，直到兩人白髮蒼蒼時才終成眷屬。",
+    "tags": ["小說", "經典文學", "愛情", "魔幻寫實", "人生"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2081.jpg"
+  },
+  {
+    "book_id": "bk_2082",
+    "title": "拖延心理學",
+    "author": "珍·博克",
+    "description": "為什麼我們總是「等一下再做」？本書從心理學角度，深入分析了拖延背後的深層原因，如對失敗的恐懼、對完美的追求等，並提供了克服拖延的具體策略與練習。",
+    "tags": ["心理學", "拖延", "自我成長", "習慣", "效率"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2082.jpg"
+  },
+  {
+    "book_id": "bk_2083",
+    "title": "舌尖上的中國：美食與文化之旅",
+    "author": "央視紀錄片團隊",
+    "description": "同名紀錄片的官方書籍。本書跟隨鏡頭，走遍中國大江南北，探尋各地最具特色的食材與烹飪技藝。不僅是美食的呈現，更是對中華飲食文化、家庭傳承與鄉土情感的深刻禮讚。",
+    "tags": ["美食", "飲食文化", "中國", "紀錄片", "旅遊"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2083.jpg"
+  },
+  {
+    "book_id": "bk_2084",
+    "title": "房間裡的大象：生活中的沉默與否認",
+    "author": "伊維塔·澤魯巴維爾",
+    "description": "「房間裡的大象」比喻那些我們心知肚明，卻假裝看不見的集體禁忌或秘密。社會學家探討了這種「合謀的沉默」是如何形成與運作的，以及它對家庭、組織與社會的深遠影響。",
+    "tags": ["社會學", "心理學", "溝通", "人際關係", "文化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2084.jpg"
+  },
+  {
+    "book_id": "bk_2085",
+    "title": "挪威的森林",
+    "author": "村上春樹",
+    "description": "一部帶有濃烈青春感傷的愛情小說。主角渡邊徹在高中好友自殺後，與其女友直子、以及另一位活潑的女孩綠，展開了複雜的情感糾葛。故事探討了愛、死亡與成長的主題，是村上春樹最暢銷的作品。",
+    "tags": ["小說", "日本文學", "村上春樹", "愛情", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2085.jpg"
+  },
+  {
+    "book_id": "bk_2086",
+    "title": "黑天鵝效應",
+    "author": "納西姆·尼可拉斯·塔雷伯",
+    "description": "「黑天鵝」是指那些極度稀有、衝擊力巨大，但在事後卻被認為是可解釋的事件。本書探討了在金融、科技等領域，我們如何低估了隨機性與未知，並提出在不確定的世界中保持強韌性的策略。",
+    "tags": ["金融", "哲學", "風險管理", "統計學", "商業"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2086.jpg"
+  },
+  {
+    "book_id": "bk_2087",
+    "title": "深夜的食堂",
+    "author": "安倍夜郎",
+    "description": "在都市的喧囂中，有一家只在午夜營業的食堂。每一道菜的背後，都藏著一個動人的故事。這是一本用美食療癒人心的溫暖漫畫，獻給所有在生活中努力的你。",
+    "tags": ["漫畫", "美食", "療癒", "人生故事", "日本文化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2087.jpg"
+  },
+  {
+    "book_id": "bk_2088",
+    "title": "奧斯曼帝國六百年",
+    "author": "派崔克·貝爾福",
+    "description": "本書詳盡敘述了這個橫跨歐亞非三大洲的龐大帝國，從崛起、輝煌到衰落的完整歷史。深入分析了其獨特的政治制度、軍事力量、宗教政策，以及它如何形塑了現代中東與巴爾幹的格局。",
+    "tags": ["歷史", "世界史", "土耳其", "伊斯蘭", "帝國"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2088.jpg"
+  },
+  {
+    "book_id": "bk_2089",
+    "title": "孩子，你慢慢來",
+    "author": "龍應台",
+    "description": "一位母親陪伴孩子成長的溫柔札記。龍應台以細膩的筆觸，記錄下兒子安安從出生到上學的點點滴滴。書中充滿了對生命初始的驚喜與讚嘆，以及為人母的喜悅與思索。",
+    "tags": ["散文", "親子教養", "家庭關係", "成長", "文學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2089.jpg"
+  },
+  {
+    "book_id": "bk_2090",
+    "title": "怦然心動的人生整理魔法",
+    "author": "近藤麻理惠",
+    "description": "整理教主麻理惠的成名作。她提出的「怦然心動整理法」，核心是只留下讓自己心動的物品。本書提供了從衣物、書籍到紀念品的完整整理流程，幫助你告別混亂，迎向清爽的人生。",
+    "tags": ["生活風格", "整理術", "極簡主義", "居家", "自我成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2090.jpg"
+  },
+  {
+    "book_id": "bk_2091",
+    "title": "咆哮山莊",
+    "author": "艾蜜莉·勃朗特",
+    "description": "一部充滿狂野、陰鬱與宿命色彩的愛情悲劇。孤兒希斯克里夫與山莊小姐凱薩琳之間毀滅性的愛情，以及他對兩代人瘋狂的報復。其獨特的哥德式風格和對人性黑暗面的深刻描寫，使其成為英國文學史上的奇書。",
+    "tags": ["經典文學", "小說", "愛情", "哥德", "英國文學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2091.jpg"
+  },
+  {
+    "book_id": "bk_2092",
+    "title": "哲學的慰藉",
+    "author": "阿蘭·德波頓",
+    "description": "當我們不受歡迎、缺錢、失戀或焦慮時，哲學能提供什麼幫助？本書作者從蘇格拉底、伊比鳩魯、尼采等六位哲學家身上，為現代人的各種煩惱尋找慰藉與解答，讓哲學變得親切又實用。",
+    "tags": ["哲學", "心理勵志", "人生", "散文", "科普"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2092.jpg"
+  },
+  {
+    "book_id": "bk_2093",
+    "title": "魔山",
+    "author": "托馬斯·曼",
+    "description": "德國小說家托馬斯·曼的代表作。年輕的主角漢斯來到阿爾卑斯山上的肺結核療養院探望表兄，卻一待就是七年。這座與世隔絕的療養院成為一戰前歐洲社會的精神縮影，小說對時間、疾病、死亡和人性進行了深刻的哲學探討。",
+    "tags": ["經典文學", "小說", "哲學", "德國", "歷史"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2093.jpg"
+  },
+  {
+    "book_id": "bk_2094",
+    "title": "台灣昆蟲記",
+    "author": "昆蟲學家協會",
+    "description": "一本專為台灣讀者編寫的昆蟲圖鑑與生態散文集。書中介紹了上百種台灣常見與特有的昆蟲，不僅有精美的生態攝影，更以生動的文字講述了牠們奇特的生命週期與行為，引導讀者親近自然。",
+    "tags": ["自然", "科普", "昆蟲", "台灣", "生態"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2094.jpg"
+  },
+  {
+    "book_id": "bk_2095",
+    "title": "如何改變一個人：華頓商學院的說服心理學",
+    "author": "喬納·伯格",
+    "description": "傳統的說服方式往往會引發反彈。本書作者，華頓商學院教授，提出了一套全新的「催化劑」框架，透過降低心理抗拒、減少不確定性等方法，巧妙地引導他人改變想法和行為。",
+    "tags": ["心理學", "說服", "商業", "溝通", "行銷"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2095.jpg"
+  },
+  {
+    "book_id": "bk_2096",
+    "title": "一日一花：跟著季節，走進花藝師的每日生活",
+    "author": "川瀨敏郎",
+    "description": "日本花道大師川瀨敏郎的攝影作品集。366天，每天一件插花作品，搭配古老的器皿與當季的植物，呈現了日本「投入花」的自然美學。書中文字簡潔，充滿禪意，是一場靜心的視覺饗宴。",
+    "tags": ["藝術", "花藝", "攝影", "日本文化", "美學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2096.jpg"
+  },
+  {
+    "book_id": "bk_2097",
+    "title": "為愛朗讀",
+    "author": "本哈德·施林克",
+    "description": "十五歲的少年麥克與一位神秘的中年女子漢娜展開了一段秘密戀情，他為她朗讀文學經典。多年後，成為法學學生的麥克，卻在納粹戰犯的審判席上，意外地與漢娜重逢。一部探討愛、罪與歷史記憶的德國小說。",
+    "tags": ["小說", "愛情", "歷史", "德國", "法律"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2097.jpg"
+  },
+  {
+    "book_id": "bk_2098",
+    "title": "斷食的藝術：一份關於限制卡路里與長壽的報告",
+    "author": "麥可·莫斯利",
+    "description": "BBC醫學記者親身實踐並報導的科學斷食法。本書介紹了「5:2輕斷食」的概念（一週兩天輕食），並從科學角度解釋了其對減重、健康和延壽的潛在益處，提供了易於執行的飲食計畫。",
+    "tags": ["健康", "斷食", "減重", "科普", "營養學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2098.jpg"
+  },
+  {
+    "book_id": "bk_2099",
+    "title": "地下鐵",
+    "author": "幾米",
+    "description": "一位盲人女孩在生日當天，決定獨自搭乘地下鐵去探險。在黑暗的旅程中，她憑藉著想像力，經歷了一場又一場繽紛奇幻的冒險。幾米的經典繪本，用詩意的圖像與文字，給予讀者溫暖與勇氣。",
+    "tags": ["繪本", "插畫", "療癒", "奇幻", "台灣"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2099.jpg"
+  },
+  {
+    "book_id": "bk_2100",
+    "title": "伊斯坦堡：一座城市的記憶",
+    "author": "奧罕·帕慕克",
+    "description": "諾貝爾文學獎得主帕慕克寫給故鄉的深情自傳與城市傳記。他將個人的成長記憶與伊斯坦堡的歷史、文化、建築交織在一起，描繪了一座在東西方文明交會處，充滿憂傷與魅力的城市。",
+    "tags": ["散文", "傳記", "土耳其", "歷史", "旅行"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2100.jpg"
+  },
+  {
+    "book_id": "bk_2101",
+    "title": "卡拉馬助夫兄弟們",
+    "author": "費奧多爾·杜斯妥也夫斯基",
+    "description": "俄國文學巨擘的最後一部長篇小說。故事圍繞著一樁弒父案展開，透過縱慾的老父與三個性格迥異的兒子，深刻探討了關於上帝、自由意志、理性與信仰、罪與罰的終極哲學問題。",
+    "tags": ["經典文學", "小說", "哲學", "俄國", "宗教"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2101.jpg"
+  },
+  {
+    "book_id": "bk_2102",
+    "title": "富爸爸，窮爸爸",
+    "author": "羅伯特·清崎",
+    "description": "顛覆傳統金錢觀的理財經典。作者透過自己「富爸爸」（企業家）與「窮爸爸」（高學歷公務員）的對比，闡述了資產與負債的區別，強調了財務智商和被動收入的重要性。",
+    "tags": ["理財", "投資", "勵志", "商業", "財商"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2102.jpg"
+  },
+  {
+    "book_id": "bk_2103",
+    "title": "寂靜的春天",
+    "author": "瑞秋·卡森",
+    "description": "一本引發全球環保運動的里程碑式著作。本書在1962年首次揭示了殺蟲劑（如DDT）對生態環境和人類健康的巨大危害，喚醒了公眾的環保意識，並直接促成了美國環保署的成立。",
+    "tags": ["環保", "科普", "自然", "社會議題", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2103.jpg"
+  },
+  {
+    "book_id": "bk_2104",
+    "title": "一個人的朝聖",
+    "author": "蕾秋·喬伊斯",
+    "description": "一位剛退休的男子哈洛，突然收到二十年未見老友的告別信。他臨時起意，決定從英國最南端徒步到最北端去探望她，相信只要他還在走，朋友就會活下去。一場關於救贖、信念與和解的旅程。",
+    "tags": ["小說", "療癒", "旅行", "人生", "英國文學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2104.jpg"
+  },
+  {
+    "book_id": "bk_2105",
+    "title": "惡血：矽谷獨角獸的醫療騙局！",
+    "author": "約翰·凱瑞魯",
+    "description": "《華爾街日報》記者揭露血液檢測公司Theranos驚天騙局的調查報導。創辦人伊莉莎白·霍姆斯被譽為「女版賈伯斯」，卻用謊言和恐嚇建立起一個百億美元的商業帝國，最終轟然倒塌。",
+    "tags": ["商業", "傳記", "科技", "矽谷", "新聞報導"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2105.jpg"
+  },
+  {
+    "book_id": "bk_2106",
+    "title": "台灣賞蝶地圖",
+    "author": "蝴蝶保育學會",
+    "description": "台灣素有「蝴蝶王國」的美譽。本書詳細介紹了全台灣從北到南數十個最佳的賞蝶地點，以及各季節可以看到的代表性蝶種。書中附有清晰的蝴蝶照片與辨識技巧，是戶外生態觀察的最佳指南。",
+    "tags": ["自然", "生態", "台灣", "旅遊", "圖鑑"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2106.jpg"
+  },
+  {
+    "book_id": "bk_2107",
+    "title": "簡愛",
+    "author": "夏綠蒂·勃朗特",
+    "description": "一位出身低微、相貌平凡的孤女簡·愛，在歷經艱辛後，成為桑費爾德莊園的家庭教師，並與男主人羅徹斯特先生陷入愛河。她追求獨立人格與平等愛情的精神，使其成為女性文學的經典。",
+    "tags": ["經典文學", "小說", "愛情", "女性主義", "英國文學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2107.jpg"
+  },
+  {
+    "book_id": "bk_2108",
+    "title": "初心：米其林星級主廚的料理哲學",
+    "author": "江振誠",
+    "description": "台灣首位米其林星級主廚江振誠的自傳。書中分享了他從台灣出發，前往法國學習廚藝，再到新加坡開設米其林二星餐廳的奮鬥歷程。同時闡述了他獨特的「八角哲學」料理理念。",
+    "tags": ["傳記", "美食", "勵志", "台灣", "專業技術"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2108.jpg"
+  },
+  {
+    "book_id": "bk_2109",
+    "title": "圍城",
+    "author": "錢鍾書",
+    "description": "「城外的人想衝進去，城裡的人想逃出來。」這句名言精準地概括了本書的主題。小說描寫了主角方鴻漸的留學、求職與婚戀經歷，以幽默諷刺的筆法，揭示了現代知識分子的困境與人生的無奈。",
+    "tags": ["經典文學", "小說", "中國", "諷刺", "人生"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2109.jpg"
+  },
+  {
+    "book_id": "bk_2110",
+    "title": "好關係，是麻煩出來的",
+    "author": "熊仁謙",
+    "description": "本書以佛法哲學為基礎，結合現代心理學，提出一種新穎的人際關係觀點。作者認為，適度的「互相麻煩」是建立深度連結的關鍵。書中提供了許多實用的溝通與互動技巧。",
+    "tags": ["人際關係", "心理學", "溝通", "哲學", "自我成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2110.jpg"
+  },
+  {
+    "book_id": "bk_2111",
+    "title": "辛德勒的名單",
+    "author": "托馬斯·肯尼利",
+    "description": "根據真人真事改編。二戰期間，德國商人奧斯卡·辛德勒利用其工廠，保護了超過一千名猶太人免於被送往集中營。小說深刻描繪了在極端邪惡的環境下，人性的複雜與光輝。",
+    "tags": ["小說", "歷史", "戰爭", "猶太人", "傳記"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2111.jpg"
+  },
+  {
+    "book_id": "bk_2112",
+    "title": "超速學習：我這樣做，一個月學會素描，一年學會四種語言",
+    "author": "史考特·楊",
+    "description": "作者親身實踐了在一年內完成MIT四年資訊科學課程的挑戰。本書總結了他的「超速學習」策略，包括設定目標、專心致志、直接實踐、回饋與保留等九大原則，幫助讀者高效掌握任何技能。",
+    "tags": ["學習方法", "自我成長", "效率", "教育", "技巧"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2112.jpg"
+  },
+  {
+    "book_id": "bk_2113",
+    "title": "台北人",
+    "author": "白先勇",
+    "description": "由十四個短篇小說組成，描寫了一群1949年後從中國大陸來到台灣的外省人。他們曾是將軍、貴婦、名伶，如今卻在台北這個新環境中，掙扎於昔日的輝煌回憶與今日的落寞現實之間。",
+    "tags": ["小說", "台灣文學", "歷史", "經典", "短篇小說"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2113.jpg"
+  },
+  {
+    "book_id": "bk_2114",
+    "title": "睡眠革命：如何睡得少、睡得好",
+    "author": "尼克·力特赫爾斯",
+    "description": "英國頂尖的睡眠教練，服務過多位職業運動員。他提出的R90睡眠法，強調以90分鐘為一個睡眠週期來規劃睡眠，並重視睡眠前、後的準備，幫助你用更少的時間獲得更高品質的休息。",
+    "tags": ["健康", "睡眠", "生活風格", "運動", "效率"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2114.jpg"
+  },
+  {
+    "book_id": "bk_2115",
+    "title": "百年法醫：解開12個世紀奇案的關鍵",
+    "author": "道格拉斯·史密斯",
+    "description": "本書回顧了法醫學的發展史，從古代的驗屍到現代的DNA鑑定。透過12個真實的歷史奇案，展現了法醫科學家如何利用不斷進步的技術，讓屍體說話，揭開罪案的真相。",
+    "tags": ["科普", "歷史", "犯罪", "法醫", "科學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2115.jpg"
+  },
+  {
+    "book_id": "bk_2116",
+    "title": "傲慢與偏見",
+    "author": "珍·奧斯汀",
+    "description": "英國鄉紳貝內特家的五個女兒，面臨著尋找理想婚姻的壓力。聰明而有主見的二女兒伊莉莎白，與富有卻傲慢的達西先生，因彼此的傲慢與偏見而產生誤會，展開了一場經典的愛情拉鋸戰。",
+    "tags": ["經典文學", "小說", "愛情", "英國文學", "社會"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2116.jpg"
+  },
+  {
+    "book_id": "bk_2117",
+    "title": "五秒法則：擊退猶豫，立即行動，創造你想要的人生",
+    "author": "梅爾·羅賓斯",
+    "description": "一個簡單卻強大的心理技巧。當你想做某件事卻感到猶豫時，立刻在心中倒數「5-4-3-2-1」，然後就去做。這個方法能幫助你繞過大腦的藉口，克服拖延與恐懼，採取行動。",
+    "tags": ["勵志", "自我成長", "習慣", "心理學", "行動力"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2117.jpg"
+  },
+  {
+    "book_id": "bk_2118",
+    "title": "野火集",
+    "author": "龍應台",
+    "description": "1985年出版時，在台灣社會投下震撼彈的雜文集。龍應台以犀利的筆鋒，批判當時台灣社會的種種亂象，如環境污染、教育僵化、公民素養等，喚醒了一代人的公民意識。",
+    "tags": ["散文", "社會評論", "台灣", "政治", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2118.jpg"
+  },
+  {
+    "book_id": "bk_2119",
+    "title": "星際過客：從起源到未来的宇宙遊覽指南",
+    "author": "卡爾·薩根",
+    "description": "天文學家卡爾·薩根的經典科普著作。他以詩意的語言，帶領讀者進行一場穿越時空的宇宙之旅，從大爆炸、恆星的演化到外星生命的可能性，傳達了科學的壯麗與人類的渺小。",
+    "tags": ["科普", "天文", "宇宙", "科學", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2119.jpg"
+  },
+  {
+    "book_id": "bk_2120",
+    "title": "Me Before You (遇見你之前)",
+    "author": "喬喬·莫伊絲",
+    "description": "來自小鎮的女孩露伊莎，成為了一位因意外而四肢癱瘓的年輕銀行家威爾的看護。兩個原本不會有交集的人，走進了彼此的生命，展開了一段笑中帶淚、改變彼此一生的深刻愛情故事。",
+    "tags": ["小說", "愛情", "療癒", "英國文學", "人生"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2120.jpg"
+  },
+  {
+    "book_id": "bk_2121",
+    "title": "藝術的故事",
+    "author": "E.H.岡布里希",
+    "description": "全球最暢銷的藝術史入門書。作者以清晰、流暢的敘事，講述了從洞穴壁畫到現代實驗藝術的完整發展脈絡。書中沒有晦澀的術語，旨在幫助讀者建立欣賞藝術的眼光與信心。",
+    "tags": ["藝術史", "藝術", "科普", "經典", "美學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2121.jpg"
+  },
+  {
+    "book_id": "bk_2122",
+    "title": "老派少女的購物路線",
+    "author": "洪愛珠",
+    "description": "一部關於台北飲食與家族記憶的溫暖散文集。作者跟隨著母親的腳步，穿梭在台北的老市場、老派的糕餅店與食材行之間，透過食物，追憶了家族的歷史與消逝的舊日時光。",
+    "tags": ["散文", "美食", "台灣", "家庭", "記憶"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2122.jpg"
+  },
+  {
+    "book_id": "bk_2123",
+    "title": "反智：不願說理的人是偏執，不會說理的人是愚蠢，不敢說理的人是奴隸",
+    "author": "立花隆",
+    "description": "在資訊爆炸的網路時代，為何反智主義卻日益盛行？日本知識巨匠立花隆剖析了反智主義的歷史根源與社會心理，並強調了理性思辨與知識素養在現代民主社會中的重要性。",
+    "tags": ["社會學", "哲學", "思辨", "媒體素養", "趨勢"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2123.jpg"
+  },
+  {
+    "book_id": "bk_2124",
+    "title": "生命不可承受之輕",
+    "author": "米蘭·昆德拉",
+    "description": "一部充滿哲學思辨的愛情小說。以1968年「布拉格之春」為背景，透過四位主角的愛慾糾葛，探討了「永恆回歸」與「輕與重」的對立，以及生命中偶然與必然的辯證關係。",
+    "tags": ["小說", "經典文學", "哲學", "愛情", "歷史"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2124.jpg"
+  },
+  {
+    "book_id": "bk_2125",
+    "title": "不只是寓言：莊子聊齋陪你談人生",
+    "author": "蔡璧名",
+    "description": "台大中文系教授蔡璧名，以獨特的視角，將《莊子》的哲學智慧與《聊齋》的奇幻故事相結合。透過一個個生動的寓言，引導讀者思考愛情、職場、生死等現代人的人生課題。",
+    "tags": ["哲學", "文學", "中國古典", "人生", "勵志"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2125.jpg"
+  },
+  {
+    "book_id": "bk_2126",
+    "title": "飢餓遊戲",
+    "author": "蘇珊·柯林斯",
+    "description": "在反烏托邦的施惠國，每年都會舉辦「飢餓遊戲」，從12個行政區中各抽出一對少男少女，投入競技場進行生死搏鬥，並全國直播。女主角凱妮絲為了保護妹妹，自願代替她參賽。",
+    "tags": ["小說", "反烏托邦", "青少年", "冒險", "科幻"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2126.jpg"
+  },
+  {
+    "book_id": "bk_2127",
+    "title": "從A到A+：企業從優秀到卓越的奧秘",
+    "author": "吉姆·柯林斯",
+    "description": "是什麼讓優秀的公司躍升為卓越的公司？本書作者及其研究團隊，花了五年時間，分析了數十家成功企業，歸納出從優秀到卓越的關鍵，包括「第五級領導」、「刺蝟原則」等重要概念。",
+    "tags": ["企業管理", "商業", "領導力", "策略", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2127.jpg"
+  },
+  {
+    "book_id": "bk_2128",
+    "title": "海奧華預言：一本改變了千萬人生命觀的書",
+    "author": "米歇·戴斯馬克特",
+    "description": "作者聲稱自己被外星人帶往名為「海奧華」的金色星球的親身經歷。書中描述了地球的史前文明、靈魂的輪迴、宇宙的法則等議題，對物質主義的現代社會提出了深刻的批判與警示。",
+    "tags": ["心靈", "奇幻", "外星人", "哲學", "科幻"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2128.jpg"
+  },
+  {
+    "book_id": "bk_2129",
+    "title": "最後14堂星期二的課",
+    "author": "米奇·艾爾邦",
+    "description": "作者米奇在畢業十六年後，偶然得知大學時的社會學教授墨利罹患了「漸凍人症」。於是在接下來的十四個星期二，他每週都去探望老師，上了一門關於生命、死亡、愛與寬恕的最後課程。",
+    "tags": ["傳記", "人生", "哲學", "死亡", "療癒"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2129.jpg"
+  },
+  {
+    "book_id": "bk_2130",
+    "title": "格雷的五十道陰影",
+    "author": "E·L·詹姆絲",
+    "description": "一位單純的女大生安娜，因為校刊採訪而結識了年輕帥氣的企業鉅子格雷。兩人之間迅速擦出火花，但安娜很快發現，格雷有著不為人知的特殊性愛偏好，引領她進入一個充滿探索與臣服的世界。",
+    "tags": ["小說", "羅曼史", "愛情", "都會", "暢銷書"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2130.jpg"
+  },
+  {
+    "book_id": "bk_2131",
+    "title": "達文西密碼",
+    "author": "丹·布朗",
+    "description": "哈佛大學符號學家羅柏·蘭登，在羅浮宮館長離奇死亡後，被捲入一場橫跨歐洲的解謎之旅。他必須解開隱藏在達文西畫作中的一連串密碼，才能揭開一個震驚西方世界的古老秘密。",
+    "tags": ["小說", "懸疑", "推理", "藝術史", "驚悚"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2131.jpg"
+  },
+  {
+    "book_id": "bk_2132",
+    "title": "父酬者：姓氏、階級與社會流動",
+    "author": "葛瑞里·克拉克",
+    "description": "社會階級真的可以流動嗎？本書作者分析了橫跨八個世紀、多個國家的姓氏數據，得出了令人震驚的結論：社會流動的速度遠比我們想像的要慢，一個人的社會地位在很大程度上仍受其祖先的影響。",
+    "tags": ["社會學", "經濟", "歷史", "階級", "科普"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2132.jpg"
+  },
+  {
+    "book_id": "bk_2133",
+    "title": "憤怒的葡萄",
+    "author": "約翰·史坦貝克",
+    "description": "美國文學的經典之作。描寫了1930年代經濟大蕭條時期，一個奧克拉荷馬州的農民家庭，因乾旱與債務被迫遷徙，駕著破舊的卡車，前往傳說中的應許之地加州尋找出路，卻一路面臨剝削與困境。",
+    "tags": ["經典文學", "小說", "美國文學", "歷史", "社會"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2133.jpg"
+  },
+  {
+    "book_id": "bk_2134",
+    "title": "別讓我走",
+    "author": "石黑一雄",
+    "description": "在一所與世隔絕的寄宿學校裡，凱西、露絲和湯米度過了美好的童年。但他們很快發現，自己的生命有著一個特殊而殘酷的目的。一部充滿哀傷與詩意，探討人性、記憶與愛的科幻小說。",
+    "tags": ["小說", "科幻", "愛情", "人性", "英國文學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2134.jpg"
+  },
+  {
+    "book_id": "bk_2135",
+    "title": "你的孩子不是你的孩子",
+    "author": "吳曉樂",
+    "description": "九個真實的家庭故事，來自一位家庭教師的親身見聞。本書深刻揭示了在「為你好」的口號下，台灣家庭中扭曲的親子關係、升學主義的壓力，以及孩子們為此付出的巨大代價。",
+    "tags": ["社會議題", "親子教養", "台灣", "教育", "家庭關係"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2135.jpg"
+  },
+  {
+    "book_id": "bk_2136",
+    "title": "控制：從心理學角度看情感操控",
+    "author": "派翠西亞·伊凡斯",
+    "description": "本書專門探討了情感虐待中的一種隱蔽形式——「煤氣燈效應」，即操控者透過扭曲事實、否認現實，讓受害者懷疑自己的記憶和理智。書中提供了辨識與應對這種操控的方法。",
+    "tags": ["心理學", "人際關係", "情緒管理", "情感虐待", "兩性"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2136.jpg"
+  },
+  {
+    "book_id": "bk_2137",
+    "title": "東方快車謀殺案",
+    "author": "阿嘉莎·克莉絲蒂",
+    "description": "偵探赫丘里·白羅搭乘的東方快車，因大雪而停駛在南斯拉夫。車廂內發生了一樁離奇的謀殺案，一位富商身中十二刀斃命。在封閉的空間裡，每位乘客都有嫌疑，白羅面臨著最棘手的挑戰。",
+    "tags": ["小說", "推理", "懸疑", "經典", "英國文學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2137.jpg"
+  },
+  {
+    "book_id": "bk_2138",
+    "title": "活出意義來",
+    "author": "維克多·弗蘭克",
+    "description": "意義治療法創始人弗蘭克的親身經歷。身為集中營倖存者的他，在極端的苦難中，體悟到人即使在無法選擇的處境下，依然擁有選擇自己態度的自由，並可以從中找到生命的意義。",
+    "tags": ["心理學", "傳記", "哲學", "勵志", "人生"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2138.jpg"
+  },
+  {
+    "book_id": "bk_2139",
+    "title": "異數：超凡與平凡的界線在哪裡？",
+    "author": "麥爾坎·葛拉威爾",
+    "description": "成功真的只靠個人才華和努力嗎？本書探討了那些被我們忽略的成功要素，如文化背景、機遇和「一萬小時定律」。作者認為，所謂的「異數」，往往是環境與個人因素交互作用的結果。",
+    "tags": ["社會學", "心理學", "成功學", "科普", "商業"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2139.jpg"
+  },
+  {
+    "book_id": "bk_2140",
+    "title": "如果這是一個人",
+    "author": "普利摩·李維",
+    "description": "義大利猶太裔作家、化學家李維的奧斯威辛集中營回憶錄。他以極度冷靜、客觀的筆觸，記錄了集中營中非人化的生活，以及人在極端環境下為了生存所展現的各種樣貌。是理解大屠殺的必讀之作。",
+    "tags": ["傳記", "歷史", "戰爭", "猶太人", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2140.jpg"
+  },
+  {
+    "book_id": "bk_2141",
+    "title": "牧羊少年奇幻之旅",
+    "author": "保羅·科爾賀",
+    "description": "一位西班牙的牧羊少年，為了追尋夢中金字塔下的寶藏，展開了一場穿越沙漠的奇幻旅程。在這個過程中，他學會了傾聽自己的心，理解了宇宙的語言，並領悟到「當你真心渴望某樣東西時，整個宇宙都會聯合起來幫助你完成」。",
+    "tags": ["小說", "奇幻", "勵志", "哲學", "心靈"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2141.jpg"
+  },
+  {
+    "book_id": "bk_2142",
+    "title": "在咖啡冷掉之前",
+    "author": "川口俊和",
+    "description": "在某個小鎮，有家都市傳說中的咖啡店。店裡某個特別的座位，能讓人回到過去，但必須在咖啡冷掉之前回來。四位懷著不同遺憾的客人，來到這裡，希望能改變些什麼。一部溫暖又催淚的奇幻小說。",
+    "tags": ["小說", "奇幻", "療癒", "日本文學", "人生"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2142.jpg"
+  },
+  {
+    "book_id": "bk_2143",
+    "title": "零規則：高人才密度下的全新管理模式",
+    "author": "里德·海斯汀",
+    "description": "Netflix創辦人親自揭示其獨特的企業文化。核心在於打造「高人才密度」，並在此基礎上，逐步取消休假、差旅費用等規定，給予員工最大的自由與責任，從而激發出驚人的創新力。",
+    "tags": ["企業管理", "Netflix", "商業", "領導力", "人力資源"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2143.jpg"
+  },
+  {
+    "book_id": "bk_2144",
+    "title": "深夜加油站遇見蘇格拉底",
+    "author": "丹·米爾曼",
+    "description": "一位天賦異稟的體操選手，在深夜的加油站，遇到了一位充滿智慧的神秘老人「蘇格拉底」。老人透過一連串的訓練與對話，引導他打破自我設限，走上身心靈合一的戰士之道。一部半自傳體的心靈成長小說。",
+    "tags": ["小說", "心靈", "勵志", "哲學", "自我成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2144.jpg"
+  },
+  {
+    "book_id": "bk_2145",
+    "title": "菊花與劍：日本文化的雙重性",
+    "author": "魯思·潘乃德",
+    "description": "美國人類學家在二戰期間，為了解敵人日本而寫的研究報告。書中精準地分析了日本文化中看似矛盾的雙重性格，如愛美又黷武、尚禮又好鬥，並探討了其背後的「恥感文化」根源。",
+    "tags": ["人類學", "日本文化", "社會學", "經典", "歷史"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2145.jpg"
+  },
+  {
+    "book_id": "bk_2146",
+    "title": "麥田捕手",
+    "author": "J.D.沙林傑",
+    "description": "被學校開除的16歲少年霍爾頓，在紐約遊蕩了兩天兩夜。他以憤世嫉俗的口吻，尖銳地批判了成人世界的虛偽與不堪，同時也流露出對純真與美好的極度渴望。一部充滿爭議的青春經典。",
+    "tags": ["經典文學", "小說", "美國文學", "青春", "成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2146.jpg"
+  },
+  {
+    "book_id": "bk_2147",
+    "title": "也許你該找人聊聊：一個心理師與她的心理師",
+    "author": "蘿蕊·葛利布",
+    "description": "一位幹練的心理師，在遭遇人生危機後，自己也成為了心理師的病人。本書以雙重視角，穿梭於她自己與她的病人們的故事之間，真誠地揭示了心理治療的過程，以及我們共通的人性脆弱。",
+    "tags": ["心理學", "傳記", "療癒", "自我探索", "人生"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2147.jpg"
+  },
+  {
+    "book_id": "bk_2148",
+    "title": "三體",
+    "author": "劉慈欣",
+    "description": "中國科幻文學的里程碑之作。地球文明向宇宙發出的第一聲啼鳴，徹底改變了人類的命運。一個飽受苦難而對人類絕望的物理學家，與瀕臨毀滅的三體文明，進行了一場跨越時空的交流，引發了兩個文明的殊死搏鬥。",
+    "tags": ["小說", "科幻", "中國", "史詩", "物理學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2148.jpg"
+  },
+  {
+    "book_id": "bk_2149",
+    "title": "人生複本",
+    "author": "布萊克·克勞奇",
+    "description": "物理學家傑森，在一個晚上被綁架，醒來後發現自己的人生被徹底置換：妻子不是他的妻子，兒子從未出生，而他自己竟成了一位偉大的科學家。為了找回原本的家庭，他必須在無數個平行宇宙中穿梭冒險。一部節奏緊湊的科幻驚悚小說。",
+    "tags": ["小說", "科幻", "驚悚", "平行宇宙", "愛情"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2149.jpg"
+  },
+  {
+    "book_id": "bk_2150",
+    "title": "我，獨裁者",
+    "author": "奧古斯都·羅亞·巴斯托斯",
+    "description": "拉丁美洲「獨裁者小說」的代表作。以19世紀巴拉圭的終身獨裁者法蘭西亞為原型，透過獨裁者本人的獨白、秘書的紀錄與各種文件的交錯，構成了一幅關於權力、孤獨與歷史的迷宮。文字繁複，充滿挑戰性。",
+    "tags": ["小說", "經典文學", "拉丁美洲", "歷史", "政治"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2150.jpg"
+  },
+  {
+    "book_id": "bk_2151",
+    "title": "原則：生活與工作",
+    "author": "瑞·達利歐",
+    "description": "全球最大避險基金「橋水基金」創辦人的人生與管理哲學。他將自己多年來犯錯與反思後總結出的原則，整理成一套系統性的方法論，涵蓋了如何做出理性決策、建立精英領導的團隊等。",
+    "tags": ["商業", "管理", "投資", "勵志", "決策"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2151.jpg"
+  },
+  {
+    "book_id": "bk_2152",
+    "title": "火星任務",
+    "author": "安迪·威爾",
+    "description": "太空人馬克·瓦特尼在一次火星任務中，因意外而被隊友誤判死亡，獨自一人被遺留在火星上。他必須運用自己植物學家和工程師的知識，在極端惡劣的環境中，想辦法生存下去，並找到聯繫地球的方法。一部充滿科學細節與樂觀精神的硬科幻小說。",
+    "tags": ["小說", "科幻", "太空", "冒險", "科學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2152.jpg"
+  },
+  {
+    "book_id": "bk_2153",
+    "title": "可可·香奈兒的傳奇一生",
+    "author": "賈斯汀·皮卡迪",
+    "description": "本書深入探討了時尚女王香奈兒的複雜人生。從孤兒院的童年，到成為引領潮流的設計師，再到二戰期間的爭議行為。作者透過詳盡的資料，呈現了一個充滿矛盾、野心與創造力的真實女性形象。",
+    "tags": ["傳記", "時尚", "女性", "歷史", "法國"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2153.jpg"
+  },
+  {
+    "book_id": "bk_2154",
+    "title": "正常人",
+    "author": "莎莉·魯尼",
+    "description": "愛爾蘭千禧世代的愛情故事。來自不同階級的康奈爾和梅黎安，在高中與大學期間，展開了一段分分合合、充滿試探與誤解的戀情。小說以細膩的筆觸，精準捕捉了現代年輕人的親密關係與內心掙扎。",
+    "tags": ["小說", "愛情", "青春", "愛爾蘭", "現代文學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2154.jpg"
+  },
+  {
+    "book_id": "bk_2155",
+    "title": "居家全能清潔寶典",
+    "author": "家事女王",
+    "description": "一本解決所有居家清潔煩惱的實用指南。從廚房的陳年油垢、浴室的黴菌，到客廳的除塵技巧，本書提供了各種天然、省力又有效的清潔方法與配方，讓打掃變得輕鬆愉快。",
+    "tags": ["生活風格", "居家", "清潔", "技巧", "實用"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2155.jpg"
+  },
+  {
+    "book_id": "bk_2156",
+    "title": "伊甸園的龍：人類智力演化的推測",
+    "author": "卡爾·薩根",
+    "description": "普立茲獎獲獎作品。天文學家薩根跨足演化生物學與人類學，從宇宙大爆炸到人類文明，探討了人類智力的演化歷程。書中對大腦的結構、夢境、神話等提出了許多富有啟發性的見解。",
+    "tags": ["科普", "演化論", "腦科學", "人類學", "哲學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2156.jpg"
+  },
+  {
+    "book_id": "bk_2157",
+    "title": "塵世樂園",
+    "author": "谷崎潤一郎",
+    "description": "日本唯美派文學大師谷崎潤一郎的長篇小說。故事描寫了一位性情乖張的富家子弟，如何將一位咖啡館女侍調教成他心目中完美的「惡女」拿俄米，最終卻反被她所控制的痴迷故事。",
+    "tags": ["小說", "經典文學", "日本文學", "愛情", "人性"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2157.jpg"
+  },
+  {
+    "book_id": "bk_2158",
+    "title": "矽谷為什麼：科技、創新與創業精神的文化根源",
+    "author": "皮耶羅·斯加魯菲",
+    "description": "本書作者為矽谷資深業內人士，他從歷史、文化與社會的角度，深入分析了矽谷之所以能成為全球創新中心的原因，包括反文化運動、風險投資生態、失敗寬容的文化等。",
+    "tags": ["商業", "科技", "矽谷", "創業", "文化"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2158.jpg"
+  },
+  {
+    "book_id": "bk_2159",
+    "title": "廚藝的科學：從牛排、麵包到醬汁，掌握完美烹飪的關鍵",
+    "author": "J. 肯吉·洛佩茲-阿爾特",
+    "description": "MIT畢業的科學家，用實驗精神來破解烹飪的秘密。本書透過數千小時的實驗，解釋了各種烹飪現象背後的科學原理，並提供了經過驗證的最佳食譜與技巧。是一本廚房裡的必備工具書。",
+    "tags": ["食譜", "科普", "烹飪", "美食", "技巧"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2159.jpg"
+  },
+  {
+    "book_id": "bk_2160",
+    "title": "使女的故事",
+    "author": "瑪格麗特·愛特伍",
+    "description": "在一個名為基列國的極權社會中，女性被剝奪了所有權利。因環境汙染導致生育率下降，少數仍有生育能力的女性被迫成為「使女」，作為統治階級的生育工具。主角奧芙弗雷，記錄了她在這個恐怖世界中的掙扎與記憶。",
+    "tags": ["小說", "反烏托邦", "女性主義", "科幻", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2160.jpg"
+  },
+  {
+    "book_id": "bk_2161",
+    "title": "金閣寺",
+    "author": "三島由紀夫",
+    "description": "改編自真實事件。一位對「美」有著極端執念的年輕僧人，無法忍受現實中金閣寺的美，最終縱火將其燒毀。小說深刻探討了美與惡、現實與理念之間的辯證關係，是三島由紀夫的代表作。",
+    "tags": ["小說", "經典文學", "日本文學", "哲學", "美學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2161.jpg"
+  },
+  {
+    "book_id": "bk_2162",
+    "title": "國家為什麼會失敗：權力、富裕與貧窮的根源",
+    "author": "戴倫·艾塞默魯",
+    "description": "地理、文化或無知，都不是國家貧富的根本原因。本書提出，關鍵在於政治與經濟制度。廣納型的制度能促進創新與繁榮，而榨取型的制度則會導致停滯與貧窮。",
+    "tags": ["政治學", "經濟", "社會學", "歷史", "科普"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2162.jpg"
+  },
+  {
+    "book_id": "bk_2163",
+    "title": "一個乾淨明亮的地方：海明威短篇傑作選",
+    "author": "厄尼斯特·海明威",
+    "description": "收錄了海明威最具代表性的短篇小說，如〈印第安營地〉、〈白象似的群山〉等。其著名的「冰山理論」寫作風格，以極度精煉、客觀的文字，呈現了表象之下的巨大情感張力，展現了戰爭、愛情與失落的主題。",
+    "tags": ["短篇小說", "經典文學", "美國文學", "現代主義", "寫作"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2163.jpg"
+  },
+  {
+    "book_id": "bk_2164",
+    "title": "鹽的代價",
+    "author": "派翠西亞·海史密斯",
+    "description": "1950年代的紐約，年輕的舞台設計師特芮絲，在百貨公司與一位優雅的已婚貴婦卡蘿相遇，兩人迅速墜入情網。在那個同性戀不被容許的年代，她們的愛情面臨著巨大的社會壓力與挑戰。電影《因為愛你》原著小說。",
+    "tags": ["小說", "愛情", "LGBTQ+", "經典文學", "美國文學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2164.jpg"
+  },
+  {
+    "book_id": "bk_2165",
+    "title": "親密關係：通往靈魂的橋樑",
+    "author": "克里斯多福·孟",
+    "description": "本書提出，親密關係是我們療癒童年創傷、找回完整自我的最佳途徑。伴侶之間的衝突，往往是內在陰影的投射。書中提供了許多練習，幫助讀者穿越關係中的痛苦，走向真正的親密。",
+    "tags": ["心理學", "兩性", "親密關係", "自我成長", "心靈"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2165.jpg"
+  },
+  {
+    "book_id": "bk_2166",
+    "title": "傷心咖啡店之歌",
+    "author": "朱少麟",
+    "description": "主角馬蒂，在對生命感到絕望時，走進了一家名為「傷心咖啡店」的地方。在這裡，她遇到了一群奇特的邊緣人，尤其是謎樣的店主海安。這是一部探討自由、生命意義與自我追尋的台灣當代經典小說。",
+    "tags": ["小說", "台灣文學", "哲學", "人生", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2166.jpg"
+  },
+  {
+    "book_id": "bk_2167",
+    "title": "情緒之書：156種人類情感的詞彙與故事",
+    "author": "蒂芬妮·瓦特·史密斯",
+    "description": "除了喜怒哀樂，你還能說出多少種情緒？本書像一本情緒的字典，收錄了從古至今、世界各地的156個情緒詞彙，如德語的「森林孤寂感」、日語的「空腹時的幸福感」，帶你探索人類情感的豐富光譜。",
+    "tags": ["心理學", "科普", "文化", "語言學", "情緒"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2167.jpg"
+  },
+  {
+    "book_id": "bk_2168",
+    "title": "禪與摩托車維修的藝術",
+    "author": "羅伯特·M·波西格",
+    "description": "一部融合旅行、哲學與家庭關係的獨特作品。作者記敘了自己與兒子騎著摩托車橫跨美國大陸的旅程，並在途中深入探討了科技與人文、理性與感性、以及「良質」的本質。",
+    "tags": ["哲學", "經典文學", "旅行", "人生", "自我探索"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2168.jpg"
+  },
+  {
+    "book_id": "bk_2169",
+    "title": "轉動的光陰：台灣老相機的故事",
+    "author": "張光儀",
+    "description": "本書不僅是相機的收藏指南，更是一部台灣的庶民生活史。作者透過數十台經典老相機，講述它們背後的故事，以及鏡頭下所捕捉的台灣社會變遷與時代記憶。",
+    "tags": ["攝影", "歷史", "台灣", "文化", "收藏"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2169.jpg"
+  },
+  {
+    "book_id": "bk_2170",
+    "title": "低GI飲食全書",
+    "author": "蕭營養師",
+    "description": "穩定血糖、減重、抗老化，從選擇「對」的碳水化合物開始。本書提供完整的低升糖指數（GI）食物列表，並設計了百道美味又健康的低GI食譜，讓你吃得飽足又能維持健康體態。",
+    "tags": ["健康", "食譜", "減重", "營養學", "糖尿病"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2170.jpg"
+  },
+  {
+    "book_id": "bk_2171",
+    "title": "被討厭的勇氣",
+    "author": "岸見一郎",
+    "description": "本書以哲學家與年輕人的對話形式，深入淺出地介紹阿德勒心理學的核心思想。闡述所有煩惱都來自於人際關係，並提出如何擺脫過去束縛、活出真正自我的具體方法。",
+    "tags": ["心理學", "阿德勒", "自我成長", "勵志", "人際關係"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2171.jpg"
+  },
+  {
+    "book_id": "bk_2172",
+    "title": "人類大歷史：從野獸到扮演上帝",
+    "author": "尤瓦爾·諾瓦·哈拉瑞",
+    "description": "一部宏大的世界史。從十萬年前的認知革命，到農業革命、科學革命，作者以獨特的視角，闡述了人類如何從一個無足輕重的物種，一步步成為地球的主宰，並探討了未來的可能性。",
+    "tags": ["歷史", "人類學", "科普", "世界史", "未來趨勢"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2172.jpg"
+  },
+  {
+    "book_id": "bk_2173",
+    "title": "風之影",
+    "author": "卡洛斯·魯依斯·薩豐",
+    "description": "在巴塞隆納的「遺忘書之墓」，少年達尼找到了一本名為《風之影》的神秘小說。他對作者深深著迷，卻發現一個惡魔般的人物正企圖銷毀所有相關書籍。一場充滿懸疑、愛情與魔法的冒險就此展開。",
+    "tags": ["小說", "懸疑", "奇幻", "文學", "西班牙"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2173.jpg"
+  },
+  {
+    "book_id": "bk_2174",
+    "title": "聽風的歌：村上春樹成名作",
+    "author": "村上春樹",
+    "description": "村上春樹的處女作。故事發生在一個夏日的海邊小鎮，主角「我」與朋友「老鼠」無所事事地喝著啤酒，談論著人生與死亡，邂逅了一位沒有小指的女孩。充滿了獨特的疏離感與青春的哀愁。",
+    "tags": ["小說", "日本文學", "村上春樹", "青春", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2174.jpg"
+  },
+  {
+    "book_id": "bk_2175",
+    "title": "咖啡學：從豆子到杯子的風味科學",
+    "author": "詹姆斯·霍夫曼",
+    "description": "世界咖啡師冠軍的權威之作。本書從咖啡豆的品種、產地、處理法，到烘焙、研磨與沖煮的每個環節，以科學的角度剖析影響咖啡風味的變因，是咖啡愛好者的進階聖經。",
+    "tags": ["飲食", "咖啡", "科普", "生活風格", "專業技術"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2175.jpg"
+  },
+  {
+    "book_id": "bk_2176",
+    "title": "三國演義",
+    "author": "羅貫中",
+    "description": "中國四大名著之一。描寫了從東漢末年到西晉初年之間近百年的歷史風雲，以劉備、曹操、孫權三方的政治和軍事鬥爭為主線，刻畫了數百個栩栩如生的人物形象，是中國歷史小說的巔峰。",
+    "tags": ["經典文學", "歷史", "小說", "中國", "戰爭"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2176.jpg"
+  },
+  {
+    "book_id": "bk_2177",
+    "title": "靜坐的科學、醫學與心靈之旅",
+    "author": "楊定一",
+    "description": "本書整合了現代醫學、量子物理與古代智慧，系統性地闡述了靜坐對大腦、身體和心靈的深遠影響。不僅是理論的介紹，更提供了實用的靜坐練習方法，引導讀者找回內在的平衡與健康。",
+    "tags": ["健康", "心靈", "靜坐", "正念", "科普"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2177.jpg"
+  },
+  {
+    "book_id": "bk_2178",
+    "title": "台灣鳥類圖鑑",
+    "author": "中華鳥會",
+    "description": "收錄台灣超過600種鳥類的完整介紹，包含留鳥、候鳥與迷鳥。每種鳥類均配有高清生態照片、詳細的形態特徵、棲地與行為描述，是賞鳥愛好者與生態研究者的權威工具書。",
+    "tags": ["自然", "科普", "生態", "台灣", "鳥類"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2178.jpg"
+  },
+  {
+    "book_id": "bk_2179",
+    "title": "斜槓青年：全球職涯新趨勢",
+    "author": "Susan Kuang",
+    "description": "不再滿足於單一職業，越來越多的年輕人選擇擁有多重職業和身份的「斜槓」生活。本書探討了這種新型態工作模式的興起，並提供如何發掘興趣、打造個人品牌、實現多元收入的實用策略。",
+    "tags": ["職涯規劃", "自我成長", "工作法", "趨勢", "生活風格"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2179.jpg"
+  },
+  {
+    "book_id": "bk_2180",
+    "title": "麵包之魂：法國麵包的工藝與哲學",
+    "author": "皮耶·艾曼",
+    "description": "一位法國麵包大師的畢生心血。書中不僅有法棍、可頌等經典麵包的詳細配方與製作技巧，更深入探討了關於酵母、麵粉、水與時間的哲學，揭示了麵包製作背後的靈魂與藝術。",
+    "tags": ["食譜", "烘焙", "飲食文化", "法國", "專業技術"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2180.jpg"
+  },
+  {
+    "book_id": "bk_2181",
+    "title": "解憂雜貨店",
+    "author": "東野圭吾",
+    "description": "三個闖空門的少年意外躲進了一家廢棄的雜貨店，發現這家店竟能收到來自過去的煩惱諮詢信。他們在回信的過程中，無意間改變了許多人的人生，也找到了自己的方向。一部充滿奇幻與溫暖的療癒小說。",
+    "tags": ["小說", "奇幻", "療癒", "日本文學", "人生"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2181.jpg"
+  },
+  {
+    "book_id": "bk_2182",
+    "title": "原子習慣",
+    "author": "詹姆斯·克利爾",
+    "description": "每天進步1%，一年後你會強大37倍。本書提出一套建立好習慣、戒除壞習慣的系統性方法。核心概念是讓改變微小到難以察覺，透過「提示、渴望、回應、獎賞」四步驟，輕鬆養成任何你想要的習慣。",
+    "tags": ["自我成長", "習慣", "心理學", "效率", "勵志"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2182.jpg"
+  },
+  {
+    "book_id": "bk_2183",
+    "title": "銀河便車指南",
+    "author": "道格拉斯·亞當斯",
+    "description": "一部充滿英式幽默的科幻經典。地球人亞瑟·鄧特在地球被毀滅前的最後一刻，被外星朋友救走，搭上便車，展開了一場穿越宇宙的荒誕冒險。書中對生命、宇宙及一切的終極答案提出了無厘頭的解答。",
+    "tags": ["小說", "科幻", "幽默", "經典文學", "冒險"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2183.jpg"
+  },
+  {
+    "book_id": "bk_2184",
+    "title": "說故事的領導力",
+    "author": "安奈特·西蒙斯",
+    "description": "數據和簡報無法打動人心，但故事可以。本書教導管理者和領導者如何運用「我是誰」、「我為何在此」等六種類型的故事，來建立信任、激勵團隊、傳遞價值觀，發揮真正的影響力。",
+    "tags": ["領導力", "溝通", "企業管理", "演講", "故事"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2184.jpg"
+  },
+  {
+    "book_id": "bk_2185",
+    "title": "唐詩三百首新注",
+    "author": "詩詞鑑賞學會",
+    "description": "本書在傳統《唐詩三百首》的基礎上，加入了詳盡的現代漢語註釋、賞析與背景介紹。特別收錄了詩人生平、創作風格分析，幫助讀者更深入地理解唐詩的意境與藝術成就。",
+    "tags": ["詩集", "經典文學", "唐詩", "中國", "文學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2185.jpg"
+  },
+  {
+    "book_id": "bk_2186",
+    "title": "貓的搖籃",
+    "author": "庫爾特·馮內古特",
+    "description": "一部反諷意味濃厚的黑色幽默小說。故事圍繞著原子彈發明者之一的子女，以及一種名為「冰-九」的末日物質展開。透過荒誕的情節，尖銳地批判了科學、宗教與人類的愚蠢。",
+    "tags": ["小說", "黑色幽默", "科幻", "經典文學", "諷刺"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2186.jpg"
+  },
+  {
+    "book_id": "bk_2187",
+    "title": "槍炮、病菌與鋼鐵",
+    "author": "賈德·戴蒙",
+    "description": "為何是歐亞大陸征服了其他文明，而不是相反？本書從地理學、生物學、歷史學等多個角度，探討了環境因素如何塑造了不同大陸人類社會的發展軌跡，顛覆了傳統的種族主義歷史觀。",
+    "tags": ["歷史", "科普", "人類學", "地理", "社會學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2187.jpg"
+  },
+  {
+    "book_id": "bk_2188",
+    "title": "思考，快與慢",
+    "author": "丹尼爾·康納曼",
+    "description": "諾貝爾經濟學獎得主的經典之作。書中揭示了人類大腦中存在兩種思考模式：快速、直覺的「系統一」和緩慢、理性的「系統二」。了解這兩種系統的運作與偏誤，能幫助我們做出更佳的個人與商業決策。",
+    "tags": ["心理學", "決策", "行為經濟學", "科普", "思考"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2188.jpg"
+  },
+  {
+    "book_id": "bk_2189",
+    "title": "我輩中人：寫給中年世代的備忘錄",
+    "author": "張曼娟",
+    "description": "當我們成為父母的倚靠、子女的榜樣，我們如何安頓自己的中年心事？作家張曼娟以溫柔而深刻的筆觸，分享她照顧年邁父母、面對人生中場的心路歷程，為中年讀者帶來撫慰與力量。",
+    "tags": ["散文", "人生", "家庭關係", "中年", "療癒"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2189.jpg"
+  },
+  {
+    "book_id": "bk_2190",
+    "title": "綠野仙蹤",
+    "author": "李曼·法蘭克·鮑姆",
+    "description": "經典兒童文學作品。描述女孩桃樂絲與她的寵物狗托托被龍捲風吹到了一個神奇的國度，在尋找回家之路的旅途中，她遇到了稻草人、錫樵夫和獅子，展開了一場關於勇氣、智慧與愛的冒險。",
+    "tags": ["童書", "經典文學", "奇幻", "冒險", "成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2190.jpg"
+  },
+  {
+    "book_id": "bk_2191",
+    "title": "餐桌上的經濟學",
+    "author": "提姆·哈福特",
+    "description": "為何超市裡的有機雞蛋那麼貴？星巴克如何定價？本書用生活中的大小事，如咖啡、交通、戀愛等，解釋供給需求、機會成本、資訊不對稱等核心經濟學原理，讓經濟學變得有趣又實用。",
+    "tags": ["經濟學", "科普", "商業", "生活", "決策"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2191.jpg"
+  },
+  {
+    "book_id": "bk_2192",
+    "title": "百年孤寂",
+    "author": "加布列·賈西亞·馬奎斯",
+    "description": "魔幻寫實主義的巔峰之作。故事圍繞著布恩迪亞家族七代人的傳奇經歷，描繪了拉丁美洲一個虛構小鎮馬康多的百年興衰，交織著神話、奇蹟與殘酷的現實。",
+    "tags": ["小說", "經典文學", "魔幻寫實", "拉丁美洲", "歷史"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2192.jpg"
+  },
+  {
+    "book_id": "bk_2193",
+    "title": "肌力訓練解剖學",
+    "author": "德拉維爾",
+    "description": "健身愛好者與專業教練的必備參考書。書中包含上百幅精細的人體解剖圖，清楚標示出每個重訓動作所鍛鍊的主要與輔助肌群，幫助你精準訓練、避免運動傷害。",
+    "tags": ["健康", "健身", "運動", "解剖學", "肌力訓練"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2193.jpg"
+  },
+  {
+    "book_id": "bk_2194",
+    "title": "台北女子圖鑑",
+    "author": "林怡君",
+    "description": "從南部北上打拼的女孩林怡珊，在台北這個夢想與現實交織的城市裡，經歷了工作、愛情與友誼的種種挑戰與成長。這是一部描寫現代都會女性生存與抉擇的寫實小說。",
+    "tags": ["小說", "都會", "女性", "職場", "愛情"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2194.jpg"
+  },
+  {
+    "book_id": "bk_2195",
+    "title": "愛的藝術",
+    "author": "埃里希·佛洛姆",
+    "description": "愛是一門需要學習的藝術，而不是一種偶然降臨的感覺。社會心理學家佛洛姆在書中探討了愛的理論與實踐，指出真正的愛包含關心、責任、尊重和了解，需要紀律、專注和耐心來培養。",
+    "tags": ["心理學", "哲學", "愛情", "人際關係", "經典"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2195.jpg"
+  },
+  {
+    "book_id": "bk_2196",
+    "title": "改變世界的植物",
+    "author": "邱園植物學家",
+    "description": "從提供糧食的小麥、稻米，到引發戰爭的香料、鴉片，再到工業革命的關鍵原料橡膠、棉花。本書精選了80種影響人類歷史的關鍵植物，講述它們與人類文明之間密不可分的精彩故事。",
+    "tags": ["科普", "歷史", "植物", "自然", "科學"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2196.jpg"
+  },
+  {
+    "book_id": "bk_2197",
+    "title": "1984",
+    "author": "喬治·歐威爾",
+    "description": "反烏托邦小說的經典之作。故事描繪了一個由「老大哥」統治的極權世界，思想警察無所不在，歷史可以被隨意竄改。主角溫斯頓在試圖反抗的過程中，深刻體驗了自由的脆弱與極權的恐怖。",
+    "tags": ["小說", "經典文學", "反烏托邦", "政治", "科幻"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2197.jpg"
+  },
+  {
+    "book_id": "bk_2198",
+    "title": "當下的力量",
+    "author": "艾克哈特·托勒",
+    "description": "一本深刻的心靈指南。作者指出，人類所有痛苦的根源都來自於對過去的悔恨和對未來的焦慮。本書引導讀者擺脫思維的束縛，全然地活在當下，體驗內在的平靜與喜悅。",
+    "tags": ["心靈", "勵志", "哲學", "正念", "自我成長"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2198.jpg"
+  },
+  {
+    "book_id": "bk_2199",
+    "title": "雲邊有個小賣部",
+    "author": "張嘉佳",
+    "description": "在外漂泊的年輕人劉十三，回到故鄉，陪伴罹患重病的外婆度過最後的時光。故事圍繞著雲邊鎮的小賣部展開，用溫暖又幽默的筆調，書寫了關於親情、友情和故鄉的動人篇章。",
+    "tags": ["小說", "療癒", "親情", "人生", "故鄉"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2199.jpg"
+  },
+  {
+    "book_id": "bk_2200",
+    "title": "非暴力溝通",
+    "author": "馬歇爾·盧森堡",
+    "description": "一種充滿愛的溝通方式。本書教導我們如何專注於觀察、感受、需要和請求，來表達自己和傾聽他人。這種方法有助於化解衝突，建立和諧的人際關係，無論在家庭還是職場都同樣適用。",
+    "tags": ["溝通", "人際關係", "心理學", "自我成長", "技巧"],
+    "language": "中文",
+    "cover_url": "https://example.com/covers/bk_2200.jpg"
   }
 ]

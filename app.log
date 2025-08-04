@@ -16,581 +16,131 @@
 
  :: Spring Boot ::                (v3.5.4)
 
-2025-08-04T11:19:12.882+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 55631 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
-2025-08-04T11:19:12.883+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
-2025-08-04T11:19:12.906+08:00  INFO 55631 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-08-04T11:19:12.906+08:00  INFO 55631 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-08-04T11:19:13.319+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2025-08-04T11:19:13.327+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-08-04T11:19:13.327+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
-2025-08-04T11:19:13.344+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-08-04T11:19:13.344+08:00  INFO 55631 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 438 ms
-2025-08-04T11:19:13.616+08:00 ERROR 55631 --- [rag.demo] [  restartedMain] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
-✅ Qdrant 集合 'books' 已存在
-2025-08-04T11:19:13.855+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-08-04T11:19:13.865+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
-2025-08-04T11:19:13.869+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 1.179 seconds (process running for 1.353)
-2025-08-04T11:19:31.298+08:00  INFO 55631 --- [rag.demo] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-08-04T11:19:31.298+08:00  INFO 55631 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-08-04T11:19:31.298+08:00  INFO 55631 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 4a340b9f-78d6-4214-8aae-124c2ea8a99d
-✅ 書籍已添加: 人工智慧與未來社會 by 張明華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: a124ed4d-090f-4ccb-a90b-1c491eff58b7
-✅ 書籍已添加: 量子計算原理與實踐 by 李志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: c12b19c6-baf9-4356-a9f5-52a877b657d8
-✅ 書籍已添加: 區塊鏈技術詳解 by 王建國
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: c6c559a1-a96b-4b7b-9c07-02710c5767dd
-✅ 書籍已添加: 大資料分析與商業智慧 by 陳美玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 41f746fa-ec4e-493a-b437-295d0af2248c
-✅ 書籍已添加: 雲端運算架構設計 by 劉德華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 00ecaa40-06e8-486d-898a-e2360b6083ac
-✅ 書籍已添加: 機器學習實戰指南 by 黃志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: fa36100c-5019-4cc6-8eae-4b43a237d447
-✅ 書籍已添加: 網路安全防護策略 by 林雅惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: b643345c-4435-4d00-870c-4fd36d466dd8
-✅ 書籍已添加: 物聯網系統開發 by 吳建宏
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: de91465d-a9d5-4dfa-a6b9-d19af424b89a
-✅ 書籍已添加: 數位轉型策略 by 許文龍
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: d4786db7-f1a0-411e-8a4d-7ea14d5052e0
-✅ 書籍已添加: 演算法設計與分析 by 趙立峰
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 5d7c2f0d-cb87-45c0-8617-24cdab63f7e0
-✅ 書籍已添加: 軟體工程最佳實踐 by 錢志偉
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: f7d90ba4-d20d-47fa-9249-6dbbda5e87ea
-✅ 書籍已添加: 資料庫系統原理 by 孫美華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 29b39f8f-596c-4e6f-833c-6881a7fcf8f6
-✅ 書籍已添加: 前端開發完全指南 by 鄭志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 3454aa94-1691-40ad-a5fe-9ebde3ced631
-✅ 書籍已添加: 後端API設計原則 by 馬建國
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 6a2f2027-b5c0-4dae-9f16-1c4b66177679
-✅ 書籍已添加: 行動應用開發實戰 by 周雅玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: e0698d1c-c0af-47d9-a878-5de3a4ef04e3
-✅ 書籍已添加: 遊戲引擎架構 by 楊志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 4a06af4a-07a2-443f-b2ec-6ab586b4b44f
-✅ 書籍已添加: 虛擬實境技術應用 by 何美惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 6154eddd-99b2-45a9-90c3-a7c3ac6c2acb
-✅ 書籍已添加: 電腦視覺與影像處理 by 蔡志峰
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 82edea64-da7e-452e-b4e9-93f24a39eead
-✅ 書籍已添加: 自然語言處理技術 by 洪文龍
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: ab601f4c-49fe-466f-b6e4-88e7a4af3c88
-✅ 書籍已添加: 分散式系統設計 by 方雅華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: a757f918-2697-49e0-af79-66a6d3ba27a6
-✅ 書籍已添加: 資料科學與Python by 丁志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 5018a85a-a6d1-4206-8758-8c7df6a8bbcd
-✅ 書籍已添加: 深度學習理論與實踐 by 江美玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 3f4a6cba-75a1-4b19-9bf6-39ac1a663552
-✅ 書籍已添加: 網頁安全攻防技術 by 羅建國
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 0709b5f8-a7c0-48e1-9534-62794f1b73d8
-✅ 書籍已添加: 敏捷開發實踐 by 袁雅惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: e95afec4-aa92-49fe-b8dd-51253a057f99
-✅ 書籍已添加: 容器化技術指南 by 朱志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: dbe06e3d-8932-4ab7-b3cb-4089eaacf56c
-✅ 書籍已添加: 區塊鏈智能合約開發 by 高美華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 1f19368c-f9fd-433d-9e4b-de3b11bbec98
-✅ 書籍已添加: 資訊安全管理 by 葉志峰
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: d6beb7d6-4d44-4166-8c51-b8f43678aa7f
-✅ 書籍已添加: 數據可視化技術 by 鍾文龍
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 01aa38bf-e0b1-4c97-aa6b-0fb03573a3e2
-✅ 書籍已添加: 軟體測試自動化 by 蘇雅玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 0c10daed-e39e-4bac-aeb6-c712e9bec868
-✅ 書籍已添加: DevOps工程實踐 by 龔志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: ae21cf35-6d3a-41c9-8d8a-4c3cb5b39e61
-✅ 書籍已添加: 人機介面設計 by 范美惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 7b8026a5-c24b-4542-b247-cb39f0daac10
-✅ 書籍已添加: 電子商務系統架構 by 曾志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 9824fa93-0da4-4820-9c1d-4c4941b149fc
-✅ 書籍已添加: 行動支付技術 by 薛雅華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 2b09bc04-246a-44d6-885a-94303a4af819
-✅ 書籍已添加: 社群網路分析 by 顏志峰
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 097680cc-42e9-4c77-8a74-0e412dec62a9
-✅ 書籍已添加: 推薦系統算法 by 魏文龍
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 53bce8ef-3f74-4c18-84c8-2dca016aeaf7
-✅ 書籍已添加: 搜尋引擎技術 by 賴雅玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 53dddc3e-9c4c-4c38-a19f-a71ca8b4d217
-✅ 書籍已添加: 金融科技創新 by 戴志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 99251101-20f8-4aa7-b6ff-6f936b264c7d
-✅ 書籍已添加: 物聯網安全 by 謝美惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 922853b2-31f1-4c6c-8f74-307e74410af7
-✅ 書籍已添加: 邊緣計算技術 by 簡志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 607feda5-59bf-46df-8c40-27a3fb90452f
-✅ 書籍已添加: 網路協定詳解 by 閻雅華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 1e4d1a16-9d07-4649-9f86-e9f6ebe2f8b2
-✅ 書籍已添加: 虛擬化技術原理 by 柯志峰
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 6d081f9f-3698-45c1-adf9-6bc9c46df581
-✅ 書籍已添加: 資料挖掘與知識發現 by 侯文龍
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: a074997d-9be1-46c6-9658-a5925e6b8e4f
-✅ 書籍已添加: 程式設計範式 by 鐘雅玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: bf813c2f-2c92-49dd-9305-48b463ee7ea4
-✅ 書籍已添加: 編譯器設計原理 by 溫志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 7fc8514d-fd42-4975-97de-42548211237c
-✅ 書籍已添加: 作業系統核心 by 湯美惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: fbe4852d-01de-4fbd-8603-697103c6ab61
-✅ 書籍已添加: 計算機圖學 by 黎志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: edb2c2da-8961-49c5-9234-eb8c7520cce4
-✅ 書籍已添加: 多媒體技術 by 韓雅華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 727e6035-e046-4569-8ac8-902029244eff
-✅ 書籍已添加: 嵌入式系統設計 by 藍志峰
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: b2b40262-b0ab-4f74-a4d1-3d6321311c60
-✅ 書籍已添加: 高效能計算 by 馮文龍
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: b20124ea-8c97-4872-acd6-26819f82a4d4
-✅ 書籍已添加: 資料結構與算法 by 程雅玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: d98229f9-b102-457f-a0f9-59df2baefe04
-✅ 書籍已添加: 軟體架構模式 by 游志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 6aecc9ea-cff1-4ffa-b05c-fbd6e33014f5
-✅ 書籍已添加: 資料庫效能調優 by 童美惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: fc76806f-0c48-4354-9c3f-404ac5bf5dcf
-✅ 書籍已添加: 網路程式設計 by 席志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 2ab8b51e-0347-465f-bb51-807a30d86db1
-✅ 書籍已添加: 資訊檢索系統 by 卜雅華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 8684e628-ee30-49a8-9b7b-daead60d2a26
-✅ 書籍已添加: 計算複雜度理論 by 盛志峰
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 59c3a544-4cef-4582-b82a-8bd0cf96f52e
-✅ 書籍已添加: 函數式程式設計 by 牛文龍
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: f302fcc4-2708-4faf-a64d-0312ddbeee73
-✅ 書籍已添加: 並行程式設計 by 石雅玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: a9432b43-eb1b-4d0e-ac5e-d463bf01f418
-✅ 書籍已添加: 機器學習系統設計 by 左志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: d6e20479-f2ff-46b0-85b0-2ba05d7298fb
-✅ 書籍已添加: 電腦網路安全 by 史美惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 933ebf1f-658b-435f-9ed9-39f216d97329
-✅ 書籍已添加: 雲端原生應用 by 田志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: f2d0d63a-8643-41bb-8d51-74cfbe04fd10
-✅ 書籍已添加: 自然語言生成 by 向雅華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 83839efe-ecf0-4991-a82f-349f4b1d381c
-✅ 書籍已添加: 知識圖譜技術 by 包志峰
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: f923d037-e0b4-4c7a-9a52-033d04eb1ed7
-✅ 書籍已添加: 計算機視覺應用 by 費文龍
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: fe0862de-b63b-40f6-8e02-7016ac0a133f
-✅ 書籍已添加: 語音識別技術 by 雷雅玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: c90f827f-a7a2-44b6-a1d4-a515767ca8a3
-✅ 書籍已添加: 區塊鏈共識算法 by 章志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: ac3b3042-bf3d-402d-bc61-b1bcabf22279
-✅ 書籍已添加: 分散式資料庫 by 冷美惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 6b5acf00-f501-48ef-95a5-afbf5119d883
-✅ 書籍已添加: 軟體品質保證 by 尤志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 20b817e9-e1a4-4e1a-b06b-7f73a6689c39
-✅ 書籍已添加: 企業架構設計 by 穆雅華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 6dad384e-cf15-4e76-97aa-3abdc6b3fa06
-✅ 書籍已添加: 演算法競程指南 by 昌志峰
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: bada1878-ae22-4e1a-86db-4b9f615b4908
-✅ 書籍已添加: 量化交易系統 by 邰文龍
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: eb9df21c-177a-4ed8-aebf-d25506f1f3fc
-✅ 書籍已添加: 遊戲AI程式設計 by 郎雅玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: bc211134-03d3-482c-b65a-4ef354e70b45
-✅ 書籍已添加: 資料科學專案實戰 by 井志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 36f5f4ae-ad28-4bb7-a525-65e3c85b04b1
-✅ 書籍已添加: 軟體設計模式 by 成美惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 3191486c-46e0-402f-ada3-d5b552879033
-✅ 書籍已添加: API設計與管理 by 解志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 6d3296cd-04bc-400d-9b43-52dd5d1aeb0a
-✅ 書籍已添加: 區塊鏈應用開發 by 鄧雅華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: d34243f6-7387-4b7a-a33d-720a927126b4
-✅ 書籍已添加: 深度學習框架 by 酆志峰
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 11ea9bfc-4fdf-4af4-bbe8-bfcc9e970cb6
-✅ 書籍已添加: 電腦圖形學算法 by 別文龍
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 0ab849c3-f9f7-4a4e-9e65-fc24116518cf
-✅ 書籍已添加: 網路爬蟲技術 by 訾雅玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 01b903c4-37e0-49d6-9f4d-ce2a676afdda
-✅ 書籍已添加: 系統效能優化 by 卞志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 35a9a71f-2070-4f9a-9f0d-a00fc6e9edcb
-✅ 書籍已添加: 微服務架構實戰 by 覃美惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: bc036598-9c92-4db9-9d71-85b6e9b489b2
-✅ 書籍已添加: 資料倉儲與ETL by 逄志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 1100111c-0168-4ae8-815e-a9b09377319b
-✅ 書籍已添加: 持續交付實踐 by 厲雅華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 99ad6f8a-d33f-4aab-b4fe-3fc19bea7aea
-✅ 書籍已添加: 電腦安全基礎 by 臧志峰
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 0f3d70c6-a2e7-4d5a-9ac9-70b07ab37f33
-✅ 書籍已添加: 人工智慧倫理 by 路文龍
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 2bbd87e8-ddd7-4d3b-900e-f359b97085f2
-✅ 書籍已添加: 量化金融模型 by 繩雅玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 5c4ad498-d4bf-420c-979e-8a7300f78cf4
-✅ 書籍已添加: 軟體專案管理 by 商志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 8af2dbf6-b78f-4d82-b8b5-1af43100d0be
-✅ 書籍已添加: 邊緣AI計算 by 蒿美惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: e54ade35-c035-4dce-a673-dba1cabf44fe
-✅ 書籍已添加: 區塊鏈密碼學 by 山志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 107a7f9d-9f41-4d2f-8b17-960144465743
-✅ 書籍已添加: 機器人程式設計 by 諸雅華
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: c248eded-0864-4f0a-aa50-a65ba7f865ee
-✅ 書籍已添加: 分散式機器學習 by 虞志峰
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: df8d13d8-6d09-46bb-953a-1c967cdb346d
-✅ 書籍已添加: 計算機網絡協議 by 焦文龍
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: cc9e6658-3139-458e-8659-a139b24d1488
-✅ 書籍已添加: 軟體逆向工程 by 班雅玲
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: ab8b5b35-e8ee-44af-ba5a-4e6643ad3f62
-✅ 書籍已添加: 量子演算法設計 by 仇志強
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 1b613dfd-d5ee-4237-bc55-a1a46fd8931e
-✅ 書籍已添加: 智慧城市技術 by 暢美惠
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 532a1b02-082c-4b00-b25f-b0fcd1364493
-✅ 書籍已添加: 生物資訊學算法 by 養志明
-💾 已緩存embedding
-✅ 文檔已添加到 Qdrant: 19f30796-9f24-4cf8-8700-fc59dec3789a
-✅ 書籍已添加: 金融風險建模 by 牧雅華
-💾 已緩存embedding
-✅ 向量搜索找到 15 個結果
-✅ 關鍵詞搜索找到 3 個結果
-📊 合併後共 3 個候選結果
-🔄 啟用Re-ranking優化，候選數量：3，目標數量：3
-🔄 開始Re-ranking，候選文檔數量：3
-⚠️ HuggingFace API Key 未配置
-⚠️ HuggingFace API 不可用，回退到 LLM
-🤖 使用 LLM 進行重排序
-🔢 Token使用: 輸入686 + 輸出179 = 總計865
-✅ Re-ranking完成，最終結果數量：3
-🔢 Token使用: 輸入348 + 輸出300 = 總計648
-💾 已緩存embedding
-✅ 向量搜索找到 15 個結果
-✅ 關鍵詞搜索找到 6 個結果
-📊 合併後共 6 個候選結果
-🔄 啟用Re-ranking優化，候選數量：6，目標數量：3
-🔄 開始Re-ranking，候選文檔數量：6
-⚠️ HuggingFace API Key 未配置
-⚠️ HuggingFace API 不可用，回退到 LLM
-🤖 使用 LLM 進行重排序
-🔢 Token使用: 輸入1025 + 輸出300 = 總計1325
-✅ Re-ranking完成，最終結果數量：3
-🔢 Token使用: 輸入363 + 輸出300 = 總計663
-💾 已緩存embedding
-✅ 向量搜索找到 15 個結果
-✅ 關鍵詞搜索找到 2 個結果
-📊 合併後共 2 個候選結果
-🔢 Token使用: 輸入283 + 輸出239 = 總計522
-💾 已緩存embedding
-✅ 向量搜索找到 15 個結果
-✅ 關鍵詞搜索找到 1 個結果
-📊 合併後共 2 個候選結果
-🔢 Token使用: 輸入292 + 輸出167 = 總計459
-💾 已緩存embedding
-✅ 向量搜索找到 15 個結果
-✅ 關鍵詞搜索找到 1 個結果
-📊 合併後共 2 個候選結果
-🔢 Token使用: 輸入285 + 輸出230 = 總計515
-💾 已緩存embedding
-✅ 向量搜索找到 10 個結果
-⚠️ 未找到任何匹配結果
-🔢 Token使用: 輸入361 + 輸出34 = 總計395
-🎯 使用LLM分析結果進行過濾查詢：categories=[人工智慧], keywords=人工智慧 機器學習 深度學習 AI入門
-🎯 使用分類過濾：[人工智慧]
-💾 已緩存embedding
-🔍 使用過濾條件搜索：FilterCondition(must=null, should=[FilterClause(key=category, match=FilterMatch(value=人工智慧), range=null)])
-✅ 過濾搜索找到 10 個結果
-🔢 Token使用: 輸入196 + 輸出147 = 總計343
-💾 已緩存embedding
-✅ 向量搜索找到 6 個結果
-📊 合併後共 1 個候選結果
-🔢 Token使用: 輸入361 + 輸出28 = 總計389
-🎯 使用LLM分析結果進行過濾查詢：categories=[人工智慧], keywords=機器學習 入門 教材
-🎯 使用分類過濾：[人工智慧]
-💾 已緩存embedding
-🔍 使用過濾條件搜索：FilterCondition(must=null, should=[FilterClause(key=category, match=FilterMatch(value=人工智慧), range=null)])
-✅ 過濾搜索找到 10 個結果
-🔢 Token使用: 輸入197 + 輸出114 = 總計311
-💾 已緩存embedding
-✅ 向量搜索找到 10 個結果
-📊 合併後共 1 個候選結果
-🔢 Token使用: 輸入363 + 輸出28 = 總計391
-🎯 使用LLM分析結果進行過濾查詢：categories=[人工智慧], keywords=機器學習 人工智慧 AI
-🎯 使用分類過濾：[人工智慧]
-💾 已緩存embedding
-🔍 使用過濾條件搜索：FilterCondition(must=null, should=[FilterClause(key=category, match=FilterMatch(value=人工智慧), range=null)])
-✅ 過濾搜索找到 10 個結果
-🔢 Token使用: 輸入197 + 輸出123 = 總計320
-📋 使用緩存的embedding
-✅ 向量搜索找到 10 個結果
-📊 合併後共 1 個候選結果
-🔢 Token使用: 輸入363 + 輸出28 = 總計391
-🎯 使用LLM分析結果進行過濾查詢：categories=[人工智慧], keywords=機器學習 人工智慧 AI
-🎯 使用分類過濾：[人工智慧]
-📋 使用緩存的embedding
-🔍 使用過濾條件搜索：FilterCondition(must=null, should=[FilterClause(key=category, match=FilterMatch(value=人工智慧), range=null)])
-✅ 過濾搜索找到 10 個結果
-🔢 Token使用: 輸入197 + 輸出122 = 總計319
-💾 已緩存embedding
-✅ 向量搜索找到 10 個結果
-📊 合併後共 1 個候選結果
-🔢 Token使用: 輸入366 + 輸出32 = 總計398
-🎯 使用LLM分析結果進行過濾查詢：categories=[人工智慧], keywords=人工智慧 AI入門 機器學習 深度學習
-🎯 使用分類過濾：[人工智慧]
-💾 已緩存embedding
-🔍 使用過濾條件搜索：FilterCondition(must=null, should=[FilterClause(key=category, match=FilterMatch(value=人工智慧), range=null)])
-✅ 過濾搜索找到 10 個結果
-🔢 Token使用: 輸入201 + 輸出147 = 總計348
-2025-08-04T18:03:16.804+08:00  INFO 55631 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 7 class path changes (0 additions, 7 deletions, 0 modifications)
-2025-08-04T18:03:16.819+08:00  INFO 55631 --- [rag.demo] [      Thread-15] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-08-04T18:03:16.827+08:00  INFO 55631 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.5.4)
-
-2025-08-04T18:03:17.014+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 55631 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
-2025-08-04T18:03:17.014+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
-2025-08-04T18:03:17.265+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2025-08-04T18:03:17.267+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-08-04T18:03:17.267+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
-2025-08-04T18:03:17.281+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-08-04T18:03:17.281+08:00  INFO 55631 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 263 ms
-2025-08-04T18:03:17.301+08:00  WARN 55631 --- [rag.demo] [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'bookRAGController': Resolution of declared constructors on bean Class [com.enzo.rag.demo.controller.BookRAGController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@a72e3ef] failed
-2025-08-04T18:03:17.302+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2025-08-04T18:03:17.308+08:00  INFO 55631 --- [rag.demo] [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-08-04T18:03:17.321+08:00 ERROR 55631 --- [rag.demo] [  restartedMain] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'bookRAGController': Resolution of declared constructors on bean Class [com.enzo.rag.demo.controller.BookRAGController] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@a72e3ef] failed
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:384) ~[spring-beans-6.2.9.jar:6.2.9]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1334) ~[spring-beans-6.2.9.jar:6.2.9]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1229) ~[spring-beans-6.2.9.jar:6.2.9]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.9.jar:6.2.9]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.9.jar:6.2.9]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.9.jar:6.2.9]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.9.jar:6.2.9]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.9.jar:6.2.9]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.9.jar:6.2.9]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1222) ~[spring-beans-6.2.9.jar:6.2.9]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1188) ~[spring-beans-6.2.9.jar:6.2.9]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1123) ~[spring-beans-6.2.9.jar:6.2.9]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.9.jar:6.2.9]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.9.jar:6.2.9]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.4.jar:3.5.4]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.4.jar:3.5.4]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.4.jar:3.5.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.4.jar:3.5.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.4.jar:3.5.4]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.4.jar:3.5.4]
-	at com.enzo.rag.demo.ApplicationKt.main(Application.kt:13) ~[main/:na]
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
-	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.4.jar:3.5.4]
-Caused by: java.lang.NoClassDefFoundError: com/enzo/rag/demo/service/BookDocumentService
-	at java.base/java.lang.Class.getDeclaredConstructors0(Native Method) ~[na:na]
-	at java.base/java.lang.Class.privateGetDeclaredConstructors(Class.java:3549) ~[na:na]
-	at java.base/java.lang.Class.getDeclaredConstructors(Class.java:2727) ~[na:na]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:379) ~[spring-beans-6.2.9.jar:6.2.9]
-	... 23 common frames omitted
-Caused by: java.lang.ClassNotFoundException: com.enzo.rag.demo.service.BookDocumentService
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
-	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
-	at java.base/java.lang.Class.forName(Class.java:534) ~[na:na]
-	at java.base/java.lang.Class.forName(Class.java:513) ~[na:na]
-	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.5.4.jar:3.5.4]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526) ~[na:na]
-	... 27 common frames omitted
-
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.5.4)
-
-2025-08-04T18:03:20.784+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 55631 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
-2025-08-04T18:03:20.784+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
-2025-08-04T18:03:20.909+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2025-08-04T18:03:20.911+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-08-04T18:03:20.911+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
-2025-08-04T18:03:20.928+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2025-08-04T18:03:20.928+08:00  INFO 55631 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 143 ms
+2025-08-04T22:40:01.932+08:00  INFO 82099 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 82099 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-04T22:40:01.934+08:00  INFO 82099 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-04T22:40:01.961+08:00  INFO 82099 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-04T22:40:01.961+08:00  INFO 82099 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-04T22:40:02.457+08:00  INFO 82099 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-04T22:40:02.467+08:00  INFO 82099 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-04T22:40:02.467+08:00  INFO 82099 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-04T22:40:02.487+08:00  INFO 82099 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-04T22:40:02.488+08:00  INFO 82099 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 526 ms
+2025-08-04T22:40:02.804+08:00 ERROR 82099 --- [rag.demo] [  restartedMain] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
 ✅ Qdrant 集合 'books' 已存在
 🔄 應用啟動時重建內存書籍數據...
-💾 已緩存embedding
-❌ Qdrant 搜索失敗: 200 OK from POST http://localhost:6333/collections/books/points/search, but response failed with cause: org.springframework.core.io.buffer.DataBufferLimitException: Exceeded limit on max bytes to buffer : 262144
-✅ 成功重建 0 本書籍的內存數據
-2025-08-04T18:03:22.292+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-08-04T18:03:22.304+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
-2025-08-04T18:03:22.307+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 1.538 seconds (process running for 24249.664)
-2025-08-04T18:03:22.308+08:00  INFO 55631 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-08-04T18:05:34.930+08:00  INFO 55631 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 7 class path changes (0 additions, 7 deletions, 0 modifications)
-2025-08-04T18:05:34.941+08:00  INFO 55631 --- [rag.demo] [      Thread-17] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-08-04T18:05:34.943+08:00  INFO 55631 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.5.4)
-
-2025-08-04T18:05:35.031+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 55631 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
-2025-08-04T18:05:35.031+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
-2025-08-04T18:05:35.134+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2025-08-04T18:05:35.135+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-08-04T18:05:35.135+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
-2025-08-04T18:05:35.141+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2025-08-04T18:05:35.141+08:00  INFO 55631 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 108 ms
-✅ Qdrant 集合 'books' 已存在
-🔄 應用啟動時重建內存書籍數據...
-💾 已緩存embedding
-📋 使用緩存的embedding
-📋 使用緩存的embedding
-📋 使用緩存的embedding
-✅ 成功重建 50 本書籍的內存數據
-2025-08-04T18:05:35.393+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-08-04T18:05:35.397+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
-2025-08-04T18:05:35.401+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.384 seconds (process running for 24382.757)
-2025-08-04T18:05:35.401+08:00  INFO 55631 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-08-04T18:05:36.813+08:00  INFO 55631 --- [rag.demo] [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 7 class path changes (7 additions, 0 deletions, 0 modifications)
-2025-08-04T18:05:36.817+08:00  INFO 55631 --- [rag.demo] [      Thread-34] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-08-04T18:05:36.823+08:00  INFO 55631 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-
-  .   ____          _            __ _ _
- /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
-( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
- \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
-  '  |____| .__|_| |_|_| |_\__, | / / / /
- =========|_|==============|___/=/_/_/_/
-
- :: Spring Boot ::                (v3.5.4)
-
-2025-08-04T18:05:36.887+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 55631 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
-2025-08-04T18:05:36.888+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
-2025-08-04T18:05:37.005+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2025-08-04T18:05:37.006+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-08-04T18:05:37.006+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
-2025-08-04T18:05:37.012+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
-2025-08-04T18:05:37.012+08:00  INFO 55631 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 123 ms
-✅ Qdrant 集合 'books' 已存在
-🔄 應用啟動時重建內存書籍數據...
-💾 已緩存embedding
-📋 使用緩存的embedding
-📋 使用緩存的embedding
-📋 使用緩存的embedding
-✅ 成功重建 50 本書籍的內存數據
-2025-08-04T18:05:37.331+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-08-04T18:05:37.342+08:00  INFO 55631 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
-2025-08-04T18:05:37.346+08:00  INFO 55631 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 0.474 seconds (process running for 24384.702)
-2025-08-04T18:05:37.348+08:00  INFO 55631 --- [rag.demo] [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
-2025-08-04T18:05:45.834+08:00  INFO 55631 --- [rag.demo] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-08-04T18:05:45.835+08:00  INFO 55631 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-
-> Task :bootRun FAILED
-
-[Incubating] Problems report is available at: file:///Users/xiechengru/Downloads/rag.demo/build/reports/problems/problems-report.html
-
-FAILURE: Build failed with an exception.
-
-* What went wrong:
-Execution failed for task ':bootRun'.
-> Process 'command '/opt/homebrew/Cellar/openjdk@21/21.0.8/libexec/openjdk.jdk/Contents/Home/bin/java'' finished with non-zero exit value 143
-
-* Try:
-> Run with --stacktrace option to get the stack trace.
-> Run with --info or --debug option to get more log output.
-> Run with --scan to get full insights.
-> Get more help at https://help.gradle.org.
-
-Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
-
-You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
-
-For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
-
-BUILD FAILED in 6h 46m 34s
-5 actionable tasks: 2 executed, 3 up-to-date
+✅ 總共獲取 0 條向量數據
+📝 Qdrant中暫無數據，等待首次導入
+2025-08-04T22:40:03.176+08:00  INFO 82099 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-04T22:40:03.188+08:00  INFO 82099 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-04T22:40:03.193+08:00  INFO 82099 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 1.482 seconds (process running for 1.687)
+2025-08-04T22:40:09.745+08:00  INFO 82099 --- [rag.demo] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-04T22:40:09.745+08:00  INFO 82099 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-04T22:40:09.745+08:00  INFO 82099 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+🗣️ 收到自然語言查詢: 想看一些戰爭史詩奇幻小說
+🧠 開始分析自然語言查詢: 想看一些戰爭史詩奇幻小說
+📊 Gemini Flash Token 使用: 487 prompt + 116 response = 603 total
+📝 Gemini 解析結果: {
+  "query_text": "想看一些戰爭史詩奇幻小說",
+  "filters": {
+    "language": "中文",
+    "tags": ["戰爭", "史詩", "奇幻", "小說"]
+  },
+  "summary": "您想尋找融合戰爭史詩與奇幻元素的小說，真是個充滿想像力的選擇！我會盡力為您推薦一些精彩的作品，帶您進入波瀾壯闊的奇幻世界！⚔️📖"
+}
+📋 Flash 解析結果: language=中文, tags=[戰爭, 史詩, 奇幻, 小說]
+🔍 開始推薦查詢: 想看一些戰爭史詩奇幻小說
+📋 過濾條件: language=中文, tags=[戰爭, 史詩, 奇幻, 小說]
+📊 步驟 1: 生成查詢向量...
+🏷️ 步驟 2: 第一階段 Tags 向量搜尋...
+✅ 過濾搜尋成功，找到 50 個結果
+✅ 第一階段找到 50 本候選書籍
+📝 步驟 3: 第二階段 Description 向量重排序...
+📊 重排序完成：
+   📖 冰與火之歌：權力遊戲 - 綜合分數: 0.790 (Tags: 0.759, Desc: 0.803)
+   📖 1984 - 綜合分數: 0.772 (Tags: 0.703, Desc: 0.802)
+   📖 1984 - 綜合分數: 0.772 (Tags: 0.703, Desc: 0.802)
+   📖 尋找回憶的偵探 - 綜合分數: 0.767 (Tags: 0.755, Desc: 0.773)
+   📖 沙丘 - 綜合分數: 0.764 (Tags: 0.753, Desc: 0.769)
+🎯 步驟 4: 構建最終推薦結果...
+🎉 推薦完成，耗時 186ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 中世紀魔幻戰爭故事
+🧠 開始分析自然語言查詢: 中世紀魔幻戰爭故事
+📊 Gemini Flash Token 使用: 484 prompt + 115 response = 599 total
+📝 Gemini 解析結果: {
+  "query_text": "中世紀魔幻戰爭故事",
+  "filters": {
+    "language": "中文",
+    "tags": ["小說", "奇幻", "戰爭", "中世紀"]
+  },
+  "summary": "您想尋找以中世紀為背景，充滿魔幻元素和戰爭場面的精彩故事嗎？我將盡力為您推薦一些扣人心弦的作品，帶您體驗那個時代的奇幻與衝突！⚔️📖"
+}
+📋 Flash 解析結果: language=中文, tags=[小說, 奇幻, 戰爭, 中世紀]
+🔍 開始推薦查詢: 中世紀魔幻戰爭故事
+📋 過濾條件: language=中文, tags=[小說, 奇幻, 戰爭, 中世紀]
+📊 步驟 1: 生成查詢向量...
+🏷️ 步驟 2: 第一階段 Tags 向量搜尋...
+✅ 過濾搜尋成功，找到 50 個結果
+✅ 第一階段找到 50 本候選書籍
+📝 步驟 3: 第二階段 Description 向量重排序...
+📊 重排序完成：
+   📖 1984 - 綜合分數: 0.595 (Tags: 0.542, Desc: 0.618)
+   📖 1984 - 綜合分數: 0.595 (Tags: 0.542, Desc: 0.618)
+   📖 被遺忘的歷史：改變世界的50場戰役 - 綜合分數: 0.595 (Tags: 0.598, Desc: 0.593)
+   📖 辛德勒的名單 - 綜合分數: 0.589 (Tags: 0.538, Desc: 0.612)
+   📖 三國演義 - 綜合分數: 0.588 (Tags: 0.577, Desc: 0.593)
+🎯 步驟 4: 構建最終推薦結果...
+🎉 推薦完成，耗時 103ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 戰爭史詩奇幻小說
+🧠 開始分析自然語言查詢: 戰爭史詩奇幻小說
+📊 Gemini Flash Token 使用: 484 prompt + 104 response = 588 total
+📝 Gemini 解析結果: {
+  "query_text": "戰爭史詩奇幻小說",
+  "filters": {
+    "language": "中文",
+    "tags": ["小說", "奇幻", "戰爭", "史詩"]
+  },
+  "summary": "您想尋找融合戰爭史詩元素的奇幻小說，期待帶給您宏大世界觀和精彩故事體驗！我會盡力推薦一些符合您需求的佳作！"
+}
+📋 Flash 解析結果: language=中文, tags=[小說, 奇幻, 戰爭, 史詩]
+🔍 開始推薦查詢: 戰爭史詩奇幻小說
+📋 過濾條件: language=中文, tags=[小說, 奇幻, 戰爭, 史詩]
+📊 步驟 1: 生成查詢向量...
+🏷️ 步驟 2: 第一階段 Tags 向量搜尋...
+✅ 過濾搜尋成功，找到 50 個結果
+✅ 第一階段找到 50 本候選書籍
+📝 步驟 3: 第二階段 Description 向量重排序...
+📊 重排序完成：
+   📖 冰與火之歌：權力遊戲 - 綜合分數: 0.811 (Tags: 0.773, Desc: 0.827)
+   📖 1984 - 綜合分數: 0.790 (Tags: 0.713, Desc: 0.822)
+   📖 1984 - 綜合分數: 0.790 (Tags: 0.713, Desc: 0.822)
+   📖 沙丘 - 綜合分數: 0.788 (Tags: 0.767, Desc: 0.797)
+   📖 尋找回憶的偵探 - 綜合分數: 0.781 (Tags: 0.769, Desc: 0.787)
+🎯 步驟 4: 構建最終推薦結果...
+🎉 推薦完成，耗時 84ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 我想找一些健康的食譜
+🧠 開始分析自然語言查詢: 我想找一些健康的食譜
+📊 Gemini Flash Token 使用: 484 prompt + 96 response = 580 total
+📝 Gemini 解析結果: {
+  "query_text": "我想找一些健康的食譜",
+  "filters": {
+    "language": "中文",
+    "tags": ["健康", "烹飪", "食譜"]
+  },
+  "summary": "希望我能找到一些美味又健康的食譜，讓您在享受美食的同時也能照顧好身體！祝您食慾佳，身體棒 💪😋"
+}
+📋 Flash 解析結果: language=中文, tags=[健康, 烹飪, 食譜]
+🔍 開始推薦查詢: 我想找一些健康的食譜
+📋 過濾條件: language=中文, tags=[健康, 烹飪, 食譜]
+📊 步驟 1: 生成查詢向量...
+🏷️ 步驟 2: 第一階段 Tags 向量搜尋...
+✅ 過濾搜尋成功，找到 33 個結果
+✅ 第一階段找到 33 本候選書籍
+📝 步驟 3: 第二階段 Description 向量重排序...
+📊 重排序完成：
+   📖 地中海飲食聖經 - 綜合分數: 0.826 (Tags: 0.820, Desc: 0.828)
+   📖 低GI飲食全書 - 綜合分數: 0.821 (Tags: 0.849, Desc: 0.809)
+   📖 低GI飲食全書 - 綜合分數: 0.821 (Tags: 0.849, Desc: 0.809)
+   📖 斷食的藝術：一份關於限制卡路里與長壽的報告 - 綜合分數: 0.812 (Tags: 0.854, Desc: 0.794)
+   📖 一日三餐的健康奇蹟：間歇性斷食全指南 - 綜合分數: 0.807 (Tags: 0.841, Desc: 0.792)
+🎯 步驟 4: 構建最終推薦結果...
+🎉 推薦完成，耗時 76ms，返回 5 本書籍

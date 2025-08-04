@@ -1,110 +1,84 @@
 #!/bin/bash
 
-echo "=== 批量導入書籍到新的JSON格式RAG系統 ==="
+echo "📚 書籍資料匯入腳本"
+echo "===================="
 echo ""
 
-# 設定基礎 URL
-BASE_URL="http://localhost:8081/api/book-rag"
-JSON_FILE="test_books.json"
-
-# 檢查JSON檔案是否存在
-if [ ! -f "$JSON_FILE" ]; then
-    echo "錯誤：找不到 $JSON_FILE 檔案"
+# 檢查文件是否存在
+if [ ! -f "test_books.json" ]; then
+    echo "❌ 找不到 test_books.json 文件"
+    echo "請確保文件在當前目錄中"
     exit 1
 fi
 
-# 檢查服務是否運行
-echo "檢查RAG服務狀態..."
-health_response=$(curl -s -w "%{http_code}" -o /dev/null "$BASE_URL/health")
-if [ "$health_response" != "200" ]; then
-    echo "錯誤：RAG服務未運行或無法連接，HTTP狀態碼：$health_response"
-    echo "請確保應用程式正在 localhost:8081 上運行"
-    exit 1
-fi
-echo "✅ RAG服務運行正常"
+echo "📖 找到 test_books.json 文件"
+echo "📊 書籍數量: $(jq length test_books.json) 本"
 echo ""
 
-# 使用新的批量導入 API
-echo "使用批量導入API..."
-if command -v jq &> /dev/null; then
-    # 準備批量導入的請求資料
-    request_data=$(jq -n --argjson books "$(cat $JSON_FILE)" '{ books: $books }')
-    
-    echo "導入書籍資料..."
-    response=$(curl -s -X POST "$BASE_URL/books/batch" \
-        -H "Content-Type: application/json" \
-        -d "$request_data")
-    
-    # 檢查回應
-    if echo "$response" | jq -e '.bookIds' > /dev/null 2>&1; then
-        book_count=$(echo "$response" | jq '.bookIds | length')
-        echo "✅ 成功批量導入 $book_count 本書籍"
-        echo "回應：$(echo "$response" | jq -r '.message')"
-    else
-        echo "❌ 批量導入失敗：$response"
-        exit 1
-    fi
-else
-    echo "警告：未找到jq工具，無法進行批量導入"
-    echo "請安裝jq工具：brew install jq"
+# 檢查應用是否運行
+if ! curl -s http://localhost:8081/health > /dev/null; then
+    echo "❌ Spring Boot 應用未運行"
+    echo "請先啟動應用: ./gradlew bootRun"
     exit 1
 fi
 
+echo "✅ Spring Boot 應用正在運行"
+
+# 檢查 Qdrant 是否運行
+if ! curl -s http://localhost:6333/health > /dev/null; then
+    echo "❌ Qdrant 向量資料庫未運行"
+    echo "請先啟動 Qdrant"
+    exit 1
+fi
+
+echo "✅ Qdrant 向量資料庫正在運行"
+
+# 檢查 Ollama embedding 服務是否運行
+if ! curl -s http://localhost:11434/api/tags > /dev/null; then
+    echo "❌ Ollama 服務未運行"
+    echo "請先啟動 Ollama: ollama serve"
+    exit 1
+fi
+
+echo "✅ Ollama 服務正在運行"
+
+# 檢查 bge-large 模型是否已下載
+if ! ollama list | grep -q "bge-large"; then
+    echo "⚠️ bge-large 模型未安裝，正在下載..."
+    ollama pull bge-large
+fi
+
+echo "✅ bge-large 模型已就緒"
 echo ""
-echo "=== 測試查詢功能 ==="
 
-# 測試統計資訊
-echo "📊 獲取統計資訊..."
-stats=$(curl -s "$BASE_URL/stats")
-echo "統計資訊：$stats" | jq '.'
-
+# 開始匯入
+echo "🚀 開始匯入書籍資料..."
+echo "⏳ 這可能需要幾分鐘時間，請耐心等待..."
 echo ""
-echo "🔍 測試搜索功能..."
 
-# 測試查詢列表
-queries=(
-    "人工智慧"
-    "區塊鏈"
-    "量子計算"
-    "大資料"
-    "雲端運算"
-)
+# 調用匯入 API
+RESPONSE=$(curl -s -X POST "http://localhost:8081/api/import/books" \
+  -H "Content-Type: application/json")
 
-for query in "${queries[@]}"; do
-    echo "查詢：$query"
-    echo "----------------------------------------"
-    
-    # 測試RAG查詢
-    response=$(curl -s -X POST "$BASE_URL/query" \
-        -H "Content-Type: application/json" \
-        -d "{\"query\": \"$query\"}")
-    
-    if command -v jq &> /dev/null; then
-        answer=$(echo "$response" | jq -r '.answer')
-        book_count=$(echo "$response" | jq '.sourceBooks | length')
-        search_method=$(echo "$response" | jq -r '.searchMethod')
-        
-        echo "搜索方法：$search_method"
-        echo "找到書籍：$book_count 本"
-        echo "回答：$answer"
-        
-        # 顯示來源書籍
-        if [ "$book_count" -gt 0 ]; then
-            echo "來源書籍："
-            echo "$response" | jq -r '.sourceBooks[] | "  - \(.title) by \(.author)"'
-        fi
-    else
-        echo "回應：$response"
-    fi
-    
+echo "📋 匯入結果:"
+echo "$RESPONSE" | jq .
+
+# 檢查結果
+SUCCESS_COUNT=$(echo "$RESPONSE" | jq -r '.successCount')
+ERROR_COUNT=$(echo "$RESPONSE" | jq -r '.errorCount')
+
+if [ "$ERROR_COUNT" -eq 0 ]; then
     echo ""
-    sleep 1
-done
-
-echo "=== 測試完成 ==="
-echo ""
-echo "您可以使用以下API進行測試："
-echo "📚 獲取所有書籍: GET $BASE_URL/books"
-echo "🔍 搜索書籍: POST $BASE_URL/search"
-echo "💬 RAG查詢: POST $BASE_URL/query"
-echo "📊 統計資訊: GET $BASE_URL/stats"
+    echo "🎉 匯入完成！成功處理 $SUCCESS_COUNT 本書籍"
+    echo ""
+    echo "📊 可以使用以下命令檢查結果:"
+    echo "   ./check_qdrant.sh"
+    echo ""
+    echo "🔍 或訪問 Qdrant Dashboard:"
+    echo "   http://localhost:6333/dashboard"
+else
+    echo ""
+    echo "⚠️ 匯入完成，但有 $ERROR_COUNT 個錯誤"
+    echo "✅ 成功: $SUCCESS_COUNT"
+    echo "❌ 失敗: $ERROR_COUNT"
+fi

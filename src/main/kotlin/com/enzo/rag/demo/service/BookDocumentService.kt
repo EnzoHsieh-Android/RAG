@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service
 import com.fasterxml.jackson.databind.ObjectMapper
 import java.util.*
 import java.util.concurrent.ConcurrentHashMap
+import jakarta.annotation.PostConstruct
 
 @Service
 class BookDocumentService(
@@ -12,6 +13,104 @@ class BookDocumentService(
 ) {
     
     private val documents = ConcurrentHashMap<String, BookDocument>()
+    
+    @PostConstruct
+    fun initializeFromQdrant() {
+        try {
+            println("🔄 應用啟動時重建內存書籍數據...")
+            
+            // 清空現有數據避免重複
+            documents.clear()
+            
+            // 使用更精確的方法獲取所有向量數據
+            val allResults = qdrantService.getAllVectors(limit = 500) // 直接獲取所有向量
+            
+            if (allResults.isEmpty()) {
+                println("📝 Qdrant中暫無數據，等待首次導入")
+                return
+            }
+            
+            // 去重處理：基於 title + author 組合
+            val uniqueBooks = mutableMapOf<String, BookDocument>()
+            var rebuiltCount = 0
+            var duplicateCount = 0
+            
+            allResults.forEach { result ->
+                try {
+                    val payload = result.metadata
+                    val title = payload["title"]?.toString() ?: ""
+                    val author = payload["author"]?.toString() ?: ""
+                    
+                    if (title.isEmpty() || author.isEmpty()) {
+                        return@forEach // 跳過無效數據
+                    }
+                    
+                    // 創建唯一鍵：title + author
+                    val uniqueKey = "$title|$author"
+                    
+                    // 檢查是否已存在相同書籍
+                    if (uniqueBooks.containsKey(uniqueKey)) {
+                        duplicateCount++
+                        println("⚠️ 發現重複書籍：$title - $author (ID: ${result.id})")
+                        return@forEach
+                    }
+                    
+                    val description = when {
+                        payload.containsKey("description") -> payload["description"]?.toString() ?: ""
+                        payload.containsKey("content") -> extractDescriptionFromVectorText(payload["content"]?.toString() ?: "")
+                        else -> ""
+                    }
+                    
+                    val book = BookDocument(
+                        id = result.id,
+                        title = title,
+                        author = author,
+                        description = description,
+                        metadata = payload
+                    )
+                    
+                    uniqueBooks[uniqueKey] = book
+                    documents[result.id] = book
+                    rebuiltCount++
+                    
+                } catch (e: Exception) {
+                    println("⚠️ 重建書籍 ${result.id} 失敗: ${e.message}")
+                }
+            }
+            
+            println("✅ 成功重建 $rebuiltCount 本書籍的內存數據")
+            if (duplicateCount > 0) {
+                println("🔍 發現並跳過 $duplicateCount 本重複書籍")
+            }
+            
+        } catch (e: Exception) {
+            println("⚠️ 從Qdrant重建內存數據失敗: ${e.message}")
+            println("📝 這是正常的，應用會在首次導入書籍時建立數據")
+        }
+    }
+    
+    /**
+     * 從向量化文本中提取原始描述
+     */
+    private fun extractDescriptionFromVectorText(vectorText: String): String {
+        return try {
+            // 查找"詳細描述:"後的內容
+            val descriptionStart = vectorText.indexOf("詳細描述: ") + "詳細描述: ".length
+            val descriptionEnd = vectorText.indexOf("\n", descriptionStart)
+            
+            if (descriptionStart > "詳細描述: ".length - 1 && descriptionEnd > descriptionStart) {
+                vectorText.substring(descriptionStart, descriptionEnd).trim()
+            } else {
+                // 回退：查找任何包含描述信息的部分
+                vectorText.lines().find { line -> 
+                    line.length > 20 && !line.startsWith("書籍標題:") && 
+                    !line.startsWith("作者:") && !line.startsWith("類別:")
+                }?.trim() ?: ""
+            }
+        } catch (e: Exception) {
+            ""
+        }
+    }
     
     data class BookDocument(
         val id: String,
@@ -64,7 +163,7 @@ class BookDocumentService(
             return keywords.joinToString(", ")
         }
         
-        private fun inferCategory(title: String, description: String): String {
+        fun inferCategory(title: String, description: String): String {
             val text = (title + " " + description).lowercase()
             return when {
                 text.contains("人工智慧") || text.contains("ai") || text.contains("機器學習") || text.contains("深度學習") -> "人工智慧"
@@ -139,7 +238,9 @@ class BookDocumentService(
             put("title", title)
             put("author", author)
             put("type", "book")
-            category?.let { put("category", it) }
+            // 如果沒有提供category，自動推斷分類
+            val inferredCategory = category ?: BookDocument("", title, author, description).inferCategory(title, description)
+            put("category", inferredCategory)
             keywords?.let { put("keywords", it) }
             putAll(additionalMetadata)
         }
@@ -349,6 +450,73 @@ class BookDocumentService(
                     it !in listOf("title", "author", "description", "category", "keywords") 
                 }
             )
+        }
+    }
+    
+    // 使用Qdrant過濾查詢的搜索方法
+    fun searchBooksWithFilter(
+        query: String, 
+        categories: List<String>, 
+        limit: Int = 5, 
+        threshold: Double = 0.05, 
+        useReRanking: Boolean = true
+    ): List<SearchResult> {
+        // 查詢預處理：擴展同義詞
+        val expandedQuery = expandQuery(query)
+        
+        // 構建過濾條件
+        val filter = if (categories.isNotEmpty()) {
+            println("🎯 使用分類過濾：$categories")
+            qdrantService.buildCategoryFilter(categories)
+        } else {
+            null
+        }
+        
+        // 第一階段：使用過濾條件進行向量搜索
+        val candidateLimit = if (useReRanking) limit * 3 else limit * 2
+        val vectorResults = qdrantService.searchSimilar(expandedQuery, candidateLimit, threshold, filter)
+        
+        if (vectorResults.isEmpty()) {
+            println("⚠️ 過濾搜索未找到結果，回退到無過濾搜索")
+            return searchBooks(query, limit, threshold, useReRanking)
+        }
+        
+        println("✅ 過濾搜索找到 ${vectorResults.size} 個結果")
+        
+        // 將結果轉換為SearchResult
+        val candidates = vectorResults.mapNotNull { result ->
+            documents[result.id]?.let { book ->
+                SearchResult(
+                    document = book,
+                    similarityScore = result.score
+                )
+            }
+        }.sortedByDescending { it.similarityScore ?: 0.0 }
+        
+        // 第二階段：Re-ranking優化
+        return if (useReRanking && candidates.size >= limit) {
+            println("🔄 啟用Re-ranking優化，候選數量：${candidates.size}，目標數量：$limit")
+            val reRankingCandidates = candidates.map { result ->
+                ReRankingService.SearchResult(
+                    document = ReRankingService.BookDocument(
+                        id = result.document.id,
+                        title = result.document.title,
+                        author = result.document.author,
+                        description = result.document.description,
+                        metadata = result.document.metadata
+                    ),
+                    similarityScore = result.similarityScore
+                )
+            }
+            val reRankedResults = reRankingService.reRankDocuments(query, reRankingCandidates, limit)
+            reRankedResults.map { reRanked ->
+                SearchResult(
+                    document = documents[reRanked.document.id]!!,
+                    similarityScore = reRanked.similarityScore
+                )
+            }
+        } else {
+            candidates.take(limit)
         }
     }
     

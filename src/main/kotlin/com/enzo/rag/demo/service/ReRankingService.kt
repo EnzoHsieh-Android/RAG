@@ -3,9 +3,9 @@ package com.enzo.rag.demo.service
 import org.springframework.stereotype.Service
 
 @Service
-class
-ReRankingService(
-    private val chatService: BasicChatService
+class ReRankingService(
+    private val chatService: BasicChatService,
+    private val huggingFaceService: HuggingFaceService
 ) {
     
     data class SearchResult(
@@ -29,7 +29,7 @@ ReRankingService(
     )
     
     /**
-     * 使用Ollama qwen3:8b進行相關度重排序
+     * 使用 bge-reranker-base 進行相關度重排序，LLM 作為 fallback
      */
     fun reRankDocuments(
         query: String,
@@ -41,17 +41,84 @@ ReRankingService(
         
         println("🔄 開始Re-ranking，候選文檔數量：${candidates.size}")
         
+        // 首先嘗試使用 bge-reranker-base
+        val reRankedResults = try {
+            reRankWithBGE(query, candidates, topK)
+        } catch (e: Exception) {
+            println("⚠️ BGE Reranker 失敗，回退到 LLM: ${e.message}")
+            reRankWithLLM(query, candidates, topK)
+        }
+        
+        println("✅ Re-ranking完成，最終結果數量：${reRankedResults.size}")
+        return reRankedResults
+    }
+    
+    /**
+     * 使用 BGE Reranker 進行重排序
+     */
+    private fun reRankWithBGE(
+        query: String,
+        candidates: List<SearchResult>,
+        topK: Int
+    ): List<SearchResult> {
+        
+        // 檢查 API 是否可用
+        if (!huggingFaceService.isApiAvailable()) {
+            println("⚠️ HuggingFace API 不可用，回退到 LLM")
+            return reRankWithLLM(query, candidates, topK)
+        }
+        
+        println("🚀 使用 BGE Reranker 進行重排序")
+        
+        // 準備文檔文本
+        val documents = candidates.map { result ->
+            "${result.document.title} ${result.document.author} ${result.document.description}"
+        }
+        
+        // 調用 BGE Reranker
+        val scores = huggingFaceService.rerankBatch(query, documents, batchSize = 10)
+        
+        if (scores.size != candidates.size) {
+            println("⚠️ BGE Reranker 返回分數數量不匹配，回退到 LLM")
+            return reRankWithLLM(query, candidates, topK)
+        }
+        
+        // 結合原始結果和新分數
+        val scoredResults = candidates.zip(scores) { candidate, score ->
+            SearchResult(
+                document = candidate.document,
+                similarityScore = score
+            )
+        }
+        
+        // 按分數排序並取前 topK
+        return scoredResults
+            .sortedByDescending { it.similarityScore ?: 0.0 }
+            .take(topK)
+    }
+    
+    /**
+     * 使用 LLM 進行重排序（fallback 方法）
+     */
+    private fun reRankWithLLM(
+        query: String,
+        candidates: List<SearchResult>,
+        topK: Int
+    ): List<SearchResult> {
+        
+        println("🤖 使用 LLM 進行重排序")
+        
         // 構建re-ranking prompt
         val reRankingPrompt = buildReRankingPrompt(query, candidates)
         
-        // 使用qwen3:8b進行評分
+        // 使用LLM進行評分
         val rankingResponse = chatService.chat(reRankingPrompt)
         
         // 解析評分結果
         val rankingResults = parseRankingResponse(rankingResponse, candidates)
         
         // 根據re-ranking分數重新排序
-        val reRankedResults = rankingResults
+        return rankingResults
             .sortedByDescending { it.reRankScore }
             .take(topK)
             .map { ranking ->
@@ -61,9 +128,6 @@ ReRankingService(
                     similarityScore = ranking.reRankScore // 使用re-ranking分數
                 )
             }
-        
-        println("✅ Re-ranking完成，最終結果數量：${reRankedResults.size}")
-        return reRankedResults
     }
     
     private fun buildReRankingPrompt(

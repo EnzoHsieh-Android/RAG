@@ -18,7 +18,9 @@
       "Bash(./import_diverse_books.sh:*)",
       "Bash(ollama list:*)",
       "Bash(ollama pull:*)",
-      "Bash(ollama search:*)"
+      "Bash(ollama search:*)",
+      "Bash(pkill:*)",
+      "Bash(true)"
     ],
     "deny": []
   }

@@ -5,7 +5,6 @@ import com.enzo.rag.demo.service.BasicChatService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import java.util.concurrent.CompletableFuture
-import java.util.concurrent.ConcurrentHashMap
 
 @RestController
 @RequestMapping("/api/recommend")
@@ -13,8 +12,6 @@ class BookRecommendationController(
     private val bookService: BookDocumentService,
     private val chatService: BasicChatService
 ) {
-    // Phase 4: 智能緩存
-    private val queryCache = ConcurrentHashMap<String, RecommendationResponse>()
     
     // Token 計算器
     private class TokenCounter {
@@ -30,12 +27,6 @@ class BookRecommendationController(
     @PostMapping("/books")
     fun recommendBooks(@RequestBody request: RecommendationRequest): ResponseEntity<RecommendationResponse> {
         
-        // Phase 4: 檢查緩存
-        val cacheKey = generateCacheKey(request.query, request.maxResults ?: 5)
-        queryCache[cacheKey]?.let { cachedResult ->
-            println("📋 使用緩存的推薦結果")
-            return ResponseEntity.ok(cachedResult)
-        }
         
         // 初始化token計算器
         val tokenCounter = TokenCounter()
@@ -48,7 +39,8 @@ class BookRecommendationController(
         
         請考慮各種書籍類型（技術書籍、小說、童書、文學、歷史、科學等），並以以下格式回答：
         搜索關鍵詞：[提取最能代表用戶需求的關鍵詞，用空格分隔，可以是主題、類型、作者、情境等]
-        目標讀者：[入門/中級/進階/兒童/青少年/成人/專業人士]
+        書籍分類：[從以下選擇：人工智慧,區塊鏈,雲端運算,資料科學,資訊安全,網頁開發,行動開發,遊戲開發,演算法,軟體工程,程式技術]
+        目標讀者：[入門/中級/進階/兒童/青少年/成人/專業人士]  
         推薦數量：[建議推薦書籍數量，通常3-8本]
         
         範例：
@@ -82,10 +74,12 @@ class BookRecommendationController(
         val keywords = extractSearchKeywords(analysis, request.query)
         val difficulty = extractTargetAudience(analysis)
         val recommendCount = extractRecommendCount(analysis)
+        val categories = extractCategories(analysis, request.query)
         
-        // 使用 LLM 分析的關鍵詞進行精確搜索（如果與原查詢不同）
-        val finalSearchResults = if (keywords != request.query) {
-            bookService.searchBooks(keywords, limit = recommendCount, useReRanking = false)
+        // 使用LLM提取的分類進行Qdrant過濾查詢
+        val finalSearchResults = if (categories.isNotEmpty() || keywords != request.query) {
+            println("🎯 使用LLM分析結果進行過濾查詢：categories=$categories, keywords=$keywords")
+            bookService.searchBooksWithFilter(keywords, categories, limit = recommendCount, useReRanking = false)
         } else {
             basicSearchResults
         }
@@ -165,17 +159,10 @@ class BookRecommendationController(
             tokenUsage = tokenCounter.toTokenUsage()
         )
         
-        // Phase 4: 緩存結果
-        queryCache[cacheKey] = response
-        println("💾 已緩存推薦結果")
         
         return ResponseEntity.ok(response)
     }
     
-    // Phase 4: 緩存管理方法
-    private fun generateCacheKey(query: String, maxResults: Int): String {
-        return "${query.trim().lowercase()}_$maxResults".hashCode().toString()
-    }
     
     // Token 估算方法 (繁體中文約1.2-1.5 tokens per 字符)
     private fun estimateTokens(text: String): Int {
@@ -217,6 +204,42 @@ class BookRecommendationController(
         val countLine = analysis.lines().find { it.contains("推薦數量") || it.contains("數量") }
         val numberStr = countLine?.substringAfter("：")?.trim()?.filter { it.isDigit() }
         return numberStr?.toIntOrNull()?.coerceIn(3, 8) ?: 5
+    }
+    
+    private fun extractCategories(analysis: String, originalQuery: String): List<String> {
+        val categoryLine = analysis.lines().find { 
+            it.contains("書籍分類") || it.contains("分類") || it.contains("類別")
+        }
+        val extracted = categoryLine?.substringAfter("：")?.trim() ?: ""
+        
+        val categories = mutableListOf<String>()
+        
+        // LLM 分析的分類
+        if (extracted.isNotBlank()) {
+            extracted.split(",", "，").forEach { category ->
+                val trimmed = category.trim()
+                if (trimmed.isNotEmpty()) {
+                    categories.add(trimmed)
+                }
+            }
+        }
+        
+        // 回退：基於原查詢的分類推斷
+        if (categories.isEmpty()) {
+            val queryLower = originalQuery.lowercase()
+            when {
+                queryLower.contains("人工智慧") || queryLower.contains("ai") || queryLower.contains("機器學習") || queryLower.contains("深度學習") -> categories.add("人工智慧")
+                queryLower.contains("區塊鏈") -> categories.add("區塊鏈")
+                queryLower.contains("雲端") || queryLower.contains("微服務") -> categories.add("雲端運算")
+                queryLower.contains("資料科學") || queryLower.contains("大數據") -> categories.add("資料科學")
+                queryLower.contains("安全") -> categories.add("資訊安全")
+                queryLower.contains("前端") || queryLower.contains("後端") || queryLower.contains("網頁") -> categories.add("網頁開發")
+                queryLower.contains("演算法") -> categories.add("演算法")
+                queryLower.contains("軟體工程") -> categories.add("軟體工程")
+            }
+        }
+        
+        return categories
     }
     
     private fun generateRecommendationReason(

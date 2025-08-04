@@ -1,0 +1,10 @@
+{
+  "books": [
+    {
+      "title": "前端開發完全指南",
+      "author": "鄭志強",
+      "description": "從HTML、CSS、JavaScript基礎到現代前端框架的完整學習指南。涵蓋React、Vue.js、Angular等主流框架，以及響應式設計、效能優化等高級主題。"
+    }
+  ],
+  "batchSize": 10
+}

@@ -59,7 +59,29 @@ class QdrantService(
         @JsonProperty("vector") val vector: List<Double>,
         @JsonProperty("limit") val limit: Int,
         @JsonProperty("score_threshold") val scoreThreshold: Double? = null,
-        @JsonProperty("with_payload") val withPayload: Boolean = true
+        @JsonProperty("with_payload") val withPayload: Boolean = true,
+        @JsonProperty("filter") val filter: FilterCondition? = null
+    )
+    
+    // Qdrant 過濾條件數據類
+    data class FilterCondition(
+        @JsonProperty("must") val must: List<FilterClause>? = null,
+        @JsonProperty("should") val should: List<FilterClause>? = null
+    )
+    
+    data class FilterClause(
+        @JsonProperty("key") val key: String,
+        @JsonProperty("match") val match: FilterMatch? = null,
+        @JsonProperty("range") val range: FilterRange? = null
+    )
+    
+    data class FilterMatch(
+        @JsonProperty("value") val value: Any
+    )
+    
+    data class FilterRange(
+        @JsonProperty("gte") val gte: Double? = null,
+        @JsonProperty("lte") val lte: Double? = null
     )
     
     data class SearchResponse(
@@ -150,7 +172,7 @@ class QdrantService(
         }
     }
     
-    fun searchSimilar(query: String, limit: Int = 5, threshold: Double = 0.05): List<SearchResult> {
+    fun searchSimilar(query: String, limit: Int = 5, threshold: Double = 0.05, filter: FilterCondition? = null): List<SearchResult> {
         return try {
             val queryEmbedding = embeddingService.getEmbedding(query)
             
@@ -158,8 +180,13 @@ class QdrantService(
                 vector = queryEmbedding,
                 limit = limit,
                 scoreThreshold = threshold,
-                withPayload = true
+                withPayload = true,
+                filter = filter
             )
+            
+            if (filter != null) {
+                println("🔍 使用過濾條件搜索：$filter")
+            }
             
             val response = client.post()
                 .uri("/collections/$collectionName/points/search")
@@ -231,4 +258,126 @@ class QdrantService(
             "集合不存在或連接失敗: ${e.message}"
         }
     }
+    
+    // 構建過濾條件的工具方法
+    fun buildCategoryFilter(categories: List<String>): FilterCondition {
+        return FilterCondition(
+            should = categories.map { category ->
+                FilterClause(
+                    key = "category",
+                    match = FilterMatch(value = category)
+                )
+            }
+        )
+    }
+    
+    fun buildTitleFilter(titleKeywords: List<String>): FilterCondition {
+        return FilterCondition(
+            should = titleKeywords.map { keyword ->
+                FilterClause(
+                    key = "title",
+                    match = FilterMatch(value = keyword)
+                )
+            }
+        )
+    }
+    
+    fun buildCombinedFilter(categories: List<String>?, titleKeywords: List<String>?): FilterCondition? {
+        val clauses = mutableListOf<FilterClause>()
+        
+        categories?.forEach { category ->
+            clauses.add(FilterClause(key = "category", match = FilterMatch(value = category)))
+        }
+        
+        titleKeywords?.forEach { keyword ->
+            clauses.add(FilterClause(key = "title", match = FilterMatch(value = keyword)))
+        }
+        
+        return if (clauses.isNotEmpty()) {
+            FilterCondition(should = clauses)
+        } else null
+    }
+    
+    /**
+     * 獲取所有向量數據（用於數據恢復）- 使用分頁避免緩衝區溢出
+     */
+    fun getAllVectors(limit: Int = 500): List<SearchResult> {
+        val allResults = mutableListOf<SearchResult>()
+        val pageSize = 20 // 小批次大小
+        var offset: String? = null
+        var totalRetrieved = 0
+        
+        try {
+            while (totalRetrieved < limit) {
+                val currentPageSize = minOf(pageSize, limit - totalRetrieved)
+                
+                val scrollRequest = mutableMapOf<String, Any>(
+                    "limit" to currentPageSize,
+                    "with_payload" to true
+                )
+                
+                // 添加分頁偏移量
+                offset?.let { scrollRequest["offset"] = it }
+                
+                val response = client.post()
+                    .uri("/collections/$collectionName/points/scroll")
+                    .bodyValue(scrollRequest)
+                    .retrieve()
+                    .bodyToMono(ScrollResponse::class.java)
+                    .block()
+                
+                val points = response?.result?.points ?: emptyList()
+                
+                if (points.isEmpty()) {
+                    break // 沒有更多數據
+                }
+                
+                points.forEach { point ->
+                    val payload = point.payload ?: emptyMap()
+                    allResults.add(
+                        SearchResult(
+                            id = point.id,
+                            content = payload["content"]?.toString() ?: "",
+                            metadata = payload.filterKeys { it != "content" },
+                            score = 1.0
+                        )
+                    )
+                }
+                
+                totalRetrieved += points.size
+                
+                // 更新偏移量
+                offset = response?.result?.nextPageOffset
+                
+                // 如果沒有下一頁偏移量，說明數據已全部獲取
+                if (offset == null) {
+                    break
+                }
+                
+                println("📄 已獲取 $totalRetrieved 條數據...")
+            }
+            
+            println("✅ 總共獲取 ${allResults.size} 條向量數據")
+            return allResults
+            
+        } catch (e: Exception) {
+            println("❌ 獲取所有向量失敗: ${e.message}")
+            return allResults // 返回已獲取的部分數據
+        }
+    }
+    
+    // Scroll API 響應數據類
+    data class ScrollResponse(
+        @JsonProperty("result") val result: ScrollResult
+    )
+    
+    data class ScrollResult(
+        @JsonProperty("points") val points: List<ScrollPoint>,
+        @JsonProperty("next_page_offset") val nextPageOffset: String?
+    )
+    
+    data class ScrollPoint(
+        @JsonProperty("id") val id: String,
+        @JsonProperty("payload") val payload: Map<String, Any>?
+    )
 }

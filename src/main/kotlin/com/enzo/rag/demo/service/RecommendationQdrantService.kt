@@ -16,6 +16,57 @@ class RecommendationQdrantService {
         .build()
     
     /**
+     * 全庫搜尋：在 desc_vecs 中進行全庫向量搜尋
+     */
+    fun searchFullLibrary(
+        queryVector: List<Double>,
+        limit: Int = 100,
+        scoreThreshold: Double = 0.2
+    ): List<QdrantSearchResult> {
+        println("🌐 在 desc_vecs 集合中進行全庫搜尋，候選數量: $limit, 閾值: $scoreThreshold")
+        
+        val searchRequest = QdrantSearchRequest(
+            vector = queryVector,
+            limit = limit,
+            scoreThreshold = scoreThreshold,
+            withPayload = true,
+            filter = null  // 無過濾條件，全庫搜尋
+        )
+        
+        return try {
+            val response = qdrantClient.post()
+                .uri("/collections/desc_vecs/points/search")
+                .bodyValue(searchRequest)
+                .retrieve()
+                .bodyToMono(QdrantSearchResponse::class.java)
+                .timeout(Duration.ofSeconds(10))
+                .block()
+            
+            val results = response?.result?.mapNotNull { item ->
+                // desc_vecs 中只有 book_id，需要從 tags_vecs 獲取完整 metadata
+                val bookId = item.payload?.get("book_id")?.toString()
+                if (bookId != null) {
+                    val fullMetadata = getBookMetadata(bookId)
+                    if (fullMetadata != null) {
+                        QdrantSearchResult(
+                            id = item.id,
+                            score = item.score,
+                            payload = fullMetadata
+                        )
+                    } else null
+                } else null
+            } ?: emptyList()
+            
+            println("✅ 全庫搜尋完成，找到 ${results.size} 個結果")
+            results
+            
+        } catch (e: Exception) {
+            println("❌ 全庫搜尋失敗: ${e.message}")
+            emptyList()
+        }
+    }
+    
+    /**
      * 第一階段：在 tags_vecs 中查詢候選書籍
      */
     fun searchTagsVectors(
@@ -253,5 +304,43 @@ class RecommendationQdrantService {
                 QdrantFilter(should = clauses)
             }
         } else null
+    }
+    
+    /**
+     * 根據單個 book_id 從 tags_vecs 獲取完整 metadata
+     */
+    private fun getBookMetadata(bookId: String): Map<String, Any>? {
+        val filter = QdrantFilter(
+            must = listOf(
+                QdrantFilterClause(
+                    key = "book_id",
+                    match = QdrantMatch(value = bookId)
+                )
+            )
+        )
+        
+        val searchRequest = QdrantSearchRequest(
+            vector = List(1024) { 0.0 }, // 使用零向量，因為我們只要 metadata
+            limit = 1,
+            scoreThreshold = null,
+            withPayload = true,
+            filter = filter
+        )
+        
+        return try {
+            val response = qdrantClient.post()
+                .uri("/collections/tags_vecs/points/search")
+                .bodyValue(searchRequest)
+                .retrieve()
+                .bodyToMono(QdrantSearchResponse::class.java)
+                .timeout(Duration.ofSeconds(10))
+                .block()
+            
+            response?.result?.firstOrNull()?.payload
+            
+        } catch (e: Exception) {
+            println("❌ 獲取書籍 $bookId metadata 失敗: ${e.message}")
+            null
+        }
     }
 }

@@ -194,6 +194,78 @@ class QueryAnalysisService(
             )
         )
     }
+    
+    /**
+     * 使用 Gemini Flash 对推荐结果进行重排序和过滤
+     */
+    fun rerankResults(
+        originalQuery: String,
+        results: List<com.enzo.rag.demo.model.RecommendationResult>
+    ): Pair<List<com.enzo.rag.demo.model.RecommendationResult>, GeminiTokenUsage?> {
+        println("🎯 使用 Gemini Flash 重排序推荐结果...")
+        
+        val resultsJson = results.mapIndexed { index, result ->
+            """
+            {
+                "index": $index,
+                "title": "${result.title}",
+                "author": "${result.author}",
+                "description": "${result.description.take(100)}...",
+                "tags": ${result.tags.joinToString(prefix = "[\"", postfix = "\"]", separator = "\", \"")},
+                "relevance_score": ${result.relevanceScore}
+            }
+            """.trimIndent()
+        }.joinToString(",\n")
+        
+        val prompt = """
+        你是一個智能書籍推薦專家。用戶查詢了：「$originalQuery」
+
+        系統返回了以下推薦結果：
+        [$resultsJson]
+
+        請分析每本書與用戶查詢的相關性，並：
+        1. 過濾掉完全不相關的書籍（相關性 < 30%）
+        2. 按照與用戶需求的匹配度重新排序
+        3. 保留最多 5 本最相關的書籍
+
+        請以 JSON 格式返回重排序後的結果：
+        {
+            "filtered_results": [相關書籍的 index 數組，按相關性降序排列],
+            "reasoning": "簡短說明為什麼這樣排序和過濾"
+        }
+
+        注意：
+        1. 只返回 JSON，不要其他說明文字
+        2. filtered_results 中的數字對應原始結果的 index
+        3. 如果所有書籍都不相關，返回空數組 []
+        """
+        
+        return try {
+            val (responseText, tokenUsage) = callGeminiFlashWithTokens(prompt)
+            println("📋 Flash 重排序回應: $responseText")
+            
+            val cleanJson = responseText
+                .replace("```json", "")
+                .replace("```", "")
+                .trim()
+            
+            val rerankResult = objectMapper.readValue(cleanJson, FlashRerankResult::class.java)
+            
+            val filteredResults = rerankResult.filteredResults.mapNotNull { index ->
+                results.getOrNull(index)
+            }
+            
+            println("✅ 重排序完成：保留 ${filteredResults.size} 本書籍")
+            println("📝 排序理由: ${rerankResult.reasoning}")
+            
+            Pair(filteredResults, tokenUsage)
+            
+        } catch (e: Exception) {
+            println("❌ Flash 重排序失败: ${e.message}")
+            // 如果重排序失败，返回原始结果
+            Pair(results, null)
+        }
+    }
 }
 
 // Gemini API 相關數據類
@@ -230,4 +302,9 @@ data class GeminiUsageMetadata(
     @JsonProperty("promptTokenCount") val promptTokenCount: Int?,
     @JsonProperty("candidatesTokenCount") val candidatesTokenCount: Int?,
     @JsonProperty("totalTokenCount") val totalTokenCount: Int?
+)
+
+data class FlashRerankResult(
+    @JsonProperty("filtered_results") val filteredResults: List<Int>,
+    @JsonProperty("reasoning") val reasoning: String
 )

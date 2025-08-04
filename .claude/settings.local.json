@@ -28,7 +28,15 @@
       "Bash(./check_new_collections.sh:*)",
       "Bash(./test_recommendation.sh:*)",
       "Bash(./test_natural_query.sh:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(jq:*)",
+      "Bash(python3:*)",
+      "Bash(./debug_similarity.sh:*)",
+      "Bash(for book_id in bk_2044 bk_1075 bk_2092 bk_1144 bk_2054)",
+      "Bash(do)",
+      "Bash(done)",
+      "Bash(./debug_tags.sh:*)"
     ],
     "deny": []
   }

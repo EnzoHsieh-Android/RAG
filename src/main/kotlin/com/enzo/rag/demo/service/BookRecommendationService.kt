@@ -16,16 +16,18 @@ class BookRecommendationService(
 ) {
     
     companion object {
-        private const val FULL_SEARCH_LIMIT = 50  // 全庫搜尋候選數量（减少Tag语义比对负担）
+        private const val TAGS_SEARCH_LIMIT = 50  // Tags搜尋候選數量
+        private const val DESC_RERANK_LIMIT = 20   // Description重排序數量
         private const val FINAL_RESULTS_LIMIT = 5   // 最終返回結果數量
-        private const val FLASH_CANDIDATE_LIMIT = 12  // Flash重排序的候选数量（给Flash更多选择空间）
-        private const val DESC_SCORE_WEIGHT = 0.2   // Tags向量分數權重 
-        private const val TAG_SCORE_WEIGHT = 0.8    // Tag語義分數權重
-        private const val ENABLE_FLASH_RERANK = true  // 是否启用Flash重排序（可关闭以加速）
+        private const val FLASH_CANDIDATE_LIMIT = 12  // Flash重排序的候选数量
+        private const val TAGS_SCORE_WEIGHT = 0.2   // Tags向量分數權重 
+        private const val DESC_SCORE_WEIGHT = 0.8    // Description向量分數權重（提高語義匹配）
+        private const val ENABLE_FLASH_RERANK = false  // 是否启用Flash重排序（可关闭以加速）
+        private const val MAX_SEMANTIC_CALCULATIONS = 10  // 限制語義計算次數
     }
     
     /**
-     * 主推薦查詢入口 - 全庫查詢 + Soft Tag Signal
+     * 主推薦查詢入口 - 雙階段策略: Tags搜尋 + Description重排序
      */
     fun recommend(queryRequest: QueryRequest): RecommendationResponse {
         val startTime = System.currentTimeMillis()
@@ -34,30 +36,17 @@ class BookRecommendationService(
         println("🏷️ Gemini提取標籤: ${queryRequest.filters.tags}")
         
         try {
-            // 步驟 1: 生成優化的查詢向量
-            println("📊 步驟 1: 生成優化的查詢向量...")
-            val queryVector = if (queryRequest.filters.tags.isNullOrEmpty()) {
-                // 如果沒有標籤，使用原始查詢文本
-                println("   使用原始查詢文本: ${queryRequest.queryText}")
-                embeddingService.getEmbedding(queryRequest.queryText)
+            // 步驟 1: Tags向量搜索（第一階段）
+            println("🏷️ 步驟 1: Tags向量搜索...")
+            val tagsQuery = if (!queryRequest.filters.tags.isNullOrEmpty()) {
+                "分類：${queryRequest.filters.tags!!.joinToString("、")}"
             } else {
-                // 有標籤時，使用與書籍標籤相同的格式進行搜索
-                val tagsQuery = "分類：${queryRequest.filters.tags!!.joinToString("、")}"
-                println("   使用標準格式Gemini標籤: $tagsQuery")
-                embeddingService.getEmbedding(tagsQuery)
+                queryRequest.queryText
             }
+            println("   Tags查詢: $tagsQuery")
+            val tagsVector = embeddingService.getEmbedding(tagsQuery)
             
-            // 步驟 2: Tags向量搜索（第一阶段）
-            println("🏷️ 步驟 2: Tags向量搜索...")
-            val tagsCandidates = if (queryRequest.filters.tags.isNullOrEmpty()) {
-                // 如果没有标签，使用全库搜索
-                println("   無標籤，使用全庫Description搜索")
-                qdrantService.searchFullLibrary(queryVector, limit = FULL_SEARCH_LIMIT)
-            } else {
-                // 有标签时，先用tags向量搜索找候选
-                println("   使用Tags向量搜索候選書籍")
-                qdrantService.searchTagsVectorsWithoutFilter(queryVector, limit = FULL_SEARCH_LIMIT)
-            }
+            val tagsCandidates = qdrantService.searchTagsVectorsWithoutFilter(tagsVector, limit = TAGS_SEARCH_LIMIT)
             
             if (tagsCandidates.isEmpty()) {
                 println("❌ Tags搜尋未找到任何候選書籍")
@@ -66,18 +55,33 @@ class BookRecommendationService(
             
             println("✅ Tags搜尋找到 ${tagsCandidates.size} 本候選書籍")
             
-            // 步驟 3: Tag語義比對計算 
-            println("🏷️ 步驟 3: Tag語義比對計算...")
+            // 步驟 2: Description向量重排序（第二階段，批量優化）
+            println("📖 步驟 2: Description向量重排序...")
+            val descQuery = queryRequest.queryText
+            println("   Description查詢: $descQuery")
+            val descVector = embeddingService.getEmbedding(descQuery)
+            
+            // 取前N個候選進行description重排序
+            val topCandidates = tagsCandidates.take(DESC_RERANK_LIMIT)
+            val bookIds = topCandidates.map { it.payload["book_id"]?.toString() ?: "" }.filter { it.isNotEmpty() }
+            
+            // 批量查詢Description分數（從20次API調用減少到1次）
+            val descScores = qdrantService.searchDescriptionVectorsBatch(descVector, bookIds)
+            
+            println("✅ Description重排序完成，批量處理 ${topCandidates.size} 本書籍")
+            
+            // 步驟 3: 快速Tag語義比對（可選）
+            println("🏷️ 步驟 3: 快速Tag語義比對...")
             val tagScores = if (queryRequest.filters.tags.isNullOrEmpty()) {
                 println("⚠️ 無Gemini標籤，跳過Tag比對")
                 emptyMap<String, Double>()
             } else {
-                calculateTagSemanticScores(queryRequest.filters.tags!!, tagsCandidates)
+                calculateFastTagScores(queryRequest.filters.tags!!, topCandidates)
             }
             
             // 步驟 4: 綜合評分排序
             println("📊 步驟 4: 綜合評分排序...")
-            val allResults = calculateFinalScores(tagsCandidates, tagScores)
+            val allResults = calculateDualStageScores(topCandidates, descScores, tagScores)
                 .sortedByDescending { it.finalScore }
             
             // 步驟 5: 準備候選結果
@@ -120,9 +124,9 @@ class BookRecommendationService(
             println("🎉 推薦完成，耗時 ${processingTime}ms，返回 ${recommendationResults.size} 本書籍")
             
             val strategy = if (ENABLE_FLASH_RERANK) {
-                "Tags向量搜尋 + Tag語義比對 + Flash智能重排序"
+                "雙階段搜尋: Tags向量 + Description重排序 + Flash智能重排序"
             } else {
-                "Tags向量搜尋 + Tag語義比對（快速模式）"
+                "雙階段搜尋: Tags向量 + Description重排序（快速模式）"
             }
             
             return RecommendationResponse(
@@ -144,19 +148,19 @@ class BookRecommendationService(
     }
     
     /**
-     * 計算Tag語義評分（快速模式）
-     * 主要使用精确匹配，只对高精确匹配的书籍进行语义计算
+     * 智能Tag語義比對（超級優化版）
+     * 基於候選分數智能決定是否進行語義計算
      */
-    private fun calculateTagSemanticScores(
+    private fun calculateFastTagScores(
         geminiTags: List<String>,
         candidates: List<QdrantSearchResult>
     ): Map<String, Double> {
-        println("🔍 開始Tag語義比對（快速模式），Gemini標籤: $geminiTags")
+        println("⚡ 智能Tag語義比對，Gemini標籤: $geminiTags")
         
         val tagScores = mutableMapOf<String, Double>()
         var semanticCalculations = 0
         
-        // 只生成一次Gemini标签向量（用于高匹配度书籍的语义计算）
+        // 預生成Gemini標籤向量（緩存會加速重複查詢）
         val geminiTagsText = geminiTags.joinToString(", ")
         var geminiTagsVector: List<Double>? = null
         
@@ -172,8 +176,16 @@ class BookRecommendationService(
                     val exactMatches = geminiTags.intersect(bookTagsList.toSet()).size
                     val exactScore = exactMatches.toDouble() / geminiTags.size.toDouble()
                     
-                    // 只对精确匹配度 >= 0.25 的书籍进行语义计算
-                    val finalTagScore = if (exactScore >= 0.25 && semanticCalculations < 20) {
+                    // 智能決定是否進行語義計算：
+                    // 1. 候選分數高（說明基礎匹配度好）
+                    // 2. 精確匹配度中等（需要語義補充）  
+                    // 3. 限制計算次數避免過度消耗
+                    val shouldCalculateSemantic = candidate.score > 0.6 && 
+                                                exactScore >= 0.3 && 
+                                                exactScore < 0.8 && 
+                                                semanticCalculations < 5
+                    
+                    val finalTagScore = if (shouldCalculateSemantic) {
                         if (geminiTagsVector == null) {
                             geminiTagsVector = embeddingService.getEmbedding(geminiTagsText)
                         }
@@ -183,46 +195,48 @@ class BookRecommendationService(
                         val semanticScore = embeddingService.cosineSimilarity(geminiTagsVector!!, bookTagsVector)
                         semanticCalculations++
                         
-                        // 综合评分: 精确匹配60% + 语义相似度40%
-                        exactScore * 0.6 + semanticScore * 0.4
+                        // 高權重給精確匹配
+                        exactScore * 0.8 + semanticScore * 0.2
                     } else {
-                        // 低匹配度书籍只使用精确匹配分数
                         exactScore
                     }
                     
                     tagScores[bookId] = finalTagScore
-                    
-                    if (exactScore >= 0.25) {
-                        println("   📋 $bookId - 精确匹配: $exactMatches/${geminiTags.size} = %.3f, 综合: %.3f".format(
-                            exactScore, finalTagScore))
-                    }
                 } else {
                     tagScores[bookId] = 0.0
                 }
             } catch (e: Exception) {
-                println("⚠️ 處理書籍標籤時發生錯誤: ${e.message}")
+                println("⚠️ Tag比對錯誤: ${e.message}")
                 tagScores[candidate.payload["book_id"]?.toString() ?: ""] = 0.0
             }
         }
         
-        println("🚀 Tag比對完成，语义计算次数: $semanticCalculations")
+        println("✅ 智能Tag比對完成，語義計算: $semanticCalculations 次（最大5次）")
         return tagScores
     }
     
     /**
-     * 計算最終綜合評分
+     * 計算雙階段綜合評分
      */
-    private fun calculateFinalScores(
-        tagsCandidates: List<QdrantSearchResult>,
+    private fun calculateDualStageScores(
+        candidates: List<QdrantSearchResult>,
+        descScores: Map<String, Double>,
         tagScores: Map<String, Double>
     ): List<RerankedBook> {
-        return tagsCandidates.map { candidate ->
+        return candidates.map { candidate ->
             val bookId = candidate.payload["book_id"]?.toString() ?: ""
-            val tagsVectorScore = candidate.score  // 这是tags向量的相似度分数
+            val tagsVectorScore = candidate.score
+            val descVectorScore = descScores[bookId] ?: 0.0
             val tagSemanticScore = tagScores[bookId] ?: 0.0
             
-            // 綜合評分: Tags向量分數 20% + Tag語義分數 80%
-            val finalScore = tagsVectorScore * DESC_SCORE_WEIGHT + tagSemanticScore * TAG_SCORE_WEIGHT
+            // 雙階段綜合評分: Tags向量20% + Description向量80%  
+            val baseScore = tagsVectorScore * TAGS_SCORE_WEIGHT + descVectorScore * DESC_SCORE_WEIGHT
+            // 如果有tag語義分數，則大幅加權（因為現在標籤提取更準確）
+            val finalScore = if (tagSemanticScore > 0) {
+                baseScore * 0.6 + tagSemanticScore * 0.4
+            } else {
+                baseScore
+            }
             
             val metadata = BookMetadata(
                 bookId = bookId,
@@ -236,8 +250,8 @@ class BookRecommendationService(
             
             RerankedBook(
                 bookId = bookId,
-                tagsScore = tagSemanticScore,
-                descScore = tagsVectorScore,  // 现在这代表tags向量分数
+                tagsScore = tagsVectorScore,
+                descScore = descVectorScore,
                 finalScore = finalScore,
                 metadata = metadata
             )

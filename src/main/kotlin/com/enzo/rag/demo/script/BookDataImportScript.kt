@@ -46,7 +46,7 @@ class BookDataImportScript(
     )
     
     data class EmbeddingRequest(
-        @JsonProperty("model") val model: String = "bge-large",
+        @JsonProperty("model") val model: String = "quentinz/bge-large-zh-v1.5:latest",
         @JsonProperty("prompt") val prompt: String
     )
     

@@ -15,7 +15,8 @@ import java.time.Duration
  */
 @Service
 class QueryAnalysisService(
-    private val objectMapper: ObjectMapper
+    private val objectMapper: ObjectMapper,
+    private val embeddingService: RecommendationEmbeddingService
 ) {
     
     @Value("\${gemini.api.key}")
@@ -114,7 +115,7 @@ class QueryAnalysisService(
             .bodyValue(requestBody)
             .retrieve()
             .bodyToMono(GeminiResponse::class.java)
-            .timeout(Duration.ofSeconds(30))
+            .timeout(Duration.ofSeconds(3))
             .block()
         
         val responseText = response?.candidates?.firstOrNull()?.content?.parts?.firstOrNull()?.text
@@ -160,39 +161,142 @@ class QueryAnalysisService(
     
     /**
      * 創建回退查詢（當 Gemini 解析失敗時）
+     * 混合策略：語義向量匹配 + 關鍵詞匹配
      */
     private fun createFallbackQuery(originalQuery: String): QueryRequest {
-        // 簡單的關鍵詞匹配回退策略
+        println("🧠 智能Fallback：語義向量 + 關鍵詞混合分析...")
+        
+        val inferredTags = mutableListOf<String>()
+        
+        try {
+            // 方法1：語義向量相似度匹配
+            val semanticTags = extractTagsBySemanticSimilarity(originalQuery)
+            inferredTags.addAll(semanticTags)
+            
+            // 方法2：關鍵詞匹配作為補充
+            val keywordTags = extractTagsByKeywords(originalQuery)
+            
+            // 合併並去重
+            val combinedTags = (inferredTags + keywordTags).distinct().take(5)
+            
+            println("🎯 語義匹配標籤: $semanticTags")
+            println("🔍 關鍵詞匹配標籤: $keywordTags") 
+            println("✨ 最終混合標籤: $combinedTags")
+            
+            return QueryRequest(
+                queryText = originalQuery,
+                filters = QueryFilters(
+                    language = "中文",
+                    tags = if (combinedTags.isEmpty()) null else combinedTags
+                )
+            )
+            
+        } catch (e: Exception) {
+            println("⚠️ 智能Fallback失敗，使用基礎關鍵詞匹配: ${e.message}")
+            // 如果語義匹配失敗，回退到基礎關鍵詞匹配
+            return createBasicKeywordFallback(originalQuery)
+        }
+    }
+    
+    /**
+     * 基於語義向量相似度的標籤提取
+     */
+    private fun extractTagsBySemanticSimilarity(query: String): List<String> {
+        // 預定義標籤庫及其語義描述
+        val tagSemantics = mapOf(
+            "小說" to "虛構故事、文學作品、情節、人物",
+            "武俠" to "江湖、俠客、武功、古代中國、劍客",
+            "奇幻" to "魔法、巫師、龍、精靈、異世界",
+            "科幻" to "未來、太空、機器人、科技、外星人",
+            "愛情" to "戀愛、浪漫、情侶、婚姻、感情",
+            "懸疑" to "推理、偵探、謎題、犯罪、調查",
+            "歷史" to "古代、歷史事件、朝代、歷史人物",
+            "心理學" to "心理、情緒、行為、思維、治療",
+            "哲學" to "思想、存在、邏輯、價值觀、人生",
+            "管理" to "領導、企業、商業、策略、團隊",
+            "程式設計" to "編程、代碼、軟體、開發、技術"
+        )
+        
+        val queryVector = embeddingService.getEmbedding(query)
+        
+        // 計算查詢與各標籤語義的相似度
+        val similarities: List<Pair<String, Double>> = tagSemantics.map { (tag, semantic) ->
+            val semanticVector = embeddingService.getEmbedding(semantic)
+            val similarity = embeddingService.cosineSimilarity(queryVector, semanticVector)
+            tag to similarity
+        }
+        
+        // 選取相似度高於閾值的標籤
+        val threshold = 0.3
+        val selectedTags = similarities
+            .filter { it.second > threshold }
+            .sortedByDescending { it.second }
+            .take(3)
+            .map { it.first }
+        
+        println("📊 語義相似度分析: ${similarities.map { "${it.first}=${String.format("%.3f", it.second)}" }}")
+        
+        return selectedTags
+    }
+    
+    /**
+     * 基礎關鍵詞匹配（原有邏輯）
+     */
+    private fun extractTagsByKeywords(originalQuery: String): List<String> {
         val inferredTags = mutableListOf<String>()
         val queryLower = originalQuery.lowercase()
         
-        // 基本分類推斷
-        when {
-            queryLower.contains("小說") || queryLower.contains("故事") -> inferredTags.add("小說")
-            queryLower.contains("心理") || queryLower.contains("自我") -> inferredTags.add("心理學")
-            queryLower.contains("管理") || queryLower.contains("商業") -> inferredTags.add("管理")
-            queryLower.contains("程式") || queryLower.contains("編程") -> inferredTags.add("程式設計")
-            queryLower.contains("科幻") -> inferredTags.add("科幻")
-            queryLower.contains("歷史") -> inferredTags.add("歷史")
-            queryLower.contains("哲學") -> inferredTags.add("哲學")
-        }
+        // 文學體裁
+        if (queryLower.contains("小說") || queryLower.contains("故事")) inferredTags.add("小說")
+        if (queryLower.contains("散文")) inferredTags.add("散文")
+        if (queryLower.contains("詩歌") || queryLower.contains("詩")) inferredTags.add("詩歌")
+        
+        // 流派分類
+        if (queryLower.contains("奇幻") || queryLower.contains("魔法") || queryLower.contains("魔幻")) inferredTags.add("奇幻")
+        if (queryLower.contains("科幻") || queryLower.contains("科學幻想")) inferredTags.add("科幻")
+        if (queryLower.contains("武俠") || queryLower.contains("江湖")) inferredTags.add("武俠")
+        if (queryLower.contains("戰爭") || queryLower.contains("戰鬥") || queryLower.contains("軍事")) inferredTags.add("戰爭")
+        if (queryLower.contains("懸疑") || queryLower.contains("推理") || queryLower.contains("偵探")) inferredTags.add("懸疑")
+        if (queryLower.contains("愛情") || queryLower.contains("浪漫") || queryLower.contains("戀愛")) inferredTags.add("愛情")
+        if (queryLower.contains("歷史") || queryLower.contains("古代")) inferredTags.add("歷史")
+        if (queryLower.contains("冒險") || queryLower.contains("探險")) inferredTags.add("冒險")
+        
+        // 主題分類
+        if (queryLower.contains("心理") || queryLower.contains("自我成長")) inferredTags.add("心理學")
+        if (queryLower.contains("哲學") || queryLower.contains("思辨")) inferredTags.add("哲學")
+        if (queryLower.contains("管理") || queryLower.contains("商業")) inferredTags.add("管理")
+        if (queryLower.contains("程式") || queryLower.contains("編程")) inferredTags.add("程式設計")
         
         // 風格推斷
-        when {
-            queryLower.contains("幽默") -> inferredTags.add("幽默")
-            queryLower.contains("療癒") -> inferredTags.add("療癒")
-            queryLower.contains("勵志") -> inferredTags.add("勵志")
-            queryLower.contains("懸疑") -> inferredTags.add("懸疑")
-            queryLower.contains("愛情") -> inferredTags.add("愛情")
-        }
+        if (queryLower.contains("幽默") || queryLower.contains("搞笑")) inferredTags.add("幽默")
+        if (queryLower.contains("療癒") || queryLower.contains("溫暖")) inferredTags.add("療癒")
+        if (queryLower.contains("勵志") || queryLower.contains("激勵")) inferredTags.add("勵志")
+        if (queryLower.contains("經典")) inferredTags.add("經典文學")
+        
+        return inferredTags
+    }
+    
+    /**
+     * 基礎關鍵詞fallback（最后保障）
+     */
+    private fun createBasicKeywordFallback(originalQuery: String): QueryRequest {
+        val keywordTags = extractTagsByKeywords(originalQuery)
+        println("🎯 基礎Fallback策略提取標籤: $keywordTags")
         
         return QueryRequest(
             queryText = originalQuery,
             filters = QueryFilters(
-                language = "中文", // 預設中文
-                tags = if (inferredTags.isEmpty()) null else inferredTags
+                language = "中文",
+                tags = if (keywordTags.isEmpty()) null else keywordTags
             )
         )
+    }
+    
+    /**
+     * 創建快速fallback查詢（公開方法供外部調用）
+     */
+    fun createPublicFallbackQuery(originalQuery: String): QueryRequest {
+        return createFallbackQuery(originalQuery)
     }
     
     /**

@@ -13,7 +13,21 @@ class RecommendationQdrantService {
     
     private val qdrantClient = WebClient.builder()
         .baseUrl("http://localhost:6333")
+        .codecs { it.defaultCodecs().maxInMemorySize(10 * 1024 * 1024) } // 10MB buffer
         .build()
+    
+    // 查詢結果緩存（針對相同向量的重複查詢）
+    private val queryCache = java.util.concurrent.ConcurrentHashMap<String, CachedQueryResult>()
+    
+    data class CachedQueryResult(
+        val results: List<QdrantSearchResult>,
+        val timestamp: Long = System.currentTimeMillis()
+    )
+    
+    companion object {
+        private const val QUERY_CACHE_TTL = 300000L // 5分鐘緩存
+        private const val MAX_CACHE_SIZE = 100
+    }
     
     /**
      * 全庫搜尋：在 desc_vecs 中進行全庫向量搜尋
@@ -111,13 +125,25 @@ class RecommendationQdrantService {
     }
     
     /**
-     * Fallback：無過濾條件的全庫語意搜尋
+     * Fallback：無過濾條件的全庫語意搜尋（帶緩存優化）
      */
     fun searchTagsVectorsWithoutFilter(
         queryVector: List<Double>,
         limit: Int = 50,
         scoreThreshold: Double = 0.2
     ): List<QdrantSearchResult> {
+        
+        // 生成查詢緩存鍵
+        val cacheKey = "tags_${queryVector.hashCode()}_${limit}_${scoreThreshold}"
+        
+        // 檢查緩存
+        queryCache[cacheKey]?.let { cached ->
+            if (System.currentTimeMillis() - cached.timestamp < QUERY_CACHE_TTL) {
+                return cached.results
+            } else {
+                queryCache.remove(cacheKey)
+            }
+        }
         
         val searchRequest = QdrantSearchRequest(
             vector = queryVector,
@@ -127,13 +153,13 @@ class RecommendationQdrantService {
             filter = null // 無過濾條件
         )
         
-        return try {
+        val results = try {
             val response = qdrantClient.post()
                 .uri("/collections/tags_vecs/points/search")
                 .bodyValue(searchRequest)
                 .retrieve()
                 .bodyToMono(QdrantSearchResponse::class.java)
-                .timeout(Duration.ofSeconds(30))
+                .timeout(Duration.ofSeconds(15)) // 縮短超時時間
                 .block()
             
             response?.result?.map { item ->
@@ -148,6 +174,13 @@ class RecommendationQdrantService {
             println("❌ 無過濾條件的向量查詢失敗: ${e.message}")
             emptyList()
         }
+        
+        // 緩存結果
+        if (results.isNotEmpty()) {
+            cacheResults(cacheKey, results)
+        }
+        
+        return results
     }
     
     /**
@@ -196,6 +229,152 @@ class RecommendationQdrantService {
         } catch (e: Exception) {
             println("❌ Description 向量查詢失敗: ${e.message}")
             emptyList()
+        }
+    }
+    
+    /**
+     * 單個書籍的 description 向量查詢
+     */
+    fun searchDescriptionVectors(
+        queryVector: List<Double>,
+        bookId: String,
+        limit: Int = 1
+    ): List<QdrantSearchResult> {
+        
+        val filter = QdrantFilter(
+            must = listOf(
+                QdrantFilterClause(
+                    key = "book_id",
+                    match = QdrantMatch(value = bookId)
+                )
+            )
+        )
+        
+        val searchRequest = QdrantSearchRequest(
+            vector = queryVector,
+            limit = limit,
+            scoreThreshold = null,
+            withPayload = true,
+            filter = filter
+        )
+        
+        return try {
+            val response = qdrantClient.post()
+                .uri("/collections/desc_vecs/points/search")
+                .bodyValue(searchRequest)
+                .retrieve()
+                .bodyToMono(QdrantSearchResponse::class.java)
+                .timeout(Duration.ofSeconds(10))
+                .block()
+            
+            response?.result?.map { item ->
+                QdrantSearchResult(
+                    id = item.id,
+                    score = item.score,
+                    payload = item.payload ?: emptyMap()
+                )
+            } ?: emptyList()
+            
+        } catch (e: Exception) {
+            println("❌ 單個書籍 Description 向量查詢失敗: ${e.message}")
+            emptyList()
+        }
+    }
+    
+    /**
+     * 批量Description向量查詢（優化版 + 緩存 + 分段處理）
+     * 使用單次API調用替代多次調用，支持大規模批量處理
+     */
+    fun searchDescriptionVectorsBatch(
+        queryVector: List<Double>,
+        bookIds: List<String>
+    ): Map<String, Double> {
+        if (bookIds.isEmpty()) return emptyMap()
+        
+        // 生成查詢緩存鍵
+        val cacheKey = "desc_batch_${queryVector.hashCode()}_${bookIds.sorted().hashCode()}"
+        
+        // 檢查緩存
+        queryCache[cacheKey]?.let { cached ->
+            if (System.currentTimeMillis() - cached.timestamp < QUERY_CACHE_TTL) {
+                return cached.results.associate { result ->
+                    result.payload["book_id"]?.toString()!! to result.score
+                }
+            } else {
+                queryCache.remove(cacheKey)
+            }
+        }
+        
+        // 對於大量bookIds，分批處理以避免請求過大
+        val results = if (bookIds.size > 100) {
+            bookIds.chunked(100).map { chunk ->
+                searchDescriptionVectorsBatchSingle(queryVector, chunk)
+            }.fold(mutableMapOf<String, Double>()) { acc, batch ->
+                acc.putAll(batch)
+                acc
+            }
+        } else {
+            searchDescriptionVectorsBatchSingle(queryVector, bookIds)
+        }
+        
+        // 緩存結果（轉換為QdrantSearchResult格式）
+        if (results.isNotEmpty()) {
+            val cacheResults = results.map { (bookId, score) ->
+                QdrantSearchResult(
+                    id = bookId,
+                    score = score,
+                    payload = mapOf("book_id" to bookId)
+                )
+            }
+            cacheResults(cacheKey, cacheResults)
+        }
+        
+        return results
+    }
+    
+    /**
+     * 單批Description向量查詢
+     */
+    private fun searchDescriptionVectorsBatchSingle(
+        queryVector: List<Double>,
+        bookIds: List<String>
+    ): Map<String, Double> {
+        val filter = QdrantFilter(
+            should = bookIds.map { bookId ->
+                QdrantFilterClause(
+                    key = "book_id",
+                    match = QdrantMatch(value = bookId)
+                )
+            }
+        )
+        
+        val searchRequest = QdrantSearchRequest(
+            vector = queryVector,
+            limit = bookIds.size,
+            scoreThreshold = null,
+            withPayload = true,
+            filter = filter
+        )
+        
+        return try {
+            val response = qdrantClient.post()
+                .uri("/collections/desc_vecs/points/search")
+                .bodyValue(searchRequest)
+                .retrieve()
+                .bodyToMono(QdrantSearchResponse::class.java)
+                .timeout(Duration.ofSeconds(20)) // 增加超時時間支持大批量
+                .block()
+            
+            response?.result?.mapNotNull { item ->
+                val bookId = item.payload?.get("book_id")?.toString()
+                if (bookId != null) {
+                    bookId to item.score
+                } else null
+            }?.toMap() ?: emptyMap()
+            
+        } catch (e: Exception) {
+            println("❌ 批量 Description 向量查詢失敗: ${e.message}")
+            emptyMap()
         }
     }
     
@@ -304,6 +483,50 @@ class RecommendationQdrantService {
                 QdrantFilter(should = clauses)
             }
         } else null
+    }
+    
+    /**
+     * 緩存查詢結果
+     */
+    private fun cacheResults(cacheKey: String, results: List<QdrantSearchResult>) {
+        if (queryCache.size >= MAX_CACHE_SIZE) {
+            // 清理最舊的緩存條目
+            val oldestKey = queryCache.entries.minByOrNull { it.value.timestamp }?.key
+            oldestKey?.let { queryCache.remove(it) }
+        }
+        queryCache[cacheKey] = CachedQueryResult(results)
+    }
+    
+    /**
+     * 清理過期的查詢緩存
+     */
+    fun cleanupQueryCache() {
+        val currentTime = System.currentTimeMillis()
+        val expiredKeys = queryCache.entries.filter { (_, cached) ->
+            currentTime - cached.timestamp > QUERY_CACHE_TTL
+        }.map { it.key }
+        
+        expiredKeys.forEach { queryCache.remove(it) }
+        
+        if (expiredKeys.isNotEmpty()) {
+            println("🧹 Qdrant查詢緩存清理：移除 ${expiredKeys.size} 條過期條目")
+        }
+    }
+    
+    /**
+     * 獲取查詢緩存統計
+     */
+    fun getQueryCacheStats(): Map<String, Any> {
+        val currentTime = System.currentTimeMillis()
+        val entries = queryCache.values
+        
+        return mapOf(
+            "cache_size" to queryCache.size,
+            "max_cache_size" to MAX_CACHE_SIZE,
+            "cache_ttl_minutes" to QUERY_CACHE_TTL / 60000,
+            "active_entries" to entries.count { currentTime - it.timestamp < QUERY_CACHE_TTL },
+            "expired_entries" to entries.count { currentTime - it.timestamp >= QUERY_CACHE_TTL }
+        )
     }
     
     /**

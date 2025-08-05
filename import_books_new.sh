@@ -42,13 +42,13 @@ fi
 
 echo "✅ Ollama 服務正在運行"
 
-# 檢查 bge-large 模型是否已下載
-if ! ollama list | grep -q "bge-large"; then
-    echo "⚠️ bge-large 模型未安裝，正在下載..."
-    ollama pull bge-large
+# 檢查 bge-large-zh-v1.5 模型是否已下載
+if ! ollama list | grep -q "bge-large-zh-v1.5"; then
+    echo "⚠️ bge-large-zh-v1.5 模型未安裝，正在下載..."
+    ollama pull quentinz/bge-large-zh-v1.5:latest
 fi
 
-echo "✅ bge-large 模型已就緒"
+echo "✅ bge-large-zh-v1.5 模型已就緒"
 echo ""
 
 # 開始匯入

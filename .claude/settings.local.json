@@ -36,7 +36,9 @@
       "Bash(for book_id in bk_2044 bk_1075 bk_2092 bk_1144 bk_2054)",
       "Bash(do)",
       "Bash(done)",
-      "Bash(./debug_tags.sh:*)"
+      "Bash(./debug_tags.sh:*)",
+      "Bash(BOOK_ID=\"8bcd2463-2a3b-4f7d-a4ae-febccb48689e\")",
+      "Bash(BOOK_ID=\"42384e0f-577c-4777-9953-a1f4cc241367\")"
     ],
     "deny": []
   }

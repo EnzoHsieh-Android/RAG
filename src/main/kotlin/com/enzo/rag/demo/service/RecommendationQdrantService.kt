@@ -9,7 +9,9 @@ import java.time.Duration
  * 推薦系統專用的 Qdrant 查詢服務
  */
 @Service
-class RecommendationQdrantService {
+class RecommendationQdrantService(
+    private val embeddingService: RecommendationEmbeddingService
+) {
     
     private val qdrantClient = WebClient.builder()
         .baseUrl("http://localhost:6333")
@@ -564,6 +566,335 @@ class RecommendationQdrantService {
         } catch (e: Exception) {
             println("❌ 獲取書籍 $bookId metadata 失敗: ${e.message}")
             null
+        }
+    }
+    
+    // ==================== 數據管理API：批量操作 ====================
+    
+    /**
+     * 批量新增書籍到兩個Collection
+     */
+    fun batchAddBooks(books: List<BookData>): BatchOperationResult {
+        val results = mutableListOf<String>()
+        val errors = mutableListOf<String>()
+        
+        println("📚 開始批量新增 ${books.size} 本書籍...")
+        
+        books.forEach { book ->
+            try {
+                val bookId = book.id ?: generateBookId(book.title, book.author)
+                
+                // 添加到tags_vecs collection
+                val tagsSuccess = addToTagsCollection(bookId, book)
+                
+                // 添加到desc_vecs collection  
+                val descSuccess = addToDescCollection(bookId, book)
+                
+                if (tagsSuccess && descSuccess) {
+                    results.add(bookId)
+                    println("✅ 新增書籍成功: ${book.title} - ${book.author} (ID: $bookId)")
+                } else {
+                    errors.add("書籍 ${book.title} 部分Collection添加失敗")
+                }
+                
+            } catch (e: Exception) {
+                errors.add("書籍 ${book.title} 新增失敗: ${e.message}")
+                println("❌ 新增書籍失敗: ${book.title} - ${e.message}")
+            }
+        }
+        
+        println("📊 批量新增完成: 成功 ${results.size} 本，失敗 ${errors.size} 本")
+        
+        return BatchOperationResult(
+            success = results,
+            errors = errors,
+            total = books.size
+        )
+    }
+    
+    /**
+     * 批量更新書籍
+     */
+    fun batchUpdateBooks(updates: List<BookUpdateData>): BatchOperationResult {
+        val results = mutableListOf<String>()
+        val errors = mutableListOf<String>()
+        
+        println("📝 開始批量更新 ${updates.size} 本書籍...")
+        
+        updates.forEach { update ->
+            try {
+                // 更新tags_vecs collection
+                val tagsSuccess = updateInTagsCollection(update.id, update)
+                
+                // 更新desc_vecs collection
+                val descSuccess = updateInDescCollection(update.id, update)
+                
+                if (tagsSuccess && descSuccess) {
+                    results.add(update.id)
+                    println("✅ 更新書籍成功: ID ${update.id}")
+                } else {
+                    errors.add("書籍 ${update.id} 部分Collection更新失敗")
+                }
+                
+            } catch (e: Exception) {
+                errors.add("書籍 ${update.id} 更新失敗: ${e.message}")
+                println("❌ 更新書籍失敗: ID ${update.id} - ${e.message}")
+            }
+        }
+        
+        println("📊 批量更新完成: 成功 ${results.size} 本，失敗 ${errors.size} 本")
+        
+        return BatchOperationResult(
+            success = results,
+            errors = errors,
+            total = updates.size
+        )
+    }
+    
+    /**
+     * 批量刪除書籍
+     */
+    fun batchDeleteBooks(bookIds: List<String>): BatchOperationResult {
+        val results = mutableListOf<String>()
+        val errors = mutableListOf<String>()
+        
+        println("🗑️ 開始批量刪除 ${bookIds.size} 本書籍...")
+        
+        bookIds.forEach { bookId ->
+            try {
+                // 從tags_vecs collection刪除
+                val tagsSuccess = deleteFromTagsCollection(bookId)
+                
+                // 從desc_vecs collection刪除
+                val descSuccess = deleteFromDescCollection(bookId)
+                
+                if (tagsSuccess && descSuccess) {
+                    results.add(bookId)
+                    println("✅ 刪除書籍成功: ID $bookId")
+                } else {
+                    errors.add("書籍 $bookId 部分Collection刪除失敗")
+                }
+                
+            } catch (e: Exception) {
+                errors.add("書籍 $bookId 刪除失敗: ${e.message}")
+                println("❌ 刪除書籍失敗: ID $bookId - ${e.message}")
+            }
+        }
+        
+        println("📊 批量刪除完成: 成功 ${results.size} 本，失敗 ${errors.size} 本")
+        
+        return BatchOperationResult(
+            success = results,
+            errors = errors,
+            total = bookIds.size
+        )
+    }
+    
+    /**
+     * 檢索書籍詳細信息
+     */
+    fun getBookDetails(bookIds: List<String>): List<BookDetailResult> {
+        return bookIds.mapNotNull { bookId ->
+            try {
+                val metadata = getBookMetadata(bookId)
+                if (metadata != null) {
+                    BookDetailResult(
+                        id = bookId,
+                        title = metadata["title"]?.toString() ?: "",
+                        author = metadata["author"]?.toString() ?: "",
+                        description = metadata["description"]?.toString() ?: "",
+                        tags = (metadata["tags"] as? List<*>)?.mapNotNull { it?.toString() } ?: emptyList(),
+                        language = metadata["language"]?.toString() ?: "",
+                        metadata = metadata
+                    )
+                } else null
+            } catch (e: Exception) {
+                println("❌ 獲取書籍詳情失敗: ID $bookId - ${e.message}")
+                null
+            }
+        }
+    }
+    
+    // ==================== 私有輔助方法 ====================
+    
+    private fun generateBookId(title: String, author: String): String {
+        // 生成UUID格式的ID以匹配現有collection
+        return java.util.UUID.randomUUID().toString()
+    }
+    
+    private fun addToTagsCollection(bookId: String, book: BookData): Boolean {
+        return try {
+            val tagsText = "分類：${book.tags.joinToString("、")}"
+            val tagsVector = embeddingService.getEmbedding(tagsText)
+            
+            val point = QdrantPoint(
+                id = bookId,
+                vector = tagsVector,
+                payload = mapOf(
+                    "book_id" to bookId,
+                    "title" to book.title,
+                    "author" to book.author,
+                    "description" to book.description,
+                    "tags" to book.tags,
+                    "language" to (book.language ?: "中文"),
+                    "cover_url" to (book.coverUrl ?: ""),
+                    "type" to "book",
+                    "created_at" to System.currentTimeMillis()
+                )
+            )
+            
+            val upsertRequest = QdrantUpsertRequest(points = listOf(point))
+            
+            val response = qdrantClient.put()
+                .uri("/collections/tags_vecs/points")
+                .bodyValue(upsertRequest)
+                .retrieve()
+                .bodyToMono(String::class.java)
+                .timeout(Duration.ofSeconds(10))
+                .block()
+            
+            true
+        } catch (e: Exception) {
+            println("❌ 添加到tags_vecs失敗: ${e.message}")
+            false
+        }
+    }
+    
+    private fun addToDescCollection(bookId: String, book: BookData): Boolean {
+        return try {
+            val descVector = embeddingService.getEmbedding(book.description)
+            
+            val point = QdrantPoint(
+                id = bookId,
+                vector = descVector,
+                payload = mapOf(
+                    "book_id" to bookId,
+                    "description" to book.description,
+                    "type" to "book_desc"
+                )
+            )
+            
+            val upsertRequest = QdrantUpsertRequest(points = listOf(point))
+            
+            val response = qdrantClient.put()
+                .uri("/collections/desc_vecs/points")
+                .bodyValue(upsertRequest)
+                .retrieve()
+                .bodyToMono(String::class.java)
+                .timeout(Duration.ofSeconds(10))
+                .block()
+            
+            true
+        } catch (e: Exception) {
+            println("❌ 添加到desc_vecs失敗: ${e.message}")
+            false
+        }
+    }
+    
+    private fun updateInTagsCollection(bookId: String, update: BookUpdateData): Boolean {
+        return try {
+            // 如果有tags更新，重新計算tags向量
+            val tagsVector = if (update.tags != null) {
+                val tagsText = "分類：${update.tags.joinToString("、")}"
+                embeddingService.getEmbedding(tagsText)
+            } else null
+            
+            val payload = mutableMapOf<String, Any>()
+            update.title?.let { payload["title"] = it }
+            update.author?.let { payload["author"] = it }
+            update.description?.let { payload["description"] = it }
+            update.tags?.let { payload["tags"] = it }
+            update.language?.let { payload["language"] = it }
+            update.coverUrl?.let { payload["cover_url"] = it }
+            payload["updated_at"] = System.currentTimeMillis()
+            
+            val point = QdrantPoint(
+                id = bookId,
+                vector = tagsVector,
+                payload = payload
+            )
+            
+            val upsertRequest = QdrantUpsertRequest(points = listOf(point))
+            
+            val response = qdrantClient.put()
+                .uri("/collections/tags_vecs/points")
+                .bodyValue(upsertRequest)
+                .retrieve()
+                .bodyToMono(String::class.java)
+                .timeout(Duration.ofSeconds(10))
+                .block()
+            
+            true
+        } catch (e: Exception) {
+            println("❌ 更新tags_vecs失敗: ${e.message}")
+            false
+        }
+    }
+    
+    private fun updateInDescCollection(bookId: String, update: BookUpdateData): Boolean {
+        return try {
+            // 如果有description更新，重新計算description向量
+            val descVector = update.description?.let { embeddingService.getEmbedding(it) }
+            
+            if (descVector != null) {
+                val point = QdrantPoint(
+                    id = bookId,
+                    vector = descVector,
+                    payload = mapOf(
+                        "book_id" to bookId,
+                        "description" to update.description,
+                        "type" to "book_desc",
+                        "updated_at" to System.currentTimeMillis()
+                    )
+                )
+                
+                val upsertRequest = QdrantUpsertRequest(points = listOf(point))
+                
+                val response = qdrantClient.put()
+                    .uri("/collections/desc_vecs/points")
+                    .bodyValue(upsertRequest)
+                    .retrieve()
+                    .bodyToMono(String::class.java)
+                    .timeout(Duration.ofSeconds(10))
+                    .block()
+            }
+            
+            true
+        } catch (e: Exception) {
+            println("❌ 更新desc_vecs失敗: ${e.message}")
+            false
+        }
+    }
+    
+    private fun deleteFromTagsCollection(bookId: String): Boolean {
+        return try {
+            val response = qdrantClient.delete()
+                .uri("/collections/tags_vecs/points/$bookId")
+                .retrieve()
+                .bodyToMono(String::class.java)
+                .timeout(Duration.ofSeconds(10))
+                .block()
+            
+            true
+        } catch (e: Exception) {
+            println("❌ 從tags_vecs刪除失敗: ${e.message}")
+            false
+        }
+    }
+    
+    private fun deleteFromDescCollection(bookId: String): Boolean {
+        return try {
+            val response = qdrantClient.delete()
+                .uri("/collections/desc_vecs/points/$bookId")
+                .retrieve()
+                .bodyToMono(String::class.java)
+                .timeout(Duration.ofSeconds(10))
+                .block()
+            
+            true
+        } catch (e: Exception) {
+            println("❌ 從desc_vecs刪除失敗: ${e.message}")
+            false
         }
     }
 }

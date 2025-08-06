@@ -1,3 +1,4 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
 > Task :checkKotlinGradlePluginConfigurationErrors
 > Task :processResources UP-TO-DATE
 > Task :compileKotlin
@@ -16,78 +17,69 @@
 
  :: Spring Boot ::                (v3.5.4)
 
-2025-08-05T22:09:23.193+08:00  INFO 17971 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 17971 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
-2025-08-05T22:09:23.194+08:00  INFO 17971 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
-2025-08-05T22:09:23.218+08:00  INFO 17971 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-08-05T22:09:23.218+08:00  INFO 17971 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-08-05T22:09:23.649+08:00  INFO 17971 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2025-08-05T22:09:23.658+08:00  INFO 17971 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-08-05T22:09:23.658+08:00  INFO 17971 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
-2025-08-05T22:09:23.675+08:00  INFO 17971 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-08-05T22:09:23.675+08:00  INFO 17971 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 457 ms
-2025-08-05T22:09:24.009+08:00  INFO 17971 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-08-05T22:09:24.025+08:00  INFO 17971 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
-2025-08-05T22:09:24.030+08:00  INFO 17971 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 1.032 seconds (process running for 1.229)
-2025-08-05T22:09:33.991+08:00  INFO 17971 --- [rag.demo] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-08-05T22:09:33.991+08:00  INFO 17971 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-08-05T22:09:33.991+08:00  INFO 17971 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-⚡ 收到快速查詢請求: 推荐好看的武侠小说
-🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
-2025-08-05T22:09:40.868+08:00 ERROR 17971 --- [rag.demo] [nio-8081-exec-2] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
-📊 語義相似度分析: [小說=0.369, 武俠=0.473, 奇幻=0.314, 科幻=0.214, 愛情=0.237, 懸疑=0.268, 歷史=0.261, 心理學=0.231, 哲學=0.235, 管理=0.157, 程式設計=0.171]
-🎯 語義匹配標籤: [武俠, 小說, 奇幻]
-🔍 關鍵詞匹配標籤: []
-✨ 最終混合標籤: [武俠, 小說, 奇幻]
-🎯 Fallback解析結果: language=中文, tags=[武俠, 小說, 奇幻]
-🔍 開始推薦查詢: 推荐好看的武侠小说
-🏷️ Gemini提取標籤: [武俠, 小說, 奇幻]
+2025-08-06T22:33:19.002+08:00  INFO 46750 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 46750 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-06T22:33:19.003+08:00  INFO 46750 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-06T22:33:19.031+08:00  INFO 46750 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-06T22:33:19.031+08:00  INFO 46750 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-06T22:33:19.569+08:00  INFO 46750 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-06T22:33:19.581+08:00  INFO 46750 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-06T22:33:19.581+08:00  INFO 46750 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-06T22:33:19.602+08:00  INFO 46750 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-06T22:33:19.603+08:00  INFO 46750 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 571 ms
+2025-08-06T22:33:20.029+08:00  INFO 46750 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-06T22:33:20.048+08:00  INFO 46750 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-06T22:33:20.053+08:00  INFO 46750 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 1.29 seconds (process running for 1.511)
+2025-08-06T22:33:29.277+08:00  INFO 46750 --- [rag.demo] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-06T22:33:29.277+08:00  INFO 46750 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-06T22:33:29.278+08:00  INFO 46750 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+📝 收到單個書籍更新請求：ID 8bcd2463-2a3b-4f7d-a4ae-febccb48689e
+📝 開始批量更新 1 本書籍...
+2025-08-06T22:33:29.475+08:00 ERROR 46750 --- [rag.demo] [nio-8081-exec-1] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+✅ 更新書籍成功: ID 8bcd2463-2a3b-4f7d-a4ae-febccb48689e
+📊 批量更新完成: 成功 1 本，失敗 0 本
+🧹 緩存清理完成：移除 0 條目，剩餘 2 條目
+   高頻條目保護: 0 條目被保護
+🗑️ 收到單個書籍刪除請求：ID 42384e0f-577c-4777-9953-a1f4cc241367
+🗑️ 開始批量刪除 1 本書籍...
+❌ 從tags_vecs刪除失敗: 404 Not Found from DELETE http://localhost:6333/collections/tags_vecs/points/42384e0f-577c-4777-9953-a1f4cc241367
+❌ 從desc_vecs刪除失敗: 404 Not Found from DELETE http://localhost:6333/collections/desc_vecs/points/42384e0f-577c-4777-9953-a1f4cc241367
+📊 批量刪除完成: 成功 0 本，失敗 1 本
+🧹 緩存清理完成：移除 0 條目，剩餘 2 條目
+   高頻條目保護: 0 條目被保護
+🔍 收到單個書籍詳情查詢：ID 8bcd2463-2a3b-4f7d-a4ae-febccb48689e
+🔍 收到單個書籍詳情查詢：ID 8bcd2463-2a3b-4f7d-a4ae-febccb48689e
+🔍 收到單個書籍詳情查詢：ID 8bcd2463-2a3b-4f7d-a4ae-febccb48689e
+🔍 收到單個書籍詳情查詢：ID 8bcd2463-2a3b-4f7d-a4ae-febccb48689e
+🗣️ 收到自然語言查詢: 我想看歷史小說
+🧠 開始分析自然語言查詢: 我想看歷史小說
+📊 Gemini Flash Token 使用: 482 prompt + 92 response = 574 total
+📝 Gemini 解析結果: {
+  "query_text": "我想看歷史小說",
+  "filters": {
+    "language": "中文",
+    "tags": ["歷史", "小說"]
+  },
+  "summary": "您想探索歷史的魅力嗎？我將為您推薦一些精彩的歷史小說，帶您穿越時空，感受歷史的波瀾壯闊！📖✨"
+}
+📋 Flash 解析結果: language=中文, tags=[歷史, 小說]
+🔍 開始推薦查詢: 我想看歷史小說
+🏷️ Gemini提取標籤: [歷史, 小說]
 🏷️ 步驟 1: Tags向量搜索...
-   Tags查詢: 分類：武俠、小說、奇幻
+   Tags查詢: 分類：歷史、小說
 ✅ Tags搜尋找到 50 本候選書籍
 📖 步驟 2: Description向量重排序...
-   Description查詢: 推荐好看的武侠小说
+   Description查詢: 我想看歷史小說
 ✅ Description重排序完成，批量處理 20 本書籍
 🏷️ 步驟 3: 快速Tag語義比對...
-⚡ 智能Tag語義比對，Gemini標籤: [武俠, 小說, 奇幻]
+⚡ 智能Tag語義比對，Gemini標籤: [歷史, 小說]
 ✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
 📊 步驟 4: 綜合評分排序...
 🎯 步驟 5: 構建5個候選結果...
 ⚡ 步驟 6: 跳過Flash重排序（快速模式）
 📊 混合评分的最终结果：
-   1. 📖 解憂雜貨店 - 最终分數: 0.534
-   2. 📖 解憂雜貨店 - 最终分數: 0.534
-   3. 📖 冰與火之歌：權力遊戲 - 最终分數: 0.517
-   4. 📖 哈利波特：神秘的魔法石 - 最终分數: 0.503
-   5. 📖 魔戒：魔戒現身 - 最终分數: 0.502
-🎉 推薦完成，耗時 309ms，返回 5 本書籍
-🗣️ 收到自然語言查詢: 我想找適合青少年閱讀的書
-🧠 開始分析自然語言查詢: 我想找適合青少年閱讀的書
-⚠️ Gemini 解析失敗，使用回退策略: java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 3000ms in 'flatMap' (and no fallback has been configured)
-🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
-📊 語義相似度分析: [小說=0.384, 武俠=0.316, 奇幻=0.352, 科幻=0.293, 愛情=0.311, 懸疑=0.349, 歷史=0.276, 心理學=0.350, 哲學=0.387, 管理=0.237, 程式設計=0.201]
-🎯 語義匹配標籤: [哲學, 小說, 奇幻]
-🔍 關鍵詞匹配標籤: []
-✨ 最終混合標籤: [哲學, 小說, 奇幻]
-⚠️ Gemini解析耗時過長(3110ms)，但已完成
-📋 Flash 解析結果: language=中文, tags=[哲學, 小說, 奇幻]
-🔍 開始推薦查詢: 我想找適合青少年閱讀的書
-🏷️ Gemini提取標籤: [哲學, 小說, 奇幻]
-🏷️ 步驟 1: Tags向量搜索...
-   Tags查詢: 分類：哲學、小說、奇幻
-✅ Tags搜尋找到 50 本候選書籍
-📖 步驟 2: Description向量重排序...
-   Description查詢: 我想找適合青少年閱讀的書
-✅ Description重排序完成，批量處理 20 本書籍
-🏷️ 步驟 3: 快速Tag語義比對...
-⚡ 智能Tag語義比對，Gemini標籤: [哲學, 小說, 奇幻]
-✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
-📊 步驟 4: 綜合評分排序...
-🎯 步驟 5: 構建5個候選結果...
-⚡ 步驟 6: 跳過Flash重排序（快速模式）
-📊 混合评分的最终结果：
-   1. 📖 牧羊少年奇幻之旅 - 最终分數: 0.670
-   2. 📖 看不見的城市 - 最终分數: 0.631
-   3. 📖 你想活出怎樣的人生？ - 最终分數: 0.587
-   4. 📖 解憂雜貨店 - 最终分數: 0.580
-   5. 📖 解憂雜貨店 - 最终分數: 0.580
-🎉 推薦完成，耗時 220ms，返回 5 本書籍
+   1. 📖 三國演義 - 最终分數: 0.762
+   2. 📖 三國演義 - 最终分數: 0.762
+   3. 📖 紅樓夢 - 最终分數: 0.712
+   4. 📖 台北人 - 最终分數: 0.694
+   5. 📖 我，獨裁者 - 最终分數: 0.671
+🎉 推薦完成，耗時 305ms，返回 5 本書籍

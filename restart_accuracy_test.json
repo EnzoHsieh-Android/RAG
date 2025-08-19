@@ -1,0 +1,143 @@
+{
+  "test_time": "2025-08-07 22:30:29",
+  "test_type": "restart_accuracy_test",
+  "total_queries": 5,
+  "natural_api": {
+    "success_rate": 1.0,
+    "avg_relevance": 0.7,
+    "avg_top1_relevance": 0.65,
+    "avg_response_time": 2.1420074462890626
+  },
+  "fast_api": {
+    "success_rate": 1.0,
+    "avg_relevance": 0.41,
+    "avg_top1_relevance": 0.55,
+    "avg_response_time": 0.159110689163208
+  },
+  "detailed_results": {
+    "natural": [
+      {
+        "query": "我想看科幻小說",
+        "category": "科幻文學",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.55,
+          "top1_relevance": 0.5,
+          "top3_relevance": 0.5,
+          "total_books": 5
+        },
+        "time": 2.520555019378662
+      },
+      {
+        "query": "推薦經典文學作品",
+        "category": "經典文學",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.7,
+          "top1_relevance": 0.75,
+          "top3_relevance": 0.6666666666666666,
+          "total_books": 5
+        },
+        "time": 1.814878225326538
+      },
+      {
+        "query": "心理學和自我成長",
+        "category": "心理成長",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 1.0,
+          "top1_relevance": 1.0,
+          "top3_relevance": 1.0,
+          "total_books": 5
+        },
+        "time": 2.4362919330596924
+      },
+      {
+        "query": "料理和美食相關",
+        "category": "美食料理",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.8,
+          "top1_relevance": 0.75,
+          "top3_relevance": 0.6666666666666666,
+          "total_books": 5
+        },
+        "time": 2.680393934249878
+      },
+      {
+        "query": "我想了解中國歷史",
+        "category": "中國歷史",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.45,
+          "top1_relevance": 0.25,
+          "top3_relevance": 0.3333333333333333,
+          "total_books": 5
+        },
+        "time": 1.257918119430542
+      }
+    ],
+    "fast": [
+      {
+        "query": "我想看科幻小說",
+        "category": "科幻文學",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.5,
+          "top1_relevance": 0.5,
+          "top3_relevance": 0.5,
+          "total_books": 5
+        },
+        "time": 0.17536520957946777
+      },
+      {
+        "query": "推薦經典文學作品",
+        "category": "經典文學",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.75,
+          "top1_relevance": 0.75,
+          "top3_relevance": 0.75,
+          "total_books": 5
+        },
+        "time": 0.13715481758117676
+      },
+      {
+        "query": "心理學和自我成長",
+        "category": "心理成長",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.4,
+          "top1_relevance": 1.0,
+          "top3_relevance": 0.6666666666666666,
+          "total_books": 5
+        },
+        "time": 0.18086671829223633
+      },
+      {
+        "query": "料理和美食相關",
+        "category": "美食料理",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.0,
+          "top1_relevance": 0.0,
+          "top3_relevance": 0.0,
+          "total_books": 5
+        },
+        "time": 0.10178470611572266
+      },
+      {
+        "query": "我想了解中國歷史",
+        "category": "中國歷史",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.4,
+          "top1_relevance": 0.5,
+          "top3_relevance": 0.3333333333333333,
+          "total_books": 5
+        },
+        "time": 0.20038199424743652
+      }
+    ]
+  }
+}

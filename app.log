@@ -1,7 +1,11 @@
-Starting a Gradle Daemon (subsequent builds will be faster)
 > Task :checkKotlinGradlePluginConfigurationErrors
 > Task :processResources UP-TO-DATE
+
 > Task :compileKotlin
+w: file:///Users/xiechengru/Downloads/rag.demo/src/main/kotlin/com/enzo/rag/demo/service/BookRecommendationService.kt:42:48 Unnecessary non-null assertion (!!) on a non-null receiver of type List<String>
+w: file:///Users/xiechengru/Downloads/rag.demo/src/main/kotlin/com/enzo/rag/demo/service/BookRecommendationService.kt:79:65 Unnecessary non-null assertion (!!) on a non-null receiver of type List<String>
+w: file:///Users/xiechengru/Downloads/rag.demo/src/main/kotlin/com/enzo/rag/demo/service/BookRecommendationService.kt:106:39 Variable 'rerankTokens' is never used
+
 > Task :compileJava NO-SOURCE
 > Task :classes UP-TO-DATE
 > Task :resolveMainClassName
@@ -17,69 +21,1529 @@ Starting a Gradle Daemon (subsequent builds will be faster)
 
  :: Spring Boot ::                (v3.5.4)
 
-2025-08-06T22:33:19.002+08:00  INFO 46750 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 46750 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
-2025-08-06T22:33:19.003+08:00  INFO 46750 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
-2025-08-06T22:33:19.031+08:00  INFO 46750 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-08-06T22:33:19.031+08:00  INFO 46750 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-08-06T22:33:19.569+08:00  INFO 46750 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
-2025-08-06T22:33:19.581+08:00  INFO 46750 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-08-06T22:33:19.581+08:00  INFO 46750 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
-2025-08-06T22:33:19.602+08:00  INFO 46750 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-08-06T22:33:19.603+08:00  INFO 46750 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 571 ms
-2025-08-06T22:33:20.029+08:00  INFO 46750 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-08-06T22:33:20.048+08:00  INFO 46750 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
-2025-08-06T22:33:20.053+08:00  INFO 46750 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 1.29 seconds (process running for 1.511)
-2025-08-06T22:33:29.277+08:00  INFO 46750 --- [rag.demo] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-08-06T22:33:29.277+08:00  INFO 46750 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-08-06T22:33:29.278+08:00  INFO 46750 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-📝 收到單個書籍更新請求：ID 8bcd2463-2a3b-4f7d-a4ae-febccb48689e
-📝 開始批量更新 1 本書籍...
-2025-08-06T22:33:29.475+08:00 ERROR 46750 --- [rag.demo] [nio-8081-exec-1] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
-✅ 更新書籍成功: ID 8bcd2463-2a3b-4f7d-a4ae-febccb48689e
-📊 批量更新完成: 成功 1 本，失敗 0 本
-🧹 緩存清理完成：移除 0 條目，剩餘 2 條目
-   高頻條目保護: 0 條目被保護
-🗑️ 收到單個書籍刪除請求：ID 42384e0f-577c-4777-9953-a1f4cc241367
-🗑️ 開始批量刪除 1 本書籍...
-❌ 從tags_vecs刪除失敗: 404 Not Found from DELETE http://localhost:6333/collections/tags_vecs/points/42384e0f-577c-4777-9953-a1f4cc241367
-❌ 從desc_vecs刪除失敗: 404 Not Found from DELETE http://localhost:6333/collections/desc_vecs/points/42384e0f-577c-4777-9953-a1f4cc241367
-📊 批量刪除完成: 成功 0 本，失敗 1 本
-🧹 緩存清理完成：移除 0 條目，剩餘 2 條目
-   高頻條目保護: 0 條目被保護
-🔍 收到單個書籍詳情查詢：ID 8bcd2463-2a3b-4f7d-a4ae-febccb48689e
-🔍 收到單個書籍詳情查詢：ID 8bcd2463-2a3b-4f7d-a4ae-febccb48689e
-🔍 收到單個書籍詳情查詢：ID 8bcd2463-2a3b-4f7d-a4ae-febccb48689e
-🔍 收到單個書籍詳情查詢：ID 8bcd2463-2a3b-4f7d-a4ae-febccb48689e
-🗣️ 收到自然語言查詢: 我想看歷史小說
-🧠 開始分析自然語言查詢: 我想看歷史小說
-📊 Gemini Flash Token 使用: 482 prompt + 92 response = 574 total
+2025-08-07T21:46:57.941+08:00  INFO 75914 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Starting ApplicationKt using Java 21.0.8 with PID 75914 (/Users/xiechengru/Downloads/rag.demo/build/classes/kotlin/main started by xiechengru in /Users/xiechengru/Downloads/rag.demo)
+2025-08-07T21:46:57.942+08:00  INFO 75914 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : No active profile set, falling back to 1 default profile: "default"
+2025-08-07T21:46:57.968+08:00  INFO 75914 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-08-07T21:46:57.968+08:00  INFO 75914 --- [rag.demo] [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-08-07T21:46:58.488+08:00  INFO 75914 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2025-08-07T21:46:58.499+08:00  INFO 75914 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-08-07T21:46:58.499+08:00  INFO 75914 --- [rag.demo] [  restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-07T21:46:58.520+08:00  INFO 75914 --- [rag.demo] [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-08-07T21:46:58.521+08:00  INFO 75914 --- [rag.demo] [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 551 ms
+2025-08-07T21:46:58.929+08:00  INFO 75914 --- [rag.demo] [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-08-07T21:46:58.946+08:00  INFO 75914 --- [rag.demo] [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/'
+2025-08-07T21:46:58.951+08:00  INFO 75914 --- [rag.demo] [  restartedMain] com.enzo.rag.demo.ApplicationKt          : Started ApplicationKt in 1.231 seconds (process running for 1.442)
+2025-08-07T21:47:07.216+08:00  INFO 75914 --- [rag.demo] [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-08-07T21:47:07.216+08:00  INFO 75914 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-08-07T21:47:07.216+08:00  INFO 75914 --- [rag.demo] [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+🗣️ 收到自然語言查詢: 我想看科幻小說
+🧠 開始分析自然語言查詢: 我想看科幻小說
+2025-08-07T21:48:08.405+08:00 ERROR 75914 --- [rag.demo] [nio-8081-exec-2] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+📊 Gemini Flash Token 使用: 483 prompt + 95 response = 578 total
 📝 Gemini 解析結果: {
-  "query_text": "我想看歷史小說",
+  "query_text": "我想看科幻小說",
   "filters": {
     "language": "中文",
-    "tags": ["歷史", "小說"]
+    "tags": ["科幻", "小說"]
   },
-  "summary": "您想探索歷史的魅力嗎？我將為您推薦一些精彩的歷史小說，帶您穿越時空，感受歷史的波瀾壯闊！📖✨"
+  "summary": "準備好開啟一場星際冒險了嗎？我會盡力為您推薦精彩的科幻小說，讓您沉浸在奇幻的宇宙世界中！🚀✨"
 }
-📋 Flash 解析結果: language=中文, tags=[歷史, 小說]
-🔍 開始推薦查詢: 我想看歷史小說
-🏷️ Gemini提取標籤: [歷史, 小說]
+📋 Flash 解析結果: language=中文, tags=[科幻, 小說]
+🔍 開始推薦查詢: 我想看科幻小說
+🏷️ Gemini提取標籤: [科幻, 小說]
 🏷️ 步驟 1: Tags向量搜索...
-   Tags查詢: 分類：歷史、小說
-✅ Tags搜尋找到 50 本候選書籍
+   Tags查詢: 分類：科幻、小說
+✅ Tags搜尋找到 100 本候選書籍
 📖 步驟 2: Description向量重排序...
-   Description查詢: 我想看歷史小說
-✅ Description重排序完成，批量處理 20 本書籍
+   Description查詢: 我想看科幻小說
+✅ Description重排序完成，批量處理 40 本書籍
 🏷️ 步驟 3: 快速Tag語義比對...
-⚡ 智能Tag語義比對，Gemini標籤: [歷史, 小說]
+⚡ 智能Tag語義比對，Gemini標籤: [科幻, 小說]
 ✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
 📊 步驟 4: 綜合評分排序...
-🎯 步驟 5: 構建5個候選結果...
-⚡ 步驟 6: 跳過Flash重排序（快速模式）
-📊 混合评分的最终结果：
-   1. 📖 三國演義 - 最终分數: 0.762
-   2. 📖 三國演義 - 最终分數: 0.762
-   3. 📖 紅樓夢 - 最终分數: 0.712
-   4. 📖 台北人 - 最终分數: 0.694
-   5. 📖 我，獨裁者 - 最终分數: 0.671
-🎉 推薦完成，耗時 305ms，返回 5 本書籍
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3841 prompt + 77 response = 3918 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 3, 8],
+  "reasoning": "根據relevance_score過濾掉相關性小於0.3的書籍，並根據relevance_score由高到低排序，保留前5本最相關的科幻小說。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性小於0.3的書籍，並根據relevance_score由高到低排序，保留前5本最相關的科幻小說。
+📊 Flash重排序后的最终结果：
+   1. 📖 火星任務 - 最终分數: 0.769
+   2. 📖 三體 - 最终分數: 0.756
+   3. 📖 人生複本 - 最终分數: 0.743
+   4. 📖 群星的低語 - 最终分數: 0.730
+   5. 📖 沙丘 - 最终分數: 0.710
+🎉 推薦完成，耗時 2003ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 我想看科幻小說
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.414, 武俠=0.309, 奇幻=0.420, 科幻=0.512, 愛情=0.258, 懸疑=0.332, 歷史=0.269, 心理學=0.284, 哲學=0.329, 管理=0.221, 程式設計=0.325]
+🎯 語義匹配標籤: [科幻, 奇幻, 小說]
+🔍 關鍵詞匹配標籤: [小說, 科幻]
+✨ 最終混合標籤: [科幻, 奇幻, 小說]
+🎯 Fallback解析結果: language=中文, tags=[科幻, 奇幻, 小說]
+🔍 開始推薦查詢: 我想看科幻小說
+🏷️ Gemini提取標籤: [科幻, 奇幻, 小說]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：科幻、奇幻、小說
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 我想看科幻小說
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [科幻, 奇幻, 小說]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3985 prompt + 71 response = 4056 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 4, 7],
+  "reasoning": "根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低排序，保留前5本。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低排序，保留前5本。
+📊 Flash重排序后的最终结果：
+   1. 📖 火星任務 - 最终分數: 0.650
+   2. 📖 三體 - 最终分數: 0.624
+   3. 📖 銀河便車指南 - 最终分數: 0.612
+   4. 📖 人生複本 - 最终分數: 0.609
+   5. 📖 沙丘 - 最终分數: 0.582
+🎉 推薦完成，耗時 1117ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 推薦經典文學作品
+🧠 開始分析自然語言查詢: 推薦經典文學作品
+📊 Gemini Flash Token 使用: 482 prompt + 88 response = 570 total
+📝 Gemini 解析結果: {
+  "query_text": "推薦經典文學作品",
+  "filters": {
+    "language": "中文",
+    "tags": ["經典文學", "小說", "散文"]
+  },
+  "summary": "希望我能推薦一些您會喜歡的經典文學作品，讓您在閱讀中享受文字的魅力和思想的碰撞！📖✨"
+}
+📋 Flash 解析結果: language=中文, tags=[經典文學, 小說, 散文]
+🔍 開始推薦查詢: 推薦經典文學作品
+🏷️ Gemini提取標籤: [經典文學, 小說, 散文]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：經典文學、小說、散文
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 推薦經典文學作品
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [經典文學, 小說, 散文]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3503 prompt + 71 response = 3574 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 3, 5],
+  "reasoning": "根據relevance_score過濾掉相關性小於0.3的書籍，並根據relevance_score由高到低排序，保留前5本。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性小於0.3的書籍，並根據relevance_score由高到低排序，保留前5本。
+📊 Flash重排序后的最终结果：
+   1. 📖 紅樓夢 - 最终分數: 0.665
+   2. 📖 史記菁華錄 - 最终分數: 0.649
+   3. 📖 流浪者之歌 - 最终分數: 0.642
+   4. 📖 生命中不能承受之輕 - 最终分數: 0.639
+   5. 📖 三國演義 - 最终分數: 0.634
+🎉 推薦完成，耗時 1432ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 推薦經典文學作品
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.604, 武俠=0.422, 奇幻=0.457, 科幻=0.352, 愛情=0.441, 懸疑=0.432, 歷史=0.396, 心理學=0.421, 哲學=0.450, 管理=0.312, 程式設計=0.321]
+🎯 語義匹配標籤: [小說, 奇幻, 哲學]
+🔍 關鍵詞匹配標籤: [經典文學]
+✨ 最終混合標籤: [小說, 奇幻, 哲學, 經典文學]
+🎯 Fallback解析結果: language=中文, tags=[小說, 奇幻, 哲學, 經典文學]
+🔍 開始推薦查詢: 推薦經典文學作品
+🏷️ Gemini提取標籤: [小說, 奇幻, 哲學, 經典文學]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：小說、奇幻、哲學、經典文學
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 推薦經典文學作品
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [小說, 奇幻, 哲學, 經典文學]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3961 prompt + 74 response = 4035 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 3, 4],
+  "reasoning": "根據relevance_score，過濾掉相關性低於0.3的書籍。剩餘書籍按照relevance_score從高到低排序，取前5本。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score，過濾掉相關性低於0.3的書籍。剩餘書籍按照relevance_score從高到低排序，取前5本。
+📊 Flash重排序后的最终结果：
+   1. 📖 看不見的城市 - 最终分數: 0.710
+   2. 📖 流浪者之歌 - 最终分數: 0.674
+   3. 📖 生命不可承受之輕 - 最终分數: 0.674
+   4. 📖 生命中不能承受之輕 - 最终分數: 0.674
+   5. 📖 你想活出怎樣的人生？ - 最终分數: 0.671
+🎉 推薦完成，耗時 1242ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 心理學和自我成長
+🧠 開始分析自然語言查詢: 心理學和自我成長
+📊 Gemini Flash Token 使用: 483 prompt + 85 response = 568 total
+📝 Gemini 解析結果: {
+  "query_text": "心理學和自我成長",
+  "filters": {
+    "language": "中文",
+    "tags": ["心理學", "自我成長"]
+  },
+  "summary": "希望您能找到一些有助於提升自我認知和幸福感的書籍，開啟一段充滿收穫的閱讀旅程！😊"
+}
+📋 Flash 解析結果: language=中文, tags=[心理學, 自我成長]
+🔍 開始推薦查詢: 心理學和自我成長
+🏷️ Gemini提取標籤: [心理學, 自我成長]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：心理學、自我成長
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 心理學和自我成長
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [心理學, 自我成長]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3656 prompt + 76 response = 3732 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 2, 3, 4, 5],
+  "reasoning": "根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低重新排序，保留前5本最相關的書籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低重新排序，保留前5本最相關的書籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 被討厭的勇氣 - 最终分數: 0.803
+   2. 📖 好關係，是麻煩出來的 - 最终分數: 0.787
+   3. 📖 恆毅力：人生成功的究極能力 - 最终分數: 0.777
+   4. 📖 親密關係：通往靈魂的橋樑 - 最终分數: 0.767
+   5. 📖 原子習慣 - 最终分數: 0.761
+🎉 推薦完成，耗時 1194ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 心理學和自我成長
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.424, 武俠=0.365, 奇幻=0.455, 科幻=0.390, 愛情=0.413, 懸疑=0.444, 歷史=0.351, 心理學=0.647, 哲學=0.534, 管理=0.422, 程式設計=0.388]
+🎯 語義匹配標籤: [心理學, 哲學, 奇幻]
+🔍 關鍵詞匹配標籤: [心理學]
+✨ 最終混合標籤: [心理學, 哲學, 奇幻]
+🎯 Fallback解析結果: language=中文, tags=[心理學, 哲學, 奇幻]
+🔍 開始推薦查詢: 心理學和自我成長
+🏷️ Gemini提取標籤: [心理學, 哲學, 奇幻]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：心理學、哲學、奇幻
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 心理學和自我成長
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [心理學, 哲學, 奇幻]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3930 prompt + 107 response = 4037 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 5, 7],
+  "reasoning": "根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低排序，保留前五本最相關的書籍。這些書籍都直接或間接地與心理學和自我成長相關，涵蓋人際關係、愛情、人生意義、心理治療等方面。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低排序，保留前五本最相關的書籍。這些書籍都直接或間接地與心理學和自我成長相關，涵蓋人際關係、愛情、人生意義、心理治療等方面。
+📊 Flash重排序后的最终结果：
+   1. 📖 好關係，是麻煩出來的 - 最终分數: 0.637
+   2. 📖 愛的藝術 - 最终分數: 0.610
+   3. 📖 愛的藝術 - 最终分數: 0.610
+   4. 📖 活出意義來 - 最终分數: 0.577
+   5. 📖 也許你該找人聊聊：一個心理師與她的心理師 - 最终分數: 0.509
+🎉 推薦完成，耗時 1368ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 料理和美食相關
+🧠 開始分析自然語言查詢: 料理和美食相關
+📊 Gemini Flash Token 使用: 482 prompt + 102 response = 584 total
+📝 Gemini 解析結果: {
+  "query_text": "料理和美食相關",
+  "filters": {
+    "language": "中文",
+    "tags": ["烹飪", "美食"]
+  },
+  "summary": "您想探索料理和美食的奇妙世界嗎？我會盡力為您推薦一些精彩的食譜、烹飪技巧或美食文化相關的書籍，希望您能找到心儀的佳作！😋"
+}
+📋 Flash 解析結果: language=中文, tags=[烹飪, 美食]
+🔍 開始推薦查詢: 料理和美食相關
+🏷️ Gemini提取標籤: [烹飪, 美食]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：烹飪、美食
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 料理和美食相關
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [烹飪, 美食]
+✅ 智能Tag比對完成，語義計算: 2 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 2720 prompt + 75 response = 2795 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 3, 4],
+  "reasoning": "根據relevance_score過濾掉相關性小於0.3的書籍，並根據relevance_score由高到低排序，保留前5本最相關的書籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性小於0.3的書籍，並根據relevance_score由高到低排序，保留前5本最相關的書籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 料理新手的第一本食譜 - 最终分數: 0.791
+   2. 📖 廚藝的科學：從牛排、麵包到醬汁，掌握完美烹飪的關鍵 - 最终分數: 0.771
+   3. 📖 一人的私房烤箱料理 - 最终分數: 0.754
+   4. 📖 研究有關的探索 - 最终分數: 0.741
+   5. 📖 發現然后的探索 - 最终分數: 0.741
+🎉 推薦完成，耗時 1272ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 料理和美食相關
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.401, 武俠=0.440, 奇幻=0.462, 科幻=0.394, 愛情=0.446, 懸疑=0.505, 歷史=0.400, 心理學=0.476, 哲學=0.435, 管理=0.412, 程式設計=0.411]
+🎯 語義匹配標籤: [懸疑, 心理學, 奇幻]
+🔍 關鍵詞匹配標籤: []
+✨ 最終混合標籤: [懸疑, 心理學, 奇幻]
+🎯 Fallback解析結果: language=中文, tags=[懸疑, 心理學, 奇幻]
+🔍 開始推薦查詢: 料理和美食相關
+🏷️ Gemini提取標籤: [懸疑, 心理學, 奇幻]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：懸疑、心理學、奇幻
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 料理和美食相關
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [懸疑, 心理學, 奇幻]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3326 prompt + 43 response = 3369 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [],
+  "reasoning": "所有書籍的相關性得分均低於 30%，因此沒有書籍符合條件。"
+}
+```
+
+✅ 重排序完成：保留 0 本書籍
+📝 排序理由: 所有書籍的相關性得分均低於 30%，因此沒有書籍符合條件。
+📊 Flash重排序后的最终结果：
+🎉 推薦完成，耗時 1941ms，返回 0 本書籍
+🗣️ 收到自然語言查詢: 我想了解中國歷史
+🧠 開始分析自然語言查詢: 我想了解中國歷史
+📊 Gemini Flash Token 使用: 482 prompt + 94 response = 576 total
+📝 Gemini 解析結果: {
+  "query_text": "我想了解中國歷史",
+  "filters": {
+    "language": "中文",
+    "tags": ["歷史"]
+  },
+  "summary": "了解中國歷史是一段精彩的旅程！我會盡力為您推薦一些深入淺出、引人入勝的書籍，讓您更好地感受中華文明的博大精深。😊"
+}
+📋 Flash 解析結果: language=中文, tags=[歷史]
+🔍 開始推薦查詢: 我想了解中國歷史
+🏷️ Gemini提取標籤: [歷史]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：歷史
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 我想了解中國歷史
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [歷史]
+✅ 智能Tag比對完成，語義計算: 0 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 2611 prompt + 76 response = 2687 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 3, 4],
+  "reasoning": "所有书籍都与用户查询“我想了解中国历史”相关，相关性得分均高于30%。根据relevance_score降序排列，选择前5本最相关的书籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 所有书籍都与用户查询“我想了解中国历史”相关，相关性得分均高于30%。根据relevance_score降序排列，选择前5本最相关的书籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 你的沒有的探索 - 最终分數: 0.838
+   2. 📖 點擊廣告的探索 - 最终分數: 0.837
+   3. 📖 名稱應用的探索 - 最终分數: 0.837
+   4. 📖 得到隻有的探索 - 最终分數: 0.837
+   5. 📖 相關隻要的探索 - 最终分數: 0.836
+🎉 推薦完成，耗時 1087ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 我想了解中國歷史
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.404, 武俠=0.472, 奇幻=0.368, 科幻=0.378, 愛情=0.339, 懸疑=0.378, 歷史=0.615, 心理學=0.416, 哲學=0.453, 管理=0.333, 程式設計=0.336]
+🎯 語義匹配標籤: [歷史, 武俠, 哲學]
+🔍 關鍵詞匹配標籤: [歷史]
+✨ 最終混合標籤: [歷史, 武俠, 哲學]
+🎯 Fallback解析結果: language=中文, tags=[歷史, 武俠, 哲學]
+🔍 開始推薦查詢: 我想了解中國歷史
+🏷️ Gemini提取標籤: [歷史, 武俠, 哲學]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：歷史、武俠、哲學
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 我想了解中國歷史
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [歷史, 武俠, 哲學]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3176 prompt + 94 response = 3270 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [9, 15, 16, 17, 0],
+  "reasoning": "根據relevance_score過濾掉相關性小於0.3的書籍，並根據relevance_score由高到低排序，保留前五名。排序依據是模型評估的與用戶查詢『了解中國歷史』的相關性。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性小於0.3的書籍，並根據relevance_score由高到低排序，保留前五名。排序依據是模型評估的與用戶查詢『了解中國歷史』的相關性。
+📊 Flash重排序后的最终结果：
+   1. 📖 戰國策：權謀與話術的經典 - 最终分數: 0.502
+   2. 📖 三國演義 - 最终分數: 0.489
+   3. 📖 三國演義 - 最终分數: 0.489
+   4. 📖 史記菁華錄 - 最终分數: 0.477
+   5. 📖 相關隻要的探索 - 最终分數: 0.563
+🎉 推薦完成，耗時 1249ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 我想找一些職場相關的書
+🧠 開始分析自然語言查詢: 我想找一些職場相關的書
+📊 Gemini Flash Token 使用: 485 prompt + 87 response = 572 total
+📝 Gemini 解析結果: {
+  "query_text": "我想找一些職場相關的書",
+  "filters": {
+    "language": "中文",
+    "tags": ["商業", "管理", "領導"]
+  },
+  "summary": "希望我能找到一些適合你的職場好書，幫助你在職業發展道路上更上一層樓！💪📚"
+}
+⚠️ Gemini解析耗時過長(2732ms)，但已完成
+📋 Flash 解析結果: language=中文, tags=[商業, 管理, 領導]
+🔍 開始推薦查詢: 我想找一些職場相關的書
+🏷️ Gemini提取標籤: [商業, 管理, 領導]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：商業、管理、領導
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 我想找一些職場相關的書
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [商業, 管理, 領導]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+❌ Flash 重排序失败: java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 3000ms in 'flatMap' (and no fallback has been configured)
+📊 Flash重排序后的最终结果：
+   1. 📖 更新這樣的探索 - 最终分數: 0.648
+   2. 📖 應用得到的探索 - 最终分數: 0.648
+   3. 📖 當然政府的探索 - 最终分數: 0.648
+   4. 📖 影響電腦的探索 - 最终分數: 0.636
+   5. 📖 要求不能的探索 - 最终分數: 0.636
+   6. 📖 控制准備的探索 - 最终分數: 0.636
+   7. 📖 汽車軟體的探索 - 最终分數: 0.636
+   8. 📖 相關時間的探索 - 最终分數: 0.636
+   9. 📖 同時還是的探索 - 最终分數: 0.635
+   10. 📖 相關影響的探索 - 最终分數: 0.635
+🎉 推薦完成，耗時 3242ms，返回 10 本書籍
+🗣️ 收到自然語言查詢: 我想看中餐料理的食譜
+🧠 開始分析自然語言查詢: 我想看中餐料理的食譜
+📊 Gemini Flash Token 使用: 486 prompt + 90 response = 576 total
+📝 Gemini 解析結果: {
+  "query_text": "我想看中餐料理的食譜",
+  "filters": {
+    "language": "中文",
+    "tags": ["烹飪", "中餐"]
+  },
+  "summary": "希望我能找到一些美味的中餐食譜，讓您在烹飪的過程中享受樂趣，做出美味佳餚！😋"
+}
+📋 Flash 解析結果: language=中文, tags=[烹飪, 中餐]
+🔍 開始推薦查詢: 我想看中餐料理的食譜
+🏷️ Gemini提取標籤: [烹飪, 中餐]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：烹飪、中餐
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 我想看中餐料理的食譜
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [烹飪, 中餐]
+✅ 智能Tag比對完成，語義計算: 4 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 2584 prompt + 131 response = 2715 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [8, 9, 10, 11, 12],
+  "reasoning": "所有书籍的描述都包含“介紹各國特色料理”或“收錄多道日常家常菜食譜”，但只有index 8-15的書籍描述更符合“中餐料理食譜”的需求，因此過濾掉相關性低於30%的書籍(index 16-23)，並根據relevance_score由高到低排序，保留前5本最相關的書籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 所有书籍的描述都包含“介紹各國特色料理”或“收錄多道日常家常菜食譜”，但只有index 8-15的書籍描述更符合“中餐料理食譜”的需求，因此過濾掉相關性低於30%的書籍(index 16-23)，並根據relevance_score由高到低排序，保留前5本最相關的書籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 介紹建設的探索 - 最终分數: 0.654
+   2. 📖 安全使用的探索 - 最终分數: 0.654
+   3. 📖 然后工程的探索 - 最终分數: 0.653
+   4. 📖 發展名稱的探索 - 最终分數: 0.653
+   5. 📖 自己國內的探索 - 最终分數: 0.653
+🎉 推薦完成，耗時 1947ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 我想看科幻小說
+🧠 開始分析自然語言查詢: 我想看科幻小說
+📊 Gemini Flash Token 使用: 483 prompt + 97 response = 580 total
+📝 Gemini 解析結果: {
+  "query_text": "我想看科幻小說",
+  "filters": {
+    "language": "中文",
+    "tags": ["科幻", "小說"]
+  },
+  "summary": "準備好開啟一場星際冒險了嗎？我會盡力為您推薦精彩絕倫的科幻小說，讓您沉浸在奇幻的宇宙世界中！🚀✨"
+}
+📋 Flash 解析結果: language=中文, tags=[科幻, 小說]
+🔍 開始推薦查詢: 我想看科幻小說
+🏷️ Gemini提取標籤: [科幻, 小說]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：科幻、小說
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 我想看科幻小說
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [科幻, 小說]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3895 prompt + 71 response = 3966 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 3, 8],
+  "reasoning": "根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低排序，保留前五名。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低排序，保留前五名。
+📊 Flash重排序后的最终结果：
+   1. 📖 火星任務 - 最终分數: 0.769
+   2. 📖 三體 - 最终分數: 0.756
+   3. 📖 人生複本 - 最终分數: 0.743
+   4. 📖 群星的低語 - 最终分數: 0.730
+   5. 📖 沙丘 - 最终分數: 0.710
+🎉 推薦完成，耗時 1115ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 我想看科幻小說
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.414, 武俠=0.309, 奇幻=0.420, 科幻=0.512, 愛情=0.258, 懸疑=0.332, 歷史=0.269, 心理學=0.284, 哲學=0.329, 管理=0.221, 程式設計=0.325]
+🎯 語義匹配標籤: [科幻, 奇幻, 小說]
+🔍 關鍵詞匹配標籤: [小說, 科幻]
+✨ 最終混合標籤: [科幻, 奇幻, 小說]
+🎯 Fallback解析結果: language=中文, tags=[科幻, 奇幻, 小說]
+🔍 開始推薦查詢: 我想看科幻小說
+🏷️ Gemini提取標籤: [科幻, 奇幻, 小說]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：科幻、奇幻、小說
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 我想看科幻小說
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [科幻, 奇幻, 小說]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3985 prompt + 71 response = 4056 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 4, 7],
+  "reasoning": "根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低排序，保留前五名。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低排序，保留前五名。
+📊 Flash重排序后的最终结果：
+   1. 📖 火星任務 - 最终分數: 0.650
+   2. 📖 三體 - 最终分數: 0.624
+   3. 📖 銀河便車指南 - 最终分數: 0.612
+   4. 📖 人生複本 - 最终分數: 0.609
+   5. 📖 沙丘 - 最终分數: 0.582
+🎉 推薦完成，耗時 1434ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 推薦人工智慧相關的書
+🧠 開始分析自然語言查詢: 推薦人工智慧相關的書
+📊 Gemini Flash Token 使用: 484 prompt + 95 response = 579 total
+📝 Gemini 解析結果: {
+  "query_text": "推薦人工智慧相關的書",
+  "filters": {
+    "language": "中文",
+    "tags": ["人工智慧", "科技"]
+  },
+  "summary": "您想探索人工智慧的奧妙世界嗎？我會盡力為您推薦一些精彩的人工智慧相關書籍，希望能幫助您深入了解這個領域！📖🤖"
+}
+📋 Flash 解析結果: language=中文, tags=[人工智慧, 科技]
+🔍 開始推薦查詢: 推薦人工智慧相關的書
+🏷️ Gemini提取標籤: [人工智慧, 科技]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：人工智慧、科技
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 推薦人工智慧相關的書
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [人工智慧, 科技]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3527 prompt + 75 response = 3602 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 3, 8, 9],
+  "reasoning": "根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低排序，保留前5本最相關的書籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低排序，保留前5本最相關的書籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 人工智慧倫理 - 最终分數: 0.769
+   2. 📖 人工智慧與未來社會 - 最终分數: 0.620
+   3. 📖 語音識別技術 - 最终分數: 0.583
+   4. 📖 深度學習理論與實踐 - 最终分數: 0.561
+   5. 📖 自然語言處理技術 - 最终分數: 0.556
+🎉 推薦完成，耗時 1300ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 推薦人工智慧相關的書
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.406, 武俠=0.358, 奇幻=0.447, 科幻=0.509, 愛情=0.368, 懸疑=0.444, 歷史=0.324, 心理學=0.430, 哲學=0.477, 管理=0.368, 程式設計=0.437]
+🎯 語義匹配標籤: [科幻, 哲學, 奇幻]
+🔍 關鍵詞匹配標籤: []
+✨ 最終混合標籤: [科幻, 哲學, 奇幻]
+🎯 Fallback解析結果: language=中文, tags=[科幻, 哲學, 奇幻]
+🔍 開始推薦查詢: 推薦人工智慧相關的書
+🏷️ Gemini提取標籤: [科幻, 哲學, 奇幻]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：科幻、哲學、奇幻
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 推薦人工智慧相關的書
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [科幻, 哲學, 奇幻]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 4015 prompt + 134 response = 4149 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [8, 9, 13, 20, 1],
+  "reasoning": "筛选掉相关性低于30%的书籍，剩余书籍根据relevance_score降序排列，保留前5本。其中，三体(8)、火星任务(9)、人生复本(13)、1984(20)和美丽新世界(1)都涉及科幻、未来世界或科技与社会的关系，与用户查询“人工智能相关书籍”有一定程度的关联，尽管并非直接讨论人工智能技术本身。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 筛选掉相关性低于30%的书籍，剩余书籍根据relevance_score降序排列，保留前5本。其中，三体(8)、火星任务(9)、人生复本(13)、1984(20)和美丽新世界(1)都涉及科幻、未来世界或科技与社会的关系，与用户查询“人工智能相关书籍”有一定程度的关联，尽管并非直接讨论人工智能技术本身。
+📊 Flash重排序后的最终结果：
+   1. 📖 三體 - 最终分數: 0.478
+   2. 📖 火星任務 - 最终分數: 0.478
+   3. 📖 人生複本 - 最终分數: 0.442
+   4. 📖 1984 - 最终分數: 0.425
+   5. 📖 美麗新世界 - 最终分數: 0.605
+🎉 推薦完成，耗時 1651ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 量子計算的書籍
+🧠 開始分析自然語言查詢: 量子計算的書籍
+📊 Gemini Flash Token 使用: 482 prompt + 104 response = 586 total
+📝 Gemini 解析結果: {
+  "query_text": "量子計算的書籍",
+  "filters": {
+    "language": "中文",
+    "tags": ["量子計算", "科技", "學術"]
+  },
+  "summary": "您想深入了解量子計算的世界嗎？我會盡力為您找到一些深入淺出、通俗易懂或專業權威的書籍，希望能幫助您開啟量子計算的奇妙旅程！ 🚀"
+}
+📋 Flash 解析結果: language=中文, tags=[量子計算, 科技, 學術]
+🔍 開始推薦查詢: 量子計算的書籍
+🏷️ Gemini提取標籤: [量子計算, 科技, 學術]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：量子計算、科技、學術
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 量子計算的書籍
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [量子計算, 科技, 學術]
+✅ 智能Tag比對完成，語義計算: 4 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3496 prompt + 69 response = 3565 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2],
+  "reasoning": "只保留與\"量子計算\"直接相關的書籍，並根據relevance_score降序排列。其他書籍的相關性均低於30%，因此被過濾。"
+}
+```
+
+✅ 重排序完成：保留 3 本書籍
+📝 排序理由: 只保留與"量子計算"直接相關的書籍，並根據relevance_score降序排列。其他書籍的相關性均低於30%，因此被過濾。
+📊 Flash重排序后的最终结果：
+   1. 📖 量子計算原理與實踐 - 最终分數: 0.631
+   2. 📖 量子演算法設計 - 最终分數: 0.585
+   3. 📖 計算複雜度理論 - 最终分數: 0.585
+🎉 推薦完成，耗時 1191ms，返回 3 本書籍
+⚡ 收到快速查詢請求: 量子計算的書籍
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.337, 武俠=0.315, 奇幻=0.384, 科幻=0.393, 愛情=0.280, 懸疑=0.352, 歷史=0.262, 心理學=0.353, 哲學=0.378, 管理=0.284, 程式設計=0.371]
+🎯 語義匹配標籤: [科幻, 奇幻, 哲學]
+🔍 關鍵詞匹配標籤: []
+✨ 最終混合標籤: [科幻, 奇幻, 哲學]
+🎯 Fallback解析結果: language=中文, tags=[科幻, 奇幻, 哲學]
+🔍 開始推薦查詢: 量子計算的書籍
+🏷️ Gemini提取標籤: [科幻, 奇幻, 哲學]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：科幻、奇幻、哲學
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 量子計算的書籍
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [科幻, 奇幻, 哲學]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3990 prompt + 78 response = 4068 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [9, 8, 10, 11, 5],
+  "reasoning": "过滤掉了所有相关性低于30%的书籍。剩余书籍按照relevance_score降序排列，选择前5本与\"量子计算\"主题最相关的科幻小说。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 过滤掉了所有相关性低于30%的书籍。剩余书籍按照relevance_score降序排列，选择前5本与"量子计算"主题最相关的科幻小说。
+📊 Flash重排序后的最终结果：
+   1. 📖 火星任務 - 最终分數: 0.458
+   2. 📖 沙丘 - 最终分數: 0.466
+   3. 📖 三體 - 最终分數: 0.457
+   4. 📖 人生複本 - 最终分數: 0.452
+   5. 📖 銀河便車指南 - 最终分數: 0.485
+🎉 推薦完成，耗時 1837ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 我想了解中國歷史
+🧠 開始分析自然語言查詢: 我想了解中國歷史
+📊 Gemini Flash Token 使用: 482 prompt + 94 response = 576 total
+📝 Gemini 解析結果: {
+  "query_text": "我想了解中國歷史",
+  "filters": {
+    "language": "中文",
+    "tags": ["歷史"]
+  },
+  "summary": "了解中國歷史是一段精彩的旅程！我會盡力為您推薦一些深入淺出、引人入勝的書籍，讓您更好地認識這片古老而神奇的土地。😊"
+}
+📋 Flash 解析結果: language=中文, tags=[歷史]
+🔍 開始推薦查詢: 我想了解中國歷史
+🏷️ Gemini提取標籤: [歷史]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：歷史
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 我想了解中國歷史
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [歷史]
+✅ 智能Tag比對完成，語義計算: 0 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3784 prompt + 75 response = 3859 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [2, 7, 3, 4, 13],
+  "reasoning": "筛选掉与中国历史相关性低于30%的书籍，并根据relevance_score对剩余书籍进行降序排列，最终保留前5本最相关的书籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 筛选掉与中国历史相关性低于30%的书籍，并根据relevance_score对剩余书籍进行降序排列，最终保留前5本最相关的书籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 萬曆十五年 - 最终分數: 0.753
+   2. 📖 史記菁華錄 - 最终分數: 0.728
+   3. 📖 三國演義 - 最终分數: 0.741
+   4. 📖 三國演義 - 最终分數: 0.741
+   5. 📖 宋徽宗：天才皇帝的悲劇人生 - 最终分數: 0.702
+🎉 推薦完成，耗時 961ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 我想了解中國歷史
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.404, 武俠=0.472, 奇幻=0.368, 科幻=0.378, 愛情=0.339, 懸疑=0.378, 歷史=0.615, 心理學=0.416, 哲學=0.453, 管理=0.333, 程式設計=0.336]
+🎯 語義匹配標籤: [歷史, 武俠, 哲學]
+🔍 關鍵詞匹配標籤: [歷史]
+✨ 最終混合標籤: [歷史, 武俠, 哲學]
+🎯 Fallback解析結果: language=中文, tags=[歷史, 武俠, 哲學]
+🔍 開始推薦查詢: 我想了解中國歷史
+🏷️ Gemini提取標籤: [歷史, 武俠, 哲學]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：歷史、武俠、哲學
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 我想了解中國歷史
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [歷史, 武俠, 哲學]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3947 prompt + 108 response = 4055 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [4, 5, 6, 8, 9],
+  "reasoning": "筛选掉相关性低于0.3的书籍，剩余书籍中，'战国策'、'三國演義'、'史記菁華錄'、'萬曆十五年'直接与中国历史相关；'三國演義'虽然是小说，但其内容取材于中国历史，因此也保留。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 筛选掉相关性低于0.3的书籍，剩余书籍中，'战国策'、'三國演義'、'史記菁華錄'、'萬曆十五年'直接与中国历史相关；'三國演義'虽然是小说，但其内容取材于中国历史，因此也保留。
+📊 Flash重排序后的最终结果：
+   1. 📖 戰國策：權謀與話術的經典 - 最终分數: 0.502
+   2. 📖 三國演義 - 最终分數: 0.489
+   3. 📖 三國演義 - 最终分數: 0.489
+   4. 📖 史記菁華錄 - 最终分數: 0.477
+   5. 📖 萬曆十五年 - 最终分數: 0.474
+🎉 推薦完成，耗時 1175ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 推薦經典文學作品
+🧠 開始分析自然語言查詢: 推薦經典文學作品
+📊 Gemini Flash Token 使用: 482 prompt + 102 response = 584 total
+📝 Gemini 解析結果: {
+  "query_text": "推薦經典文學作品",
+  "filters": {
+    "language": "中文",
+    "tags": ["經典文學", "小說", "散文", "詩歌"]
+  },
+  "summary": "希望我能為您推薦一些歷久彌新的經典文學作品，讓您在閱讀中感受文字的魅力和文化的底蘊！期待您能找到心儀的書籍 😊"
+}
+📋 Flash 解析結果: language=中文, tags=[經典文學, 小說, 散文, 詩歌]
+🔍 開始推薦查詢: 推薦經典文學作品
+🏷️ Gemini提取標籤: [經典文學, 小說, 散文, 詩歌]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：經典文學、小說、散文、詩歌
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 推薦經典文學作品
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [經典文學, 小說, 散文, 詩歌]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3906 prompt + 76 response = 3982 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 8, 2, 4],
+  "reasoning": "根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低重新排序，保留前5本最相關的書籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低重新排序，保留前5本最相關的書籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 紅樓夢 - 最终分數: 0.609
+   2. 📖 史記菁華錄 - 最终分數: 0.594
+   3. 📖 三國演義 - 最终分數: 0.564
+   4. 📖 生命不可承受之輕 - 最终分數: 0.585
+   5. 📖 圍城 - 最终分數: 0.582
+🎉 推薦完成，耗時 1246ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 推薦經典文學作品
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.604, 武俠=0.422, 奇幻=0.457, 科幻=0.352, 愛情=0.441, 懸疑=0.432, 歷史=0.396, 心理學=0.421, 哲學=0.450, 管理=0.312, 程式設計=0.321]
+🎯 語義匹配標籤: [小說, 奇幻, 哲學]
+🔍 關鍵詞匹配標籤: [經典文學]
+✨ 最終混合標籤: [小說, 奇幻, 哲學, 經典文學]
+🎯 Fallback解析結果: language=中文, tags=[小說, 奇幻, 哲學, 經典文學]
+🔍 開始推薦查詢: 推薦經典文學作品
+🏷️ Gemini提取標籤: [小說, 奇幻, 哲學, 經典文學]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：小說、奇幻、哲學、經典文學
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 推薦經典文學作品
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [小說, 奇幻, 哲學, 經典文學]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3902 prompt + 73 response = 3975 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 3, 4],
+  "reasoning": "所有书籍都与\"经典文学作品\"相关，相关性得分均高于30%。根据relevance_score降序排列，选择前五本最相关的书籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 所有书籍都与"经典文学作品"相关，相关性得分均高于30%。根据relevance_score降序排列，选择前五本最相关的书籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 看不見的城市 - 最终分數: 0.710
+   2. 📖 流浪者之歌 - 最终分數: 0.674
+   3. 📖 生命不可承受之輕 - 最终分數: 0.674
+   4. 📖 生命中不能承受之輕 - 最终分數: 0.674
+   5. 📖 你想活出怎樣的人生？ - 最终分數: 0.671
+🎉 推薦完成，耗時 965ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 股票投資理財書籍
+🧠 開始分析自然語言查詢: 股票投資理財書籍
+📊 Gemini Flash Token 使用: 483 prompt + 117 response = 600 total
+📝 Gemini 解析結果: {
+  "query_text": "股票投資理財書籍",
+  "filters": {
+    "language": "中文",
+    "tags": ["投資", "理財", "商業"]
+  },
+  "summary": "您正在尋找關於股票投資理財方面的書籍，希望找到一些能幫助您更好地理解和掌握投資理財知識的佳作！我會盡力為您推薦一些權威、實用且易懂的書籍，祝您投資順利！ 📈"
+}
+📋 Flash 解析結果: language=中文, tags=[投資, 理財, 商業]
+🔍 開始推薦查詢: 股票投資理財書籍
+🏷️ Gemini提取標籤: [投資, 理財, 商業]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：投資、理財、商業
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 股票投資理財書籍
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [投資, 理財, 商業]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3748 prompt + 76 response = 3824 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 3, 5],
+  "reasoning": "根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低重新排序，保留前五名最相關的書籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低重新排序，保留前五名最相關的書籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 巴菲特寫給股東的信 - 最终分數: 0.808
+   2. 📖 富爸爸，窮爸爸 - 最终分數: 0.785
+   3. 📖 投資理財入門指南 - 最终分數: 0.715
+   4. 📖 極簡投資法則 - 最终分數: 0.676
+   5. 📖 窮查理的普通常識 - 最终分數: 0.640
+🎉 推薦完成，耗時 1299ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 股票投資理財書籍
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.363, 武俠=0.342, 奇幻=0.355, 科幻=0.345, 愛情=0.319, 懸疑=0.386, 歷史=0.284, 心理學=0.398, 哲學=0.406, 管理=0.357, 程式設計=0.321]
+🎯 語義匹配標籤: [哲學, 心理學, 懸疑]
+🔍 關鍵詞匹配標籤: []
+✨ 最終混合標籤: [哲學, 心理學, 懸疑]
+🎯 Fallback解析結果: language=中文, tags=[哲學, 心理學, 懸疑]
+🔍 開始推薦查詢: 股票投資理財書籍
+🏷️ Gemini提取標籤: [哲學, 心理學, 懸疑]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：哲學、心理學、懸疑
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 股票投資理財書籍
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [哲學, 心理學, 懸疑]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3949 prompt + 43 response = 3992 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [],
+  "reasoning": "所有書籍的相關性得分均低於 30%，因此沒有書籍符合條件。"
+}
+```
+
+✅ 重排序完成：保留 0 本書籍
+📝 排序理由: 所有書籍的相關性得分均低於 30%，因此沒有書籍符合條件。
+📊 Flash重排序后的最终结果：
+🎉 推薦完成，耗時 986ms，返回 0 本書籍
+🗣️ 收到自然語言查詢: 創業和商業管理
+🧠 開始分析自然語言查詢: 創業和商業管理
+📊 Gemini Flash Token 使用: 482 prompt + 104 response = 586 total
+📝 Gemini 解析結果: {
+  "query_text": "創業和商業管理",
+  "filters": {
+    "language": "中文",
+    "tags": ["創業", "商業", "管理"]
+  },
+  "summary": "您想深入了解創業和商業管理方面的知識，真是很棒的目標！我會盡力為您推薦一些實用且有價值的書籍，助您在創業的道路上乘風破浪！💪"
+}
+📋 Flash 解析結果: language=中文, tags=[創業, 商業, 管理]
+🔍 開始推薦查詢: 創業和商業管理
+🏷️ Gemini提取標籤: [創業, 商業, 管理]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：創業、商業、管理
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 創業和商業管理
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [創業, 商業, 管理]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3738 prompt + 75 response = 3813 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 5, 7],
+  "reasoning": "根據relevance_score過濾掉相關性小於0.3的書籍，並根據relevance_score由高到低排序，保留前5本最相關的書籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性小於0.3的書籍，並根據relevance_score由高到低排序，保留前5本最相關的書籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 原則：生活與工作 - 最终分數: 0.601
+   2. 📖 矽谷為什麼：科技、創新與創業精神的文化根源 - 最终分數: 0.597
+   3. 📖 數位轉型策略 - 最终分數: 0.529
+   4. 📖 說故事的領導力 - 最终分數: 0.509
+   5. 📖 OKR：做最重要的事 - 最终分數: 0.507
+🎉 推薦完成，耗時 1384ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 創業和商業管理
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.317, 武俠=0.378, 奇幻=0.357, 科幻=0.401, 愛情=0.367, 懸疑=0.374, 歷史=0.313, 心理學=0.437, 哲學=0.411, 管理=0.600, 程式設計=0.434]
+🎯 語義匹配標籤: [管理, 心理學, 程式設計]
+🔍 關鍵詞匹配標籤: [管理]
+✨ 最終混合標籤: [管理, 心理學, 程式設計]
+🎯 Fallback解析結果: language=中文, tags=[管理, 心理學, 程式設計]
+🔍 開始推薦查詢: 創業和商業管理
+🏷️ Gemini提取標籤: [管理, 心理學, 程式設計]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：管理、心理學、程式設計
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 創業和商業管理
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [管理, 心理學, 程式設計]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3694 prompt + 102 response = 3796 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [2, 3, 8, 16, 12],
+  "reasoning": "篩選掉相關性低於 0.3 的書籍，並根據 relevance_score 從高到低排序，保留前 5 本。這些書籍都與創業和商業管理相關，例如探討斜槓青年職涯、成功要素、商業決策和行為經濟學等。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 篩選掉相關性低於 0.3 的書籍，並根據 relevance_score 從高到低排序，保留前 5 本。這些書籍都與創業和商業管理相關，例如探討斜槓青年職涯、成功要素、商業決策和行為經濟學等。
+📊 Flash重排序后的最终结果：
+   1. 📖 斜槓青年：全球職涯新趨勢 - 最终分數: 0.486
+   2. 📖 斜槓青年：全球職涯新趨勢 - 最终分數: 0.486
+   3. 📖 恆毅力：人生成功的究極能力 - 最终分數: 0.433
+   4. 📖 異數：超凡與平凡的界線在哪裡？ - 最终分數: 0.418
+   5. 📖 快思慢想的實踐 - 最终分數: 0.427
+🎉 推薦完成，耗時 1528ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 心理學和自我成長
+🧠 開始分析自然語言查詢: 心理學和自我成長
+📊 Gemini Flash Token 使用: 483 prompt + 93 response = 576 total
+📝 Gemini 解析結果: {
+  "query_text": "心理學和自我成長",
+  "filters": {
+    "language": "中文",
+    "tags": ["心理學", "自我成長"]
+  },
+  "summary": "希望您能找到一些幫助您更好地了解自己，並在自我成長的道路上有所收穫的書籍！期待您在閱讀中有所啟發 ✨"
+}
+📋 Flash 解析結果: language=中文, tags=[心理學, 自我成長]
+🔍 開始推薦查詢: 心理學和自我成長
+🏷️ Gemini提取標籤: [心理學, 自我成長]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：心理學、自我成長
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 心理學和自我成長
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [心理學, 自我成長]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3754 prompt + 76 response = 3830 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 2, 3, 4, 9],
+  "reasoning": "根據relevance_score過濾掉相關性小於0.3的書籍，並根據relevance_score由高到低重新排序，保留前5本最相關的書籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性小於0.3的書籍，並根據relevance_score由高到低重新排序，保留前5本最相關的書籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 被討厭的勇氣 - 最终分數: 0.803
+   2. 📖 好關係，是麻煩出來的 - 最终分數: 0.787
+   3. 📖 恆毅力：人生成功的究極能力 - 最终分數: 0.777
+   4. 📖 親密關係：通往靈魂的橋樑 - 最终分數: 0.767
+   5. 📖 情緒勒索 - 最终分數: 0.754
+🎉 推薦完成，耗時 1178ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 心理學和自我成長
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.424, 武俠=0.365, 奇幻=0.455, 科幻=0.390, 愛情=0.413, 懸疑=0.444, 歷史=0.351, 心理學=0.647, 哲學=0.534, 管理=0.422, 程式設計=0.388]
+🎯 語義匹配標籤: [心理學, 哲學, 奇幻]
+🔍 關鍵詞匹配標籤: [心理學]
+✨ 最終混合標籤: [心理學, 哲學, 奇幻]
+🎯 Fallback解析結果: language=中文, tags=[心理學, 哲學, 奇幻]
+🔍 開始推薦查詢: 心理學和自我成長
+🏷️ Gemini提取標籤: [心理學, 哲學, 奇幻]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：心理學、哲學、奇幻
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 心理學和自我成長
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [心理學, 哲學, 奇幻]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3930 prompt + 100 response = 4030 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 5, 7],
+  "reasoning": "篩選掉相關性低於 0.3 的書籍，並根據 relevance_score 從高到低排序，保留前五名。這些書籍都直接或間接地與心理學和自我成長相關，涵蓋人際關係、愛情、人生意義、心理治療等方面。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 篩選掉相關性低於 0.3 的書籍，並根據 relevance_score 從高到低排序，保留前五名。這些書籍都直接或間接地與心理學和自我成長相關，涵蓋人際關係、愛情、人生意義、心理治療等方面。
+📊 Flash重排序后的最终结果：
+   1. 📖 好關係，是麻煩出來的 - 最终分數: 0.637
+   2. 📖 愛的藝術 - 最终分數: 0.610
+   3. 📖 愛的藝術 - 最终分數: 0.610
+   4. 📖 活出意義來 - 最终分數: 0.577
+   5. 📖 也許你該找人聊聊：一個心理師與她的心理師 - 最终分數: 0.509
+🎉 推薦完成，耗時 1254ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 料理和美食相關
+🧠 開始分析自然語言查詢: 料理和美食相關
+📊 Gemini Flash Token 使用: 482 prompt + 104 response = 586 total
+📝 Gemini 解析結果: {
+  "query_text": "料理和美食相關",
+  "filters": {
+    "language": "中文",
+    "tags": ["烹飪", "美食"]
+  },
+  "summary": "您想探索料理和美食的奇妙世界嗎？我會盡力為您推薦一些精彩的食譜、烹飪技巧或美食文化相關的書籍，希望您能找到心儀的讀物！ 📖😋"
+}
+⚠️ Gemini解析耗時過長(2173ms)，但已完成
+📋 Flash 解析結果: language=中文, tags=[烹飪, 美食]
+🔍 開始推薦查詢: 料理和美食相關
+🏷️ Gemini提取標籤: [烹飪, 美食]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：烹飪、美食
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 料理和美食相關
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [烹飪, 美食]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3842 prompt + 76 response = 3918 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 2, 1, 3, 4],
+  "reasoning": "根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低重新排序，保留前五本最相關的書籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 根據relevance_score過濾掉相關性低於0.3的書籍，並根據relevance_score由高到低重新排序，保留前五本最相關的書籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 料理新手的第一本食譜 - 最终分數: 0.791
+   2. 📖 廚藝的科學：從牛排、麵包到醬汁，掌握完美烹飪的關鍵 - 最终分數: 0.771
+   3. 📖 廚房裡的人類學家：從田野到餐桌的美味追尋 - 最终分數: 0.786
+   4. 📖 一人的私房烤箱料理 - 最终分數: 0.754
+   5. 📖 義大利麵之書 - 最终分數: 0.738
+🎉 推薦完成，耗時 1277ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 料理和美食相關
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.401, 武俠=0.440, 奇幻=0.462, 科幻=0.394, 愛情=0.446, 懸疑=0.505, 歷史=0.400, 心理學=0.476, 哲學=0.435, 管理=0.412, 程式設計=0.411]
+🎯 語義匹配標籤: [懸疑, 心理學, 奇幻]
+🔍 關鍵詞匹配標籤: []
+✨ 最終混合標籤: [懸疑, 心理學, 奇幻]
+🎯 Fallback解析結果: language=中文, tags=[懸疑, 心理學, 奇幻]
+🔍 開始推薦查詢: 料理和美食相關
+🏷️ Gemini提取標籤: [懸疑, 心理學, 奇幻]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：懸疑、心理學、奇幻
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 料理和美食相關
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [懸疑, 心理學, 奇幻]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3940 prompt + 42 response = 3982 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [],
+  "reasoning": "所有書籍的相關性都低於 30%，因此沒有書籍被保留。"
+}
+```
+
+✅ 重排序完成：保留 0 本書籍
+📝 排序理由: 所有書籍的相關性都低於 30%，因此沒有書籍被保留。
+📊 Flash重排序后的最终结果：
+🎉 推薦完成，耗時 1526ms，返回 0 本書籍
+🗣️ 收到自然語言查詢: 設計和藝術書籍
+🧠 開始分析自然語言查詢: 設計和藝術書籍
+📊 Gemini Flash Token 使用: 482 prompt + 90 response = 572 total
+📝 Gemini 解析結果: {
+  "query_text": "設計和藝術書籍",
+  "filters": {
+    "language": "中文",
+    "tags": ["設計", "藝術"]
+  },
+  "summary": "您想探索設計與藝術的魅力世界嗎？我會盡力為您推薦一些精彩的設計和藝術書籍，希望能滿足您的閱讀期待！🎨📖"
+}
+📋 Flash 解析結果: language=中文, tags=[設計, 藝術]
+🔍 開始推薦查詢: 設計和藝術書籍
+🏷️ Gemini提取標籤: [設計, 藝術]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：設計、藝術
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 設計和藝術書籍
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [設計, 藝術]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3629 prompt + 81 response = 3710 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 3, 7],
+  "reasoning": "過濾掉相關性低於 30% 的書籍 (index 4-23)，並根據 relevance_score 從高到低重新排序，保留前 5 本最相關的書籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 過濾掉相關性低於 30% 的書籍 (index 4-23)，並根據 relevance_score 從高到低重新排序，保留前 5 本最相關的書籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 設計中的設計 - 最终分數: 0.607
+   2. 📖 藝術的故事 - 最终分數: 0.599
+   3. 📖 印象派的光與影：從莫內到梵谷 - 最终分數: 0.591
+   4. 📖 文藝復興三傑：達文西、米開朗基羅、拉斐爾 - 最终分數: 0.567
+   5. 📖 美的歷史 - 最终分數: 0.548
+🎉 推薦完成，耗時 1467ms，返回 5 本書籍
+⚡ 收到快速查詢請求: 設計和藝術書籍
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.368, 武俠=0.342, 奇幻=0.387, 科幻=0.327, 愛情=0.345, 懸疑=0.349, 歷史=0.281, 心理學=0.343, 哲學=0.381, 管理=0.324, 程式設計=0.410]
+🎯 語義匹配標籤: [程式設計, 奇幻, 哲學]
+🔍 關鍵詞匹配標籤: []
+✨ 最終混合標籤: [程式設計, 奇幻, 哲學]
+🎯 Fallback解析結果: language=中文, tags=[程式設計, 奇幻, 哲學]
+🔍 開始推薦查詢: 設計和藝術書籍
+🏷️ Gemini提取標籤: [程式設計, 奇幻, 哲學]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：程式設計、奇幻、哲學
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 設計和藝術書籍
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [程式設計, 奇幻, 哲學]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3613 prompt + 89 response = 3702 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [7, 1, 15, 2, 6],
+  "reasoning": "过滤掉了相关性低于30%的书籍，并根据relevance_score对剩余书籍按相关性降序排列，最终保留了前5本最相关的书籍。这些书籍都直接或间接地与设计或艺术相关。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 过滤掉了相关性低于30%的书籍，并根据relevance_score对剩余书籍按相关性降序排列，最终保留了前5本最相关的书籍。这些书籍都直接或间接地与设计或艺术相关。
+📊 Flash重排序后的最终结果：
+   1. 📖 設計中的設計 - 最终分數: 0.512
+   2. 📖 人機介面設計 - 最终分數: 0.547
+   3. 📖 美的歷史 - 最终分數: 0.452
+   4. 📖 電腦圖形學算法 - 最终分數: 0.533
+   5. 📖 軟體設計模式 - 最终分數: 0.513
+🎉 推薦完成，耗時 1416ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 我想看中餐料理的食譜
+🧠 開始分析自然語言查詢: 我想看中餐料理的食譜
+📊 Gemini Flash Token 使用: 486 prompt + 85 response = 571 total
+📝 Gemini 解析結果: {
+  "query_text": "我想看中餐料理的食譜",
+  "filters": {
+    "language": "中文",
+    "tags": ["烹飪", "中餐"]
+  },
+  "summary": "希望你能找到滿意的中餐食譜，做出美味佳餚！祝你烹飪愉快！😋"
+}
+📋 Flash 解析結果: language=中文, tags=[烹飪, 中餐]
+🔍 開始推薦查詢: 我想看中餐料理的食譜
+🏷️ Gemini提取標籤: [烹飪, 中餐]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：烹飪、中餐
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 我想看中餐料理的食譜
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [烹飪, 中餐]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3841 prompt + 81 response = 3922 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [1, 0, 2, 7, 8],
+  "reasoning": "篩選掉相關性低於 0.3 的書籍，並根據 relevance_score 由高到低排序，保留前 5 本與『中餐料理食譜』最相關的書籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 篩選掉相關性低於 0.3 的書籍，並根據 relevance_score 由高到低排序，保留前 5 本與『中餐料理食譜』最相關的書籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 料理新手的第一本食譜 - 最终分數: 0.601
+   2. 📖 舌尖上的中國：美食與文化之旅 - 最终分數: 0.629
+   3. 📖 一碗療癒：30分鐘快速上桌的家常湯品 - 最终分數: 0.582
+   4. 📖 台灣小吃圖鑑 - 最终分數: 0.545
+   5. 📖 廚房裡的人類學家：從田野到餐桌的美味追尋 - 最终分數: 0.536
+🎉 推薦完成，耗時 1132ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 我想看中餐料理的食譜
+🧠 開始分析自然語言查詢: 我想看中餐料理的食譜
+📊 Gemini Flash Token 使用: 486 prompt + 85 response = 571 total
+📝 Gemini 解析結果: {
+  "query_text": "我想看中餐料理的食譜",
+  "filters": {
+    "language": "中文",
+    "tags": ["烹飪", "中餐"]
+  },
+  "summary": "希望你能找到滿意的中餐食譜，做出美味佳餚！祝你烹飪愉快！😋"
+}
+📋 Flash 解析結果: language=中文, tags=[烹飪, 中餐]
+🔍 開始推薦查詢: 我想看中餐料理的食譜
+🏷️ Gemini提取標籤: [烹飪, 中餐]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：烹飪、中餐
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 我想看中餐料理的食譜
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [烹飪, 中餐]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3841 prompt + 75 response = 3916 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [1, 0, 7, 2, 3],
+  "reasoning": "篩選掉相關性低於 0.3 的書籍，並根據 relevance_score 由高到低排序，保留前 5 本最相關的食譜書籍。"
+}
+```
+
+✅ 重排序完成：保留 5 本書籍
+📝 排序理由: 篩選掉相關性低於 0.3 的書籍，並根據 relevance_score 由高到低排序，保留前 5 本最相關的食譜書籍。
+📊 Flash重排序后的最终结果：
+   1. 📖 料理新手的第一本食譜 - 最终分數: 0.601
+   2. 📖 舌尖上的中國：美食與文化之旅 - 最终分數: 0.629
+   3. 📖 台灣小吃圖鑑 - 最终分數: 0.545
+   4. 📖 一碗療癒：30分鐘快速上桌的家常湯品 - 最终分數: 0.582
+   5. 📖 一個人開伙：快速、簡單、不浪費的單人料理 - 最终分數: 0.575
+🎉 推薦完成，耗時 1052ms，返回 5 本書籍
+🗣️ 收到自然語言查詢: 想看一些法律知識的書
+🧠 開始分析自然語言查詢: 想看一些法律知識的書
+📊 Gemini Flash Token 使用: 485 prompt + 78 response = 563 total
+📝 Gemini 解析結果: {
+  "query_text": "想看一些法律知識的書",
+  "filters": {
+    "language": "中文",
+    "tags": ["法律"]
+  },
+  "summary": "希望你能在我們的推薦中找到你需要的法律知識，開啟一段充實的學習之旅！📖"
+}
+📋 Flash 解析結果: language=中文, tags=[法律]
+🔍 開始推薦查詢: 想看一些法律知識的書
+🏷️ Gemini提取標籤: [法律]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：法律
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 想看一些法律知識的書
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [法律]
+✅ 智能Tag比對完成，語義計算: 0 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+📊 Gemini Flash Token 使用: 3669 prompt + 134 response = 3803 total
+📋 Flash 重排序回應: ```json
+{
+  "filtered_results": [0, 1, 2, 10],
+  "reasoning": "篩選掉相關性低於 0.3 的書籍，並根據 relevance_score 由高到低排序，保留前 4 本最相關的書籍。'為愛朗讀' 雖然是小說，但涉及法律審判；'百年法醫' 直接與法醫學相關；'我們與惡的距離' 探討法律與社會議題；'正義：一場思辨之旅' 涉及法律與倫理的思辨。"
+}
+```
+
+✅ 重排序完成：保留 4 本書籍
+📝 排序理由: 篩選掉相關性低於 0.3 的書籍，並根據 relevance_score 由高到低排序，保留前 4 本最相關的書籍。'為愛朗讀' 雖然是小說，但涉及法律審判；'百年法醫' 直接與法醫學相關；'我們與惡的距離' 探討法律與社會議題；'正義：一場思辨之旅' 涉及法律與倫理的思辨。
+📊 Flash重排序后的最终结果：
+   1. 📖 為愛朗讀 - 最终分數: 0.670
+   2. 📖 百年法醫：解開12個世紀奇案的關鍵 - 最终分數: 0.473
+   3. 📖 我們與惡的距離：從罪行、新聞到心理的深度剖析 - 最终分數: 0.470
+   4. 📖 正義：一場思辨之旅 - 最终分數: 0.432
+🎉 推薦完成，耗時 2561ms，返回 4 本書籍
+🗣️ 收到自然語言查詢: 有沒有推薦心理學方面的讀物？
+🧠 開始分析自然語言查詢: 有沒有推薦心理學方面的讀物？
+⚠️ Gemini 解析失敗，使用回退策略: java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 3000ms in 'flatMap' (and no fallback has been configured)
+🧠 智能Fallback：語義向量 + 關鍵詞混合分析...
+📊 語義相似度分析: [小說=0.389, 武俠=0.232, 奇幻=0.336, 科幻=0.268, 愛情=0.305, 懸疑=0.380, 歷史=0.248, 心理學=0.424, 哲學=0.391, 管理=0.257, 程式設計=0.237]
+🎯 語義匹配標籤: [心理學, 哲學, 小說]
+🔍 關鍵詞匹配標籤: [心理學]
+✨ 最終混合標籤: [心理學, 哲學, 小說]
+⚠️ Gemini解析耗時過長(3069ms)，但已完成
+📋 Flash 解析結果: language=中文, tags=[心理學, 哲學, 小說]
+🔍 開始推薦查詢: 有沒有推薦心理學方面的讀物？
+🏷️ Gemini提取標籤: [心理學, 哲學, 小說]
+🏷️ 步驟 1: Tags向量搜索...
+   Tags查詢: 分類：心理學、哲學、小說
+✅ Tags搜尋找到 100 本候選書籍
+📖 步驟 2: Description向量重排序...
+   Description查詢: 有沒有推薦心理學方面的讀物？
+✅ Description重排序完成，批量處理 40 本書籍
+🏷️ 步驟 3: 快速Tag語義比對...
+⚡ 智能Tag語義比對，Gemini標籤: [心理學, 哲學, 小說]
+✅ 智能Tag比對完成，語義計算: 5 次（最大5次）
+📊 步驟 4: 綜合評分排序...
+🎯 步驟 5: 構建24個候選結果...
+🧠 步驟 6: Flash 智能重排序（从24本中选出最佳10本）...
+🎯 使用 Gemini Flash 重排序推荐结果...
+❌ Flash 重排序失败: java.util.concurrent.TimeoutException: Did not observe any item or terminal signal within 3000ms in 'flatMap' (and no fallback has been configured)
+📊 Flash重排序后的最终结果：
+   1. 📖 好關係，是麻煩出來的 - 最终分數: 0.600
+   2. 📖 愛的藝術 - 最终分數: 0.596
+   3. 📖 深夜加油站遇見蘇格拉底 - 最终分數: 0.588
+   4. 📖 愛的藝術 - 最终分數: 0.587
+   5. 📖 你想活出怎樣的人生？ - 最终分數: 0.578
+   6. 📖 流浪者之歌 - 最终分數: 0.576
+   7. 📖 魔山 - 最终分數: 0.572
+   8. 📖 異鄉人 - 最终分數: 0.569
+   9. 📖 生命中不能承受之輕 - 最终分數: 0.567
+   10. 📖 生命不可承受之輕 - 最终分數: 0.567
+🎉 推薦完成，耗時 3185ms，返回 10 本書籍
+2025-08-07T22:26:25.827+08:00  INFO 75914 --- [rag.demo] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-08-07T22:26:25.830+08:00  INFO 75914 --- [rag.demo] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+
+> Task :bootRun FAILED
+
+[Incubating] Problems report is available at: file:///Users/xiechengru/Downloads/rag.demo/build/reports/problems/problems-report.html
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':bootRun'.
+> Process 'command '/opt/homebrew/Cellar/openjdk@21/21.0.8/libexec/openjdk.jdk/Contents/Home/bin/java'' finished with non-zero exit value 143
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14.3/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 39m 33s
+5 actionable tasks: 4 executed, 1 up-to-date

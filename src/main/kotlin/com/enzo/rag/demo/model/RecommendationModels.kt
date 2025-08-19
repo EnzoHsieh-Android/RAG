@@ -11,13 +11,29 @@ data class QueryRequest(
     @JsonProperty("query_text") val queryText: String,
     @JsonProperty("filters") val filters: QueryFilters,
     @JsonProperty("summary") val summary: String? = null,
-    @JsonProperty("gemini_tokens") val geminiTokens: GeminiTokenUsage? = null
+    @JsonProperty("gemini_tokens") val geminiTokens: GeminiTokenUsage? = null,
+    @JsonProperty("title_info") val titleInfo: TitleDetectionInfo? = null
 )
 
 data class QueryFilters(
     @JsonProperty("language") val language: String?,
     @JsonProperty("tags") val tags: List<String>?
 )
+
+// 書名檢測信息
+data class TitleDetectionInfo(
+    @JsonProperty("has_title") val hasTitle: Boolean,
+    @JsonProperty("confidence") val confidence: Double,
+    @JsonProperty("extracted_title") val extractedTitle: String?,
+    @JsonProperty("search_strategy") val searchStrategy: SearchStrategy
+)
+
+// 搜索策略枚舉
+enum class SearchStrategy {
+    @JsonProperty("title_first") TITLE_FIRST,      // 優先書名搜索
+    @JsonProperty("hybrid") HYBRID,                // 混合搜索
+    @JsonProperty("semantic_only") SEMANTIC_ONLY   // 純語義搜索
+}
 
 // 書籍 Metadata
 data class BookMetadata(
@@ -106,6 +122,20 @@ data class QdrantSearchRequest(
 
 data class QdrantSearchResponse(
     @JsonProperty("result") val result: List<QdrantSearchResultItem>
+)
+
+data class QdrantScrollResponse(
+    @JsonProperty("result") val result: QdrantScrollResult
+)
+
+data class QdrantScrollResult(
+    @JsonProperty("points") val points: List<QdrantScrollPoint>?,
+    @JsonProperty("next_page_offset") val nextPageOffset: String?
+)
+
+data class QdrantScrollPoint(
+    @JsonProperty("id") val id: String,
+    @JsonProperty("payload") val payload: Map<String, Any>?
 )
 
 data class QdrantSearchResultItem(
@@ -203,4 +233,16 @@ data class QdrantPoint(
 // Qdrant Upsert請求
 data class QdrantUpsertRequest(
     @JsonProperty("points") val points: List<QdrantPoint>
+)
+
+// 書籍搜索結果（用於多輪搜索）
+data class BookResult(
+    val bookId: String,
+    val title: String,
+    val author: String,
+    val description: String,
+    val tags: List<String>,
+    val language: String,
+    val coverUrl: String,
+    val relevanceScore: Double
 )

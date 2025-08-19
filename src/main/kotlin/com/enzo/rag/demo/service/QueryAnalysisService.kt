@@ -3,6 +3,8 @@ package com.enzo.rag.demo.service
 import com.enzo.rag.demo.model.QueryRequest
 import com.enzo.rag.demo.model.QueryFilters
 import com.enzo.rag.demo.model.GeminiTokenUsage
+import com.enzo.rag.demo.model.TitleDetectionInfo
+import com.enzo.rag.demo.model.SearchStrategy
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.beans.factory.annotation.Value
@@ -32,14 +34,24 @@ class QueryAnalysisService(
     fun analyzeQuery(naturalLanguageQuery: String): QueryRequest {
         println("🧠 開始分析自然語言查詢: $naturalLanguageQuery")
         
+        // 先進行書名檢測
+        val titleInfo = detectBookTitle(naturalLanguageQuery)
+        println("📖 書名檢測結果: ${titleInfo}")
+        
         val analysisPrompt = buildAnalysisPrompt(naturalLanguageQuery)
         
         return try {
             val (responseText, tokenUsage) = callGeminiFlashWithTokens(analysisPrompt)
-            parseGeminiResponse(responseText, naturalLanguageQuery, tokenUsage)
+            val queryRequest = parseGeminiResponse(responseText, naturalLanguageQuery, tokenUsage)
+            
+            // 將書名檢測信息添加到查詢請求中
+            queryRequest.copy(
+                titleInfo = titleInfo
+            )
         } catch (e: Exception) {
             println("⚠️ Gemini 解析失敗，使用回退策略: ${e.message}")
-            createFallbackQuery(naturalLanguageQuery)
+            val fallbackQuery = createFallbackQuery(naturalLanguageQuery)
+            fallbackQuery.copy(titleInfo = titleInfo)
         }
     }
     
@@ -297,6 +309,72 @@ class QueryAnalysisService(
      */
     fun createPublicFallbackQuery(originalQuery: String): QueryRequest {
         return createFallbackQuery(originalQuery)
+    }
+    
+    /**
+     * 檢測查詢中的書名信息
+     */
+    fun detectBookTitle(query: String): TitleDetectionInfo {
+        val cleanQuery = query.trim()
+        
+        // 1. 檢測書名關鍵詞
+        val titleKeywords = listOf("找", "搜索", "搜尋", "我要看", "推薦", "有沒有", "書名叫", "這本書", "那本書")
+        val hasKeywords = titleKeywords.any { cleanQuery.contains(it) }
+        
+        // 2. 檢測引號包圍的內容
+        val quotedPattern = Regex("[\"'「」『』]([^\"'「」『』]+)[\"'「」『』]")
+        val quotedTitle = quotedPattern.find(cleanQuery)?.groupValues?.get(1)
+        
+        // 3. 檢測《》書名號
+        val bookMarkPattern = Regex("《([^《》]+)》")
+        val bookMarkTitle = bookMarkPattern.find(cleanQuery)?.groupValues?.get(1)
+        
+        // 4. 分析查詢長度和複雜度
+        val words = cleanQuery.length
+        val isShort = words <= 20
+        val hasAdjectives = listOf("好看", "有趣", "經典", "熱門", "推薦", "最新").any { cleanQuery.contains(it) }
+        
+        // 計算書名置信度
+        var confidence = 0.0
+        var extractedTitle: String? = null
+        
+        when {
+            bookMarkTitle != null -> {
+                confidence = 0.95
+                extractedTitle = bookMarkTitle
+            }
+            quotedTitle != null -> {
+                confidence = 0.85
+                extractedTitle = quotedTitle
+            }
+            hasKeywords && isShort && !hasAdjectives -> {
+                confidence = 0.7
+                extractedTitle = cleanQuery.replace(Regex("[找搜索搜尋我要看推薦有沒有書名叫這本書那本書]"), "").trim()
+            }
+            isShort && !hasAdjectives -> {
+                confidence = 0.5
+                extractedTitle = cleanQuery
+            }
+            else -> {
+                confidence = 0.2
+            }
+        }
+        
+        // 清理提取的書名
+        extractedTitle = extractedTitle?.let { title ->
+            title.replace(Regex("[的了嗎呢吧？?！!。]$"), "").trim()
+        }
+        
+        return TitleDetectionInfo(
+            hasTitle = confidence > 0.4,
+            confidence = confidence,
+            extractedTitle = extractedTitle,
+            searchStrategy = when {
+                confidence >= 0.8 -> SearchStrategy.TITLE_FIRST
+                confidence >= 0.5 -> SearchStrategy.HYBRID
+                else -> SearchStrategy.SEMANTIC_ONLY
+            }
+        )
     }
     
     /**

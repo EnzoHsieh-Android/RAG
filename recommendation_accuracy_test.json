@@ -1,0 +1,262 @@
+{
+  "test_time": "2025-08-07 22:21:58",
+  "total_queries": 10,
+  "natural_api": {
+    "success_rate": 1.0,
+    "avg_relevance": 0.548,
+    "avg_top1_relevance": 0.5650000000000001,
+    "avg_response_time": 2.5663110494613646
+  },
+  "fast_api": {
+    "success_rate": 1.0,
+    "avg_relevance": 0.275,
+    "avg_top1_relevance": 0.325,
+    "avg_response_time": 1.3839224100112915
+  },
+  "detailed_results": {
+    "natural": [
+      {
+        "query": "我想看科幻小說",
+        "category": "科幻文學",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.55,
+          "top1_relevance": 0.5,
+          "top3_relevance": 0.5,
+          "total_books": 5
+        },
+        "time": 2.643076181411743
+      },
+      {
+        "query": "推薦人工智慧相關的書",
+        "category": "人工智慧",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.4,
+          "top1_relevance": 0.5,
+          "top3_relevance": 0.5,
+          "total_books": 5
+        },
+        "time": 2.3810930252075195
+      },
+      {
+        "query": "量子計算的書籍",
+        "category": "量子物理",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.25,
+          "top1_relevance": 0.5,
+          "top3_relevance": 0.25,
+          "total_books": 3
+        },
+        "time": 2.365945816040039
+      },
+      {
+        "query": "我想了解中國歷史",
+        "category": "中國歷史",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.5,
+          "top1_relevance": 0.5,
+          "top3_relevance": 0.5,
+          "total_books": 5
+        },
+        "time": 2.0228240489959717
+      },
+      {
+        "query": "推薦經典文學作品",
+        "category": "經典文學",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.7,
+          "top1_relevance": 0.75,
+          "top3_relevance": 0.6666666666666666,
+          "total_books": 5
+        },
+        "time": 2.585452079772949
+      },
+      {
+        "query": "股票投資理財書籍",
+        "category": "投資理財",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.4800000000000001,
+          "top1_relevance": 0.4,
+          "top3_relevance": 0.5333333333333333,
+          "total_books": 5
+        },
+        "time": 2.494393825531006
+      },
+      {
+        "query": "創業和商業管理",
+        "category": "商業管理",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.55,
+          "top1_relevance": 0.5,
+          "top3_relevance": 0.5833333333333334,
+          "total_books": 5
+        },
+        "time": 2.796574831008911
+      },
+      {
+        "query": "心理學和自我成長",
+        "category": "心理成長",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 1.0,
+          "top1_relevance": 1.0,
+          "top3_relevance": 1.0,
+          "total_books": 5
+        },
+        "time": 2.3467140197753906
+      },
+      {
+        "query": "料理和美食相關",
+        "category": "美食料理",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.8,
+          "top1_relevance": 0.75,
+          "top3_relevance": 0.6666666666666666,
+          "total_books": 5
+        },
+        "time": 3.4583089351654053
+      },
+      {
+        "query": "設計和藝術書籍",
+        "category": "藝術設計",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.25,
+          "top1_relevance": 0.25,
+          "top3_relevance": 0.25,
+          "total_books": 5
+        },
+        "time": 2.568727731704712
+      }
+    ],
+    "fast": [
+      {
+        "query": "我想看科幻小說",
+        "category": "科幻文學",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.5,
+          "top1_relevance": 0.5,
+          "top3_relevance": 0.5,
+          "total_books": 5
+        },
+        "time": 1.4399762153625488
+      },
+      {
+        "query": "推薦人工智慧相關的書",
+        "category": "人工智慧",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.0,
+          "top1_relevance": 0.0,
+          "top3_relevance": 0.0,
+          "total_books": 5
+        },
+        "time": 1.657304048538208
+      },
+      {
+        "query": "量子計算的書籍",
+        "category": "量子物理",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.1,
+          "top1_relevance": 0.25,
+          "top3_relevance": 0.16666666666666666,
+          "total_books": 5
+        },
+        "time": 1.842979907989502
+      },
+      {
+        "query": "我想了解中國歷史",
+        "category": "中國歷史",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.5,
+          "top1_relevance": 0.5,
+          "top3_relevance": 0.5,
+          "total_books": 5
+        },
+        "time": 1.1846840381622314
+      },
+      {
+        "query": "推薦經典文學作品",
+        "category": "經典文學",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.75,
+          "top1_relevance": 0.75,
+          "top3_relevance": 0.75,
+          "total_books": 5
+        },
+        "time": 0.9686179161071777
+      },
+      {
+        "query": "股票投資理財書籍",
+        "category": "投資理財",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.0,
+          "top1_relevance": 0.0,
+          "top3_relevance": 0.0,
+          "total_books": 0
+        },
+        "time": 0.9933199882507324
+      },
+      {
+        "query": "創業和商業管理",
+        "category": "商業管理",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.1,
+          "top1_relevance": 0.0,
+          "top3_relevance": 0.0,
+          "total_books": 5
+        },
+        "time": 1.5413579940795898
+      },
+      {
+        "query": "心理學和自我成長",
+        "category": "心理成長",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.6,
+          "top1_relevance": 1.0,
+          "top3_relevance": 0.6666666666666666,
+          "total_books": 5
+        },
+        "time": 1.2583911418914795
+      },
+      {
+        "query": "料理和美食相關",
+        "category": "美食料理",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.0,
+          "top1_relevance": 0.0,
+          "top3_relevance": 0.0,
+          "total_books": 0
+        },
+        "time": 1.5319607257843018
+      },
+      {
+        "query": "設計和藝術書籍",
+        "category": "藝術設計",
+        "success": true,
+        "analysis": {
+          "avg_relevance": 0.2,
+          "top1_relevance": 0.25,
+          "top3_relevance": 0.25,
+          "total_books": 5
+        },
+        "time": 1.4206321239471436
+      }
+    ]
+  }
+}

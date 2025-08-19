@@ -1,0 +1,439 @@
+/Users/xiechengru/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+🚀 開始導入cleaned_books_1000.json到Qdrant...
+🔍 檢查服務狀態...
+✅ Qdrant服務正常
+✅ Ollama服務正常
+📖 載入cleaned_books_1000.json...
+✅ 成功載入 1000 本書籍
+🏭 開始批次處理，批次大小: 10
+
+📦 處理批次 1/100 (10 本書)...
+📚 處理第 1 本書: 深紅之潮：南海衝突的未來預測
+📚 處理第 2 本書: 原子習慣的實踐：365日行動手冊
+📚 處理第 3 本書: 記憶宮殿的鑰匙：打造超凡記憶力的藝術與科學
+📚 處理第 4 本書: 麵包師的四季：從酵母到餐桌的自然烘焙
+📚 處理第 5 本書: 銀翼之遺：蒸汽與魔法的交響詩
+📚 處理第 6 本書: 博弈論的智慧：從賽局理論看懂商業競爭與人生決策
+📚 處理第 7 本書: 羅馬的黃昏：一位元老院議員的末日回憶錄
+📚 處理第 8 本書: 孤獨的觀星人
+📚 處理第 9 本書: 從零開始的居家健身：打造理想體態的徒手訓練法
+📚 處理第 10 本書: 低語者：法醫昆蟲學破案實錄
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3001 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 2/100 (10 本書)...
+📚 處理第 11 本書: 編劇的聖經：從靈感到成品的實用寫作指南
+📚 處理第 12 本書: 被討厭的勇氣：自我啟發之父阿德勒的教導
+📚 處理第 13 本書: 禪與摩托車維修藝術
+📚 處理第 14 本書: 無人深空：AI艦隊的崛起
+📚 處理第 15 本書: 色彩的履歷書：從古代染料到現代塗料的演進史
+📚 處理第 16 本書: 財務自由的藍圖：FIRE運動實踐者的告白
+📚 處理第 17 本書: 京都有晴：漫步古都的二十四節氣
+📚 處理第 18 本書: 悖論：破解科學史上最令人費解的45個謎題
+📚 處理第 19 本書: 沼澤地女孩
+📚 處理第 20 本書: UX使用者體驗設計：從用戶研究到產品迭代的完整流程
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3011 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 3/100 (10 本書)...
+📚 處理第 21 本書: 黑天鵝：如何應對不可預知的未來
+📚 處理第 22 本書: 刺殺騎士團長
+📚 處理第 23 本書: 植物的私生活：它們如何戰鬥、求偶與欺騙
+📚 處理第 24 本書: 正義：一場思辨之旅
+📚 處理第 25 本書: 鬼滅之刃
+📚 處理第 26 本書: 萬曆十五年
+📚 處理第 27 本書: 薩德侯爵的罪行
+📚 處理第 28 本書: OKR：做最重要的事
+📚 處理第 29 本書: 冰與火之歌：權力遊戲
+📚 處理第 30 本書: 時間的秩序
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3021 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 4/100 (10 本書)...
+📚 處理第 31 本書: 一個人的朝聖
+📚 處理第 32 本書: 槍砲、病菌與鋼鐵：人類社會的命運
+📚 處理第 33 本書: 設計的準則：寫給大家的平面設計入門
+📚 處理第 34 本書: 克蘇魯的呼喚
+📚 處理第 35 本書: 快思慢想
+📚 處理第 36 本書: 人間失格
+📚 處理第 37 本書: 魔戒：魔戒現身
+📚 處理第 38 本書: 思考，快與慢
+📚 處理第 39 本書: 海邊的卡夫卡
+📚 處理第 40 本書: 鄉土中國
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3031 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 5/100 (10 本書)...
+📚 處理第 41 本書: 三體
+📚 處理第 42 本書: 百年孤寂
+📚 處理第 43 本書: 自私的基因
+📚 處理第 44 本書: 如何閱讀一本書
+📚 處理第 45 本書: Docker從入門到實踐
+📚 處理第 46 本書: 全球通史：從史前到21世紀
+📚 處理第 47 本書: 山羊之歌：我與我的希臘島嶼
+📚 處理第 48 本書: 深度學習：用Python進行圖像識別
+📚 處理第 49 本書: 第五號屠宰場
+📚 處理第 50 本書: 斷捨離：改變人生的整理魔法
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3041 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 6/100 (10 本書)...
+📚 處理第 51 本書: 1984
+📚 處理第 52 本書: 美麗新世界
+📚 處理第 53 本書: 你想活出怎樣的人生？
+📚 處理第 54 本書: 活出意義來
+📚 處理第 55 本書: 小王子
+📚 處理第 56 本書: 靜坐的科學、醫學與心靈之旅
+📚 處理第 57 本書: 異鄉人
+📚 處理第 58 本書: 伊斯坦堡：一座城市的記憶
+📚 處理第 59 本書: 富爸爸，窮爸爸
+📚 處理第 60 本書: 紅樓夢
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3051 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 7/100 (10 本書)...
+📚 處理第 61 本書: 深夜食堂
+📚 處理第 62 本書: 銀河便車指南
+📚 處理第 63 本書: 挪威的森林
+📚 處理第 64 本書: 引爆趨勢：小事如何產生大影響
+📚 處理第 65 本書: 生命的不可思議：胡適的私人回憶
+📚 處理第 66 本書: 風格的要素
+📚 處理第 67 本書: 塵埃之書：野美人號
+📚 處理第 68 本書: 戀愛中的城市：用心理學解析愛情地圖
+📚 處理第 69 本書: React：引領未來的框架
+📚 處理第 70 本書: 大亨小傳
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3061 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 8/100 (10 本書)...
+📚 處理第 71 本書: 神經喚術士
+📚 處理第 72 本書: 情緒勒索：那些在伴侶、親子、職場間，最讓人窒息的相處
+📚 處理第 73 本書: 天龍八部
+📚 處理第 74 本書: 台北人
+📚 處理第 75 本書: 沉默的艦隊
+📚 處理第 76 本書: 西方哲學史
+📚 處理第 77 本書: 行銷4.0：從傳統到數位，全面掌握虛實整合的顧客旅程
+📚 處理第 78 本書: 沙丘
+📚 處理第 79 本書: 與成功有約：高效能人士的七個習慣
+📚 處理第 80 本書: 物種源始
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3071 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 9/100 (10 本書)...
+📚 處理第 81 本書: 白鯨記
+📚 處理第 82 本書: 非暴力溝通
+📚 處理第 83 本書: 斜槓青年：全球職涯新趨勢，迎接更有價值的多重人生
+📚 處理第 84 本書: 黑暗元素三部曲：黃金羅盤
+📚 處理第 85 本書: 解憂雜貨店
+📚 處理第 86 本書: 被隱藏的女性：NASA黑人女科學家的故事
+📚 處理第 87 本書: 故事：材質、結構、風格和銀幕劇作的原理
+📚 處理第 88 本書: 錢買不到的東西：金錢與正義的攻防
+📚 處理第 89 本書: 哈利波特：神秘的魔法石
+📚 處理第 90 本書: 單車失竊記
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3081 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 10/100 (10 本書)...
+📚 處理第 91 本書: 你的名字。
+📚 處理第 92 本書: 為什麼要睡覺？
+📚 處理第 93 本書: 飄
+📚 處理第 94 本書: 如何避免氣候災難
+📚 處理第 95 本書: 別讓我走
+📚 處理第 96 本書: 刻意練習：從新手到專家的成功秘訣
+📚 處理第 97 本書: 蒼蠅王
+📚 處理第 98 本書: 怦然心動的人生整理魔法
+📚 處理第 99 本書: 流浪者之歌
+📚 處理第 100 本書: 人類大歷史：從野獸到扮演上帝
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3091 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 11/100 (10 本書)...
+📚 處理第 101 本書: 蜻蜓之眼：一個不存在的女人
+📚 處理第 102 本書: 零廢棄生活：一個普通家庭的環保實踐
+📚 處理第 103 本書: 巴菲特寫給股東的信
+📚 處理第 104 本書: 最後的獨角獸
+📚 處理第 105 本書: 舌尖上的植物學：蔬果的起源與演化
+📚 處理第 106 本書: 心是瘋狂的野馬
+📚 處理第 107 本書: 精通比特幣
+📚 處理第 108 本書: 地下鐵
+📚 處理第 109 本書: 樂高神話：一塊積木如何改變世界
+📚 處理第 110 本書: 紙牌的秘密
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3101 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 12/100 (10 本書)...
+📚 處理第 111 本書: 惡血：矽谷獨角獸的醫療騙局
+📚 處理第 112 本書: 鋼之鍊金術師
+📚 處理第 113 本書: 反脆弱：從不確定性中獲益
+📚 處理第 114 本書: 極地惡靈
+📚 處理第 115 本書: 安靜，就是力量：內向者如何發揮積極的力量
+📚 處理第 116 本書: 宛如希望之光的你
+📚 處理第 117 本書: 葡萄酒全書：從產區、品種到品飲的完整指南
+📚 處理第 118 本書: 盲眼刺客
+📚 處理第 119 本書: 遊戲改變世界：為什麼遊戲讓我們更快樂、更聰明、更強大
+📚 處理第 120 本書: 禪的初心
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3111 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 13/100 (10 本書)...
+📚 處理第 121 本書: 成為：蜜雪兒·歐巴馬
+📚 處理第 122 本書: 芬蘭的教育奇蹟
+📚 處理第 123 本書: 龍槍編年史：秋暮之巨龍
+📚 處理第 124 本書: 番茄醬的歷史：以及你所不知道的調味料戰爭
+📚 處理第 125 本書: 浪潮
+📚 處理第 126 本書: 心智圖聖經：你的第一本大腦使用手冊
+📚 處理第 127 本書: 一級玩家
+📚 處理第 128 本書: 寄生上流：劇本原著
+📚 處理第 129 本書: 教練：矽谷兆元CEO的幕後推手
+📚 處理第 130 本書: 尋找阿拉斯加
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3121 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 14/100 (10 本書)...
+📚 處理第 131 本書: 文案的基本修養
+📚 處理第 132 本書: 使女的故事
+📚 處理第 133 本書: 在路上
+📚 處理第 134 本書: 雜訊：人類判斷的缺陷
+📚 處理第 135 本書: 怪奇事物所：你知道嗎？其實我們住在一個充滿問號的星球
+📚 處理第 136 本書: 風之名
+📚 處理第 137 本書: 當下的力量
+📚 處理第 138 本書: 廚房裡的人類學家：從產地、市集到餐桌的飲食田野筆記
+📚 處理第 139 本書: 守望者
+📚 處理第 140 本書: 高敏感是種天賦
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3131 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 15/100 (10 本書)...
+📚 處理第 141 本書: AI·未來
+📚 處理第 142 本書: 雲圖
+📚 處理第 143 本書: 簡報禪：最強大的簡報設計與演說技巧
+📚 處理第 144 本書: 白噪音
+📚 處理第 145 本書: 拖延心理學：為什麼我老是愛拖延？
+📚 處理第 146 本書: 蟲師
+📚 處理第 147 本書: 上帝的語言：一位科學家提出的信心證據
+📚 處理第 148 本書: 月亮與六便士
+📚 處理第 149 本書: OKR工作法：Google、Intel如何實現個人與團隊的持續成長
+📚 處理第 150 本書: 天橋上的魔術師
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3141 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 16/100 (10 本書)...
+📚 處理第 151 本書: 美國眾神
+📚 處理第 152 本書: 恆毅力：人生成功的究極能力
+📚 處理第 153 本書: 日本妖怪圖鑑
+📚 處理第 154 本書: 生命中不能承受之輕
+📚 處理第 155 本書: 最後的麵包師
+📚 處理第 156 本書: 不當行為：行為經濟學之父教你更聰明的思考
+📚 處理第 157 本書: 王者天下
+📚 處理第 158 本書: 大腦喜歡這樣學：先分心，再專心
+📚 處理第 159 本書: 愛的藝術
+📚 處理第 160 本書: 刺激1995：四季奇譚
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3151 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 17/100 (10 本書)...
+📚 處理第 161 本書: 脆弱的力量
+📚 處理第 162 本書: 深夜特急
+📚 處理第 163 本書: 工作、消費、新貧：後現代的窮人
+📚 處理第 164 本書: 仿生人會夢見電子羊嗎？
+📚 處理第 165 本書: 雪國
+📚 處理第 166 本書: 打造第二大腦：多一個數位大腦，讓你專注最重要的事
+📚 處理第 167 本書: 長日將盡
+📚 處理第 168 本書: AKIRA 阿基拉
+📚 處理第 169 本書: 如何讓你愛的人愛上你
+📚 處理第 170 本書: 看不見的城市
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3161 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 18/100 (10 本書)...
+📚 處理第 171 本書: 伊豆的舞孃
+📚 處理第 172 本書: 窮查理的普通常識
+📚 處理第 173 本書: 來自新世界
+📚 處理第 174 本書: 餐巾紙背面的商業計畫：快速畫出好點子
+📚 處理第 175 本書: 飢餓遊戲
+📚 處理第 176 本書: 第二性
+📚 處理第 177 本書: 午夜圖書館
+📚 處理第 178 本書: 黑貓
+📚 處理第 179 本書: 匱乏經濟學：為什麼老是在趕deadline？
+📚 處理第 180 本書: 里斯本夜車
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3171 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 19/100 (10 本書)...
+📚 處理第 181 本書: 灌籃高手
+📚 處理第 182 本書: 真確：扭轉十大直覺偏誤，發現事情比你想的美好
+📚 處理第 183 本書: 笑忘書
+📚 處理第 184 本書: 設計的心理學：人性化的產品設計
+📚 處理第 185 本書: 沒有女人的男人們
+📚 處理第 186 本書: 伊坂幸太郎：蚱蜢
+📚 處理第 187 本書: 創意電力公司：皮克斯的創新經驗
+📚 處理第 188 本書: 異星入境
+📚 處理第 189 本書: 生命科學的基礎：給未來公民的通識課
+📚 處理第 190 本書: 流暢的Python
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3181 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 20/100 (10 本書)...
+📚 處理第 191 本書: 過得還不錯的一年：我的快樂生活提案
+📚 處理第 192 本書: 銀河帝國：基地
+📚 處理第 193 本書: 正常人
+📚 處理第 194 本書: 鼠族：一個倖存者的故事
+📚 處理第 195 本書: 知識的假象：為什麼我們從未獨立思考？
+📚 處理第 196 本書: 火星任務
+📚 處理第 197 本書: 織夢者的地圖
+📚 處理第 198 本書: 從A到A+：企業從優秀到卓越的奧秘
+📚 處理第 199 本書: 失物之書
+📚 處理第 200 本書: 情緒跟你以為的不一樣：科學證據揭示喜怒哀樂如何生成
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3191 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 21/100 (10 本書)...
+📚 處理第 201 本書: 菊花與劍：日本文化的雙重性格
+📚 處理第 202 本書: 思考的藝術：52個非受迫性思考錯誤
+📚 處理第 203 本書: 發條橘子
+📚 處理第 204 本書: 奇蹟之屋：在水底招手的女孩
+📚 處理第 205 本書: 萬物皆有時：從大爆炸到時間盡頭的宇宙編年史
+📚 處理第 206 本書: 如何贏得友誼與影響他人
+📚 處理第 207 本書: 克拉拉與太陽
+📚 處理第 208 本書: 重構：改善既有程式碼的設計
+📚 處理第 209 本書: 雲端裡的藏獒
+📚 處理第 210 本書: 茶之書
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3201 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 22/100 (10 本書)...
+📚 處理第 211 本書: 權力世界的叢林法則：48條成功操控的秘密
+📚 處理第 212 本書: JOJO的奇妙冒險：幻影血脈
+📚 處理第 213 本書: 床邊的經濟學家：為什麼比爾蓋茲的馬桶這麼值錢？
+📚 處理第 214 本書: 迷霧之子：最後帝國
+📚 處理第 215 本書: 永久檔案：關燈看世界
+📚 處理第 216 本書: 摩托日記：拉丁美洲遊記
+📚 處理第 217 本書: 創新者的窘境
+📚 處理第 218 本書: 野性的呼喚
+📚 處理第 219 本書: 正念的奇蹟
+📚 處理第 220 本書: 城堡
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3211 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 23/100 (10 本書)...
+📚 處理第 221 本書: 番茄工作法圖解：簡單易行的時間管理方法
+📚 處理第 222 本書: 東方快車謀殺案
+📚 處理第 223 本書: 我是馬拉拉
+📚 處理第 224 本書: 死亡終局：法醫昆蟲學家的罪案筆記
+📚 處理第 225 本書: 星之繼承者
+📚 處理第 226 本書: 牧羊少年奇幻之旅
+📚 處理第 227 本書: 禪與日本文化
+📚 處理第 228 本書: 我們為什麼還沒有實現共產主義？
+📚 處理第 229 本書: 海奧華預言：第九級星球的九日見聞
+📚 處理第 230 本書: 日本戰國名將圖解
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3221 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 24/100 (10 本書)...
+📚 處理第 231 本書: 浪人劍客
+📚 處理第 232 本書: 蘋果的設計美學：強納森·艾夫的傳奇
+📚 處理第 233 本書: 麥田捕手
+📚 處理第 234 本書: 走路的人
+📚 處理第 235 本書: 自駕車革命：我們的未來將如何被重塑？
+📚 處理第 236 本書: 格雷的五十道陰影
+📚 處理第 237 本書: 決斷2秒間：擷取關鍵資訊，發揮決策力
+📚 處理第 238 本書: 愛麗絲夢遊仙境
+📚 處理第 239 本書: 海龜交易法則
+📚 處理第 240 本書: 香水
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3231 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 25/100 (10 本書)...
+📚 處理第 241 本書: 尤利西斯
+📚 處理第 242 本書: 我，機器人
+📚 處理第 243 本書: 拖拉機使用與維修
+📚 處理第 244 本書: 蘇菲的世界
+📚 處理第 245 本書: 國富論
+📚 處理第 246 本書: 廚藝之鑰：烹飪的科學與藝術
+📚 處理第 247 本書: 魔山
+📚 處理第 248 本書: 零信任網路：在不可信的網路上建構安全的系統
+📚 處理第 249 本書: 風之谷
+📚 處理第 250 本書: 追憶逝水年華：在斯萬家那邊
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3241 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 26/100 (10 本書)...
+📚 處理第 251 本書: 芬克・伊項：一位戰犯的自白
+📚 處理第 252 本書: 火藥的歷史：從煉丹術到核武器
+📚 處理第 253 本書: 貓的搖籃
+📚 處理第 254 本書: 注意力商人：他們如何操弄人心？
+📚 處理第 255 本書: 最後一擊：職業拳擊手的告白
+📚 處理第 256 本書: 愛因斯坦的夢
+📚 處理第 257 本書: 殭屍生存指南
+📚 處理第 258 本書: 極客與怪咖：我們如此不同，我們其實很像
+📚 處理第 259 本書: 狼廳
+📚 處理第 260 本書: 高勝算決策：如何在賭局、戰場、商場、情場致勝
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3251 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 27/100 (10 本書)...
+📚 處理第 261 本書: 革命的年代：1789-1848
+📚 處理第 262 本書: 生命之書：365日的靜心冥想
+📚 處理第 263 本書: 北歐神話
+📚 處理第 264 本書: 從此刻起，我只為我自己努力
+📚 處理第 265 本書: 人月神話：軟體專案管理之道
+📚 處理第 266 本書: 我的天才女友
+📚 處理第 267 本書: 如何解決複雜問題：系統思考的核心五步驟
+📚 處理第 268 本書: 一九〇〇的傳奇
+📚 處理第 269 本書: 無印良品的設計
+📚 處理第 270 本書: 海狸的性生活：以及其他動物的奇聞軼事
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3261 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 28/100 (10 本書)...
+📚 處理第 271 本書: 逃出14號勞改營
+📚 處理第 272 本書: 大分裂：階級、性別、種族與全球化下的不平等
+📚 處理第 273 本書: 達文西密碼
+📚 處理第 274 本書: 伊藤潤二恐怖漫畫精選
+📚 處理第 275 本書: 從需求到產品：打造成功數位產品的PM修練之路
+📚 處理第 276 本書: 君王論
+📚 處理第 277 本書: 廚房機密檔案
+📚 處理第 278 本書: 紙上城市
+📚 處理第 279 本書: 黑客與畫家：來自電腦時代的思考
+📚 處理第 280 本書: 東大特訓班
+📤 上傳到tags_vecs...
+❌ Qdrant上傳錯誤: 400, {"status":{"error":"Format error in JSON body: value bk3271 is not a valid point ID, valid values are either an unsigned integer or a UUID"},"time":0.0}
+❌ tags_vecs上傳失敗
+
+📦 處理批次 29/100 (10 本書)...
+📚 處理第 281 本書: 路
+📚 處理第 282 本書: Google模式：我們的文化與管理之道
+📚 處理第 283 本書: 模仿犯
+📚 處理第 284 本書: 哥德爾、埃舍爾、巴赫：集異璧之大成
+📚 處理第 285 本書: 也許你該找人聊聊
+📚 處理第 286 本書: 細節的力量：打造成功品牌的微小差異
+📚 處理第 287 本書: 世界末日與冷酷異境
+📚 處理第 288 本書: 悉達多

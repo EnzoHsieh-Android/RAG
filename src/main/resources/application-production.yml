@@ -12,8 +12,9 @@ qdrant:
     # 針對大數據量的優化配置
     hnsw_config:
       m: 16                    # 連接數，影響搜索精度和速度
-      ef_construct: 200        # 構建索引時的搜索範圍
-      full_scan_threshold: 10000   # 全掃描閾值
+      "ef_construct": 100,
+      "ef_search": 64,
+      "full_scan_threshold": 10000
     quantization:
       scalar:
         type: int8             # 使用量化減少內存使用
@@ -44,7 +45,18 @@ search:
   default-threshold: 0.7       # 提高相似度閾值
   timeout: 30s                 # 搜索超時時間
 
+# 健康檢查配置
+health-check:
+  enabled: true                          # 是否啟用健康檢查
+  perform-on-startup: true               # 啟動時是否執行健康檢查
+  timeout-seconds: 30                    # 檢查超時時間(秒)
+  enable-performance-tests: true         # 是否啟用性能測試
+  enable-data-integrity-tests: true      # 是否啟用數據完整性檢查
+  output-report-file: true               # 是否輸出報告文件
+  report-file-path: "health-check-report.json"  # 報告文件路徑
+
 logging:
   level:
     com.enzo.rag.demo: INFO
     org.springframework.web: WARN
+    com.enzo.rag.demo.service.HealthCheckService: INFO

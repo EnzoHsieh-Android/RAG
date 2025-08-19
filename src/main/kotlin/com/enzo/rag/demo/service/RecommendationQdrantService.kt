@@ -381,6 +381,95 @@ class RecommendationQdrantService(
     }
     
     /**
+     * 書名搜索：基於title字段的快速檢索
+     */
+    fun searchByTitle(
+        titleQuery: String,
+        limit: Int = 10,
+        usePartialMatch: Boolean = true
+    ): List<QdrantSearchResult> {
+        println("📖 書名搜索: \"$titleQuery\", 模糊匹配: $usePartialMatch")
+        
+        return try {
+            // 使用scroll API來檢索所有書籍，然後在應用層進行標題匹配
+            val scrollRequest = mapOf(
+                "limit" to 1000,  // 每次檢索1000本書
+                "with_payload" to true,
+                "with_vector" to false  // 不需要向量數據，只要metadata
+            )
+            
+            val response = qdrantClient.post()
+                .uri("/collections/tags_vecs/points/scroll")
+                .bodyValue(scrollRequest)
+                .retrieve()
+                .bodyToMono(QdrantScrollResponse::class.java)
+                .timeout(Duration.ofSeconds(10))
+                .block()
+            
+            val allResults = response?.result?.points?.mapNotNull { point ->
+                val title = point.payload?.get("title")?.toString()
+                if (title != null) {
+                    val matchScore = calculateTitleMatchScore(title, titleQuery, usePartialMatch)
+                    if (matchScore > 0.3) {  // 設定匹配閾值
+                        QdrantSearchResult(
+                            id = point.id,
+                            score = matchScore,
+                            payload = point.payload
+                        )
+                    } else null
+                } else null
+            } ?: emptyList()
+            
+            // 按匹配分數排序並限制結果數量
+            val sortedResults = allResults.sortedByDescending { it.score }.take(limit)
+            
+            println("✅ 書名搜索完成，找到 ${sortedResults.size} 個匹配結果")
+            sortedResults
+            
+        } catch (e: Exception) {
+            println("❌ 書名搜索失敗: ${e.message}")
+            emptyList()
+        }
+    }
+    
+    /**
+     * 計算標題匹配分數
+     */
+    private fun calculateTitleMatchScore(bookTitle: String, queryTitle: String, usePartialMatch: Boolean): Double {
+        val normalizedBookTitle = bookTitle.lowercase().replace(Regex("[\\s\\p{Punct}]"), "")
+        val normalizedQueryTitle = queryTitle.lowercase().replace(Regex("[\\s\\p{Punct}]"), "")
+        
+        return when {
+            // 完全匹配
+            normalizedBookTitle == normalizedQueryTitle -> 1.0
+            
+            // 查詢是書名的完整子字符串
+            normalizedBookTitle.contains(normalizedQueryTitle) -> {
+                val ratio = normalizedQueryTitle.length.toDouble() / normalizedBookTitle.length
+                0.7 + ratio * 0.2  // 0.7-0.9之間
+            }
+            
+            // 書名是查詢的完整子字符串
+            normalizedQueryTitle.contains(normalizedBookTitle) -> {
+                val ratio = normalizedBookTitle.length.toDouble() / normalizedQueryTitle.length
+                0.6 + ratio * 0.2  // 0.6-0.8之間
+            }
+            
+            // 部分匹配（如果啟用）
+            usePartialMatch -> {
+                // 計算共同字符數
+                val commonChars = normalizedBookTitle.toSet().intersect(normalizedQueryTitle.toSet()).size
+                val totalChars = maxOf(normalizedBookTitle.length, normalizedQueryTitle.length)
+                val ratio = commonChars.toDouble() / totalChars
+                
+                if (ratio > 0.5) ratio * 0.5 else 0.0  // 0.0-0.5之間
+            }
+            
+            else -> 0.0
+        }
+    }
+    
+    /**
      * 根據 book_id 列表從 tags_vecs 獲取完整 metadata
      */
     fun getBookMetadataByIds(bookIds: List<String>): Map<String, BookMetadata> {
@@ -895,6 +984,65 @@ class RecommendationQdrantService(
         } catch (e: Exception) {
             println("❌ 從desc_vecs刪除失敗: ${e.message}")
             false
+        }
+    }
+    
+    /**
+     * 純語義搜索方法 - 用於多輪搜索
+     */
+    fun searchSemantic(
+        query: String,
+        limit: Int = 10,
+        threshold: Double = 0.5
+    ): List<BookResult> {
+        return try {
+            // 生成查詢向量
+            val queryVector = embeddingService.getEmbedding(query)
+            
+            // 在desc_vecs中搜索
+            val searchRequest = QdrantSearchRequest(
+                vector = queryVector,
+                limit = limit * 2, // 搜索更多候選以便篩選
+                scoreThreshold = threshold,
+                withPayload = true,
+                filter = null
+            )
+            
+            val response = qdrantClient.post()
+                .uri("/collections/desc_vecs/points/search")
+                .bodyValue(searchRequest)
+                .retrieve()
+                .bodyToMono(QdrantSearchResponse::class.java)
+                .timeout(Duration.ofSeconds(10))
+                .block()
+            
+            // 獲取書籍metadata並構建結果
+            val bookIds = response?.result?.map { it.payload?.get("book_id")?.toString() }
+                ?.filterNotNull() ?: emptyList()
+                
+            val metadataMap = getBookMetadataByIds(bookIds)
+            
+            response?.result?.mapNotNull { item ->
+                val bookId = item.payload?.get("book_id")?.toString()
+                val metadata = metadataMap[bookId]
+                
+                if (bookId != null && metadata != null) {
+                    BookResult(
+                        bookId = bookId,
+                        title = metadata.title,
+                        author = metadata.author,
+                        description = metadata.description,
+                        tags = metadata.tags,
+                        language = metadata.language,
+                        coverUrl = metadata.coverUrl,
+                        relevanceScore = item.score
+                    )
+                } else null
+            }?.take(limit) ?: emptyList()
+            
+        } catch (e: Exception) {
+            println("❌ 語義搜索失敗: ${e.message}")
+            emptyList()
         }
     }
 }

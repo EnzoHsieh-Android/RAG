@@ -1,0 +1,779 @@
+{
+  "test_summary": {
+    "start_time": "2025-08-19T12:53:21+08:00",
+    "test_cases": [
+  {
+    "query": "《深紅之潮：南海衝突的未來預測》",
+    "expected_strategy": "title_first",
+    "expected_title": "深紅之潮：南海衝突的未來預測",
+    "weight": 1.0,
+    "actual_strategy": "書名優先搜索 (高置信度匹配)",
+    "detected_strategy": "title_first",
+    "title_confidence": 0.95,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 32,
+    "result_count": 1,
+    "total_candidates": 1,
+    "top_result": {
+      "title": "深紅之潮：南海衝突的未來預測",
+      "score": 1.0
+    }
+  },
+  {
+    "query": "《原子習慣的實踐：365日行動手冊》",
+    "expected_strategy": "title_first",
+    "expected_title": "原子習慣的實踐：365日行動手冊",
+    "weight": 1.0,
+    "actual_strategy": "書名優先搜索 (高置信度匹配)",
+    "detected_strategy": "title_first",
+    "title_confidence": 0.95,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 45,
+    "result_count": 1,
+    "total_candidates": 1,
+    "top_result": {
+      "title": "原子習慣的實踐：365日行動手冊",
+      "score": 1.0
+    }
+  },
+  {
+    "query": "《記憶宮殿的鑰匙：打造超凡記憶力的藝術與科學》",
+    "expected_strategy": "title_first",
+    "expected_title": "記憶宮殿的鑰匙：打造超凡記憶力的藝術與科學",
+    "weight": 1.0,
+    "actual_strategy": "書名優先搜索 (高置信度匹配)",
+    "detected_strategy": "title_first",
+    "title_confidence": 0.95,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 32,
+    "result_count": 1,
+    "total_candidates": 1,
+    "top_result": {
+      "title": "記憶宮殿的鑰匙：打造超凡記憶力的藝術與科學",
+      "score": 1.0
+    }
+  },
+  {
+    "query": "《三體》",
+    "expected_strategy": "title_first",
+    "expected_title": "三體",
+    "weight": 1.0,
+    "actual_strategy": "書名優先搜索 (高置信度匹配)",
+    "detected_strategy": "title_first",
+    "title_confidence": 0.95,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 35,
+    "result_count": 1,
+    "total_candidates": 1,
+    "top_result": {
+      "title": "三體",
+      "score": 1.0
+    }
+  },
+  {
+    "query": "《1984》",
+    "expected_strategy": "title_first",
+    "expected_title": "1984",
+    "weight": 1.0,
+    "actual_strategy": "書名優先搜索 (高置信度匹配)",
+    "detected_strategy": "title_first",
+    "title_confidence": 0.95,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 25,
+    "result_count": 1,
+    "total_candidates": 1,
+    "top_result": {
+      "title": "1984",
+      "score": 1.0
+    }
+  },
+  {
+    "query": "《小王子》",
+    "expected_strategy": "title_first",
+    "expected_title": "小王子",
+    "weight": 1.0,
+    "actual_strategy": "書名優先搜索 (高置信度匹配)",
+    "detected_strategy": "title_first",
+    "title_confidence": 0.95,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 29,
+    "result_count": 1,
+    "total_candidates": 1,
+    "top_result": {
+      "title": "小王子",
+      "score": 1.0
+    }
+  },
+  {
+    "query": "《紅樓夢》",
+    "expected_strategy": "title_first",
+    "expected_title": "紅樓夢",
+    "weight": 1.0,
+    "actual_strategy": "書名優先搜索 (高置信度匹配)",
+    "detected_strategy": "title_first",
+    "title_confidence": 0.95,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 33,
+    "result_count": 1,
+    "total_candidates": 1,
+    "top_result": {
+      "title": "紅樓夢",
+      "score": 1.0
+    }
+  },
+  {
+    "query": "《挪威的森林》",
+    "expected_strategy": "title_first",
+    "expected_title": "挪威的森林",
+    "weight": 1.0,
+    "actual_strategy": "書名優先搜索 (高置信度匹配)",
+    "detected_strategy": "title_first",
+    "title_confidence": 0.95,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 39,
+    "result_count": 2,
+    "total_candidates": 2,
+    "top_result": {
+      "title": "挪威的森林",
+      "score": 1.0
+    }
+  },
+  {
+    "query": "深紅之潮",
+    "expected_strategy": "hybrid",
+    "expected_title": "深紅之潮：南海衝突的未來預測",
+    "weight": 0.8,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 2,
+    "accuracy_score": 80,
+    "processing_time_ms": 60,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "來自新世界",
+      "score": 0.4651115383154241
+    }
+  },
+  {
+    "query": "原子習慣",
+    "expected_strategy": "hybrid",
+    "expected_title": "原子習慣的實踐：365日行動手冊",
+    "weight": 0.8,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 794,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "原子習慣的實踐：365日行動手冊",
+      "score": 0.5977271340896138
+    }
+  },
+  {
+    "query": "記憶宮殿",
+    "expected_strategy": "hybrid",
+    "expected_title": "記憶宮殿的鑰匙：打造超凡記憶力的藝術與科學",
+    "weight": 0.8,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 243,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "記憶宮殿的鑰匙：打造超凡記憶力的藝術與科學",
+      "score": 0.5921322237142856
+    }
+  },
+  {
+    "query": "銀河便車",
+    "expected_strategy": "hybrid",
+    "expected_title": "銀河便車指南",
+    "weight": 0.8,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 85,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "銀河便車指南",
+      "score": 0.5714231449999999
+    }
+  },
+  {
+    "query": "哈利波特",
+    "expected_strategy": "hybrid",
+    "expected_title": "哈利波特：神秘的魔法石",
+    "weight": 0.8,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 218,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "哈利波特：神秘的魔法石",
+      "score": 0.6496318271818181
+    }
+  },
+  {
+    "query": "我要看 麵包師的四季",
+    "expected_strategy": "hybrid",
+    "expected_title": "麵包師的四季：從酵母到餐桌的自然烘焙",
+    "weight": 0.8,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.7,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 56,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "麵包師的四季：從酵母到餐桌的自然烘焙",
+      "score": 0.610405974
+    }
+  },
+  {
+    "query": "找 沙丘",
+    "expected_strategy": "hybrid",
+    "expected_title": "沙丘",
+    "weight": 0.8,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.7,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 74,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "沙丘",
+      "score": 0.72203601
+    }
+  },
+  {
+    "query": "搜索 達文西密碼",
+    "expected_strategy": "hybrid",
+    "expected_title": "達文西密碼",
+    "weight": 0.8,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.7,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 281,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "達文西密碼",
+      "score": 0.712317938
+    }
+  },
+  {
+    "query": "推薦 被討厭的勇氣",
+    "expected_strategy": "hybrid",
+    "expected_title": "被討厭的勇氣：自我啟發之父阿德勒的教導",
+    "weight": 0.7,
+    "actual_strategy": "純語義搜索策略",
+    "detected_strategy": "semantic_only",
+    "title_confidence": 0.2,
+    "strategy_correct": false,
+    "title_found": false,
+    "title_rank": 0,
+    "accuracy_score": 0,
+    "processing_time_ms": 210,
+    "result_count": 5,
+    "total_candidates": 50,
+    "top_result": {
+      "title": "脆弱的力量",
+      "score": 0.6429464066666666
+    }
+  },
+  {
+    "query": "村上春樹的作品",
+    "expected_strategy": "semantic",
+    "expected_title": "挪威的森林",
+    "weight": 0.6,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": false,
+    "title_rank": 0,
+    "accuracy_score": 0,
+    "processing_time_ms": 288,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "巴黎評論：作家訪談錄",
+      "score": 0.6190859849999999
+    }
+  },
+  {
+    "query": "東野圭吾寫的書",
+    "expected_strategy": "semantic",
+    "expected_title": "解憂雜貨店",
+    "weight": 0.6,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": false,
+    "title_rank": 0,
+    "accuracy_score": 0,
+    "processing_time_ms": 97,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "別相信任何人",
+      "score": 0.7308109408
+    }
+  },
+  {
+    "query": "劉慈欣的小說",
+    "expected_strategy": "semantic",
+    "expected_title": "三體",
+    "weight": 0.6,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 70,
+    "processing_time_ms": 85,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "三體",
+      "score": 0.6095323899999999
+    }
+  },
+  {
+    "query": "想看一些科幻小說",
+    "expected_strategy": "semantic",
+    "expected_title": "三體",
+    "weight": 0.5,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": true,
+    "title_rank": 2,
+    "accuracy_score": 50,
+    "processing_time_ms": 51,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "火星任務",
+      "score": 0.5755916116176495
+    }
+  },
+  {
+    "query": "推薦一些心理學書籍",
+    "expected_strategy": "semantic",
+    "expected_title": "被討厭的勇氣：自我啟發之父阿德勒的教導",
+    "weight": 0.5,
+    "actual_strategy": "純語義搜索策略",
+    "detected_strategy": "semantic_only",
+    "title_confidence": 0.2,
+    "strategy_correct": true,
+    "title_found": false,
+    "title_rank": 0,
+    "accuracy_score": 30,
+    "processing_time_ms": 64,
+    "result_count": 5,
+    "total_candidates": 50,
+    "top_result": {
+      "title": "拖延心理學：為什麼我老是愛拖延？",
+      "score": 0.7630438756
+    }
+  },
+  {
+    "query": "有什麼哲學相關的書",
+    "expected_strategy": "semantic",
+    "expected_title": "蘇菲的世界",
+    "weight": 0.5,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": false,
+    "title_rank": 0,
+    "accuracy_score": 0,
+    "processing_time_ms": 125,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "哲學的慰藉",
+      "score": 0.7703075265999999
+    }
+  },
+  {
+    "query": "推薦歷史類書籍",
+    "expected_strategy": "semantic",
+    "expected_title": "萬曆十五年",
+    "weight": 0.5,
+    "actual_strategy": "純語義搜索策略",
+    "detected_strategy": "semantic_only",
+    "title_confidence": 0.2,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 3,
+    "accuracy_score": 65,
+    "processing_time_ms": 83,
+    "result_count": 5,
+    "total_candidates": 50,
+    "top_result": {
+      "title": "為什麼要學歷史？一位歷史學家的20堂思辨課",
+      "score": 0.8012275546
+    }
+  },
+  {
+    "query": "想學習商業管理",
+    "expected_strategy": "semantic",
+    "expected_title": "從A到A+：企業從優秀到卓越的奧秘",
+    "weight": 0.5,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": true,
+    "title_rank": 3,
+    "accuracy_score": 35,
+    "processing_time_ms": 298,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "系統思考：解決問題、制定策略、做出決策的實用指南",
+      "score": 0.6077040386666667
+    }
+  },
+  {
+    "query": "想要提升工作效率的書",
+    "expected_strategy": "semantic",
+    "expected_title": "原子習慣的實踐：365日行動手冊",
+    "weight": 0.4,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": false,
+    "title_rank": 0,
+    "accuracy_score": 0,
+    "processing_time_ms": 259,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "系統思考：解決問題、制定策略、做出決策的實用指南",
+      "score": 0.6496872686666666
+    }
+  },
+  {
+    "query": "學習投資理財的書",
+    "expected_strategy": "semantic",
+    "expected_title": "富爸爸，窮爸爸",
+    "weight": 0.4,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": true,
+    "title_rank": 2,
+    "accuracy_score": 50,
+    "processing_time_ms": 285,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "無痛理財：月薪族的存錢、投資、買房實戰課",
+      "score": 0.6987296984656106
+    }
+  },
+  {
+    "query": "關於人工智能的書",
+    "expected_strategy": "semantic",
+    "expected_title": "AI·未來",
+    "weight": 0.4,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 70,
+    "processing_time_ms": 307,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "AI·未來",
+      "score": 0.783422713
+    }
+  },
+  {
+    "query": "想了解日本文化",
+    "expected_strategy": "semantic",
+    "expected_title": "菊花與劍：日本文化的雙重性格",
+    "weight": 0.4,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": true,
+    "title_rank": 4,
+    "accuracy_score": 25,
+    "processing_time_ms": 194,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "如何思考一場認知革命：從語言、八卦到想像的共同體",
+      "score": 0.469258309
+    }
+  },
+  {
+    "query": "那本關於時間的書",
+    "expected_strategy": "semantic",
+    "expected_title": "時間的秩序",
+    "weight": 0.3,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": false,
+    "title_rank": 0,
+    "accuracy_score": 0,
+    "processing_time_ms": 264,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "當科學家遇上哲學家：一場關於世界本質的對話",
+      "score": 0.638383672188624
+    }
+  },
+  {
+    "query": "講宇宙的書",
+    "expected_strategy": "semantic",
+    "expected_title": "時間的秩序",
+    "weight": 0.3,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": false,
+    "title_rank": 0,
+    "accuracy_score": 0,
+    "processing_time_ms": 227,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "時間簡史",
+      "score": 0.707720955
+    }
+  },
+  {
+    "query": "關於愛情的小說",
+    "expected_strategy": "semantic",
+    "expected_title": "挪威的森林",
+    "weight": 0.3,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": false,
+    "title_rank": 0,
+    "accuracy_score": 0,
+    "processing_time_ms": 257,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "在世界末日，來一場下午茶",
+      "score": 0.7133175322
+    }
+  },
+  {
+    "query": "三體1",
+    "expected_strategy": "hybrid",
+    "expected_title": "三體",
+    "weight": 0.7,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 68,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "三體",
+      "score": 0.5931922409999999
+    }
+  },
+  {
+    "query": "哈里波特",
+    "expected_strategy": "hybrid",
+    "expected_title": "哈利波特：神秘的魔法石",
+    "weight": 0.6,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 100,
+    "processing_time_ms": 77,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "哈利波特：神秘的魔法石",
+      "score": 0.604000638
+    }
+  },
+  {
+    "query": "1984年",
+    "expected_strategy": "hybrid",
+    "expected_title": "1984",
+    "weight": 0.7,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": true,
+    "title_found": false,
+    "title_rank": 0,
+    "accuracy_score": 30,
+    "processing_time_ms": 280,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "戰爭與和平",
+      "score": 0.475600908
+    }
+  },
+  {
+    "query": "講述一個人工智能機器人思考是否為人類的科幻小說",
+    "expected_strategy": "semantic",
+    "expected_title": "仿生人會夢見電子羊嗎？",
+    "weight": 0.3,
+    "actual_strategy": "純語義搜索策略",
+    "detected_strategy": "semantic_only",
+    "title_confidence": 0.2,
+    "strategy_correct": true,
+    "title_found": false,
+    "title_rank": 0,
+    "accuracy_score": 30,
+    "processing_time_ms": 160,
+    "result_count": 5,
+    "total_candidates": 50,
+    "top_result": {
+      "title": "我，機器人",
+      "score": 0.6904560719999999
+    }
+  },
+  {
+    "query": "在日本背景下描寫青春愛情的文學作品",
+    "expected_strategy": "semantic",
+    "expected_title": "挪威的森林",
+    "weight": 0.3,
+    "actual_strategy": "混合搜索策略",
+    "detected_strategy": "hybrid",
+    "title_confidence": 0.5,
+    "strategy_correct": false,
+    "title_found": true,
+    "title_rank": 1,
+    "accuracy_score": 70,
+    "processing_time_ms": 300,
+    "result_count": 5,
+    "total_candidates": 20,
+    "top_result": {
+      "title": "挪威的森林",
+      "score": 0.6382477340490952
+    }
+  },
+  {
+    "query": "關於經濟學原理和財富分配的經典著作",
+    "expected_strategy": "semantic",
+    "expected_title": "國富論",
+    "weight": 0.3,
+    "actual_strategy": "純語義搜索策略",
+    "detected_strategy": "semantic_only",
+    "title_confidence": 0.2,
+    "strategy_correct": true,
+    "title_found": true,
+    "title_rank": 4,
+    "accuracy_score": 55,
+    "processing_time_ms": 209,
+    "result_count": 5,
+    "total_candidates": 50,
+    "top_result": {
+      "title": "富爸爸，窮爸爸",
+      "score": 0.6422648599999999
+    }
+  }
+    ],
+    "end_time": "2025-08-19T12:54:29+08:00",
+    "total_tests": 38,
+    "passed_tests": 25,
+    "failed_tests": 13,
+    "overall_accuracy": 65,
+    "avg_response_time_ms": 1,
+    "avg_processing_time_ms": 164,
+    "strategy_breakdown": {
+      "title_first": { "tests": 8, "success": 8, "accuracy": 100 },
+      "hybrid": { "tests": 12, "success": 10, "accuracy": 83 },
+      "semantic": { "tests": 18, "success": 7, "accuracy": 38 }
+    }
+  }
+}

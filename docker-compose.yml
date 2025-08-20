@@ -61,10 +61,8 @@ services:
     ports:
       - "8081:8081"
     depends_on:
-      qdrant:
-        condition: service_started
-      ollama:
-        condition: service_started
+      - qdrant
+      - ollama
     environment:
       # Spring profiles
       - SPRING_PROFILES_ACTIVE=docker
@@ -72,7 +70,7 @@ services:
       - QDRANT_HOST=qdrant
       - QDRANT_PORT=6333
       # Ollama 配置  
-      - SPRING_AI_OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_BASE_URL=http://ollama:11434
       # Gemini API (如果使用)
       - GEMINI_API_KEY=${GEMINI_API_KEY:-}
       # JVM 設定

@@ -39,6 +39,13 @@ COPY --from=builder /app/build/libs/*.jar app.jar
 # 設定文件權限
 RUN chown -R ragapp:ragapp /app
 
+# <<< 新增這兩行 >>>
+# 在切換用戶前，為 logs 目錄設定權限
+RUN mkdir logs && chown -R ragapp:ragapp logs
+
+# 設定文件權限
+RUN chown -R ragapp:ragapp /app
+
 # 切換到非root用戶
 USER ragapp
 

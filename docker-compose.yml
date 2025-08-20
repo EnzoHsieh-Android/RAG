@@ -72,7 +72,7 @@ services:
       - QDRANT_HOST=qdrant
       - QDRANT_PORT=6333
       # Ollama 配置  
-      - OLLAMA_BASE_URL=http://ollama:11434
+      - SPRING_AI_OLLAMA_BASE_URL=http://ollama:11434
       # Gemini API (如果使用)
       - GEMINI_API_KEY=${GEMINI_API_KEY:-}
       # JVM 設定

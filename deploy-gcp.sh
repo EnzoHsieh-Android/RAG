@@ -314,7 +314,7 @@ build_docker_images() {
     
     # 構建應用映像檔
     log_info "構建 RAG 應用映像檔..."
-    docker-compose build rag-app
+    docker-compose build --no-cache rag-app
     
     log_success "Docker 映像檔構建完成"
 }

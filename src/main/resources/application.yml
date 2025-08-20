@@ -1,14 +1,16 @@
 spring:
   ai:
     ollama:
-      base-url: http://localhost:11434
+      # 修改這裡：優先使用環境變數 OLLAMA_BASE_URL，如果沒有才用 localhost 當作預設值
+      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
       chat:
         model: quentinz/bge-large-zh-v1.5:latest
         options:
           temperature: 0.7
     vector-store:
       qdrant:
-        host: localhost
+        # 修改這裡：優先使用環境變數 QDRANT_HOST，如果沒有才用 localhost 當作預設值
+        host: ${QDRANT_HOST:localhost}
         port: 6333
         collection-name: rag-collection
   jpa:

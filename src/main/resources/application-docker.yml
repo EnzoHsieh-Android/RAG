@@ -25,7 +25,7 @@ spring:
 
 # Qdrant 向量數據庫配置
 qdrant:
-  host: localhost
+  host: ${QDRANT_HOST:localhost}
   port: 6333
   collection:
     # 使用現有的 collection 配置

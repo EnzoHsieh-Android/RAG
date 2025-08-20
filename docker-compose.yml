@@ -1,0 +1,127 @@
+version: '3.8'
+
+services:
+  # Qdrant 向量數據庫
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: rag-qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+      - "6334:6334"  # gRPC port
+    volumes:
+      - qdrant_data:/qdrant/storage
+    environment:
+      - QDRANT__SERVICE__HTTP_PORT=6333
+      - QDRANT__SERVICE__GRPC_PORT=6334
+    networks:
+      - rag-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:6333/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Ollama AI 模型服務
+  ollama:
+    image: ollama/ollama:latest
+    container_name: rag-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    environment:
+      - OLLAMA_HOST=0.0.0.0:11434
+    networks:
+      - rag-network
+    # GPU 支持 (如果服務器有 NVIDIA GPU)
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+
+  # RAG 書籍推薦應用
+  rag-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag-app
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    depends_on:
+      qdrant:
+        condition: service_healthy
+      ollama:
+        condition: service_healthy
+    environment:
+      # Spring profiles
+      - SPRING_PROFILES_ACTIVE=docker
+      # Qdrant 配置
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      # Ollama 配置  
+      - OLLAMA_BASE_URL=http://ollama:11434
+      # Gemini API (如果使用)
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      # JVM 設定
+      - JAVA_OPTS=-Xmx2g -Xms1g -XX:+UseG1GC
+    volumes:
+      # 掛載日誌目錄
+      - app_logs:/app/logs
+      # 如果需要讀取外部配置文件
+      - ./config:/app/config:ro
+    networks:
+      - rag-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/api/v2/recommend/health"]
+      interval: 30s
+      timeout: 15s
+      retries: 5
+      start_period: 120s
+
+  # Nginx 反向代理 (可選)
+  nginx:
+    image: nginx:alpine
+    container_name: rag-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - rag-app
+    networks:
+      - rag-network
+    profiles:
+      - nginx  # 使用 --profile nginx 啟動
+
+# 持久化數據卷
+volumes:
+  qdrant_data:
+    driver: local
+  ollama_models:
+    driver: local
+  app_logs:
+    driver: local
+
+# 網絡配置
+networks:
+  rag-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

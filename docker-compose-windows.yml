@@ -1,0 +1,88 @@
+# Docker Compose - Windows 版本 (僅部署 RAG 應用)
+# 適用於 Windows 服務器已運行 Ollama 和 Qdrant 的情況
+
+services:
+  # RAG 書籍推薦應用 (Windows 優化版)
+  rag-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag-app-windows
+    restart: unless-stopped
+    
+    # Windows 網絡配置
+    ports:
+      - "8081:8081"  # Windows 建議使用端口映射而非 host 網絡
+      - "8082:8082"  # 管理端點
+    
+    environment:
+      # Spring profiles
+      - SPRING_PROFILES_ACTIVE=server
+      # Windows 主機上的服務連接
+      - QDRANT_HOST=host.docker.internal
+      - QDRANT_PORT=6333
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      # Gemini API (如果使用)
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      # JVM 設定 (Windows 優化)
+      - JAVA_OPTS=-Xmx3g -Xms1g -XX:+UseG1GC -XX:MaxGCPauseMillis=200 -Djava.awt.headless=true
+      # Windows 特定設定
+      - TZ=Asia/Taipei
+      - DOCKER_HOST=npipe://./pipe/docker_engine
+    
+    volumes:
+      # Windows 路徑格式的卷映射
+      - type: bind
+        source: .\logs
+        target: /app/logs
+      - type: bind
+        source: .\config
+        target: /app/config
+        read_only: true
+    
+    # Windows 優化的健康檢查
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/api/v2/recommend/health"]
+      interval: 45s      # Windows 延長檢查間隔
+      timeout: 20s       # 延長超時時間
+      retries: 5
+      start_period: 180s # Windows 容器啟動較慢
+    
+    # Windows 容器資源限制
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2.0'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+    
+    # Windows 網絡設定
+    networks:
+      - rag-windows-network
+    
+    # Windows 特定的 DNS 設定
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    
+    # 額外主機映射 (Windows Docker Desktop)
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+# Windows 網絡配置
+networks:
+  rag-windows-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.25.0.0/16
+          gateway: 172.25.0.1
+
+# 注意事項:
+# 1. Windows Docker Desktop 使用 host.docker.internal 連接到主機服務
+# 2. 使用端口映射而非 host 網絡模式 (Windows Docker Desktop 限制)
+# 3. 路徑使用 Windows 格式的相對路徑
+# 4. 延長健康檢查時間適應 Windows 容器性能
+# 5. 確保 Windows Defender 和防火牆允許 Docker 和應用端口

@@ -1,0 +1,52 @@
+# Docker Compose - 僅部署 RAG 應用 (連接到現有服務)
+# 適用於服務器已運行 Ollama 和 Qdrant 的情況
+
+services:
+  # RAG 書籍推薦應用 (僅此服務)
+  rag-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rag-app-only
+    restart: unless-stopped
+    # 使用 host 網絡模式直接連接到宿主機服務
+    network_mode: host
+    environment:
+      # Spring profiles
+      - SPRING_PROFILES_ACTIVE=server
+      # 連接到宿主機上的服務
+      - QDRANT_HOST=localhost
+      - QDRANT_PORT=6333
+      - OLLAMA_BASE_URL=http://localhost:11434
+      # Gemini API (如果使用)
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      # JVM 設定
+      - JAVA_OPTS=-Xmx3g -Xms1g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
+    volumes:
+      # 掛載日誌目錄到宿主機
+      - ./logs:/app/logs
+      # 如果需要讀取外部配置文件
+      - ./config:/app/config:ro
+    # 簡化的健康檢查 (直接連接宿主機端口)
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/api/v2/recommend/health"]
+      interval: 30s
+      timeout: 15s
+      retries: 5
+      start_period: 120s
+    
+    # 資源限制 (可根據服務器配置調整)
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2.0'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+
+# 注意: 
+# 1. 使用 network_mode: host 讓容器直接使用宿主機網絡
+# 2. 應用將在宿主機的 8081 端口提供服務
+# 3. 確保宿主機的 Ollama (11434) 和 Qdrant (6333) 正在運行
+# 4. 確保 8081 端口未被佔用

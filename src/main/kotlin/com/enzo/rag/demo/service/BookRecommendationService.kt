@@ -18,12 +18,14 @@ class BookRecommendationService(
     
     companion object {
         private const val TAGS_SEARCH_LIMIT = 50  // Tags搜尋候選數量
-        private const val DESC_RERANK_LIMIT = 20   // Description重排序數量
+        private const val DESC_RERANK_LIMIT = 30   // Description重排序數量（增加以配合早期Flash reranking）
         private const val FINAL_RESULTS_LIMIT = 5   // 最終返回結果數量
         private const val FLASH_CANDIDATE_LIMIT = 12  // Flash重排序的候选数量
+        private const val EARLY_FLASH_LIMIT = 25      // 早期Flash重排序數量（從50個中選出25個）
         private const val TAGS_SCORE_WEIGHT = 0.3   // Tags向量分數權重
         private const val DESC_SCORE_WEIGHT = 0.7    // Description向量分數權重（提高語義匹配）
-        private const val ENABLE_FLASH_RERANK = false  // 是否启用Flash重排序（可关闭以加速）
+        private const val ENABLE_FLASH_RERANK = true   // 是否启用Flash重排序（可关闭以加速）
+        private const val ENABLE_EARLY_FLASH_RERANK = true  // 是否啟用早期Flash重排序（防止向量錯誤排除）
         private const val MAX_SEMANTIC_CALCULATIONS = 10  // 限制語義計算次數
     }
     
@@ -177,14 +179,23 @@ class BookRecommendationService(
             return createEmptyResponse(queryRequest.queryText, "無匹配結果", startTime)
         }
         
+        // 步驟 1.5: 早期Flash重排序 - 防止向量搜索錯誤排除高相關書籍
+        val filteredCandidates = if (ENABLE_EARLY_FLASH_RERANK && candidates.size > EARLY_FLASH_LIMIT) {
+            println("🧠 步驟 1.5: 早期Flash重排序（從${candidates.size}個候選中選出最相關的${EARLY_FLASH_LIMIT}個）...")
+            performEarlyFlashRerank(queryRequest.queryText, candidates)
+        } else {
+            println("⚡ 步驟 1.5: 跳過早期Flash重排序（候選數量: ${candidates.size}）")
+            candidates.take(DESC_RERANK_LIMIT)
+        }
+        
         // 步驟 2: Description向量重排序（第二階段，批量優化）
         println("📖 步驟 2: Description向量重排序...")
         val descQuery = queryRequest.queryText
         println("   Description查詢: $descQuery")
         val descVector = embeddingService.getEmbedding(descQuery)
         
-        // 取前N個候選進行description重排序
-        val topCandidates = candidates.take(DESC_RERANK_LIMIT)
+        // 使用經過早期Flash重排序篩選的候選
+        val topCandidates = filteredCandidates
         val bookIds = topCandidates.map { it.payload["book_id"]?.toString() ?: "" }.filter { it.isNotEmpty() }
         
         // 批量查詢Description分數（從20次API調用減少到1次）
@@ -447,6 +458,49 @@ class BookRecommendationService(
         return isAbstract || hasVagueIndicator || isSemanticOnly
     }
 
+    /**
+     * 早期Flash重排序 - 在向量搜索後立即進行智能篩選
+     */
+    private fun performEarlyFlashRerank(
+        query: String, 
+        candidates: List<QdrantSearchResult>
+    ): List<QdrantSearchResult> {
+        return try {
+            // 將QdrantSearchResult轉換為RecommendationResult格式
+            val tempResults = candidates.map { candidate ->
+                val metadata = candidate.payload
+                RecommendationResult(
+                    title = metadata["title"]?.toString() ?: "未知書名",
+                    author = metadata["author"]?.toString() ?: "未知作者",
+                    description = metadata["description"]?.toString() ?: "無描述",
+                    coverUrl = metadata["cover_url"]?.toString() ?: "",
+                    tags = ((metadata["tags"] as? List<*>) ?: emptyList<Any>()).map { it.toString() },
+                    relevanceScore = candidate.score.toDouble()
+                )
+            }
+            
+            // 使用Flash reranking重新排序
+            val (rerankedResults, _) = queryAnalysisService.rerankResults(query, tempResults)
+            println("✅ 早期Flash重排序完成，從${candidates.size}個候選中選出${rerankedResults.size}個")
+            
+            // 將重排序結果對應回原始的QdrantSearchResult
+            val resultTitles = rerankedResults.map { it.title }.take(EARLY_FLASH_LIMIT)
+            val reorderedCandidates = mutableListOf<QdrantSearchResult>()
+            
+            // 按照Flash reranking的順序重新排列候選
+            resultTitles.forEach { title ->
+                candidates.find { candidate ->
+                    candidate.payload["title"]?.toString() == title
+                }?.let { reorderedCandidates.add(it) }
+            }
+            
+            reorderedCandidates
+        } catch (e: Exception) {
+            println("⚠️ 早期Flash重排序失敗，使用原始排序: ${e.message}")
+            candidates.take(EARLY_FLASH_LIMIT)
+        }
+    }
+    
     /**
      * 創建空結果響應
      */

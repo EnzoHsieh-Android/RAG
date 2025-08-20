@@ -44,7 +44,12 @@
       "Bash(ollama serve:*)",
       "Bash(./test_title_search.sh:*)",
       "Bash(./comprehensive_accuracy_test.sh:*)",
-      "Bash(./test_abstract_queries.sh:*)"
+      "Bash(./test_abstract_queries.sh:*)",
+      "Bash(docker-compose:*)",
+      "Bash(./deploy.sh:*)",
+      "Bash(./deploy-simple.sh:*)",
+      "Bash(bash:*)",
+      "Bash(/dev/null)"
     ],
     "deny": []
   }

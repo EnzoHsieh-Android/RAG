@@ -1,0 +1,114 @@
+server:
+  port: 8081
+
+# Docker 環境配置
+spring:
+  ai:
+    ollama:
+      base-url: ${OLLAMA_BASE_URL:http://ollama:11434}
+      chat:
+        model: quentinz/bge-large-zh-v1.5:latest
+        options:
+          temperature: 0.7
+  
+  # 數據源配置 (使用內存數據庫)
+  datasource:
+    url: jdbc:h2:mem:ragdb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false  # 生產環境關閉 SQL 日誌
+
+# Qdrant 向量數據庫配置
+qdrant:
+  host: localhost
+  port: 6333
+  collection:
+    # 使用現有的 collection 配置
+    tags_collection: tags_vecs
+    desc_collection: desc_vecs
+    vector_size: 1024
+    distance: Cosine
+
+# Gemini API 配置
+gemini:
+  api:
+    key: ${GEMINI_API_KEY:AIzaSyAyd-FiCipmb2sDsvKHbaC0wR4tg4HXzTw}
+    timeout: 3s
+    retry: 1
+
+# 緩存配置
+cache:
+  embeddings:
+    max-size: 50000           # Docker 環境減少緩存大小
+    expire-after-write: 12h
+    cleanup-threshold: 40000
+
+# 批處理配置
+batch:
+  size: 100                   # 適中的批次大小
+  parallel-workers: 2         # 減少並行工作線程數
+  
+# 搜索優化配置
+search:
+  max-results: 50             # 最大搜索結果數
+  default-threshold: 0.6      # 相似度閾值
+  timeout: 30s                # 搜索超時時間
+
+# 健康檢查配置
+health-check:
+  enabled: true                          
+  perform-on-startup: true               
+  timeout-seconds: 30                    
+  enable-performance-tests: false        # Docker 環境關閉性能測試
+  enable-data-integrity-tests: true      
+  output-report-file: true               
+  report-file-path: "logs/health-check-report.json"
+
+# 日誌配置
+logging:
+  level:
+    com.enzo.rag.demo: INFO
+    org.springframework.web: WARN
+    org.springframework.boot: INFO
+    com.enzo.rag.demo.service.HealthCheckService: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+  file:
+    name: logs/rag-app.log
+    max-size: 100MB
+    max-history: 7
+
+# 應用配置
+app:
+  name: "RAG Book Recommendation System"
+  version: "1.0.0"
+  environment: "docker"
+  
+# 性能調優
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: when-authorized
+    metrics:
+      enabled: true
+
+# JVM 和容器優化
+java:
+  options: "-Xmx2g -Xms1g -XX:+UseG1GC -XX:+UseStringDeduplication"
+  
+# 連接池配置
+connection:
+  pool:
+    maximum: 20
+    minimum: 5
+    timeout: 30000

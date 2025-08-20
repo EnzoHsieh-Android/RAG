@@ -1,0 +1,82 @@
+# Build outputs
+build/
+target/
+*.jar
+!build/libs/*.jar
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Version control
+.git/
+.gitignore
+
+# Logs
+*.log
+logs/
+app.log
+
+# Test outputs
+**/test-results/
+**/build/test-results/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Node modules (if any)
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Documentation (will be copied separately if needed)
+*.md
+!README.md
+
+# Local development files
+.env.local
+.env.development
+gradle.properties.local
+
+# Test data (large files)
+*.json
+!src/test/resources/*.json
+
+# Scripts (not needed in container)
+*.sh
+!gradlew
+
+# Local configuration
+config/
+local_config/
+
+# Cache directories
+.gradle/cache/
+.m2/
+
+# Backup files
+backup/
+*.backup
+
+# Database files
+*.db
+*.sqlite
+
+# Other generated files
+*.pid
+*.seed
+*.cover

@@ -1,0 +1,150 @@
+server:
+  port: 8081
+
+# 服務器環境配置 - 連接到已運行的 Ollama 和 Qdrant 服務
+spring:
+  ai:
+    ollama:
+      base-url: ${OLLAMA_BASE_URL:http://localhost:11434}
+      chat:
+        model: quentinz/bge-large-zh-v1.5:latest
+        options:
+          temperature: 0.7
+  
+  # 數據源配置 (使用內存數據庫)
+  datasource:
+    url: jdbc:h2:mem:ragdb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false  # 生產環境關閉 SQL 日誌
+
+# Qdrant 向量數據庫配置 (連接到宿主機服務)
+qdrant:
+  host: localhost
+  port: 6333
+  collection:
+    # 使用現有的 collection 配置
+    tags_collection: tags_vecs
+    desc_collection: desc_vecs
+    vector_size: 1024
+    distance: Cosine
+
+# Gemini API 配置
+gemini:
+  api:
+    key: ${GEMINI_API_KEY:}
+    timeout: 3s
+    retry: 1
+
+# 緩存配置 (針對服務器環境優化)
+cache:
+  embeddings:
+    max-size: 100000          # 服務器環境可以使用更大緩存
+    expire-after-write: 24h   # 延長緩存時間
+    cleanup-threshold: 80000
+
+# 批處理配置
+batch:
+  size: 50                    # 適中的批次大小
+  parallel-workers: 4         # 可以使用更多並行工作線程
+  
+# 搜索優化配置
+search:
+  max-results: 100            # 更多搜索結果
+  default-threshold: 0.6      # 相似度閾值
+  timeout: 45s                # 稍長的搜索超時時間
+
+# 健康檢查配置
+health-check:
+  enabled: true                          
+  perform-on-startup: true               
+  timeout-seconds: 30                    
+  enable-performance-tests: true         # 服務器環境啟用性能測試
+  enable-data-integrity-tests: true      
+  output-report-file: true               
+  report-file-path: "logs/health-check-report.json"
+
+# 日誌配置 (生產環境優化)
+logging:
+  level:
+    com.enzo.rag.demo: INFO
+    org.springframework.web: WARN
+    org.springframework.boot: INFO
+    com.enzo.rag.demo.service.HealthCheckService: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/rag-app.log
+    max-size: 200MB
+    max-history: 30         # 保留更多日誌文件
+    total-size-cap: 5GB     # 總日誌大小限制
+
+# 應用配置
+app:
+  name: "RAG Book Recommendation System"
+  version: "1.0.0"
+  environment: "server"
+  
+# 性能調優 (服務器環境)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,env,configprops
+      base-path: /actuator
+  endpoint:
+    health:
+      show-details: always    # 服務器環境顯示詳細健康信息
+    metrics:
+      enabled: true
+  server:
+    port: 8082              # 管理端點使用不同端口
+
+# 連接池配置 (服務器優化)
+connection:
+  pool:
+    maximum: 50             # 更大的連接池
+    minimum: 10
+    timeout: 60000
+    idle-timeout: 300000
+    
+# 服務器特定配置
+server-config:
+  # 連接到現有服務的配置
+  external-services:
+    ollama:
+      host: localhost
+      port: 11434
+      model: "quentinz/bge-large-zh-v1.5:latest"
+      connection-timeout: 30s
+      read-timeout: 60s
+    qdrant:
+      host: localhost
+      port: 6333
+      connection-timeout: 10s
+      read-timeout: 30s
+      
+  # 性能監控配置
+  monitoring:
+    enabled: true
+    metrics-interval: 30s
+    
+# HTTP 配置
+server:
+  # 處理大請求
+  max-http-header-size: 8192
+  # 連接超時設定
+  connection-timeout: 20s
+  # Tomcat 調優
+  tomcat:
+    max-connections: 200
+    max-threads: 200
+    min-spare-threads: 10
+    connection-timeout: 20s
+    max-http-form-post-size: 2MB

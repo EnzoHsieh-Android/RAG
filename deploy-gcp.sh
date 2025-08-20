@@ -300,8 +300,8 @@ build_application() {
     log_info "開始構建應用 (這可能需要幾分鐘)..."
     ./gradlew clean build -x test --no-daemon
     
-    if [[ ! -f "build/libs/"*.jar ]]; then
-        log_error "應用構建失敗"
+    if ! ls build/libs/*.jar 1> /dev/null 2>&1; then
+        log_error "應用構建失敗：找不到 build/libs/ 目錄下的 .jar 檔案"
         exit 1
     fi
     

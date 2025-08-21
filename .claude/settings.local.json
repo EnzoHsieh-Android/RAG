@@ -50,7 +50,8 @@
       "Bash(./deploy-simple.sh:*)",
       "Bash(bash:*)",
       "Bash(/dev/null)",
-      "Bash(java:*)"
+      "Bash(java:*)",
+      "Bash(./test_fix.sh:*)"
     ],
     "deny": []
   }

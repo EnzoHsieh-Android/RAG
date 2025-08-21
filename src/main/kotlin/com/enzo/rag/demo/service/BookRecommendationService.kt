@@ -155,10 +155,20 @@ class BookRecommendationService(
         println("   Tags查詢: $tagsQuery")
         val tagsVector = embeddingService.getEmbedding(tagsQuery)
         
-        val tagsCandidates = qdrantService.searchTagsVectorsWithoutFilter(tagsVector, limit = TAGS_SEARCH_LIMIT)
+        val tagsCandidates = try {
+            qdrantService.searchTagsVectorsWithoutFilter(tagsVector, limit = TAGS_SEARCH_LIMIT)
+        } catch (e: Exception) {
+            println("❌ Tags搜尋失敗: ${e.message}")
+            println("   查詢文本: $tagsQuery")
+            println("   錯誤類型: ${e.javaClass.simpleName}")
+            return emptyList()
+        }
         
         if (tagsCandidates.isEmpty()) {
             println("❌ Tags搜尋未找到任何候選書籍")
+            println("   查詢文本: $tagsQuery")
+            println("   向量維度: ${tagsVector.size}")
+            println("   搜索限制: $TAGS_SEARCH_LIMIT")
             return emptyList()
         }
         
@@ -199,7 +209,15 @@ class BookRecommendationService(
         val bookIds = topCandidates.map { it.payload["book_id"]?.toString() ?: "" }.filter { it.isNotEmpty() }
         
         // 批量查詢Description分數（從20次API調用減少到1次）
-        val descScores = qdrantService.searchDescriptionVectorsBatch(descVector, bookIds)
+        val descScores = try {
+            qdrantService.searchDescriptionVectorsBatch(descVector, bookIds)
+        } catch (e: Exception) {
+            println("❌ Description批量查詢失敗: ${e.message}")
+            println("   查詢書籍數量: ${bookIds.size}")
+            println("   書籍ID樣本: ${bookIds.take(3)}")
+            println("   錯誤類型: ${e.javaClass.simpleName}")
+            emptyMap<String, Double>()
+        }
         
         println("✅ Description重排序完成，批量處理 ${topCandidates.size} 本書籍")
         

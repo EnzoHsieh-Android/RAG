@@ -3,7 +3,7 @@ server:
 
 # 生產環境配置 - 支援大數據量
 qdrant:
-  host: localhost
+  host: ${QDRANT_HOST:localhost}
   port: 6333
   collection:
     name: books_large

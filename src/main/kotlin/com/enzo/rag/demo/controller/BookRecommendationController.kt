@@ -6,6 +6,7 @@ import com.enzo.rag.demo.model.RecommendationResponse
 import com.enzo.rag.demo.service.BookRecommendationService
 import com.enzo.rag.demo.service.QueryAnalysisService
 import com.enzo.rag.demo.service.RecommendationEmbeddingService
+import com.enzo.rag.demo.service.RecommendationQdrantService
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
@@ -17,7 +18,8 @@ import org.springframework.web.bind.annotation.*
 class BookRecommendationController(
     private val recommendationService: BookRecommendationService,
     private val queryAnalysisService: QueryAnalysisService,
-    private val embeddingService: RecommendationEmbeddingService
+    private val embeddingService: RecommendationEmbeddingService,
+    private val qdrantService: RecommendationQdrantService
 ) {
     
     /**
@@ -79,7 +81,28 @@ class BookRecommendationController(
             
             // 步驟 2: 執行向量檢索推薦
             val finalQuery = structuredQuery!!
-            val recommendation = recommendationService.recommend(finalQuery)
+            println("🔍 開始執行推薦查詢...")
+            println("   最終查詢文本: ${finalQuery.queryText}")
+            println("   語言過濾: ${finalQuery.filters.language}")
+            println("   標籤過濾: ${finalQuery.filters.tags}")
+            
+            val recommendation = try {
+                recommendationService.recommend(finalQuery)
+            } catch (e: Exception) {
+                println("❌ 推薦服務執行失敗: ${e.message}")
+                println("   查詢: ${finalQuery.queryText}")
+                println("   錯誤類型: ${e.javaClass.simpleName}")
+                e.printStackTrace()
+                
+                // 返回有詳細錯誤信息的空結果
+                RecommendationResponse(
+                    query = finalQuery.queryText,
+                    results = emptyList(),
+                    totalCandidates = 0,
+                    searchStrategy = "推薦服務錯誤: ${e.javaClass.simpleName} - ${e.message}",
+                    processingTimeMs = System.currentTimeMillis() - startTime
+                )
+            }
             
             val totalTime = System.currentTimeMillis() - startTime
             
@@ -190,14 +213,17 @@ class BookRecommendationController(
     }
     
     /**
-     * 健康檢查（包含性能優化統計）
+     * 健康檢查（包含性能優化統計和數據完整性檢查）
      */
     @GetMapping("/health")
     fun healthCheck(): ResponseEntity<Map<String, Any>> {
         val cacheStats = embeddingService.getCacheStats()
+        val dataIntegrityCheck = performDataIntegrityCheck()
         
         return ResponseEntity.ok(mapOf(
-            "status" to "healthy",
+            "status" to if (dataIntegrityCheck["qdrant_connected"] == true && 
+                            dataIntegrityCheck["collections_exist"] == true &&
+                            dataIntegrityCheck["has_data"] == true) "healthy" else "degraded",
             "service" to "Book Recommendation System v2",
             "features" to listOf(
                 "dual_stage_search",
@@ -214,7 +240,8 @@ class BookRecommendationController(
                 "embedding_cache" to cacheStats,
                 "batch_description_queries" to "enabled",
                 "smart_tag_semantic" to "max_5_calculations"
-            )
+            ),
+            "data_integrity" to dataIntegrityCheck
         ))
     }
     
@@ -285,6 +312,166 @@ class BookRecommendationController(
         } catch (e: Exception) {
             ResponseEntity.badRequest().body(mapOf(
                 "error" to "緩存清空失敗: ${e.message}"
+            ))
+        }
+    }
+    
+    /**
+     * 數據完整性檢查
+     */
+    private fun performDataIntegrityCheck(): Map<String, Any> {
+        return try {
+            // 檢查 Qdrant 連接
+            val qdrantConnected = try {
+                val tagsVector = embeddingService.getEmbedding("test")
+                val results = qdrantService.searchTagsVectorsWithoutFilter(tagsVector, limit = 1)
+                true
+            } catch (e: Exception) {
+                println("❌ Qdrant 連接檢查失敗: ${e.message}")
+                false
+            }
+            
+            // 檢查集合是否存在和有數據
+            val collectionsCheck = try {
+                val tagsVector = embeddingService.getEmbedding("測試查詢")
+                val tagsResults = qdrantService.searchTagsVectorsWithoutFilter(tagsVector, limit = 5)
+                val descResults = qdrantService.searchDescriptionVectorsBatch(tagsVector, 
+                    tagsResults.take(3).map { it.payload["book_id"]?.toString() ?: "" }.filter { it.isNotEmpty() }
+                )
+                
+                mapOf(
+                    "collections_exist" to true,
+                    "tags_vecs_count" to tagsResults.size,
+                    "desc_vecs_accessible" to descResults.isNotEmpty(),
+                    "has_data" to (tagsResults.isNotEmpty() && descResults.isNotEmpty())
+                )
+            } catch (e: Exception) {
+                println("❌ 集合檢查失敗: ${e.message}")
+                mapOf(
+                    "collections_exist" to false,
+                    "tags_vecs_count" to 0,
+                    "desc_vecs_accessible" to false,
+                    "has_data" to false,
+                    "error" to (e.message ?: "未知錯誤")
+                )
+            }
+            
+            mutableMapOf(
+                "qdrant_connected" to qdrantConnected,
+                "timestamp" to System.currentTimeMillis()
+            ).apply { 
+                collectionsCheck.forEach { (key, value) -> 
+                    this[key] = value
+                }
+            }
+            
+        } catch (e: Exception) {
+            println("❌ 數據完整性檢查失敗: ${e.message}")
+            mapOf(
+                "qdrant_connected" to false,
+                "collections_exist" to false,
+                "has_data" to false,
+                "error" to (e.message ?: "未知錯誤"),
+                "timestamp" to System.currentTimeMillis()
+            )
+        }
+    }
+    
+    /**
+     * 數據診斷API - 詳細的數據完整性和連接檢查
+     */
+    @GetMapping("/diagnose")
+    fun diagnoseSystem(): ResponseEntity<Map<String, Any>> {
+        val startTime = System.currentTimeMillis()
+        
+        return try {
+            println("🔍 開始系統診斷...")
+            
+            val diagnostics = mutableMapOf<String, Any>()
+            
+            // 1. Qdrant 服務檢查
+            val qdrantHost: Any = System.getProperty("qdrant.host") ?: "qdrant"
+            val qdrantPort: Any = System.getProperty("qdrant.port") ?: "6333"
+            diagnostics["qdrant_config"] = mapOf(
+                "host" to qdrantHost,
+                "port" to qdrantPort,
+                "base_url" to "http://$qdrantHost:$qdrantPort"
+            )
+            
+            // 2. 基礎連接測試
+            val connectionTest = try {
+                val testVector = embeddingService.getEmbedding("連接測試")
+                val testResults = qdrantService.searchTagsVectorsWithoutFilter(testVector, limit = 1)
+                mapOf(
+                    "connection_successful" to true,
+                    "test_query_results" to testResults.size
+                )
+            } catch (e: Exception) {
+                mapOf(
+                    "connection_successful" to false,
+                    "error" to (e.message ?: "未知錯誤"),
+                    "error_type" to e.javaClass.simpleName
+                )
+            }
+            diagnostics["connection_test"] = connectionTest
+            
+            // 3. 集合數據統計
+            val dataStats = try {
+                val sampleVector = embeddingService.getEmbedding("sample query")
+                val tagsResults = qdrantService.searchTagsVectorsWithoutFilter(sampleVector, limit = 10)
+                val bookIds = tagsResults.map { result -> result.payload["book_id"]?.toString() ?: "" }.filter { bookId -> bookId.isNotEmpty() }
+                val descResults = if (bookIds.isNotEmpty()) {
+                    qdrantService.searchDescriptionVectorsBatch(sampleVector, bookIds.take(5))
+                } else emptyMap<String, Double>()
+                
+                mapOf(
+                    "tags_vecs_accessible" to true,
+                    "tags_sample_size" to tagsResults.size,
+                    "desc_vecs_accessible" to true,
+                    "desc_sample_size" to descResults.size,
+                    "has_book_ids" to bookIds.isNotEmpty(),
+                    "sample_book_ids" to bookIds.take(3)
+                )
+            } catch (e: Exception) {
+                mapOf(
+                    "tags_vecs_accessible" to false,
+                    "desc_vecs_accessible" to false,
+                    "error" to (e.message ?: "未知錯誤")
+                )
+            }
+            diagnostics["data_statistics"] = dataStats
+            
+            // 4. embedding 服務檢查
+            val embeddingTest = try {
+                val testEmbedding = embeddingService.getEmbedding("測試 embedding")
+                val cacheStats = embeddingService.getCacheStats()
+                mapOf(
+                    "embedding_service_working" to true,
+                    "test_embedding_size" to testEmbedding.size,
+                    "cache_stats" to cacheStats
+                )
+            } catch (e: Exception) {
+                mapOf(
+                    "embedding_service_working" to false,
+                    "error" to (e.message ?: "未知錯誤")
+                )
+            }
+            diagnostics["embedding_test"] = embeddingTest
+            
+            val diagnosticTime = System.currentTimeMillis() - startTime
+            
+            ResponseEntity.ok(mapOf(
+                "status" to "diagnostic_completed",
+                "diagnostic_time_ms" to diagnosticTime,
+                "timestamp" to System.currentTimeMillis(),
+                "diagnostics" to diagnostics
+            ))
+            
+        } catch (e: Exception) {
+            ResponseEntity.badRequest().body(mapOf(
+                "status" to "diagnostic_failed",
+                "error" to (e.message ?: "未知錯誤"),
+                "timestamp" to System.currentTimeMillis()
             ))
         }
     }

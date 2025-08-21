@@ -12,9 +12,13 @@ import java.time.Duration
 @Service
 class RecommendationQdrantService(
     private val embeddingService: RecommendationEmbeddingService,
-    @Value("\${qdrant.base.url:http://localhost:6333}")
-    private val qdrantBaseUrl: String
+    @Value("\${qdrant.host:localhost}")
+    private val qdrantHost: String,
+    @Value("\${qdrant.port:6333}")
+    private val qdrantPort: Int
 ) {
+    
+    private val qdrantBaseUrl = "http://$qdrantHost:$qdrantPort"
     
     private val qdrantClient = WebClient.builder()
         .baseUrl(qdrantBaseUrl)

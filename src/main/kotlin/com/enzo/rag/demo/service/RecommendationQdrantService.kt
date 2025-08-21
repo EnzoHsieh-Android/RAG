@@ -1,6 +1,7 @@
 package com.enzo.rag.demo.service
 
 import com.enzo.rag.demo.model.*
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 import java.time.Duration
@@ -10,11 +11,13 @@ import java.time.Duration
  */
 @Service
 class RecommendationQdrantService(
-    private val embeddingService: RecommendationEmbeddingService
+    private val embeddingService: RecommendationEmbeddingService,
+    @Value("\${qdrant.base.url:http://localhost:6333}")
+    private val qdrantBaseUrl: String
 ) {
     
     private val qdrantClient = WebClient.builder()
-        .baseUrl("http://localhost:6333")
+        .baseUrl(qdrantBaseUrl)
         .codecs { it.defaultCodecs().maxInMemorySize(10 * 1024 * 1024) } // 10MB buffer
         .build()
     

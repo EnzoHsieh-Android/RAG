@@ -49,7 +49,8 @@
       "Bash(./deploy.sh:*)",
       "Bash(./deploy-simple.sh:*)",
       "Bash(bash:*)",
-      "Bash(/dev/null)"
+      "Bash(/dev/null)",
+      "Bash(java:*)"
     ],
     "deny": []
   }

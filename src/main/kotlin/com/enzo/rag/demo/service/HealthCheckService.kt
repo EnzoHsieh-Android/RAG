@@ -30,13 +30,20 @@ class HealthCheckService(
     @Value("\${qdrant.collection.name:books_large}")
     private lateinit var collectionName: String
     
-    private val qdrantClient = WebClient.builder()
-        .baseUrl("http://localhost:6333")
-        .build()
+    @Value("\${ollama.base.url:http://localhost:11434}")
+    private lateinit var ollamaBaseUrl: String
     
-    private val ollamaClient = WebClient.builder()
-        .baseUrl("http://localhost:11434")
-        .build()
+    private val qdrantClient by lazy {
+        WebClient.builder()
+            .baseUrl("http://$qdrantHost:$qdrantPort")
+            .build()
+    }
+    
+    private val ollamaClient by lazy {
+        WebClient.builder()
+            .baseUrl(ollamaBaseUrl)
+            .build()
+    }
     
     private val objectMapper = ObjectMapper()
     

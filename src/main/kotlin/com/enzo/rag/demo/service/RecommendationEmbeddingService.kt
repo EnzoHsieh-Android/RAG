@@ -2,6 +2,7 @@ package com.enzo.rag.demo.service
 
 import com.enzo.rag.demo.model.EmbeddingRequest
 import com.enzo.rag.demo.model.EmbeddingResponse
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 import java.time.Duration
@@ -12,10 +13,13 @@ import java.util.concurrent.atomic.AtomicLong
  * 推薦系統專用的 Embedding 服務
  */
 @Service
-class RecommendationEmbeddingService {
+class RecommendationEmbeddingService(
+    @Value("\${ollama.base.url:http://localhost:11434}")
+    private val ollamaBaseUrl: String
+) {
     
     private val embeddingClient = WebClient.builder()
-        .baseUrl("http://localhost:11434")
+        .baseUrl(ollamaBaseUrl)
         .build()
     
     // 智能向量緩存系統

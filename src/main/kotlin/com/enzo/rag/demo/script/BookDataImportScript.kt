@@ -2,6 +2,7 @@ package com.enzo.rag.demo.script
 
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.ObjectMapper
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Component
 import org.springframework.web.reactive.function.client.WebClient
 import java.io.File
@@ -16,13 +17,17 @@ import java.security.MessageDigest
  */
 @Component
 class BookDataImportScript(
-    private val objectMapper: ObjectMapper
+    private val objectMapper: ObjectMapper,
+    @Value("\${qdrant.host:localhost}")
+    private val qdrantHost: String,
+    @Value("\${qdrant.port:6333}")
+    private val qdrantPort: Int,
+    @Value("\${ollama.host:localhost}")
+    private val embeddingHost: String,
+    @Value("\${ollama.port:11434}")
+    private val embeddingPort: Int
 ) {
     
-    private val qdrantHost = "localhost"
-    private val qdrantPort = 6333
-    private val embeddingHost = "localhost"
-    private val embeddingPort = 11434
     private val qdrantBaseUrl = "http://$qdrantHost:$qdrantPort"
     private val embeddingBaseUrl = "http://$embeddingHost:$embeddingPort"
     

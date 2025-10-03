@@ -10,18 +10,6 @@ spring:
         model: quentinz/bge-large-zh-v1.5:latest
         options:
           temperature: 0.7
-  
-  # 數據源配置 (使用內存數據庫)
-  datasource:
-    url: jdbc:h2:mem:ragdb
-    username: sa
-    password: password
-    driver-class-name: org.h2.Driver
-  
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: false  # 生產環境關閉 SQL 日誌
 
 # Qdrant 向量數據庫配置
 qdrant:

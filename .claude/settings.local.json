@@ -51,7 +51,13 @@
       "Bash(bash:*)",
       "Bash(/dev/null)",
       "Bash(java:*)",
-      "Bash(./test_fix.sh:*)"
+      "Bash(./test_fix.sh:*)",
+      "Read(/Users/xiechengru/Downloads/qdrant.maintain/**)",
+      "Read(/Users/xiechengru/Downloads/qdrant.maintain/**)",
+      "Read(/Users/xiechengru/Downloads/qdrant.maintain/src/main/kotlin/com/enzo/qdrant/maintain/service/**)",
+      "Read(/Users/xiechengru/Downloads/qdrant.maintain/src/main/kotlin/com/enzo/qdrant/maintain/controller/**)",
+      "Read(/Users/xiechengru/Downloads/qdrant.maintain/src/main/kotlin/com/enzo/qdrant/maintain/service/**)",
+      "Read(/Users/xiechengru/Downloads/qdrant.maintain/src/main/resources/**)"
     ],
     "deny": []
   }
